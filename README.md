@@ -41,6 +41,41 @@
 - 🔧 工場現場の無骨さと力強さを表現
 - ❌ AIっぽさを徹底排除
 
+### 6. [Liquid Gradient Template](./liquid-gradient-template/)
+**流体的グラデーションデザイン**
+- 🌊 モーフィングシェイプと有機的な形状
+- 🎨 動的グラデーションアニメーション
+- 💧 グラスモーフィズムとぼかし効果
+- ✨ パーティクルと浮遊エレメント
+
+### 7. [ASCII Terminal Template](./ascii-terminal-template/)
+**レトロターミナルデザイン**
+- 💻 モノスペースフォントとASCIIアート
+- 📟 CRTエフェクト（走査線、色収差）
+- 🖥️ ターミナルウィンドウとコマンドライン
+- 🌐 マトリックスレインとタイピング効果
+
+### 8. [Broken Grid Template](./broken-grid-template/)
+**アンチグリッド・カオスデザイン**
+- 🎲 意図的な無秩序と非対称配置
+- 💥 要素の重なりと衝突
+- 🌀 ランダムな回転とスケール
+- 🎨 DIY/パンク美学とグリッチ効果
+
+### 9. [Retro Blog Template](./retro-blog-template/)
+**2000年代ブログ・掲示板デザイン**
+- 💖 アメブロ風パステルカラー
+- ✨ キラキラ装飾と顔文字
+- 📝 3カラムレイアウト（サイドバー充実）
+- 🎀 過剰な装飾とカスタムカーソル
+
+### 10. [90s Web Template](./90s-web-template/)
+**1990年代WWW黎明期デザイン**
+- 🌐 Under Construction永遠の工事中
+- 🖼️ アニメーションGIFとMIDI BGM
+- 📊 テーブルレイアウトとフレームセット
+- 🔷 原色使いとTimes New Roman
+
 ## 🚀 クイックスタート
 
 ### 基本的な使用方法
@@ -53,7 +88,7 @@
 ```bash
 # テンプレートをクローン
 git clone https://github.com/itoksk/design.git
-cd design-templates
+cd design
 
 # 特定のテンプレートに移動
 cd brutalist-design-template/
@@ -65,6 +100,16 @@ cd tech-editorial-template/
 cd industrial-cyberpunk-template/
 # または
 cd industrial-hackathon-template/
+# または
+cd liquid-gradient-template/
+# または
+cd ascii-terminal-template/
+# または
+cd broken-grid-template/
+# または
+cd retro-blog-template/
+# または
+cd 90s-web-template/
 
 # 詳細を確認
 cat README.md
@@ -75,10 +120,11 @@ cat README.md
 すべてのテンプレートには以下が含まれています：
 
 - **README.md** - テンプレートの概要と使用方法
-- **Design System** - デザイン仕様書（.yaml/.md形式）
-- **Prompts** - AI生成用のプロンプト集
-- **Components** - 再利用可能なコンポーネント定義
-- **Examples** - 実装サンプル（一部テンプレート）
+- **design-system.yaml** - デザインシステム仕様書
+- **prompts.md** - AI生成用のプロンプト集
+- **components.json** - 再利用可能なコンポーネント定義
+- **theme.json** - カラー、タイポグラフィ、アニメーション設定
+- **examples/** - 実装サンプル（HTML/CSS）
 
 ## 🎨 デザイン哲学
 

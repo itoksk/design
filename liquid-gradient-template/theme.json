@@ -1,0 +1,301 @@
+{
+  "name": "Liquid Gradient",
+  "version": "1.0.0",
+  "description": "流体的グラデーションとモーフィングシェイプのテーマ",
+  
+  "colors": {
+    "gradients": {
+      "aurora_dreams": {
+        "colors": ["#667eea", "#764ba2", "#f093fb", "#feca57", "#48c9b0"],
+        "angle": "135deg",
+        "size": "400% 400%",
+        "animation": {
+          "name": "gradient-shift",
+          "duration": "15s",
+          "timing": "ease",
+          "iteration": "infinite"
+        }
+      },
+      "neon_ocean": {
+        "colors": ["#00f2fe", "#4facfe", "#00f2fe", "#4facfe"],
+        "angle": "45deg",
+        "size": "400% 400%",
+        "animation": {
+          "name": "gradient-wave",
+          "duration": "12s",
+          "timing": "ease-in-out",
+          "iteration": "infinite"
+        }
+      },
+      "sunset_plasma": {
+        "colors": ["#fc466b", "#3f5efb", "#fc466b", "#3f5efb"],
+        "angle": "90deg",
+        "size": "400% 400%",
+        "animation": {
+          "name": "gradient-pulse",
+          "duration": "10s",
+          "timing": "ease",
+          "iteration": "infinite"
+        }
+      },
+      "holographic": {
+        "colors": ["#21D4FD", "#B721FF", "#21D4FD", "#FF21D4", "#21D4FD"],
+        "angle": "270deg",
+        "size": "500% 500%",
+        "animation": {
+          "name": "gradient-rotate",
+          "duration": "20s",
+          "timing": "linear",
+          "iteration": "infinite"
+        }
+      }
+    },
+    
+    "glass": {
+      "light": {
+        "background": "rgba(255, 255, 255, 0.1)",
+        "border": "rgba(255, 255, 255, 0.2)",
+        "text": "#ffffff",
+        "blur": "10px"
+      },
+      "dark": {
+        "background": "rgba(0, 0, 0, 0.2)",
+        "border": "rgba(255, 255, 255, 0.1)",
+        "text": "#ffffff",
+        "blur": "15px"
+      },
+      "iridescent": {
+        "background": "rgba(255, 255, 255, 0.15)",
+        "border": "rgba(255, 255, 255, 0.3)",
+        "text": "#ffffff",
+        "blur": "20px",
+        "shimmer": true
+      }
+    },
+    
+    "particles": {
+      "light": "rgba(255, 255, 255, 0.8)",
+      "medium": "rgba(255, 255, 255, 0.6)",
+      "dim": "rgba(255, 255, 255, 0.4)"
+    }
+  },
+  
+  "typography": {
+    "families": {
+      "display": "'Space Grotesk', -apple-system, sans-serif",
+      "body": "'Inter', -apple-system, sans-serif",
+      "accent": "'Outfit', 'Montserrat', sans-serif",
+      "mono": "'Fira Code', 'Courier New', monospace"
+    },
+    "sizes": {
+      "mega": {
+        "min": "3rem",
+        "preferred": "12vw + 1rem",
+        "max": "10rem"
+      },
+      "hero": {
+        "min": "2.5rem",
+        "preferred": "8vw + 1rem",
+        "max": "7rem"
+      },
+      "title": {
+        "min": "2rem",
+        "preferred": "5vw + 1rem",
+        "max": "4rem"
+      },
+      "subtitle": {
+        "min": "1.5rem",
+        "preferred": "3vw + 0.5rem",
+        "max": "2.5rem"
+      },
+      "body": {
+        "min": "1rem",
+        "preferred": "2vw",
+        "max": "1.25rem"
+      }
+    },
+    "effects": {
+      "gradient": {
+        "background": "linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end))",
+        "backgroundClip": "text",
+        "webkitBackgroundClip": "text",
+        "webkitTextFillColor": "transparent"
+      },
+      "glow": {
+        "textShadow": "0 0 20px rgba(102, 126, 234, 0.5), 0 0 40px rgba(118, 75, 162, 0.3)"
+      },
+      "outline": {
+        "webkitTextStroke": "2px currentColor",
+        "webkitTextFillColor": "transparent"
+      }
+    }
+  },
+  
+  "morphing": {
+    "shapes": {
+      "blob1": "40% 60% 70% 30% / 40% 50% 60% 50%",
+      "blob2": "70% 30% 50% 50% / 30% 30% 70% 70%",
+      "blob3": "30% 70% 70% 30% / 30% 60% 40% 70%",
+      "blob4": "60% 40% 30% 70% / 60% 30% 70% 40%"
+    },
+    "animation": {
+      "duration": "8s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    }
+  },
+  
+  "effects": {
+    "blur": {
+      "light": "10px",
+      "medium": "20px",
+      "heavy": "40px",
+      "extreme": "80px"
+    },
+    "shadows": {
+      "soft": "0 20px 40px rgba(0, 0, 0, 0.1)",
+      "glow": "0 0 40px rgba(102, 126, 234, 0.5)",
+      "depth": "0 2px 4px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.1), 0 16px 32px rgba(0,0,0,0.1)",
+      "neon": "0 0 20px currentColor, 0 0 40px currentColor, 0 0 60px currentColor"
+    },
+    "filters": {
+      "glassmorphism": "blur(20px) saturate(180%)",
+      "frosted": "blur(10px) saturate(120%) brightness(1.1)",
+      "colorShift": "blur(15px) hue-rotate(90deg) saturate(150%)"
+    }
+  },
+  
+  "animations": {
+    "durations": {
+      "instant": "0.15s",
+      "fast": "0.3s",
+      "normal": "0.6s",
+      "slow": "1.2s",
+      "glacial": "3s",
+      "background": "15s"
+    },
+    "easings": {
+      "smooth": "ease-in-out",
+      "organic": "cubic-bezier(0.455, 0.03, 0.515, 0.955)",
+      "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "elastic": "cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+    },
+    "presets": {
+      "float": {
+        "transform": "translateY(-20px)",
+        "duration": "10s",
+        "timing": "ease-in-out",
+        "iteration": "infinite",
+        "alternate": true
+      },
+      "rotate": {
+        "transform": "rotate(360deg)",
+        "duration": "20s",
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "pulse": {
+        "transform": "scale(1.05)",
+        "duration": "2s",
+        "timing": "ease-in-out",
+        "iteration": "infinite",
+        "alternate": true
+      }
+    }
+  },
+  
+  "spacing": {
+    "base": "8px",
+    "scale": {
+      "xs": "0.5rem",
+      "sm": "1rem",
+      "md": "2rem",
+      "lg": "3rem",
+      "xl": "4rem",
+      "2xl": "6rem",
+      "3xl": "8rem",
+      "4xl": "12rem"
+    },
+    "fluid": {
+      "padding": "clamp(1rem, 5vw, 3rem)",
+      "gap": "clamp(1rem, 3vw, 2rem)",
+      "margin": "clamp(2rem, 8vw, 6rem)"
+    }
+  },
+  
+  "layout": {
+    "containers": {
+      "narrow": "800px",
+      "medium": "1200px",
+      "wide": "1600px",
+      "full": "100%"
+    },
+    "grid": {
+      "columns": "repeat(auto-fit, minmax(300px, 1fr))",
+      "gap": "clamp(1rem, 3vw, 3rem)"
+    }
+  },
+  
+  "breakpoints": {
+    "mobile": {
+      "max": "480px",
+      "performance": "reduced"
+    },
+    "tablet": {
+      "min": "481px",
+      "max": "768px",
+      "performance": "balanced"
+    },
+    "laptop": {
+      "min": "769px",
+      "max": "1024px",
+      "performance": "balanced"
+    },
+    "desktop": {
+      "min": "1025px",
+      "max": "1440px",
+      "performance": "full"
+    },
+    "wide": {
+      "min": "1441px",
+      "performance": "full"
+    }
+  },
+  
+  "performance": {
+    "reduced": {
+      "disableParticles": true,
+      "simplifyGradients": true,
+      "reduceBlur": true,
+      "limitAnimations": true
+    },
+    "balanced": {
+      "disableParticles": false,
+      "simplifyGradients": false,
+      "reduceBlur": true,
+      "limitAnimations": false
+    },
+    "full": {
+      "disableParticles": false,
+      "simplifyGradients": false,
+      "reduceBlur": false,
+      "limitAnimations": false
+    }
+  },
+  
+  "accessibility": {
+    "reduceMotion": {
+      "animations": "none",
+      "transitions": "opacity 0.3s ease"
+    },
+    "highContrast": {
+      "borders": "2px solid",
+      "textShadow": "none",
+      "backgroundOverlay": "rgba(0, 0, 0, 0.5)"
+    },
+    "focusIndicator": {
+      "outline": "3px solid #667eea",
+      "outlineOffset": "4px"
+    }
+  }
+}

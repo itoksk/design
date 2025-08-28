@@ -1,0 +1,270 @@
+# Liquid Gradient Design System
+# 流体グラデーションデザインシステム
+
+version: "1.0"
+created: "2025"
+description: "有機的で流動的なグラデーションとモーフィングシェイプを特徴とするデザインシステム"
+
+# ===========================================
+# DESIGN PHILOSOPHY
+# ===========================================
+
+philosophy:
+  concept: "Fluid Digital Organisms"
+  principles:
+    - "Continuous Motion - 静止することのない永続的な動き"
+    - "Organic Morphing - 自然界の流体力学に基づいた変形"
+    - "Gradient Interference - 複数グラデーションの干渉と融合"
+    - "Depth Perception - Z軸を活用した奥行きの表現"
+    - "Living Colors - 呼吸するように変化する色彩"
+
+# ===========================================
+# COLOR SYSTEM
+# ===========================================
+
+colors:
+  gradients:
+    aurora_dreams:
+      colors: ["#667eea", "#764ba2", "#f093fb", "#feca57", "#48c9b0"]
+      angle: "135deg"
+      animation: "gradient-shift 15s ease infinite"
+      
+    neon_ocean:
+      colors: ["#00f2fe", "#4facfe", "#00f2fe", "#4facfe"]
+      angle: "45deg"
+      animation: "gradient-wave 12s ease-in-out infinite"
+      
+    sunset_plasma:
+      colors: ["#fc466b", "#3f5efb", "#fc466b", "#3f5efb"]
+      angle: "90deg"
+      animation: "gradient-pulse 10s ease infinite"
+      
+    holographic:
+      colors: ["#21D4FD", "#B721FF", "#21D4FD", "#FF21D4", "#21D4FD"]
+      angle: "270deg"
+      animation: "gradient-rotate 20s linear infinite"
+      
+  glass_overlays:
+    light:
+      background: "rgba(255, 255, 255, 0.1)"
+      blur: "10px"
+      border: "1px solid rgba(255, 255, 255, 0.2)"
+      
+    dark:
+      background: "rgba(0, 0, 0, 0.2)"
+      blur: "15px"
+      border: "1px solid rgba(255, 255, 255, 0.1)"
+      
+    iridescent:
+      background: "linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0.1) 100%)"
+      blur: "20px"
+      border: "1px solid rgba(255, 255, 255, 0.3)"
+
+# ===========================================
+# TYPOGRAPHY
+# ===========================================
+
+typography:
+  fonts:
+    display: "'Space Grotesk', 'Helvetica Neue', sans-serif"
+    body: "'Inter', -apple-system, sans-serif"
+    accent: "'Outfit', 'Montserrat', sans-serif"
+    
+  fluid_sizes:
+    mega: "clamp(3rem, 12vw + 1rem, 10rem)"
+    hero: "clamp(2.5rem, 8vw + 1rem, 7rem)"
+    title: "clamp(2rem, 5vw + 1rem, 4rem)"
+    subtitle: "clamp(1.5rem, 3vw + 0.5rem, 2.5rem)"
+    body: "clamp(1rem, 2vw, 1.25rem)"
+    small: "clamp(0.875rem, 1.5vw, 1rem)"
+    
+  effects:
+    gradient_text:
+      background: "linear-gradient(90deg, #667eea, #764ba2, #f093fb)"
+      background_clip: "text"
+      text_fill_color: "transparent"
+      animation: "gradient-text 8s ease infinite"
+      
+    glow_text:
+      text_shadow: "0 0 20px rgba(102, 126, 234, 0.5), 0 0 40px rgba(118, 75, 162, 0.3)"
+      animation: "text-glow 3s ease-in-out infinite alternate"
+
+# ===========================================
+# SHAPES & MORPHING
+# ===========================================
+
+shapes:
+  blob_variations:
+    variation_1:
+      border_radius: "40% 60% 70% 30% / 40% 50% 60% 50%"
+      
+    variation_2:
+      border_radius: "70% 30% 50% 50% / 30% 30% 70% 70%"
+      
+    variation_3:
+      border_radius: "30% 70% 70% 30% / 30% 60% 40% 70%"
+      
+    variation_4:
+      border_radius: "60% 40% 30% 70% / 60% 30% 70% 40%"
+      
+  morphing_animation:
+    duration: "8s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    keyframes:
+      - "0%, 100%: border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%"
+      - "25%: border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%"
+      - "50%: border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%"
+      - "75%: border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%"
+
+# ===========================================
+# EFFECTS & FILTERS
+# ===========================================
+
+effects:
+  backdrop_filters:
+    heavy_blur:
+      backdrop_filter: "blur(20px) saturate(180%)"
+      
+    light_blur:
+      backdrop_filter: "blur(10px) saturate(120%)"
+      
+    color_shift:
+      backdrop_filter: "blur(15px) hue-rotate(90deg) saturate(150%)"
+      
+    grayscale_blur:
+      backdrop_filter: "blur(12px) grayscale(50%)"
+      
+  box_shadows:
+    soft_glow:
+      shadow: "0 20px 40px rgba(102, 126, 234, 0.3), 0 10px 20px rgba(118, 75, 162, 0.2)"
+      
+    depth_layers:
+      shadow: |
+        0 2px 4px rgba(0,0,0,0.1),
+        0 8px 16px rgba(0,0,0,0.1),
+        0 16px 32px rgba(0,0,0,0.1),
+        0 32px 64px rgba(0,0,0,0.1)
+        
+    neon_glow:
+      shadow: "0 0 20px rgba(0, 242, 254, 0.5), 0 0 40px rgba(79, 172, 254, 0.3), 0 0 60px rgba(0, 242, 254, 0.2)"
+
+# ===========================================
+# ANIMATIONS
+# ===========================================
+
+animations:
+  gradient_animations:
+    gradient_shift:
+      keyframes:
+        "0%, 100%": "background-position: 0% 50%"
+        "50%": "background-position: 100% 50%"
+      duration: "15s"
+      timing: "ease"
+      
+    gradient_rotate:
+      keyframes:
+        "0%": "background: linear-gradient(0deg, var(--color-1), var(--color-2))"
+        "100%": "background: linear-gradient(360deg, var(--color-1), var(--color-2))"
+      duration: "20s"
+      timing: "linear"
+      
+  motion_paths:
+    float_path:
+      keyframes:
+        "0%, 100%": "transform: translateY(0px) translateX(0px) rotate(0deg)"
+        "33%": "transform: translateY(-20px) translateX(10px) rotate(1deg)"
+        "66%": "transform: translateY(10px) translateX(-5px) rotate(-1deg)"
+      duration: "10s"
+      timing: "cubic-bezier(0.455, 0.03, 0.515, 0.955)"
+      
+  particle_effects:
+    bubble_rise:
+      keyframes:
+        "0%": "transform: translateY(100vh) scale(0)"
+        "10%": "transform: translateY(90vh) scale(1)"
+        "100%": "transform: translateY(-100vh) scale(0.5)"
+      duration: "20s"
+      timing: "linear"
+      
+# ===========================================
+# LAYOUTS
+# ===========================================
+
+layouts:
+  fluid_grid:
+    display: "grid"
+    grid_template: "repeat(auto-fit, minmax(300px, 1fr))"
+    gap: "clamp(1rem, 3vw, 3rem)"
+    
+  morphing_container:
+    position: "relative"
+    overflow: "hidden"
+    min_height: "100vh"
+    background: "gradient"
+    
+  glass_panel:
+    background: "glass_overlay"
+    backdrop_filter: "blur"
+    border_radius: "20px"
+    padding: "clamp(1rem, 5vw, 3rem)"
+    
+  floating_element:
+    position: "absolute"
+    animation: "float_path"
+    will_change: "transform"
+    
+# ===========================================
+# INTERACTIVE STATES
+# ===========================================
+
+interactions:
+  hover:
+    scale: "scale(1.05)"
+    blur: "blur(0px)"
+    brightness: "brightness(1.1)"
+    transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)"
+    
+  active:
+    scale: "scale(0.95)"
+    brightness: "brightness(0.9)"
+    transition: "all 0.2s ease"
+    
+  focus:
+    outline: "2px solid transparent"
+    outline_offset: "4px"
+    box_shadow: "0 0 0 3px rgba(102, 126, 234, 0.5)"
+    
+  liquid_cursor:
+    cursor: "none"
+    custom_cursor: "liquid-blob"
+    trail_effect: true
+    magnetic_pull: true
+
+# ===========================================
+# RESPONSIVE BEHAVIOR
+# ===========================================
+
+responsive:
+  breakpoints:
+    mobile: "480px"
+    tablet: "768px"
+    desktop: "1024px"
+    wide: "1440px"
+    ultrawide: "2560px"
+    
+  performance_modes:
+    mobile:
+      reduce_motion: true
+      simple_gradients: true
+      disable_particles: true
+      
+    tablet:
+      reduce_motion: false
+      simple_gradients: false
+      disable_particles: true
+      
+    desktop:
+      reduce_motion: false
+      simple_gradients: false
+      disable_particles: false

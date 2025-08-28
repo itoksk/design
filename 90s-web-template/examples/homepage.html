@@ -1,0 +1,333 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+    <TITLE>Welcome to John's Homepage on the World Wide Web!</TITLE>
+    <META NAME="Author" CONTENT="John Smith">
+    <META NAME="Keywords" CONTENT="homepage, personal, web, internet, cool, links">
+    <META NAME="Description" CONTENT="John's personal homepage on the World Wide Web">
+    <META NAME="Generator" CONTENT="Notepad">
+    
+    <SCRIPT LANGUAGE="JavaScript">
+    <!--
+    // Welcome message
+    alert("Welcome to my homepage! Please sign my guestbook!");
+    
+    // Scrolling status bar text
+    var scrollText = "Welcome to the coolest homepage on the World Wide Web!!! ";
+    var scrollPos = 0;
+    
+    function scrollStatus() {
+        window.status = scrollText.substring(scrollPos, scrollText.length) + scrollText.substring(0, scrollPos);
+        scrollPos++;
+        if (scrollPos > scrollText.length) scrollPos = 0;
+        setTimeout("scrollStatus()", 150);
+    }
+    
+    // Browser detection
+    function checkBrowser() {
+        if (navigator.appName == "Netscape") {
+            document.write("<FONT COLOR='#0000FF'>Netscape User Detected!</FONT>");
+        } else if (navigator.appName == "Microsoft Internet Explorer") {
+            document.write("<FONT COLOR='#FF0000'>Internet Explorer User Detected!</FONT>");
+        } else {
+            document.write("Unknown Browser");
+        }
+    }
+    
+    // No right click
+    function noRightClick() {
+        alert("Sorry, right-click is disabled!\nThis page is copyrighted!");
+        return false;
+    }
+    document.oncontextmenu = noRightClick;
+    //-->
+    </SCRIPT>
+</HEAD>
+
+<BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#551A8B" ALINK="#FF0000" 
+      BACKGROUND="data:image/gif;base64,R0lGODlhBAAEAIAAAP///wAAACH5BAAAAAAALAAAAAAEAAQAAAIERACJVgAOw=="
+      onLoad="scrollStatus()">
+
+<!-- Main Container Table -->
+<CENTER>
+<TABLE WIDTH="800" BORDER="0" CELLPADDING="0" CELLSPACING="0">
+<TR><TD>
+
+<!-- Welcome Banner -->
+<TABLE WIDTH="100%" BORDER="3" CELLPADDING="10" BGCOLOR="#C0C0C0">
+<TR>
+    <TD ALIGN="CENTER">
+        <H1><FONT COLOR="#FF0000" SIZE="7">WELCOME TO JOHN'S HOMEPAGE!</FONT></H1>
+        <MARQUEE WIDTH="60%" BEHAVIOR="alternate">
+            <FONT COLOR="#0000FF" SIZE="4"><B>On the World Wide Web!</B></FONT>
+        </MARQUEE>
+        <BR>
+        <FONT SIZE="2">Best viewed with Netscape Navigator 3.0 at 800x600 resolution</FONT>
+        <BR>
+        <SCRIPT>checkBrowser();</SCRIPT>
+    </TD>
+</TR>
+</TABLE>
+
+<BR>
+
+<!-- Under Construction Notice -->
+<TABLE WIDTH="100%" BORDER="5" BGCOLOR="#FFFF00">
+<TR>
+    <TD ALIGN="CENTER">
+        <BLINK><FONT SIZE="+2" COLOR="#FF0000"><B>UNDER CONSTRUCTION!</B></FONT></BLINK><BR>
+        <IMG SRC="data:image/gif;base64,R0lGODlhMgAyAPcAAP//////zP//mf//Zv//M///AP/M///MzP/Mmf/MZv/MM//MAP+Z//+ZzP+Zmf+ZZv+ZM/+ZAP9m//9mzP9mmf9mZv9mM/9mAP8z//8zzP8zmf8zZv8zM/8zAP8A//8AzP8Amf8AZv8AM/8AAMz//8z/zMz/mcz/Zsz/M8z/AMzM/8zMzMzMmczMZszMM8zMAMyZ/8yZzMyZmcyZZsyZM8yZAMxm/8xmzMxmmcxmZsxmM8xmAMwz/8wzzMwzmcwzZswzM8wzAMwA/8wAzMwAmcwAZswAM8wAAJn//5n/zJn/mZn/Zpn/M5n/AJnM/5nMzJnMmZnMZpnMM5nMAJmZ/5mZzJmZmZmZZpmZM5mZAJlm/5lmzJlmmZlmZplmM5lmAJkz/5kzzJkzmZkzZpkzM5kzAJkA/5kAzJkAmZkAZpkAM5kAAGb//2b/zGb/mWb/Zmb/M2b/AGbM/2bMzGbMmWbMZmbMM2bMAGaZ/2aZzGaZmWaZZmaZM2aZAGZm/2ZmzGZmmWZmZmZmM2ZmAGYz/2YzzGYzmWYzZmYzM2YzAGYA/2YAzGYAmWYAZmYAM2YAADP//zP/zDP/mTP/ZjP/MzP/ADPM/zPMzDPMmTPMZjPMMzPMADOZ/zOZzDOZmTOZZjOZMzOZADNm/zNmzDNmmTNmZjNmMzNmADMz/zMzzDMzmTMzZjMzMzMzADMA/zMAzDMAmTMAZjMAMzMAAAD//wD/zAD/mQD/ZgD/MwD/AADM/wDMzADMmQDMZgDMMwDMAACZ/wCZzACZmQCZZgCZMwCZAABm/wBmzABmmQBmZgBmMwBmAAAz/wAzzAAzmQAzZgAzMwAzAAAA/wAAzAAAmQAAZgAAMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAEAAP8ALAAAAAAyADIAAAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTKFOqXMmypcuXMGPKnEmzps2bOHPq3Mmzp8+fQIMKHUq0qNGjSJMqXcq0qdOnUKNKnUq1qtWrWLNq3cq1q9evYMOKHUu2rNmzaNOqXcu2rdu3cOPKnUu3rt27ePPq3cu3r9+/gAMLHky4sOHDiBMrXsy4sePHkCNLnky5suXLmDNr3sy5s+fPoEOLHk26tOnTqFOrXs26tevXsGPLnk27tu3buHPr3s27t+/fwIMLH068uPHjyJMrX868ufPn0KNLn069uvXr2LNr3869u/fv4MOL/x9Pvrz58+jTq1/Pvr379/Djy59Pv779+/jz69/Pv7///wAGKOCABBZo4IEIJqjgggw26OCDEEYo4YQUVmjhhRhmqOGGHHbo4YcghijiiCSWaOKJKKao4oostujiizDGKOOMNNZo44045qjjjjz26OOPQAYp5JBEFmnkkUgmqeSSTDbp5JNQRinllFRWaeWVWGap5ZZcdunll2CGKeaYZJZp5plopqnmmmy26eabcMYp55x01mnnnXjmqeeefPbp55+ABirooIQWauihiCaq6KKMNuroo5BGKumklFZq6aWYZqrpppx26umnoIYq6qiklmrqqaimquqqrLbq6quwxv8q66y01mrrrbjmquuuvPbq66/ABivssMQWa+yxyCar7LLMNuvss9BGK+201FZr7bXYZqvtttx26+234IYr7rjklmvuueimq+667Lbr7rvwxivvvPTWa++9+Oar77789uvvvwAHLPDABBds8MEIJ6zwwgw37PDDEEcs8cQUV2zxxRhnrPHGHHfs8ccghyzyyCSXbPLJKKes8sost+zyyzDHLPPMNNds880456zzzjz37PPPQAct9NBEF2300UgnrfTSTDft9NNQRy311FRXbfXVWGet9dZcd+3112CHLfbYZJdt9tlop6322my37fbbcMct99x012333XjnrffefPft91+BCy744IQXbvjhiCeu+OKMN+7445BHLvnklFdu+eWYZ6755px37vnnoIcu+uikl2766ainrvrqrLfu+uuwx077AAIAOE=
+" ALT="Under Construction" WIDTH="50" HEIGHT="50"><BR>
+        <FONT SIZE="3">This page is always being updated! Please come back soon!</FONT>
+    </TD>
+</TR>
+</TABLE>
+
+<P>
+
+<!-- Navigation Menu -->
+<TABLE WIDTH="100%" BORDER="3" CELLPADDING="5" CELLSPACING="2" BGCOLOR="#E0E0E0">
+<TR ALIGN="CENTER">
+    <TD BGCOLOR="#FF0000" WIDTH="20%">
+        <A HREF="#home"><FONT COLOR="#FFFFFF" SIZE="4"><B>HOME</B></FONT></A>
+    </TD>
+    <TD BGCOLOR="#00FF00" WIDTH="20%">
+        <A HREF="#about"><FONT COLOR="#000000" SIZE="4"><B>ABOUT ME</B></FONT></A>
+    </TD>
+    <TD BGCOLOR="#0000FF" WIDTH="20%">
+        <A HREF="#links"><FONT COLOR="#FFFFFF" SIZE="4"><B>COOL LINKS</B></FONT></A>
+    </TD>
+    <TD BGCOLOR="#FFFF00" WIDTH="20%">
+        <A HREF="#photos"><FONT COLOR="#000000" SIZE="4"><B>PHOTOS</B></FONT></A>
+    </TD>
+    <TD BGCOLOR="#FF00FF" WIDTH="20%">
+        <A HREF="#guestbook"><FONT COLOR="#FFFFFF" SIZE="4"><B>GUESTBOOK</B></FONT></A>
+    </TD>
+</TR>
+</TABLE>
+
+<BR>
+<HR SIZE="5" WIDTH="75%" COLOR="#0000FF" NOSHADE>
+<BR>
+
+<!-- Main Content -->
+<A NAME="home"></A>
+<TABLE WIDTH="100%" BORDER="0" CELLPADDING="10">
+<TR>
+    <TD WIDTH="70%" VALIGN="TOP">
+        <!-- About Section -->
+        <TABLE BORDER="1" CELLPADDING="10" BGCOLOR="#F0F0F0">
+        <TR>
+            <TD>
+                <H2><FONT COLOR="#000080">Welcome to my corner of the Web!</FONT></H2>
+                <P>
+                <FONT SIZE="3">
+                Hello! My name is John and this is my personal homepage on the Information Superhighway!
+                I created this page to share my interests with the world. Feel free to look around and 
+                don't forget to sign my guestbook before you leave!
+                </FONT>
+                </P>
+                
+                <P>
+                <TABLE BORDER="2" CELLPADDING="5">
+                <TR>
+                    <TD BGCOLOR="#FFFF00"><BLINK><B>NEW!</B></BLINK></TD>
+                    <TD>Added more cool links! (Updated: 3/14/1997)</TD>
+                </TR>
+                <TR>
+                    <TD BGCOLOR="#00FF00"><B>HOT!</B></TD>
+                    <TD>Check out my photo gallery!</TD>
+                </TR>
+                </TABLE>
+                </P>
+            </TD>
+        </TR>
+        </TABLE>
+        
+        <BR>
+        
+        <!-- Interests Section -->
+        <A NAME="about"></A>
+        <H3><FONT COLOR="#FF0000">My Interests:</FONT></H3>
+        <UL>
+            <LI>Surfing the World Wide Web</LI>
+            <LI>Computer Programming (HTML, JavaScript)</LI>
+            <LI>Collecting MIDI files</LI>
+            <LI>Playing Doom and Quake</LI>
+            <LI>Science Fiction (Star Trek, X-Files)</LI>
+        </UL>
+        
+        <HR WIDTH="50%">
+        
+        <!-- Cool Links -->
+        <A NAME="links"></A>
+        <H3><FONT COLOR="#008000">My Favorite Links on the Web:</FONT></H3>
+        <TABLE BORDER="1" CELLPADDING="5" WIDTH="100%">
+        <TR BGCOLOR="#C0C0C0">
+            <TD><B>Search Engines</B></TD>
+        </TR>
+        <TR>
+            <TD>
+                <A HREF="http://www.yahoo.com">Yahoo!</A> - The best directory<BR>
+                <A HREF="http://www.altavista.com">AltaVista</A> - Most comprehensive search<BR>
+                <A HREF="http://www.excite.com">Excite</A> - Another good engine<BR>
+                <A HREF="http://www.webcrawler.com">WebCrawler</A> - Fast searches
+            </TD>
+        </TR>
+        <TR BGCOLOR="#C0C0C0">
+            <TD><B>Cool Sites</B></TD>
+        </TR>
+        <TR>
+            <TD>
+                <A HREF="#">GeoCities</A> - Free homepages!<BR>
+                <A HREF="#">Angelfire</A> - Another free host<BR>
+                <A HREF="#">Cool Site of the Day</A> - Daily cool sites<BR>
+                <A HREF="#">The Palace</A> - Virtual chat world
+            </TD>
+        </TR>
+        </TABLE>
+    </TD>
+    
+    <!-- Sidebar -->
+    <TD WIDTH="30%" VALIGN="TOP" BGCOLOR="#E0E0E0">
+        <!-- Counter -->
+        <CENTER>
+        <TABLE BORDER="3" CELLPADDING="5" BGCOLOR="#000000">
+        <TR>
+            <TD ALIGN="CENTER">
+                <FONT COLOR="#00FF00" SIZE="2">You are visitor #</FONT><BR>
+                <FONT COLOR="#00FF00" SIZE="4"><TT>000421</TT></FONT><BR>
+                <FONT COLOR="#00FF00" SIZE="1">Since Jan 1, 1997</FONT>
+            </TD>
+        </TR>
+        </TABLE>
+        </CENTER>
+        
+        <P>
+        
+        <!-- Email -->
+        <CENTER>
+        <TABLE BORDER="1" CELLPADDING="5">
+        <TR>
+            <TD BGCOLOR="#FFFFFF" ALIGN="CENTER">
+                <A HREF="mailto:john@geocities.com">
+                <IMG SRC="data:image/gif;base64,R0lGODlhGAAYAIAAAP///wAAACH5BAAAAAAALAAAAAAYABgAAAIrhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKBQA7" BORDER="0" ALT="Email"><BR>
+                <B>Send me email!</B>
+                </A>
+            </TD>
+        </TR>
+        </TABLE>
+        </CENTER>
+        
+        <P>
+        
+        <!-- Awards -->
+        <CENTER>
+        <B>Awards This Site Has Won:</B><BR>
+        <IMG SRC="data:image/gif;base64,R0lGODlhWAAfAIAAAP///wAAACH5BAAAAAAALAAAAABYAB8AAAKJhI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKh8Si8YhMKpfMpvMJjUqn1Kr1is1qt9yu9wsOi8fksvmMTqvX7Lb7DY/L5/S6/Y7P6/f8vv8PGCg4SFhoeIiYqLjI2Oj4CBkpOUlZaXmJmam5ydnp+QkaKjpKWmp6ipoAADs=" ALT="Cool Site Award"><BR>
+        <FONT SIZE="1">Cool Site Award - March 1997</FONT>
+        </CENTER>
+        
+        <P>
+        
+        <!-- Webring -->
+        <CENTER>
+        <TABLE BORDER="2" BGCOLOR="#FFFF00" CELLPADDING="3">
+        <TR>
+            <TD ALIGN="CENTER" COLSPAN="3">
+                <B>GeoCities Ring</B>
+            </TD>
+        </TR>
+        <TR>
+            <TD><A HREF="#">&lt;&lt;Prev</A></TD>
+            <TD><A HREF="#">Random</A></TD>
+            <TD><A HREF="#">Next&gt;&gt;</A></TD>
+        </TR>
+        </TABLE>
+        </CENTER>
+        
+        <P>
+        
+        <!-- Browser Buttons -->
+        <CENTER>
+        <A HREF="http://www.netscape.com">
+        <IMG SRC="data:image/gif;base64,R0lGODlhWAAfAIAAAP///wAAACH5BAAAAAAALAAAAABYAB8AAAIthI+py+0Po5y02ouz3rz7D4biSJbmiabqyrbuC8fyTNf2jef6zvf+DwwKhwQAOw==" BORDER="0" ALT="Netscape Now!">
+        </A><BR>
+        <FONT SIZE="1">Best viewed with<BR>Netscape Navigator 3.0</FONT>
+        </CENTER>
+    </TD>
+</TR>
+</TABLE>
+
+<BR>
+<HR SIZE="3" NOSHADE>
+<BR>
+
+<!-- Guestbook -->
+<A NAME="guestbook"></A>
+<CENTER>
+<TABLE BORDER="5" CELLPADDING="10" BGCOLOR="#FFE0E0">
+<TR>
+    <TD ALIGN="CENTER">
+        <H3><FONT COLOR="#FF0000">Sign My Guestbook!</FONT></H3>
+        <FORM ACTION="/cgi-bin/guestbook.cgi" METHOD="POST">
+        <TABLE>
+        <TR>
+            <TD>Name:</TD>
+            <TD><INPUT TYPE="TEXT" NAME="name" SIZE="30"></TD>
+        </TR>
+        <TR>
+            <TD>Email:</TD>
+            <TD><INPUT TYPE="TEXT" NAME="email" SIZE="30"></TD>
+        </TR>
+        <TR>
+            <TD>Homepage:</TD>
+            <TD><INPUT TYPE="TEXT" NAME="url" SIZE="30" VALUE="http://"></TD>
+        </TR>
+        <TR>
+            <TD VALIGN="TOP">Comments:</TD>
+            <TD><TEXTAREA NAME="comments" ROWS="5" COLS="30"></TEXTAREA></TD>
+        </TR>
+        <TR>
+            <TD COLSPAN="2" ALIGN="CENTER">
+                <INPUT TYPE="SUBMIT" VALUE="Sign Guestbook!">
+                <INPUT TYPE="RESET" VALUE="Clear Form">
+            </TD>
+        </TR>
+        </TABLE>
+        </FORM>
+    </TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<BR>
+
+<!-- Footer -->
+<HR SIZE="5" WIDTH="100%">
+<CENTER>
+<TABLE WIDTH="100%">
+<TR>
+    <TD ALIGN="CENTER">
+        <FONT SIZE="2">
+        <B>© 1997 John Smith - All Rights Reserved</B><BR>
+        This page was last updated on: March 14, 1997<BR>
+        Created with: Notepad and lots of caffeine!<BR>
+        <BR>
+        <MARQUEE WIDTH="300">Thanks for visiting! Come back soon!</MARQUEE>
+        </FONT>
+    </TD>
+</TR>
+</TABLE>
+</CENTER>
+
+<!-- MIDI Background Music (commented out for demo) -->
+<!-- <BGSOUND SRC="canyon.mid" LOOP="INFINITE"> -->
+<!-- <EMBED SRC="canyon.mid" AUTOSTART="TRUE" LOOP="TRUE" HIDDEN="TRUE"> -->
+
+</TD></TR>
+</TABLE>
+</CENTER>
+
+</BODY>
+</HTML>

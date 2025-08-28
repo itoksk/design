@@ -1,0 +1,484 @@
+{
+  "name": "ASCII Terminal Components",
+  "version": "1.0.0",
+  "description": "レトロターミナルとASCIIアートコンポーネントライブラリ",
+  
+  "components": {
+    "windows": {
+      "terminal-window": {
+        "description": "ターミナルウィンドウコンテナ",
+        "props": {
+          "title": "string",
+          "theme": ["green", "amber", "white", "matrix"],
+          "buttons": "boolean",
+          "resizable": "boolean"
+        },
+        "styles": {
+          "background": "#0C0C0C",
+          "border": "1px solid #333",
+          "borderRadius": "5px",
+          "fontFamily": "monospace",
+          "position": "relative"
+        },
+        "header": {
+          "height": "30px",
+          "background": "#1C1C1C",
+          "borderBottom": "1px solid #333",
+          "display": "flex",
+          "alignItems": "center",
+          "padding": "0 10px"
+        },
+        "buttons": {
+          "close": { "background": "#FF5F56", "size": "12px" },
+          "minimize": { "background": "#FFBD2E", "size": "12px" },
+          "maximize": { "background": "#27C93F", "size": "12px" }
+        }
+      },
+      
+      "dialog-box": {
+        "description": "ASCIIダイアログボックス",
+        "props": {
+          "border": ["single", "double", "rounded", "heavy"],
+          "shadow": "boolean",
+          "title": "string",
+          "buttons": "array"
+        },
+        "template": "╔═══════════════╗\n║    {title}    ║\n╟───────────────╢\n║   {content}   ║\n╟───────────────╢\n║ {buttons}     ║\n╚═══════════════╝",
+        "styles": {
+          "fontFamily": "monospace",
+          "whiteSpace": "pre",
+          "lineHeight": "1.0"
+        }
+      },
+      
+      "alert-box": {
+        "description": "アラートボックス",
+        "props": {
+          "type": ["info", "warning", "error", "success"],
+          "message": "string"
+        },
+        "templates": {
+          "info": "[INFO] {message}",
+          "warning": "[WARN] {message}",
+          "error": "[ERROR] {message}",
+          "success": "[OK] {message}"
+        },
+        "colors": {
+          "info": "#00AAFF",
+          "warning": "#FFAA00",
+          "error": "#FF0000",
+          "success": "#00FF00"
+        }
+      }
+    },
+    
+    "text": {
+      "ascii-heading": {
+        "description": "ASCII アートヘッディング",
+        "props": {
+          "text": "string",
+          "font": ["standard", "big", "mini", "script"],
+          "align": ["left", "center", "right"]
+        },
+        "styles": {
+          "fontFamily": "'Courier', monospace",
+          "whiteSpace": "pre",
+          "textAlign": "var(--align)",
+          "lineHeight": "1.0"
+        }
+      },
+      
+      "glitch-text": {
+        "description": "グリッチテキストエフェクト",
+        "props": {
+          "text": "string",
+          "intensity": ["low", "medium", "high"],
+          "color": "string"
+        },
+        "styles": {
+          "position": "relative",
+          "animation": "glitch 0.5s infinite"
+        },
+        "animation": "@keyframes glitch { 0% { transform: translateX(0); } 20% { transform: translateX(-2px); } 40% { transform: translateX(2px); } 60% { transform: translateX(-1px); } 80% { transform: translateX(1px); } 100% { transform: translateX(0); }}"
+      },
+      
+      "typing-text": {
+        "description": "タイピングアニメーションテキスト",
+        "props": {
+          "text": "string",
+          "speed": "number",
+          "cursor": ["block", "underline", "bar"],
+          "loop": "boolean"
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "position": "relative",
+          "display": "inline-block"
+        },
+        "cursor": {
+          "animation": "blink 1s infinite",
+          "display": "inline-block"
+        }
+      },
+      
+      "matrix-text": {
+        "description": "マトリックス文字列",
+        "props": {
+          "length": "number",
+          "speed": "number",
+          "characters": "string"
+        },
+        "defaultChars": "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789",
+        "styles": {
+          "color": "#00FF41",
+          "fontFamily": "monospace",
+          "textShadow": "0 0 5px currentColor",
+          "writingMode": "vertical-rl"
+        }
+      }
+    },
+    
+    "navigation": {
+      "ascii-menu": {
+        "description": "ASCIIメニュー",
+        "props": {
+          "items": "array",
+          "style": ["list", "inline", "tree"],
+          "selected": "number",
+          "prefix": "string"
+        },
+        "templates": {
+          "list": "  {prefix} {item}\n",
+          "selected": "> {prefix} [{item}]\n",
+          "tree": "├── {item}\n"
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "whiteSpace": "pre",
+          "cursor": "pointer"
+        }
+      },
+      
+      "command-prompt": {
+        "description": "コマンドプロンプト",
+        "props": {
+          "user": "string",
+          "host": "string",
+          "path": "string",
+          "symbol": "string"
+        },
+        "template": "{user}@{host}:{path}{symbol} ",
+        "styles": {
+          "fontFamily": "monospace",
+          "color": "#00FF00",
+          "display": "inline-block"
+        }
+      },
+      
+      "breadcrumb": {
+        "description": "パンくずナビゲーション",
+        "props": {
+          "items": "array",
+          "separator": "string"
+        },
+        "defaultSeparator": " > ",
+        "styles": {
+          "fontFamily": "monospace",
+          "color": "#AAAAAA"
+        }
+      }
+    },
+    
+    "forms": {
+      "ascii-input": {
+        "description": "ASCII入力フィールド",
+        "props": {
+          "width": "number",
+          "placeholder": "string",
+          "border": "boolean"
+        },
+        "template": "[{value}                    ]",
+        "styles": {
+          "fontFamily": "monospace",
+          "background": "transparent",
+          "border": "none",
+          "color": "#00FF00",
+          "outline": "none"
+        }
+      },
+      
+      "ascii-select": {
+        "description": "ASCII選択ボックス",
+        "props": {
+          "options": "array",
+          "selected": "number",
+          "width": "number"
+        },
+        "template": "▼ {selected_option}",
+        "dropdown": "┌──────────────┐\n│ {option1}    │\n│ {option2}    │\n│ {option3}    │\n└──────────────┘",
+        "styles": {
+          "fontFamily": "monospace",
+          "cursor": "pointer"
+        }
+      },
+      
+      "ascii-checkbox": {
+        "description": "ASCIIチェックボックス",
+        "props": {
+          "checked": "boolean",
+          "label": "string"
+        },
+        "templates": {
+          "unchecked": "[ ] {label}",
+          "checked": "[X] {label}"
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "cursor": "pointer",
+          "userSelect": "none"
+        }
+      },
+      
+      "ascii-radio": {
+        "description": "ASCIIラジオボタン",
+        "props": {
+          "selected": "boolean",
+          "label": "string"
+        },
+        "templates": {
+          "unselected": "( ) {label}",
+          "selected": "(*) {label}"
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "cursor": "pointer",
+          "userSelect": "none"
+        }
+      }
+    },
+    
+    "display": {
+      "progress-bar": {
+        "description": "プログレスバー",
+        "props": {
+          "value": "number",
+          "max": "number",
+          "width": "number",
+          "showPercent": "boolean"
+        },
+        "characters": {
+          "filled": "█",
+          "empty": "░",
+          "partial": "▒"
+        },
+        "template": "[{bar}] {percent}%",
+        "styles": {
+          "fontFamily": "monospace",
+          "display": "inline-block"
+        }
+      },
+      
+      "loading-spinner": {
+        "description": "ローディングスピナー",
+        "props": {
+          "style": ["dots", "line", "circle", "arrows"],
+          "speed": "number",
+          "text": "string"
+        },
+        "frames": {
+          "dots": ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"],
+          "line": ["-", "\\", "|", "/"],
+          "circle": ["◐", "◓", "◑", "◒"],
+          "arrows": ["←", "↖", "↑", "↗", "→", "↘", "↓", "↙"]
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "display": "inline-block"
+        }
+      },
+      
+      "ascii-table": {
+        "description": "ASCIIテーブル",
+        "props": {
+          "headers": "array",
+          "rows": "array",
+          "border": ["single", "double", "none"]
+        },
+        "borders": {
+          "single": {
+            "top": "┌─┬─┐",
+            "middle": "├─┼─┤",
+            "bottom": "└─┴─┘",
+            "vertical": "│"
+          },
+          "double": {
+            "top": "╔═╦═╗",
+            "middle": "╠═╬═╣",
+            "bottom": "╚═╩═╝",
+            "vertical": "║"
+          }
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "whiteSpace": "pre",
+          "lineHeight": "1.2"
+        }
+      },
+      
+      "ascii-chart": {
+        "description": "ASCIIチャート",
+        "props": {
+          "data": "array",
+          "type": ["bar", "line", "spark"],
+          "height": "number",
+          "width": "number"
+        },
+        "characters": {
+          "bar": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+          "line": ["⎯", "╱", "╲"],
+          "point": "●"
+        },
+        "styles": {
+          "fontFamily": "monospace",
+          "lineHeight": "1.0"
+        }
+      }
+    },
+    
+    "art": {
+      "ascii-logo": {
+        "description": "ASCIIロゴ",
+        "props": {
+          "text": "string",
+          "style": ["3d", "outline", "shadow", "gradient"]
+        },
+        "styles": {
+          "fontFamily": "'Courier', monospace",
+          "whiteSpace": "pre",
+          "lineHeight": "1.0",
+          "fontSize": "10px"
+        }
+      },
+      
+      "ascii-border": {
+        "description": "ASCIIボーダー",
+        "props": {
+          "style": ["single", "double", "rounded", "heavy", "dashed"],
+          "width": "number",
+          "height": "number"
+        },
+        "characters": {
+          "single": "┌─┐│└┘",
+          "double": "╔═╗║╚╝",
+          "rounded": "╭─╮│╰╯",
+          "heavy": "┏━┓┃┗┛",
+          "dashed": "┌┄┐┆└┘"
+        }
+      },
+      
+      "ascii-divider": {
+        "description": "ASCII区切り線",
+        "props": {
+          "style": ["line", "double", "dotted", "wave", "gradient"],
+          "width": "number"
+        },
+        "patterns": {
+          "line": "─",
+          "double": "═",
+          "dotted": "·",
+          "wave": "～",
+          "gradient": "░▒▓█▓▒░"
+        }
+      },
+      
+      "matrix-rain": {
+        "description": "マトリックスレイン背景",
+        "props": {
+          "columns": "number",
+          "speed": "number",
+          "color": "string",
+          "characters": "string"
+        },
+        "styles": {
+          "position": "fixed",
+          "top": "0",
+          "left": "0",
+          "width": "100%",
+          "height": "100%",
+          "pointerEvents": "none",
+          "zIndex": "-1"
+        }
+      }
+    },
+    
+    "effects": {
+      "crt-screen": {
+        "description": "CRT画面エフェクト",
+        "props": {
+          "scanlines": "boolean",
+          "curvature": "boolean",
+          "flicker": "boolean",
+          "glow": "boolean"
+        },
+        "styles": {
+          "position": "relative",
+          "overflow": "hidden",
+          "background": "#0C0C0C"
+        },
+        "overlays": {
+          "scanlines": "linear-gradient(transparent 50%, rgba(0,0,0,0.25) 50%)",
+          "vignette": "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)"
+        }
+      },
+      
+      "phosphor-glow": {
+        "description": "フォスファーグロー効果",
+        "props": {
+          "color": "string",
+          "intensity": "number"
+        },
+        "styles": {
+          "textShadow": "0 0 {intensity}px currentColor",
+          "filter": "brightness(1.2)"
+        }
+      },
+      
+      "static-noise": {
+        "description": "静的ノイズオーバーレイ",
+        "props": {
+          "opacity": "number",
+          "animation": "boolean"
+        },
+        "styles": {
+          "position": "absolute",
+          "top": "0",
+          "left": "0",
+          "width": "100%",
+          "height": "100%",
+          "opacity": "var(--opacity)",
+          "pointerEvents": "none",
+          "background": "url(noise.gif)"
+        }
+      }
+    }
+  },
+  
+  "utilities": {
+    "text-to-ascii": {
+      "description": "テキストをASCIIアートに変換",
+      "function": "(text, font) => generateAsciiArt(text, font)"
+    },
+    "box-drawing": {
+      "description": "ボックス描画ユーティリティ",
+      "function": "(width, height, style) => drawBox(width, height, style)"
+    },
+    "color-to-phosphor": {
+      "description": "色をフォスファー色に変換",
+      "function": "(color) => toPhosphor(color)"
+    },
+    "typing-animation": {
+      "description": "タイピングアニメーション生成",
+      "function": "(text, speed) => typeWriter(text, speed)"
+    }
+  }
+}

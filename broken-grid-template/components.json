@@ -1,0 +1,418 @@
+{
+  "name": "Broken Grid Components",
+  "version": "1.0.0",
+  "description": "カオスと破壊のコンポーネントライブラリ",
+  
+  "components": {
+    "layout": {
+      "broken-container": {
+        "description": "壊れたグリッドコンテナ",
+        "props": {
+          "chaos-level": ["minimal", "moderate", "extreme"],
+          "overlap": "boolean",
+          "rotation": "number",
+          "distortion": "boolean"
+        },
+        "styles": {
+          "display": "grid",
+          "grid-template-columns": "repeat(auto-fill, random)",
+          "transform": "rotate(var(--rotation)) skew(var(--skew))",
+          "position": "relative",
+          "overflow": "visible"
+        }
+      },
+      
+      "scatter-box": {
+        "description": "散乱配置ボックス",
+        "props": {
+          "density": ["sparse", "normal", "dense"],
+          "animation": "boolean",
+          "collision": "boolean"
+        },
+        "styles": {
+          "position": "absolute",
+          "top": "random",
+          "left": "random",
+          "transform": "translate(-50%, -50%) rotate(random)",
+          "z-index": "random"
+        }
+      },
+      
+      "chaos-grid": {
+        "description": "カオスグリッドシステム",
+        "props": {
+          "columns": "number",
+          "breakpoints": "array",
+          "shuffle": "boolean"
+        },
+        "styles": {
+          "display": "grid",
+          "grid-auto-flow": "dense",
+          "gap": "random",
+          "transform-style": "preserve-3d"
+        }
+      }
+    },
+    
+    "typography": {
+      "glitch-text": {
+        "description": "グリッチテキスト",
+        "props": {
+          "intensity": ["low", "medium", "high"],
+          "animation": "boolean",
+          "layers": "number"
+        },
+        "styles": {
+          "position": "relative",
+          "animation": "glitch 0.3s infinite",
+          "text-shadow": "2px 2px #ff0000, -2px -2px #00ff00",
+          "filter": "url(#glitch-filter)"
+        },
+        "animation": "@keyframes glitch { 0% { transform: translateX(0); } 20% { transform: translateX(-2px); } 40% { transform: translateX(2px); } 60% { transform: translateX(-1px); } 80% { transform: translateX(1px); } 100% { transform: translateX(0); }}"
+      },
+      
+      "broken-heading": {
+        "description": "破壊された見出し",
+        "props": {
+          "size": ["small", "medium", "large", "random"],
+          "rotation": "number",
+          "split": "boolean"
+        },
+        "styles": {
+          "display": "inline-block",
+          "transform": "rotate(var(--rotation)) skewX(var(--skew))",
+          "letter-spacing": "random",
+          "word-spacing": "random",
+          "line-height": "random"
+        }
+      },
+      
+      "ransom-text": {
+        "description": "身代金要求書風テキスト",
+        "props": {
+          "variety": ["low", "high"],
+          "paper-texture": "boolean"
+        },
+        "styles": {
+          "font-family": "random from list",
+          "font-size": "random",
+          "text-transform": "random",
+          "background": "var(--paper-texture)",
+          "padding": "random",
+          "display": "inline-block",
+          "transform": "rotate(random)"
+        }
+      }
+    },
+    
+    "cards": {
+      "broken-card": {
+        "description": "壊れたカード",
+        "props": {
+          "damage": ["light", "moderate", "severe"],
+          "rotation": "number",
+          "tear": "boolean"
+        },
+        "styles": {
+          "clip-path": "polygon(random points)",
+          "transform": "rotate(var(--rotation)) translateZ(0)",
+          "box-shadow": "multiple random shadows",
+          "border": "3px solid var(--chaos-color)",
+          "position": "relative"
+        },
+        "effects": {
+          "tear": "url(#torn-paper-mask)",
+          "fold": "linear-gradient(45deg, transparent 48%, rgba(0,0,0,0.1) 50%, transparent 52%)"
+        }
+      },
+      
+      "collage-card": {
+        "description": "コラージュカード",
+        "props": {
+          "layers": "number",
+          "blend-mode": "string",
+          "overlap": "number"
+        },
+        "styles": {
+          "position": "relative",
+          "mix-blend-mode": "var(--blend-mode)",
+          "transform": "rotate(random)",
+          "filter": "contrast(1.2) saturate(1.1)"
+        }
+      },
+      
+      "floating-card": {
+        "description": "浮遊カード",
+        "props": {
+          "float-range": "number",
+          "speed": "number",
+          "rotation": "boolean"
+        },
+        "styles": {
+          "position": "absolute",
+          "animation": "float var(--speed) ease-in-out infinite",
+          "transform-style": "preserve-3d",
+          "will-change": "transform"
+        }
+      }
+    },
+    
+    "navigation": {
+      "chaos-menu": {
+        "description": "カオスメニュー",
+        "props": {
+          "scatter": "boolean",
+          "hover-escape": "boolean",
+          "random-size": "boolean"
+        },
+        "styles": {
+          "position": "fixed",
+          "display": "block",
+          "transform": "translate(random) rotate(random)",
+          "transition": "none"
+        },
+        "items": {
+          "position": "absolute",
+          "font-size": "random",
+          "transform": "rotate(random)",
+          "cursor": "pointer"
+        }
+      },
+      
+      "broken-nav": {
+        "description": "壊れたナビゲーション",
+        "props": {
+          "orientation": ["horizontal", "vertical", "diagonal", "circular"],
+          "distortion": "number"
+        },
+        "styles": {
+          "display": "flex",
+          "flex-direction": "random",
+          "gap": "random",
+          "transform": "skew(var(--skew)) rotate(var(--rotation))"
+        }
+      }
+    },
+    
+    "buttons": {
+      "chaos-button": {
+        "description": "カオスボタン",
+        "props": {
+          "shake": "boolean",
+          "morph": "boolean",
+          "escape": "boolean"
+        },
+        "styles": {
+          "border": "3px solid",
+          "border-radius": "random",
+          "transform": "rotate(random)",
+          "padding": "random",
+          "cursor": "pointer",
+          "transition": "all 0.1s"
+        },
+        "states": {
+          "hover": {
+            "transform": "rotate(random) scale(random)",
+            "border-radius": "random"
+          },
+          "active": {
+            "transform": "scale(0.95) rotate(random)",
+            "filter": "invert(1)"
+          }
+        }
+      },
+      
+      "glitch-button": {
+        "description": "グリッチボタン",
+        "props": {
+          "glitch-color": "string",
+          "intensity": "number"
+        },
+        "styles": {
+          "position": "relative",
+          "overflow": "hidden",
+          "animation": "glitch-btn 0.5s infinite"
+        },
+        "pseudo": {
+          "before": {
+            "content": "attr(data-text)",
+            "position": "absolute",
+            "left": "2px",
+            "text-shadow": "-2px 0 red",
+            "animation": "glitch-1 0.5s infinite"
+          },
+          "after": {
+            "content": "attr(data-text)",
+            "position": "absolute",
+            "left": "-2px",
+            "text-shadow": "2px 0 blue",
+            "animation": "glitch-2 0.5s infinite"
+          }
+        }
+      }
+    },
+    
+    "forms": {
+      "broken-input": {
+        "description": "壊れた入力フィールド",
+        "props": {
+          "tilt": "number",
+          "border-style": ["solid", "dashed", "double", "groove"],
+          "shake": "boolean"
+        },
+        "styles": {
+          "transform": "rotate(var(--tilt))",
+          "border": "2px var(--border-style)",
+          "background": "transparent",
+          "outline": "none"
+        },
+        "states": {
+          "focus": {
+            "transform": "rotate(calc(var(--tilt) * -1))",
+            "border-color": "var(--chaos-color)"
+          }
+        }
+      },
+      
+      "chaos-textarea": {
+        "description": "カオステキストエリア",
+        "props": {
+          "resize": ["none", "both", "horizontal", "vertical", "random"],
+          "distort": "boolean"
+        },
+        "styles": {
+          "resize": "var(--resize)",
+          "transform": "perspective(100px) rotateX(random)",
+          "border": "3px solid",
+          "border-radius": "random"
+        }
+      }
+    },
+    
+    "media": {
+      "glitch-image": {
+        "description": "グリッチ画像",
+        "props": {
+          "corruption": ["low", "medium", "high"],
+          "animation": "boolean"
+        },
+        "styles": {
+          "position": "relative",
+          "filter": "url(#glitch)",
+          "animation": "glitch-img 2s infinite"
+        },
+        "filters": {
+          "svg": "<filter id='glitch'><feTurbulence baseFrequency='0.02' numOctaves='3'/><feColorMatrix values='0 0 0 0 1 1 0 0 0 0 0 1 0 0 0 0 0 0 1 0'/></filter>"
+        }
+      },
+      
+      "torn-image": {
+        "description": "破れた画像",
+        "props": {
+          "tear-style": ["rough", "clean", "burn"],
+          "edges": "number"
+        },
+        "styles": {
+          "clip-path": "url(#torn-edge)",
+          "filter": "drop-shadow(2px 2px 4px rgba(0,0,0,0.5))",
+          "transform": "rotate(random)"
+        }
+      }
+    },
+    
+    "effects": {
+      "noise-overlay": {
+        "description": "ノイズオーバーレイ",
+        "props": {
+          "opacity": "number",
+          "blend-mode": "string",
+          "animation": "boolean"
+        },
+        "styles": {
+          "position": "fixed",
+          "top": "0",
+          "left": "0",
+          "width": "100%",
+          "height": "100%",
+          "pointer-events": "none",
+          "opacity": "var(--opacity)",
+          "mix-blend-mode": "var(--blend-mode)",
+          "background": "url(noise.png)",
+          "animation": "noise 0.2s infinite"
+        }
+      },
+      
+      "scan-lines": {
+        "description": "走査線エフェクト",
+        "props": {
+          "color": "string",
+          "spacing": "number",
+          "speed": "number"
+        },
+        "styles": {
+          "position": "fixed",
+          "top": "0",
+          "left": "0",
+          "width": "100%",
+          "height": "100%",
+          "pointer-events": "none",
+          "background": "linear-gradient(transparent 50%, rgba(0,0,0,0.25) 50%)",
+          "background-size": "100% var(--spacing)",
+          "animation": "scan var(--speed) linear infinite"
+        }
+      }
+    },
+    
+    "containers": {
+      "chaos-modal": {
+        "description": "カオスモーダル",
+        "props": {
+          "shake": "boolean",
+          "rotation": "number",
+          "glitch": "boolean"
+        },
+        "styles": {
+          "position": "fixed",
+          "transform": "translate(-50%, -50%) rotate(var(--rotation))",
+          "border": "5px solid",
+          "background": "rgba(255,255,255,0.9)",
+          "animation": "modal-chaos 10s infinite"
+        }
+      },
+      
+      "broken-panel": {
+        "description": "壊れたパネル",
+        "props": {
+          "cracks": "boolean",
+          "fold": "boolean",
+          "tear": "boolean"
+        },
+        "styles": {
+          "position": "relative",
+          "transform": "perspective(1000px) rotateY(random)",
+          "box-shadow": "multiple shadows",
+          "background": "linear-gradient(45deg, white 48%, gray 50%, white 52%)"
+        }
+      }
+    }
+  },
+  
+  "utilities": {
+    "random-position": {
+      "description": "ランダム配置ユーティリティ",
+      "function": "() => ({ top: Math.random() * 100 + '%', left: Math.random() * 100 + '%' })"
+    },
+    "random-rotation": {
+      "description": "ランダム回転ユーティリティ",
+      "function": "() => Math.random() * 360 - 180 + 'deg'"
+    },
+    "random-scale": {
+      "description": "ランダムスケールユーティリティ",
+      "function": "() => Math.random() * 2 + 0.5"
+    },
+    "glitch-text": {
+      "description": "テキストグリッチユーティリティ",
+      "function": "(text) => text.split('').map(char => Math.random() > 0.9 ? String.fromCharCode(Math.random() * 94 + 33) : char).join('')"
+    }
+  }
+}

@@ -1,0 +1,504 @@
+# ASCII Terminal Design System
+# レトロターミナルとASCIIアートのシステム定義
+
+metadata:
+  name: "ASCII Terminal System"
+  version: "1.0.0"
+  description: "80年代のコンピューター文化とハッカー美学のデザインシステム"
+  author: "Terminal Collective"
+  created: "2024"
+  philosophy: "Everything is text, text is art"
+
+# カラーシステム
+colors:
+  # フォスファーカラー
+  phosphor:
+    p1_green: "#00FF00"
+    p3_amber: "#FFAA00"
+    p4_white: "#E0E0E0"
+    matrix_green: "#00FF41"
+    apple_green: "#33FF00"
+    old_amber: "#FFB000"
+    
+  # CGA 16色パレット
+  cga:
+    black: "#000000"
+    blue: "#0000AA"
+    green: "#00AA00"
+    cyan: "#00AAAA"
+    red: "#AA0000"
+    magenta: "#AA00AA"
+    brown: "#AA5500"
+    light_gray: "#AAAAAA"
+    dark_gray: "#555555"
+    light_blue: "#5555FF"
+    light_green: "#55FF55"
+    light_cyan: "#55FFFF"
+    light_red: "#FF5555"
+    light_magenta: "#FF55FF"
+    yellow: "#FFFF55"
+    white: "#FFFFFF"
+    
+  # ターミナル標準
+  terminal:
+    background: "#0C0C0C"
+    foreground: "#00FF00"
+    cursor: "#FFFFFF"
+    selection: "rgba(0, 255, 0, 0.3)"
+    comment: "#666666"
+    error: "#FF0000"
+    warning: "#FFAA00"
+    success: "#00FF00"
+    info: "#00AAFF"
+    
+  # モノクローム
+  monochrome:
+    black: "#000000"
+    gray_10: "#1A1A1A"
+    gray_20: "#333333"
+    gray_30: "#4D4D4D"
+    gray_40: "#666666"
+    gray_50: "#808080"
+    gray_60: "#999999"
+    gray_70: "#B3B3B3"
+    gray_80: "#CCCCCC"
+    gray_90: "#E6E6E6"
+    white: "#FFFFFF"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー
+  families:
+    primary: "'Fira Code', 'Courier New', monospace"
+    display: "'IBM Plex Mono', 'Monaco', monospace"
+    ascii: "'Courier', 'Courier New', monospace"
+    retro: "'VT323', 'Consolas', monospace"
+    matrix: "'Noto Sans JP', 'MS Gothic', monospace"
+    
+  # サイズシステム
+  sizes:
+    micro: "8px"
+    tiny: "10px"
+    small: "12px"
+    base: "14px"
+    medium: "16px"
+    large: "20px"
+    xlarge: "24px"
+    huge: "32px"
+    mega: "48px"
+    ascii_art: "10px"  # ASCIIアート用固定サイズ
+    
+  # 行間
+  line_height:
+    ascii: 1.0      # ASCIIアート用（密着）
+    tight: 1.2      # コード表示用
+    normal: 1.4     # 通常テキスト
+    relaxed: 1.6    # 読みやすさ重視
+    
+  # 文字間隔
+  letter_spacing:
+    mono: "0"       # 等幅フォント標準
+    tight: "-0.05em"
+    normal: "0.05em"
+    wide: "0.1em"
+    ascii: "0"      # ASCIIアート用（固定）
+
+# ASCIIアート要素
+ascii:
+  # ボーダースタイル
+  borders:
+    single:
+      horizontal: "─"
+      vertical: "│"
+      top_left: "┌"
+      top_right: "┐"
+      bottom_left: "└"
+      bottom_right: "┘"
+      cross: "┼"
+      t_down: "┬"
+      t_up: "┴"
+      t_right: "├"
+      t_left: "┤"
+      
+    double:
+      horizontal: "═"
+      vertical: "║"
+      top_left: "╔"
+      top_right: "╗"
+      bottom_left: "╚"
+      bottom_right: "╝"
+      cross: "╬"
+      t_down: "╦"
+      t_up: "╩"
+      t_right: "╠"
+      t_left: "╣"
+      
+    rounded:
+      horizontal: "─"
+      vertical: "│"
+      top_left: "╭"
+      top_right: "╮"
+      bottom_left: "╰"
+      bottom_right: "╯"
+      
+    heavy:
+      horizontal: "━"
+      vertical: "┃"
+      top_left: "┏"
+      top_right: "┓"
+      bottom_left: "┗"
+      bottom_right: "┛"
+      
+  # ブロック要素
+  blocks:
+    full: "█"
+    dark: "▓"
+    medium: "▒"
+    light: "░"
+    upper_half: "▀"
+    lower_half: "▄"
+    left_half: "▌"
+    right_half: "▐"
+    
+  # 矢印
+  arrows:
+    up: "↑"
+    down: "↓"
+    left: "←"
+    right: "→"
+    double_up: "⇑"
+    double_down: "⇓"
+    double_left: "⇐"
+    double_right: "⇒"
+    north_east: "↗"
+    south_east: "↘"
+    south_west: "↙"
+    north_west: "↖"
+    
+  # 特殊記号
+  symbols:
+    cursor: "▮"
+    cursor_blink: "▯"
+    prompt: ">"
+    bullet: "•"
+    check: "✓"
+    cross: "✗"
+    star: "★"
+    heart: "♥"
+    diamond: "♦"
+    club: "♣"
+    spade: "♠"
+    music: "♪"
+    sun: "☀"
+    moon: "☾"
+    
+  # プログレスバー要素
+  progress:
+    empty: "░"
+    quarter: "▒"
+    half: "▓"
+    full: "█"
+    bar_start: "["
+    bar_end: "]"
+    spinner: ["⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏"]
+
+# CRTエフェクト
+crt_effects:
+  # スキャンライン
+  scanlines:
+    opacity: 0.1
+    size: "2px"
+    speed: "8s"
+    color: "rgba(0, 0, 0, 0.3)"
+    
+  # フリッカー
+  flicker:
+    intensity: 0.03
+    frequency: "0.1s"
+    random: true
+    
+  # 画面の歪み
+  curvature:
+    amount: "2px"
+    border_radius: "10px"
+    
+  # 色収差
+  chromatic_aberration:
+    red_offset: "1px"
+    blue_offset: "-1px"
+    intensity: 0.5
+    
+  # グロー効果
+  glow:
+    text_shadow: "0 0 5px currentColor"
+    box_shadow: "0 0 20px rgba(0, 255, 0, 0.5)"
+    intensity: 0.8
+    
+  # ノイズ
+  noise:
+    opacity: 0.02
+    blend_mode: "multiply"
+    animation: true
+
+# アニメーション
+animations:
+  # タイピング
+  typing:
+    speed: "50ms"
+    cursor_blink: "1s"
+    deletion_speed: "30ms"
+    pause_at_end: "1s"
+    
+  # マトリックスレイン
+  matrix_rain:
+    fall_speed: "10s"
+    spawn_rate: "100ms"
+    fade_duration: "2s"
+    characters: "ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ0123456789"
+    
+  # グリッチ
+  glitch:
+    duration: "0.2s"
+    frequency: "10s"
+    intensity: "5px"
+    color_shift: true
+    position_shift: true
+    
+  # ブート
+  boot_sequence:
+    line_delay: "100ms"
+    total_duration: "3s"
+    typing_speed: "20ms"
+    
+  # カーソル
+  cursor:
+    blink_rate: "530ms"
+    style: "block"  # block, underline, bar
+    
+  # フェード
+  fade:
+    in_duration: "0.3s"
+    out_duration: "0.2s"
+    stagger: "50ms"
+
+# レイアウト
+layout:
+  # ターミナルウィンドウ
+  terminal_window:
+    header_height: "30px"
+    padding: "10px"
+    border_radius: "5px"
+    buttons:
+      close: "#FF5F56"
+      minimize: "#FFBD2E"
+      maximize: "#27C93F"
+      size: "12px"
+      spacing: "8px"
+      
+  # グリッドシステム（文字ベース）
+  grid:
+    columns: 80        # 標準ターミナル幅
+    rows: 24          # 標準ターミナル高さ
+    character_width: "10px"
+    character_height: "20px"
+    
+  # マージン
+  margins:
+    screen: "20px"
+    component: "10px"
+    text: "5px"
+    
+  # プロンプト
+  prompt:
+    format: "user@machine:~$"
+    color: "#00FF00"
+    cursor: "_"
+    padding: "5px"
+
+# コンポーネント
+components:
+  # ターミナルプロンプト
+  terminal_prompt:
+    user_color: "#00FF00"
+    host_color: "#00AAFF"
+    path_color: "#FFAA00"
+    symbol: "$"
+    root_symbol: "#"
+    
+  # メニュー
+  menu:
+    style: "list"      # list, inline, tree
+    prefix: ">"
+    indent: "  "
+    selected: "[X]"
+    unselected: "[ ]"
+    separator: " | "
+    
+  # ダイアログボックス
+  dialog:
+    border: "double"
+    padding: "10px"
+    shadow: true
+    title_separator: "═"
+    
+  # プログレスバー
+  progress_bar:
+    width: 40
+    filled_char: "█"
+    empty_char: "░"
+    brackets: true
+    percentage: true
+    
+  # テーブル
+  table:
+    border_style: "single"
+    header_separator: "─"
+    column_separator: "│"
+    padding: 2
+    
+  # ボタン
+  button:
+    border: "single"
+    padding: "5px 10px"
+    hover_invert: true
+    active_style: "double"
+
+# インタラクション
+interactions:
+  # キーボード
+  keyboard:
+    shortcuts: true
+    vim_mode: false
+    emacs_mode: false
+    custom_bindings: true
+    
+  # マウス
+  mouse:
+    cursor: "default"
+    selection: true
+    context_menu: false
+    
+  # コマンド
+  commands:
+    history: true
+    autocomplete: true
+    suggestions: true
+    max_history: 100
+    
+  # フォーカス
+  focus:
+    outline: "1px solid"
+    background: "rgba(255, 255, 255, 0.1)"
+    invert: false
+
+# サウンド設定
+sounds:
+  # キーボード
+  keyboard:
+    enabled: false
+    volume: 0.3
+    pitch_variation: true
+    key_press: "mechanical"
+    
+  # モデム
+  modem:
+    enabled: false
+    connection: "dialup"
+    handshake: true
+    
+  # システム
+  system:
+    beep: true
+    frequency: "800Hz"
+    duration: "100ms"
+    
+  # アンビエント
+  ambient:
+    crt_hum: false
+    fan_noise: false
+    disk_access: false
+
+# レスポンシブ設定
+responsive:
+  # ブレイクポイント
+  breakpoints:
+    mobile: "480px"
+    tablet: "768px"
+    desktop: "1024px"
+    wide: "1440px"
+    
+  # モバイル最適化
+  mobile:
+    columns: 40
+    rows: 20
+    font_size: "12px"
+    simplified_ascii: true
+    reduce_effects: true
+    
+  # タブレット最適化
+  tablet:
+    columns: 60
+    rows: 24
+    font_size: "14px"
+    simplified_ascii: false
+    reduce_effects: false
+    
+  # デスクトップ
+  desktop:
+    columns: 80
+    rows: 24
+    font_size: "14px"
+    full_effects: true
+
+# パフォーマンス
+performance:
+  # 最適化
+  optimization:
+    css_animations: true
+    gpu_acceleration: true
+    font_subsetting: true
+    lazy_loading: true
+    
+  # 品質設定
+  quality:
+    low:
+      effects: false
+      animations: "simple"
+      scanlines: false
+    medium:
+      effects: "reduced"
+      animations: "normal"
+      scanlines: true
+    high:
+      effects: "full"
+      animations: "complex"
+      scanlines: true
+
+# アクセシビリティ
+accessibility:
+  # スクリーンリーダー
+  screen_reader:
+    enabled: true
+    aria_labels: true
+    alt_text: true
+    skip_ascii_art: true
+    
+  # キーボードナビゲーション
+  keyboard_nav:
+    enabled: true
+    tab_order: true
+    shortcuts: true
+    help_menu: "?"
+    
+  # ビジュアル
+  visual:
+    high_contrast: true
+    large_text: true
+    reduce_motion: true
+    color_blind_mode: true
+    
+  # 代替表示
+  alternatives:
+    ascii_to_text: true
+    simple_mode: true
+    grid_layout: false

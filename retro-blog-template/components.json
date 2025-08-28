@@ -1,0 +1,574 @@
+{
+  "name": "Retro Blog Components",
+  "version": "1.0.0",
+  "description": "2000年代ブログ・掲示板コンポーネントライブラリ",
+  
+  "components": {
+    "layout": {
+      "blog-container": {
+        "description": "メインブログコンテナ",
+        "props": {
+          "layout": ["3-column", "2-column", "1-column"],
+          "width": "string",
+          "background": "string"
+        },
+        "styles": {
+          "width": "1000px",
+          "margin": "0 auto",
+          "background": "#FFE0EC",
+          "border": "5px ridge #FFB6C1"
+        },
+        "structure": {
+          "table": true,
+          "cellspacing": "10",
+          "cellpadding": "15"
+        }
+      },
+      
+      "sidebar": {
+        "description": "サイドバーコンテナ",
+        "props": {
+          "position": ["left", "right"],
+          "width": "string",
+          "sticky": "boolean"
+        },
+        "styles": {
+          "width": "200px",
+          "background": "#E6E6FA",
+          "padding": "10px",
+          "border": "3px double #DDA0DD"
+        }
+      },
+      
+      "main-content": {
+        "description": "メインコンテンツエリア",
+        "props": {
+          "width": "string",
+          "background": "string"
+        },
+        "styles": {
+          "width": "600px",
+          "background": "white",
+          "padding": "20px",
+          "border": "1px solid #C0C0C0"
+        }
+      }
+    },
+    
+    "header": {
+      "blog-header": {
+        "description": "ブログヘッダー",
+        "props": {
+          "title": "string",
+          "subtitle": "string",
+          "background": "string",
+          "decoration": "string"
+        },
+        "template": "♡*:.｡. .｡.:*♡ {title} ♡*:.｡. .｡.:*♡",
+        "styles": {
+          "height": "200px",
+          "background": "linear-gradient(180deg, #FFB6C1, #FFFFFF)",
+          "textAlign": "center",
+          "padding": "50px 20px",
+          "position": "relative"
+        },
+        "title": {
+          "fontSize": "48px",
+          "fontFamily": "'Comic Sans MS', cursive",
+          "color": "#FF69B4",
+          "textShadow": "3px 3px 0 white, 5px 5px 10px rgba(0,0,0,0.2)"
+        }
+      },
+      
+      "navigation-menu": {
+        "description": "ナビゲーションメニュー",
+        "props": {
+          "items": "array",
+          "style": ["horizontal", "vertical", "dropdown"],
+          "separator": "string"
+        },
+        "styles": {
+          "background": "#E6E6FA",
+          "border": "2px solid #DDA0DD",
+          "padding": "10px",
+          "textAlign": "center"
+        },
+        "item": {
+          "display": "inline-block",
+          "padding": "5px 15px",
+          "margin": "0 5px",
+          "background": "#FFE0EC",
+          "border": "2px outset #FFB6C1",
+          "cursor": "pointer"
+        }
+      }
+    },
+    
+    "content": {
+      "blog-post": {
+        "description": "ブログ記事",
+        "props": {
+          "title": "string",
+          "date": "string",
+          "category": "string",
+          "content": "string",
+          "mood": "string"
+        },
+        "styles": {
+          "background": "white",
+          "border": "5px ridge #DDA0DD",
+          "padding": "20px",
+          "marginBottom": "30px"
+        },
+        "header": {
+          "borderBottom": "2px dotted #FFB6C1",
+          "paddingBottom": "10px",
+          "marginBottom": "20px"
+        },
+        "title": {
+          "fontSize": "24px",
+          "color": "#FF69B4",
+          "fontFamily": "'メイリオ', sans-serif"
+        },
+        "meta": {
+          "fontSize": "12px",
+          "color": "#808080",
+          "marginTop": "10px"
+        },
+        "dateFormat": "♪ {date} ♪",
+        "categoryFormat": "【{category}】"
+      },
+      
+      "comment-box": {
+        "description": "コメントボックス",
+        "props": {
+          "author": "string",
+          "avatar": "string",
+          "content": "string",
+          "timestamp": "string"
+        },
+        "styles": {
+          "background": "#F5F5DC",
+          "border": "1px dashed #C0C0C0",
+          "padding": "15px",
+          "marginBottom": "10px",
+          "borderRadius": "5px"
+        },
+        "avatar": {
+          "width": "50px",
+          "height": "50px",
+          "float": "left",
+          "border": "3px ridge #87CEEB",
+          "marginRight": "10px"
+        }
+      }
+    },
+    
+    "widgets": {
+      "profile-card": {
+        "description": "プロフィールカード",
+        "props": {
+          "name": "string",
+          "avatar": "string",
+          "bio": "string",
+          "stats": "object"
+        },
+        "styles": {
+          "background": "linear-gradient(180deg, #FFE0EC, white)",
+          "border": "5px outset #FFB6C1",
+          "padding": "15px",
+          "textAlign": "center"
+        },
+        "avatar": {
+          "width": "100px",
+          "height": "100px",
+          "border": "5px ridge #87CEEB",
+          "borderRadius": "50%",
+          "margin": "0 auto 10px"
+        },
+        "decorations": "✿ ❀ ✿",
+        "nameStyle": {
+          "fontSize": "20px",
+          "fontFamily": "'あずきフォント', cursive",
+          "color": "#FF69B4"
+        }
+      },
+      
+      "counter": {
+        "description": "アクセスカウンター",
+        "props": {
+          "count": "number",
+          "style": ["led", "odometer", "simple"],
+          "showStats": "boolean"
+        },
+        "styles": {
+          "background": "black",
+          "padding": "10px",
+          "border": "3px inset #808080",
+          "textAlign": "center"
+        },
+        "digits": {
+          "display": "inline-block",
+          "background": "black",
+          "color": "#00FF00",
+          "fontFamily": "monospace",
+          "fontSize": "20px",
+          "padding": "2px 5px",
+          "margin": "0 1px",
+          "border": "1px solid #333"
+        }
+      },
+      
+      "calendar-widget": {
+        "description": "カレンダーウィジェット",
+        "props": {
+          "month": "number",
+          "year": "number",
+          "theme": "string"
+        },
+        "styles": {
+          "background": "#FFFDD0",
+          "border": "3px double #FFB6C1",
+          "padding": "10px",
+          "fontSize": "12px"
+        },
+        "header": {
+          "background": "#FFB6C1",
+          "color": "white",
+          "padding": "5px",
+          "textAlign": "center"
+        },
+        "today": {
+          "background": "#FF69B4",
+          "color": "white",
+          "fontWeight": "bold"
+        }
+      },
+      
+      "tag-cloud": {
+        "description": "タグクラウド",
+        "props": {
+          "tags": "array",
+          "maxSize": "string",
+          "minSize": "string"
+        },
+        "styles": {
+          "padding": "10px",
+          "textAlign": "center",
+          "lineHeight": "2.0"
+        },
+        "tag": {
+          "display": "inline-block",
+          "margin": "3px",
+          "padding": "2px 8px",
+          "background": "#E6E6FA",
+          "border": "1px solid #DDA0DD",
+          "borderRadius": "10px",
+          "cursor": "pointer"
+        }
+      },
+      
+      "recent-posts": {
+        "description": "最新記事リスト",
+        "props": {
+          "posts": "array",
+          "count": "number",
+          "showDate": "boolean"
+        },
+        "styles": {
+          "background": "#FFFDD0",
+          "border": "3px double #FFB6C1",
+          "padding": "10px"
+        },
+        "title": {
+          "background": "#FFB6C1",
+          "color": "white",
+          "padding": "5px",
+          "textAlign": "center",
+          "marginBottom": "10px"
+        },
+        "item": {
+          "padding": "5px 0",
+          "borderBottom": "1px dotted #DDA0DD"
+        },
+        "newBadge": "NEW!",
+        "newBadgeStyle": {
+          "color": "#FF0000",
+          "fontWeight": "bold",
+          "animation": "blink 1s infinite"
+        }
+      }
+    },
+    
+    "decorations": {
+      "divider": {
+        "description": "装飾的区切り線",
+        "props": {
+          "style": ["dots", "hearts", "stars", "flowers", "wave"],
+          "width": "string",
+          "color": "string"
+        },
+        "patterns": {
+          "dots": "・・・・・・・・・・・・・・・・",
+          "hearts": "♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡",
+          "stars": "☆.。.:*・゜☆.。.:*・゜☆",
+          "flowers": "❀ ✿ ❀ ✿ ❀ ✿ ❀ ✿",
+          "wave": "～～～～～～～～～～～～～"
+        },
+        "styles": {
+          "textAlign": "center",
+          "margin": "20px 0",
+          "color": "#FFB6C1"
+        }
+      },
+      
+      "emoticon": {
+        "description": "顔文字・絵文字",
+        "props": {
+          "type": "string",
+          "size": "string"
+        },
+        "library": {
+          "happy": "(´･ω･`)",
+          "love": "(｡♥‿♥｡)",
+          "music": "♪(´▽｀)",
+          "star": "☆",
+          "heart": "♡",
+          "flower": "✿"
+        },
+        "styles": {
+          "display": "inline-block",
+          "margin": "0 5px"
+        }
+      },
+      
+      "marquee-text": {
+        "description": "スクロールテキスト",
+        "props": {
+          "text": "string",
+          "speed": "number",
+          "direction": ["left", "right", "up", "down"]
+        },
+        "styles": {
+          "display": "block",
+          "overflow": "hidden",
+          "whiteSpace": "nowrap",
+          "animation": "marquee 10s linear infinite"
+        }
+      },
+      
+      "sparkle-cursor": {
+        "description": "キラキラカーソル",
+        "props": {
+          "type": ["star", "heart", "flower"],
+          "trail": "boolean"
+        },
+        "styles": {
+          "cursor": "url('cursor-star.cur'), auto"
+        }
+      }
+    },
+    
+    "forms": {
+      "comment-form": {
+        "description": "コメント投稿フォーム",
+        "props": {
+          "fields": "array",
+          "emoticons": "boolean",
+          "preview": "boolean"
+        },
+        "styles": {
+          "background": "#FFE0EC",
+          "border": "3px ridge #FFB6C1",
+          "padding": "15px",
+          "borderRadius": "10px"
+        },
+        "input": {
+          "border": "2px inset #DDA0DD",
+          "padding": "5px",
+          "fontFamily": "'メイリオ', sans-serif",
+          "width": "100%"
+        },
+        "textarea": {
+          "border": "2px inset #DDA0DD",
+          "padding": "5px",
+          "fontFamily": "'メイリオ', sans-serif",
+          "width": "100%",
+          "height": "100px"
+        },
+        "button": {
+          "background": "#FF69B4",
+          "color": "white",
+          "border": "3px outset #FF69B4",
+          "padding": "5px 20px",
+          "cursor": "pointer",
+          "fontWeight": "bold"
+        }
+      },
+      
+      "guestbook-form": {
+        "description": "ゲストブック署名フォーム",
+        "props": {
+          "fields": "array",
+          "maxLength": "number"
+        },
+        "styles": {
+          "background": "white",
+          "border": "5px groove #87CEEB",
+          "padding": "20px"
+        }
+      }
+    },
+    
+    "media": {
+      "photo-album": {
+        "description": "フォトアルバム",
+        "props": {
+          "photos": "array",
+          "columns": "number",
+          "frameStyle": "string"
+        },
+        "styles": {
+          "display": "grid",
+          "gridTemplateColumns": "repeat(3, 1fr)",
+          "gap": "15px",
+          "padding": "10px"
+        },
+        "frame": {
+          "padding": "10px",
+          "background": "white",
+          "border": "5px ridge #DDA0DD",
+          "transform": "rotate(-2deg)"
+        }
+      },
+      
+      "music-player": {
+        "description": "BGMプレイヤー",
+        "props": {
+          "autoplay": "boolean",
+          "loop": "boolean",
+          "playlist": "array"
+        },
+        "styles": {
+          "position": "fixed",
+          "bottom": "20px",
+          "right": "20px",
+          "background": "#E6E6FA",
+          "border": "3px outset #DDA0DD",
+          "padding": "10px",
+          "borderRadius": "5px"
+        }
+      },
+      
+      "banner": {
+        "description": "バナー画像",
+        "props": {
+          "src": "string",
+          "alt": "string",
+          "link": "string",
+          "size": ["200x40", "100x60", "88x31"]
+        },
+        "styles": {
+          "border": "2px solid #FFB6C1",
+          "margin": "5px"
+        }
+      }
+    },
+    
+    "special": {
+      "web-clap": {
+        "description": "Web拍手ボタン",
+        "props": {
+          "count": "number",
+          "message": "string"
+        },
+        "styles": {
+          "display": "inline-block",
+          "padding": "10px 20px",
+          "background": "linear-gradient(180deg, #FFB6C1, #FF69B4)",
+          "border": "3px outset #FF69B4",
+          "color": "white",
+          "cursor": "pointer",
+          "textAlign": "center"
+        }
+      },
+      
+      "blog-ranking": {
+        "description": "ブログランキングボタン",
+        "props": {
+          "rank": "number",
+          "site": "string"
+        },
+        "styles": {
+          "display": "inline-block",
+          "margin": "5px"
+        }
+      },
+      
+      "webring": {
+        "description": "ウェブリング/同盟バナー",
+        "props": {
+          "name": "string",
+          "id": "string",
+          "prev": "string",
+          "next": "string"
+        },
+        "styles": {
+          "textAlign": "center",
+          "padding": "10px",
+          "background": "#FFFDD0",
+          "border": "2px dashed #FFB6C1"
+        }
+      }
+    }
+  },
+  
+  "animations": {
+    "blink": {
+      "keyframes": "@keyframes blink { 0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; }}",
+      "duration": "1s",
+      "iteration": "infinite"
+    },
+    "marquee": {
+      "keyframes": "@keyframes marquee { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); }}",
+      "duration": "10s",
+      "timing": "linear",
+      "iteration": "infinite"
+    },
+    "rainbow": {
+      "keyframes": "@keyframes rainbow { 0% { color: red; } 16% { color: orange; } 33% { color: yellow; } 50% { color: green; } 66% { color: blue; } 83% { color: indigo; } 100% { color: violet; }}",
+      "duration": "3s",
+      "iteration": "infinite"
+    },
+    "sparkle": {
+      "keyframes": "@keyframes sparkle { 0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); }}",
+      "duration": "1s",
+      "iteration": "infinite"
+    },
+    "float": {
+      "keyframes": "@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); }}",
+      "duration": "3s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    }
+  },
+  
+  "utilities": {
+    "emoticon-converter": {
+      "description": "テキストを顔文字に変換",
+      "function": "(emotion) => emoticonLibrary[emotion]"
+    },
+    "rainbow-text": {
+      "description": "テキストを虹色に変換",
+      "function": "(text) => rainbowify(text)"
+    },
+    "sparkle-generator": {
+      "description": "キラキラエフェクト生成",
+      "function": "() => generateSparkles()"
+    },
+    "date-formatter": {
+      "description": "日付を可愛くフォーマット",
+      "function": "(date) => `♪ ${date} ♪`"
+    }
+  }
+}

@@ -1,0 +1,394 @@
+{
+  "name": "90s Web Components",
+  "version": "1.0.0",
+  "description": "1990年代WWW黎明期コンポーネントライブラリ",
+  
+  "components": {
+    "layout": {
+      "table-layout": {
+        "description": "テーブルベースレイアウト",
+        "props": {
+          "width": ["640", "800", "100%"],
+          "border": "number",
+          "cellpadding": "number",
+          "cellspacing": "number",
+          "bgcolor": "string"
+        },
+        "html": "<TABLE WIDTH='640' BORDER='1' CELLPADDING='5' CELLSPACING='2' BGCOLOR='#FFFFFF' ALIGN='CENTER'>",
+        "styles": {
+          "deprecated": true,
+          "inline": true
+        }
+      },
+      
+      "frameset": {
+        "description": "フレームセットレイアウト",
+        "props": {
+          "rows": "string",
+          "cols": "string",
+          "border": "number",
+          "bordercolor": "string"
+        },
+        "html": "<FRAMESET ROWS='100,*,50' BORDER='5' BORDERCOLOR='#808080'>",
+        "frames": {
+          "banner": "<FRAME SRC='banner.html' NAME='banner' SCROLLING='no'>",
+          "menu": "<FRAME SRC='menu.html' NAME='menu'>",
+          "main": "<FRAME SRC='main.html' NAME='main'>",
+          "footer": "<FRAME SRC='footer.html' NAME='footer'>"
+        },
+        "noframes": "<NOFRAMES>Your browser doesn't support frames!</NOFRAMES>"
+      },
+      
+      "center-container": {
+        "description": "センター配置コンテナ",
+        "props": {
+          "width": "string"
+        },
+        "html": "<CENTER><TABLE WIDTH='640'></TABLE></CENTER>",
+        "deprecated": "CENTER tag is deprecated"
+      }
+    },
+    
+    "text": {
+      "heading": {
+        "description": "見出し要素",
+        "props": {
+          "level": ["H1", "H2", "H3", "H4", "H5", "H6"],
+          "align": ["LEFT", "CENTER", "RIGHT"]
+        },
+        "html": "<H1 ALIGN='CENTER'><FONT COLOR='#0000FF'>WELCOME!</FONT></H1>",
+        "font_sizes": {
+          "H1": "36pt",
+          "H2": "24pt",
+          "H3": "18pt",
+          "H4": "14pt",
+          "H5": "12pt",
+          "H6": "10pt"
+        }
+      },
+      
+      "blink-text": {
+        "description": "点滅テキスト",
+        "props": {
+          "text": "string",
+          "color": "string"
+        },
+        "html": "<BLINK><FONT COLOR='#FF0000'>NEW!</FONT></BLINK>",
+        "support": "Netscape only",
+        "alternative": "Use animated GIF"
+      },
+      
+      "marquee-text": {
+        "description": "スクロールテキスト",
+        "props": {
+          "text": "string",
+          "direction": ["left", "right", "up", "down"],
+          "behavior": ["scroll", "slide", "alternate"],
+          "scrollamount": "number",
+          "bgcolor": "string"
+        },
+        "html": "<MARQUEE DIRECTION='left' BEHAVIOR='scroll' SCROLLAMOUNT='6'>Welcome to my homepage!</MARQUEE>",
+        "support": "IE mainly"
+      },
+      
+      "font-tag": {
+        "description": "フォントタグ",
+        "props": {
+          "size": ["1", "2", "3", "4", "5", "6", "7", "+1", "-1"],
+          "color": "string",
+          "face": "string"
+        },
+        "html": "<FONT SIZE='5' COLOR='#FF0000' FACE='Arial'>Important!</FONT>",
+        "deprecated": true
+      }
+    },
+    
+    "navigation": {
+      "nav-table": {
+        "description": "ナビゲーションテーブル",
+        "props": {
+          "items": "array",
+          "bgcolor": "string",
+          "border": "number"
+        },
+        "html": "<TABLE BORDER='3' CELLPADDING='5'><TR><TD BGCOLOR='#FF0000'><A HREF='home.html'>HOME</A></TD></TR></TABLE>",
+        "styles": {
+          "cellColors": ["#FF0000", "#00FF00", "#0000FF", "#FFFF00"],
+          "textColor": "#FFFFFF",
+          "borderStyle": "ridge"
+        }
+      },
+      
+      "image-map": {
+        "description": "イメージマップ",
+        "props": {
+          "image": "string",
+          "areas": "array"
+        },
+        "html": "<IMG SRC='navbar.gif' USEMAP='#navbar'><MAP NAME='navbar'><AREA SHAPE='rect' COORDS='0,0,100,30' HREF='home.html'></MAP>",
+        "shapes": ["rect", "circle", "poly"],
+        "ismap": "server-side image map option"
+      },
+      
+      "site-menu": {
+        "description": "サイトメニュー",
+        "props": {
+          "style": ["list", "table", "frames"]
+        },
+        "html": "<UL><LI><A HREF='index.html'>Home</A></LI><LI><A HREF='about.html'>About</A></LI></UL>",
+        "bullet_images": "Use custom bullet GIFs"
+      }
+    },
+    
+    "media": {
+      "animated-gif": {
+        "description": "アニメーションGIF",
+        "props": {
+          "src": "string",
+          "alt": "string",
+          "border": "number"
+        },
+        "common": {
+          "under_construction": "const.gif",
+          "email": "email.gif",
+          "new": "new.gif",
+          "flame": "flame.gif",
+          "welcome": "welcome.gif"
+        },
+        "html": "<IMG SRC='const.gif' ALT='Under Construction' BORDER='0'>"
+      },
+      
+      "background-pattern": {
+        "description": "背景パターン",
+        "props": {
+          "image": "string",
+          "bgcolor": "string"
+        },
+        "html": "<BODY BACKGROUND='stars.gif' BGCOLOR='#000000' TEXT='#FFFFFF'>",
+        "patterns": {
+          "stars": "stars.gif",
+          "clouds": "clouds.gif",
+          "marble": "marble.gif",
+          "paper": "paper.gif"
+        }
+      },
+      
+      "midi-player": {
+        "description": "MIDI BGM",
+        "props": {
+          "src": "string",
+          "autostart": "boolean",
+          "loop": "boolean",
+          "hidden": "boolean"
+        },
+        "html": {
+          "ie": "<BGSOUND SRC='music.mid' LOOP='infinite'>",
+          "netscape": "<EMBED SRC='music.mid' AUTOSTART='true' LOOP='true' HIDDEN='true' WIDTH='0' HEIGHT='0'>"
+        }
+      },
+      
+      "java-applet": {
+        "description": "Javaアプレット",
+        "props": {
+          "code": "string",
+          "width": "number",
+          "height": "number",
+          "params": "object"
+        },
+        "html": "<APPLET CODE='Lake.class' WIDTH='300' HEIGHT='200'><PARAM NAME='image' VALUE='lake.jpg'>Your browser doesn't support Java!</APPLET>",
+        "common_applets": {
+          "lake": "Lake.class",
+          "ticker": "Ticker.class",
+          "clock": "Clock.class"
+        }
+      }
+    },
+    
+    "forms": {
+      "guestbook-form": {
+        "description": "ゲストブックフォーム",
+        "props": {
+          "action": "string",
+          "method": ["GET", "POST"]
+        },
+        "html": "<FORM ACTION='/cgi-bin/guestbook.cgi' METHOD='POST'><TABLE><TR><TD>Name:</TD><TD><INPUT TYPE='TEXT' NAME='name' SIZE='30'></TD></TR></TABLE></FORM>",
+        "fields": {
+          "name": "TEXT",
+          "email": "TEXT",
+          "homepage": "TEXT",
+          "comments": "TEXTAREA"
+        }
+      },
+      
+      "email-form": {
+        "description": "メールフォーム",
+        "props": {
+          "recipient": "string"
+        },
+        "html": "<FORM ACTION='mailto:webmaster@geocities.com' METHOD='POST' ENCTYPE='text/plain'>",
+        "note": "Opens email client"
+      },
+      
+      "search-box": {
+        "description": "検索ボックス",
+        "props": {
+          "engine": ["yahoo", "altavista", "excite", "lycos"]
+        },
+        "html": "<FORM ACTION='http://search.yahoo.com/search' METHOD='GET'><INPUT TYPE='TEXT' NAME='p' SIZE='20'><INPUT TYPE='SUBMIT' VALUE='Search!'></FORM>"
+      }
+    },
+    
+    "special": {
+      "hit-counter": {
+        "description": "アクセスカウンター",
+        "props": {
+          "style": ["odometer", "led", "simple"],
+          "digits": "number"
+        },
+        "html": {
+          "cgi": "<IMG SRC='/cgi-bin/counter.cgi'>",
+          "service": "<!-- Counter by GeoCities -->",
+          "text": "You are visitor number: 00042"
+        },
+        "styles": {
+          "background": "#000000",
+          "digitColor": "#00FF00",
+          "border": "inset"
+        }
+      },
+      
+      "webring": {
+        "description": "Webringナビゲーション",
+        "props": {
+          "ring": "string",
+          "id": "string"
+        },
+        "html": "<TABLE BGCOLOR='#C0C0C0' BORDER='2'><TR><TD><A HREF='?ring=geocities;id=42;prev'>Previous</A></TD><TD><A HREF='?ring=geocities;id=42;next'>Next</A></TD></TR></TABLE>",
+        "navigation": {
+          "prev": "<< Previous",
+          "next": "Next >>",
+          "random": "Random",
+          "list": "List Sites"
+        }
+      },
+      
+      "awards": {
+        "description": "サイトアワード",
+        "props": {
+          "awards": "array"
+        },
+        "html": "<IMG SRC='cool_site.gif' ALT='Cool Site Award'><IMG SRC='top5.gif' ALT='Top 5% of Web'>",
+        "common_awards": {
+          "cool_site": "Cool Site of the Day",
+          "top_5": "Top 5% of the Web",
+          "hot_site": "Hot Site",
+          "site_of_month": "Site of the Month"
+        }
+      },
+      
+      "under-construction": {
+        "description": "工事中表示",
+        "props": {
+          "message": "string",
+          "image": "string"
+        },
+        "html": "<CENTER><IMG SRC='const.gif'><BR><BLINK><FONT SIZE='+2' COLOR='#FF0000'>UNDER CONSTRUCTION</FONT></BLINK><BR>Please come back soon!</CENTER>",
+        "images": {
+          "worker": "construction_worker.gif",
+          "barrier": "barrier.gif",
+          "sign": "under_construction_sign.gif"
+        }
+      }
+    },
+    
+    "dividers": {
+      "horizontal-rule": {
+        "description": "水平線",
+        "props": {
+          "size": "number",
+          "width": "string",
+          "color": "string",
+          "noshade": "boolean"
+        },
+        "html": {
+          "basic": "<HR>",
+          "sized": "<HR SIZE='5' WIDTH='50%'>",
+          "colored": "<HR COLOR='#FF0000'>",
+          "noshade": "<HR NOSHADE>"
+        }
+      },
+      
+      "rainbow-bar": {
+        "description": "虹色バー",
+        "props": {
+          "animated": "boolean"
+        },
+        "html": "<IMG SRC='rainbow_bar.gif' WIDTH='100%' HEIGHT='10'>",
+        "alternatives": {
+          "static": "rainbow_static.gif",
+          "animated": "rainbow_animated.gif"
+        }
+      }
+    },
+    
+    "scripts": {
+      "welcome-alert": {
+        "description": "ウェルカムアラート",
+        "props": {
+          "message": "string"
+        },
+        "javascript": "alert('Welcome to my homepage!');",
+        "placement": "body onLoad"
+      },
+      
+      "status-scroll": {
+        "description": "ステータスバースクロール",
+        "props": {
+          "text": "string",
+          "speed": "number"
+        },
+        "javascript": "window.status = scrollingText; // with timer",
+        "browser": "Works in older browsers"
+      },
+      
+      "no-right-click": {
+        "description": "右クリック禁止",
+        "props": {
+          "message": "string"
+        },
+        "javascript": "document.oncontextmenu = function() { alert('Right click disabled!'); return false; }",
+        "note": "Annoying but common"
+      },
+      
+      "browser-detect": {
+        "description": "ブラウザ検出",
+        "props": {},
+        "javascript": "if (navigator.appName == 'Netscape') { /* Netscape code */ } else { /* IE code */ }",
+        "purpose": "Show browser-specific content"
+      }
+    }
+  },
+  
+  "utilities": {
+    "spacer-gif": {
+      "description": "透明スペーサーGIF",
+      "usage": "<IMG SRC='spacer.gif' WIDTH='50' HEIGHT='1'>",
+      "purpose": "Layout spacing control"
+    },
+    "nbsp-spacing": {
+      "description": "ノンブレークスペース",
+      "usage": "&nbsp;&nbsp;&nbsp;&nbsp;",
+      "purpose": "Text indentation and spacing"
+    },
+    "table-nesting": {
+      "description": "テーブル入れ子",
+      "usage": "<TABLE><TR><TD><TABLE>...</TABLE></TD></TR></TABLE>",
+      "purpose": "Complex layouts"
+    },
+    "font-stacking": {
+      "description": "フォントタグ重ね",
+      "usage": "<FONT SIZE='+2'><FONT COLOR='#FF0000'><B>Text</B></FONT></FONT>",
+      "purpose": "Multiple text styles"
+    }
+  }
+}

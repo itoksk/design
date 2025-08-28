@@ -1,0 +1,407 @@
+# 90s Web Design System
+# 1990年代初期WWWデザインシステム
+
+metadata:
+  name: "90s Web System"
+  version: "1.0.0"
+  description: "World Wide Web黎明期のデザインシステム"
+  author: "Webmaster"
+  created: "1996"
+  last_modified: "1999/12/31"
+  philosophy: "Under Construction Forever"
+
+# カラーシステム (Web Safe Colors)
+colors:
+  # 基本16色
+  standard_16:
+    black: "#000000"
+    silver: "#C0C0C0"
+    gray: "#808080"
+    white: "#FFFFFF"
+    maroon: "#800000"
+    red: "#FF0000"
+    purple: "#800080"
+    fuchsia: "#FF00FF"
+    green: "#008000"
+    lime: "#00FF00"
+    olive: "#808000"
+    yellow: "#FFFF00"
+    navy: "#000080"
+    blue: "#0000FF"
+    teal: "#008080"
+    aqua: "#00FFFF"
+    
+  # Web Safe 216色パレットのサンプル
+  web_safe:
+    safe_red: "#CC0000"
+    safe_green: "#00CC00"
+    safe_blue: "#0000CC"
+    safe_yellow: "#FFFF33"
+    safe_orange: "#FF9900"
+    safe_purple: "#9900CC"
+    safe_pink: "#FF66CC"
+    safe_gray: "#999999"
+    
+  # リンク色
+  links:
+    unvisited: "#0000FF"  # 青
+    visited: "#551A8B"    # 紫
+    active: "#FF0000"     # 赤
+    hover: "#FF0000"      # 赤（当時はhoverあまり使わない）
+    
+  # 背景色
+  backgrounds:
+    default: "#FFFFFF"
+    gray: "#C0C0C0"
+    black: "#000000"
+    pattern: "url('background.gif')"
+    stars: "url('stars.gif')"
+    clouds: "url('clouds.gif')"
+    marble: "url('marble.gif')"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー（限定的）
+  families:
+    default: "Times New Roman, Times, serif"
+    heading: "Arial, Helvetica, sans-serif"
+    mono: "Courier New, Courier, monospace"
+    special: "Comic Sans MS, cursive"  # 1994年以降
+    system: "serif"  # ブラウザデフォルト
+    
+  # フォントサイズ（HTML式）
+  sizes:
+    html_1: "8pt"    # <FONT SIZE="1">
+    html_2: "10pt"   # <FONT SIZE="2">
+    html_3: "12pt"   # <FONT SIZE="3"> デフォルト
+    html_4: "14pt"   # <FONT SIZE="4">
+    html_5: "18pt"   # <FONT SIZE="5">
+    html_6: "24pt"   # <FONT SIZE="6">
+    html_7: "36pt"   # <FONT SIZE="7">
+    h1: "36pt"
+    h2: "24pt"
+    h3: "18pt"
+    h4: "14pt"
+    h5: "12pt"
+    h6: "10pt"
+    
+  # 文字装飾
+  decorations:
+    bold: "<B>"
+    italic: "<I>"
+    underline: "<U>"
+    strike: "<S>"
+    blink: "<BLINK>"
+    marquee: "<MARQUEE>"
+    
+  # 特殊効果
+  effects:
+    shadow: "none"  # CSSサポートなし
+    3d_text: "use images"
+    rainbow: "use animated GIF"
+    fire: "use animated GIF"
+
+# レイアウト
+layout:
+  # ページ構造
+  structure:
+    type: "table"  # TABLEレイアウト
+    width: "640px"  # 固定幅（VGA標準）
+    alternative_width: "800px"  # SVGA
+    center: "<CENTER>"  # センタリング
+    
+  # フレームセット
+  frameset:
+    enabled: true
+    border: "5"
+    bordercolor: "#000000"
+    frameborder: "yes"
+    scrolling: "auto"
+    layouts:
+      two_column: "20%, 80%"
+      three_column: "15%, 70%, 15%"
+      header_content: "100, *"
+      navigation_content: "150, *"
+      
+  # テーブル
+  tables:
+    border: "1"
+    cellpadding: "5"
+    cellspacing: "2"
+    width: "100%"
+    bgcolor: "#FFFFFF"
+    bordercolor: "#000000"
+    align: "center"
+    
+  # 余白（限定的）
+  spacing:
+    default: "use &nbsp;"
+    spacer_gif: "spacer.gif"
+    br_tags: "<BR><BR>"
+    p_tags: "<P>"
+    blockquote: "<BLOCKQUOTE>"
+
+# HTML要素
+html_elements:
+  # 見出し
+  headings:
+    h1: "<H1 ALIGN='CENTER'>"
+    h2: "<H2>"
+    h3: "<H3>"
+    h4: "<H4>"
+    h5: "<H5>"
+    h6: "<H6>"
+    
+  # 区切り線
+  horizontal_rules:
+    default: "<HR>"
+    sized: "<HR SIZE='5'>"
+    width: "<HR WIDTH='50%'>"
+    noshade: "<HR NOSHADE>"
+    color: "<HR COLOR='#FF0000'>"  # IE拡張
+    
+  # リスト
+  lists:
+    unordered: "<UL>"
+    ordered: "<OL>"
+    definition: "<DL>"
+    menu: "<MENU>"  # 非推奨だが使用
+    dir: "<DIR>"    # 非推奨だが使用
+    
+  # フォーム要素
+  forms:
+    input_text: "<INPUT TYPE='TEXT'>"
+    input_submit: "<INPUT TYPE='SUBMIT'>"
+    input_reset: "<INPUT TYPE='RESET'>"
+    input_checkbox: "<INPUT TYPE='CHECKBOX'>"
+    input_radio: "<INPUT TYPE='RADIO'>"
+    textarea: "<TEXTAREA ROWS='5' COLS='30'>"
+    select: "<SELECT>"
+
+# アニメーションGIF
+animated_gifs:
+  # 定番GIF
+  standard:
+    under_construction: "const.gif"
+    email: "email.gif"
+    new: "new.gif"
+    hot: "hot.gif"
+    cool: "cool.gif"
+    welcome: "welcome.gif"
+    enter: "enter.gif"
+    
+  # 装飾GIF
+  decorative:
+    flame_bar: "flamebar.gif"
+    rainbow_bar: "rainbow.gif"
+    spinning_globe: "globe.gif"
+    rotating_skull: "skull.gif"
+    dancing_baby: "baby.gif"
+    
+  # カウンター
+  counter:
+    digits: "counter.gif"
+    odometer: "odometer.gif"
+    
+  # 矢印・ボタン
+  navigation:
+    back: "back.gif"
+    forward: "forward.gif"
+    home: "home.gif"
+    up: "up.gif"
+    mail: "mail.gif"
+
+# JavaScript（初期）
+javascript:
+  # 基本機能
+  alerts:
+    welcome: "alert('Welcome to my homepage!');"
+    leaving: "alert('Thanks for visiting!');"
+    
+  # ステータスバー
+  status_bar:
+    scrolling: "scrolling text in status bar"
+    static: "window.status = 'Welcome!';"
+    
+  # マウスオーバー
+  mouse_over:
+    image_swap: "onMouseOver='this.src=\"image2.gif\"'"
+    status: "onMouseOver='window.status=\"Click here!\"; return true'"
+    
+  # ポップアップ
+  popup:
+    window_open: "window.open('popup.html', 'popup', 'width=400,height=300')"
+    
+  # ブラウザ検出
+  browser_detect:
+    netscape: "navigator.appName == 'Netscape'"
+    ie: "navigator.appName == 'Microsoft Internet Explorer'"
+
+# Java Applets
+java_applets:
+  # 一般的なアプレット
+  common:
+    lake_effect: "Lake.class"
+    scrolling_text: "Ticker.class"
+    ripple: "Ripple.class"
+    clock: "Clock.class"
+    eyes: "Eyes.class"
+    
+  # パラメータ
+  params:
+    width: "300"
+    height: "200"
+    bgcolor: "#000000"
+    text: "Welcome!"
+
+# MIDI音楽
+midi:
+  # BGM設定
+  background:
+    autostart: "true"
+    loop: "true"
+    hidden: "true"
+    
+  # 一般的なMIDIファイル
+  files:
+    canyon: "canyon.mid"
+    passport: "passport.mid"
+    flourish: "flourish.mid"
+    town: "town.mid"
+    
+  # 埋め込み方法
+  embed:
+    bgsound: "<BGSOUND SRC='music.mid' LOOP='infinite'>"  # IE
+    embed: "<EMBED SRC='music.mid' AUTOSTART='true' LOOP='true' HIDDEN='true'>"  # Netscape
+
+# 特殊要素
+special_elements:
+  # ブリンク
+  blink:
+    tag: "<BLINK>"
+    support: "Netscape only"
+    
+  # マーキー
+  marquee:
+    tag: "<MARQUEE>"
+    direction: ["left", "right", "up", "down"]
+    behavior: ["scroll", "slide", "alternate"]
+    scrollamount: "6"
+    scrolldelay: "85"
+    
+  # センター
+  center:
+    tag: "<CENTER>"
+    deprecated: "yes, but widely used"
+    
+  # フォント
+  font:
+    tag: "<FONT>"
+    size: "1-7"
+    color: "#RRGGBB"
+    face: "Arial"
+
+# イメージマップ
+image_maps:
+  # クライアントサイド
+  client_side:
+    map_tag: "<MAP>"
+    area_tag: "<AREA>"
+    shapes: ["rect", "circle", "poly"]
+    
+  # サーバーサイド
+  server_side:
+    ismap: "ISMAP"
+    cgi_script: "/cgi-bin/imagemap"
+
+# メタタグ
+meta_tags:
+  # 基本メタタグ
+  basic:
+    author: "<META NAME='Author' CONTENT='Your Name'>"
+    keywords: "<META NAME='Keywords' CONTENT='homepage, personal, web'>"
+    description: "<META NAME='Description' CONTENT='My personal homepage'>"
+    generator: "<META NAME='Generator' CONTENT='Notepad'>"
+    
+  # リフレッシュ
+  refresh:
+    redirect: "<META HTTP-EQUIV='Refresh' CONTENT='5; URL=page2.html'>"
+    
+  # キャッシュ制御
+  cache:
+    no_cache: "<META HTTP-EQUIV='Pragma' CONTENT='no-cache'>"
+
+# Webring
+webring:
+  # ナビゲーション
+  navigation:
+    previous: "<< Previous"
+    next: "Next >>"
+    random: "Random"
+    list: "List Sites"
+    
+  # 表示形式
+  display:
+    table: true
+    centered: true
+    border: "2"
+
+# バッジ・アワード
+badges:
+  # ブラウザ
+  browsers:
+    netscape: "netscape_now.gif"
+    ie: "ie_logo.gif"
+    best_viewed: "best_viewed_with.gif"
+    
+  # 技術
+  technology:
+    html32: "html32.gif"
+    javascript: "javascript.gif"
+    java: "java_powered.gif"
+    
+  # アワード
+  awards:
+    cool_site: "cool_site_award.gif"
+    top_5_percent: "top5.gif"
+    site_of_day: "site_of_the_day.gif"
+
+# アクセシビリティ（ほぼ無視）
+accessibility:
+  # 考慮事項
+  considerations:
+    alt_text: "sometimes"
+    table_headers: "never"
+    frame_titles: "never"
+    skip_navigation: "not invented yet"
+    
+  # サポート
+  support:
+    screen_readers: "not considered"
+    keyboard_navigation: "basic"
+    color_contrast: "not considered"
+
+# パフォーマンス（考慮なし）
+performance:
+  # 画像
+  images:
+    optimization: false
+    format: "GIF or JPEG"
+    transparency: "GIF only"
+    
+  # ロード
+  loading:
+    progressive: false
+    lazy: false
+    preload: false
+    
+  # キャッシュ
+  caching:
+    browser: "default"
+    server: "none"
+
+# Y2K対応
+y2k:
+  compliant: "This website is Y2K compliant!"
+  tested: "Tested on: 12/31/1999 23:59:59"
+  badge: "y2k_ready.gif"

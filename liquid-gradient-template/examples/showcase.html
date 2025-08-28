@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquid Gradient - Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter:wght@300;400;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --gradient-1: #667eea;
+            --gradient-2: #764ba2;
+            --gradient-3: #f093fb;
+            --gradient-4: #feca57;
+            --gradient-5: #48c9b0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: white;
+            overflow-x: hidden;
+            cursor: none;
+        }
+        
+        /* Custom Cursor */
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transition: transform 0.15s ease;
+            mix-blend-mode: screen;
+        }
+        
+        .cursor-follower {
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+        
+        /* Mesh Gradient Background */
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2), var(--gradient-3));
+            background-size: 400% 400%;
+            animation: gradient-shift 20s ease infinite;
+        }
+        
+        .background::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 80%, var(--gradient-3) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, var(--gradient-4) 0%, transparent 50%),
+                        radial-gradient(circle at 40% 40%, var(--gradient-5) 0%, transparent 50%);
+            filter: blur(100px);
+            opacity: 0.6;
+            animation: drift 30s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes drift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5vw;
+            z-index: 1000;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--gradient-1), var(--gradient-3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 8s ease infinite;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 1rem;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gradient-1), var(--gradient-3));
+            transform: translateX(-100%);
+            transition: transform 0.4s ease;
+        }
+        
+        .nav-menu a:hover::before {
+            transform: translateX(0);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0 5vw;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 10;
+        }
+        
+        .hero-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 700;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            background: linear-gradient(90deg, 
+                var(--gradient-1) 0%, 
+                var(--gradient-2) 25%, 
+                var(--gradient-3) 50%, 
+                var(--gradient-4) 75%, 
+                var(--gradient-5) 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-text 8s linear infinite;
+            filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.5));
+        }
+        
+        @keyframes gradient-text {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+        }
+        
+        /* Morphing Blobs */
+        .blob {
+            position: absolute;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            filter: blur(40px);
+            opacity: 0.7;
+            animation: morph 15s ease-in-out infinite;
+        }
+        
+        .blob-1 {
+            width: 600px;
+            height: 600px;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-2));
+            top: -200px;
+            left: -200px;
+        }
+        
+        .blob-2 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(45deg, var(--gradient-3), var(--gradient-4));
+            bottom: -150px;
+            right: -150px;
+            animation-delay: 5s;
+        }
+        
+        .blob-3 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(45deg, var(--gradient-4), var(--gradient-5));
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation-delay: 10s;
+        }
+        
+        @keyframes morph {
+            0%, 100% { 
+                border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+                transform: rotate(0deg) scale(1);
+            }
+            25% { 
+                border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+                transform: rotate(90deg) scale(1.1);
+            }
+            50% { 
+                border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%;
+                transform: rotate(180deg) scale(0.9);
+            }
+            75% { 
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+                transform: rotate(270deg) scale(1.05);
+            }
+        }
+        
+        /* Liquid Button */
+        .liquid-button {
+            position: relative;
+            padding: 1.5rem 4rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: transparent;
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            overflow: hidden;
+            cursor: none;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .liquid-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: linear-gradient(45deg, var(--gradient-1), var(--gradient-3));
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        
+        .liquid-button:hover::before {
+            width: 300%;
+            height: 300%;
+        }
+        
+        .liquid-button:hover {
+            color: white;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+        
+        .liquid-button span {
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Cards Section */
+        .cards-section {
+            padding: 8rem 5vw;
+            position: relative;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .liquid-card {
+            position: relative;
+            height: 400px;
+            border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%;
+            overflow: hidden;
+            animation: card-morph 12s ease-in-out infinite;
+        }
+        
+        .liquid-card:nth-child(2) {
+            animation-delay: 4s;
+        }
+        
+        .liquid-card:nth-child(3) {
+            animation-delay: 8s;
+        }
+        
+        @keyframes card-morph {
+            0%, 100% { border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%; }
+            33% { border-radius: 70% 30% 30% 70% / 70% 30% 70% 30%; }
+            66% { border-radius: 30% 70% 30% 70% / 30% 70% 30% 70%; }
+        }
+        
+        .card-background {
+            position: absolute;
+            inset: -50%;
+            background: linear-gradient(45deg, var(--gradient-2), var(--gradient-3), var(--gradient-4));
+            animation: rotate 20s linear infinite;
+            filter: blur(30px);
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .card-content {
+            position: relative;
+            height: 100%;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .liquid-card:hover .card-content {
+            background: rgba(255, 255, 255, 0.12);
+            transform: scale(1.05);
+        }
+        
+        .card-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .card-description {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+        
+        /* Particles */
+        .particles {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0;
+            animation: float 20s linear infinite;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) translateX(0) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blob-1, .blob-2, .blob-3 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
+    <!-- Background -->
+    <div class="background"></div>
+    
+    <!-- Morphing Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-logo">LIQUID</div>
+            <ul class="nav-menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Work</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">LIQUID<br>GRADIENT</h1>
+            <p class="hero-subtitle">Where pixels flow like water</p>
+            <button class="liquid-button">
+                <span>Experience Fluidity</span>
+            </button>
+        </div>
+    </section>
+    
+    <!-- Cards Section -->
+    <section class="cards-section">
+        <div class="cards-grid">
+            <div class="liquid-card">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Organic Motion</h3>
+                    <p class="card-description">
+                        Experience the natural flow of digital elements that breathe and evolve with every interaction.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="liquid-card">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Living Colors</h3>
+                    <p class="card-description">
+                        Watch as gradients dance and merge, creating an ever-changing canvas of vibrant hues.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="liquid-card">
+                <div class="card-background"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Fluid Interaction</h3>
+                    <p class="card-description">
+                        Every element responds to your presence, creating a truly immersive digital experience.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX - 10 + 'px';
+            cursor.style.top = e.clientY - 10 + 'px';
+            
+            setTimeout(() => {
+                follower.style.left = e.clientX - 20 + 'px';
+                follower.style.top = e.clientY - 20 + 'px';
+            }, 100);
+        });
+        
+        // Hover effects
+        document.querySelectorAll('a, button').forEach(elem => {
+            elem.addEventListener('mouseenter', () => {
+                cursor.style.transform = 'scale(2)';
+                follower.style.transform = 'scale(1.5)';
+            });
+            elem.addEventListener('mouseleave', () => {
+                cursor.style.transform = 'scale(1)';
+                follower.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Generate Particles
+        const particlesContainer = document.getElementById('particles');
+        for (let i = 0; i < 30; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 20 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+        
+        // Parallax effect on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const blobs = document.querySelectorAll('.blob');
+            
+            blobs.forEach((blob, index) => {
+                const speed = 0.5 + (index * 0.2);
+                blob.style.transform = `translateY(${scrolled * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+# Retro Blog Design System
+# 2000年代ブログ・掲示板デザインシステム
+
+metadata:
+  name: "Retro Blog System"
+  version: "1.0.0"
+  description: "アメブロ風懐かしのブログデザインシステム"
+  author: "Y2K Web Collective"
+  created: "2024"
+  philosophy: "More decoration, more personality"
+
+# カラーシステム
+colors:
+  # パステルカラー
+  pastel:
+    pink: "#FFB6C1"
+    blue: "#87CEEB"
+    lavender: "#E6E6FA"
+    mint: "#98FB98"
+    peach: "#FFDAB9"
+    lemon: "#FFFACD"
+    lilac: "#DDA0DD"
+    coral: "#F08080"
+    
+  # ビビッドカラー
+  vivid:
+    hot_pink: "#FF69B4"
+    electric_blue: "#00BFFF"
+    lime_green: "#32CD32"
+    orange: "#FF6347"
+    purple: "#9370DB"
+    yellow: "#FFD700"
+    
+  # ベースカラー
+  base:
+    white: "#FFFFFF"
+    cream: "#FFFDD0"
+    beige: "#F5F5DC"
+    light_gray: "#F0F0F0"
+    gray: "#C0C0C0"
+    dark_gray: "#808080"
+    black: "#000000"
+    
+  # 特殊効果
+  effects:
+    sparkle: "linear-gradient(45deg, #FFB6C1, #87CEEB, #E6E6FA)"
+    rainbow: "linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)"
+    gradient_pink: "linear-gradient(180deg, #FFE0EC, #FFB6C1)"
+    gradient_blue: "linear-gradient(180deg, #E0F0FF, #87CEEB)"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー
+  families:
+    title:
+      primary: "'Comic Sans MS', 'Chalkboard SE', cursive"
+      japanese: "'あずきフォント', 'Rounded Mplus 1c', sans-serif"
+    body:
+      primary: "'メイリオ', 'Meiryo', sans-serif"
+      secondary: "'Hiragino Maru Gothic Pro', 'ヒラギノ丸ゴ Pro', sans-serif"
+    handwritten:
+      primary: "'Marker Felt', 'Klee', cursive"
+      japanese: "'みかちゃん', 'あんずもじ', cursive"
+    pixel:
+      primary: "'MS PGothic', 'ＭＳ Ｐゴシック', monospace"
+      retro: "'美咲フォント', 'DotGothic16', monospace"
+    decorative:
+      fancy: "'Curlz MT', 'Snell Roundhand', cursive"
+      gothic: "'Blackletter', 'Old English Text MT', serif"
+      
+  # サイズ
+  sizes:
+    tiny: "10px"
+    small: "12px"
+    base: "14px"
+    medium: "16px"
+    large: "18px"
+    xlarge: "24px"
+    title: "32px"
+    hero: "48px"
+    
+  # 文字装飾
+  decorations:
+    shadow:
+      soft: "1px 1px 2px rgba(0,0,0,0.2)"
+      glow: "0 0 5px #FFB6C1"
+      rainbow: "2px 2px 0 #FF0000, 4px 4px 0 #00FF00, 6px 6px 0 #0000FF"
+    stroke:
+      white: "-1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF"
+      black: "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000"
+    effects:
+      blink: "animation: blink 1s infinite"
+      marquee: "animation: marquee 10s linear infinite"
+      rainbow: "animation: rainbow 3s linear infinite"
+
+# レイアウト
+layout:
+  # メインレイアウト
+  structure:
+    type: "table-based"  # テーブルレイアウト（レトロ）
+    width: "1000px"
+    alignment: "center"
+    columns:
+      left_sidebar: "200px"
+      main_content: "600px"
+      right_sidebar: "200px"
+      
+  # 余白
+  spacing:
+    page_margin: "10px"
+    section_padding: "15px"
+    component_margin: "20px"
+    line_height: "1.8"
+    
+  # ボーダー・フレーム
+  borders:
+    dotted: "1px dotted #FFB6C1"
+    dashed: "2px dashed #87CEEB"
+    double: "3px double #E6E6FA"
+    groove: "5px groove #DDA0DD"
+    ridge: "5px ridge #F08080"
+    inset: "5px inset #C0C0C0"
+    outset: "5px outset #C0C0C0"
+
+# デコレーション要素
+decorations:
+  # 顔文字
+  emoticons:
+    happy: ["(´･ω･`)", "(*´▽｀*)", "(◕‿◕)", "(＾ω＾)"]
+    love: ["(｡♥‿♥｡)", "♡(˃͈ દ ˂͈ ༶ )", "(´♡‿♡`)"]
+    sad: ["(´；ω；｀)", "(T_T)", "(╥﹏╥)"]
+    surprise: ["Σ(ﾟДﾟ)", "( ﾟoﾟ)", "Σ(･口･)"]
+    music: ["♪(´▽｀)", "♫♪♫♪", "ヽ(´▽｀)/"]
+    
+  # 記号装飾
+  symbols:
+    stars: ["☆", "★", "✦", "✧", "⋆"]
+    hearts: ["♡", "♥", "❤", "💕", "💖"]
+    flowers: ["✿", "❀", "✾", "❁", "❃"]
+    music: ["♪", "♫", "♬", "♩", "♭"]
+    arrows: ["→", "←", "↑", "↓", "➡", "⬅"]
+    special: ["◇", "◆", "▽", "▼", "○", "●", "□", "■"]
+    
+  # 区切り線パターン
+  dividers:
+    simple: "━━━━━━━━━━━━━━━━━━━━"
+    dotted: "・・・・・・・・・・・・・・・・・・・・"
+    wave: "～～～～～～～～～～～～～～～～～"
+    star: "☆.。.:*・゜☆.。.:*・゜☆.。.:*・゜"
+    heart: "♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡"
+    flower: "❀ ✿ ❀ ✿ ❀ ✿ ❀ ✿ ❀ ✿"
+    music: "♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫"
+    
+  # 背景パターン
+  backgrounds:
+    polka_dots: "radial-gradient(circle, #FFB6C1 20%, transparent 20%)"
+    stripes: "repeating-linear-gradient(45deg, #FFB6C1, #FFB6C1 10px, #FFF 10px, #FFF 20px)"
+    checkered: "repeating-conic-gradient(#FFB6C1 0% 25%, #87CEEB 0% 50%)"
+    stars: "url('stars-pattern.gif')"
+    hearts: "url('hearts-pattern.gif')"
+    sparkles: "url('sparkles.gif')"
+
+# コンポーネント
+components:
+  # ヘッダー
+  header:
+    height: "200px"
+    background: "gradient_pink"
+    title:
+      font_size: "48px"
+      font_family: "Comic Sans MS"
+      text_shadow: "3px 3px 0 #FFF"
+      decoration: "✿ {title} ✿"
+    subtitle:
+      font_size: "16px"
+      font_style: "italic"
+      
+  # ナビゲーションメニュー
+  navigation:
+    style: "horizontal"
+    background: "#E6E6FA"
+    border: "2px solid #DDA0DD"
+    items:
+      padding: "10px 20px"
+      separator: " | "
+      hover: "background: #FFB6C1"
+      active: "background: #FF69B4; color: white"
+      
+  # ブログ記事
+  blog_post:
+    background: "white"
+    border: "5px ridge #DDA0DD"
+    padding: "20px"
+    title:
+      prefix: "◆"
+      suffix: "◆"
+      font_size: "24px"
+      color: "#FF69B4"
+    meta:
+      date_format: "♪ YYYY.MM.DD (Day) ♪"
+      category: "【{category}】"
+      tags: "#{tag}"
+    content:
+      line_height: "2.0"
+      font_size: "14px"
+    footer:
+      stats: "コメント({count}) | いいね♡({count}) | リブログ({count})"
+      
+  # サイドバー
+  sidebar:
+    widget:
+      background: "#FFFDD0"
+      border: "3px double #FFB6C1"
+      title:
+        background: "#FFB6C1"
+        color: "white"
+        padding: "5px"
+        decoration: "☆ {title} ☆"
+      content:
+        padding: "10px"
+        
+  # プロフィールカード
+  profile:
+    background: "linear-gradient(180deg, #FFE0EC, #FFF)"
+    border: "5px outset #FFB6C1"
+    avatar:
+      size: "100px"
+      border: "5px ridge #87CEEB"
+      decoration: "sparkle"
+    name:
+      font_size: "20px"
+      font_family: "handwritten"
+    bio:
+      font_size: "12px"
+      line_height: "1.6"
+    stats:
+      posts: "記事数: {count}"
+      readers: "読者: {count}人"
+      
+  # コメント欄
+  comments:
+    background: "#F5F5DC"
+    border: "1px dashed #C0C0C0"
+    avatar:
+      size: "50px"
+      float: "left"
+    name:
+      color: "#FF69B4"
+      font_weight: "bold"
+    timestamp:
+      color: "#808080"
+      font_size: "10px"
+    content:
+      margin_left: "60px"
+      
+  # カウンター
+  counter:
+    style: "retro"
+    digits:
+      background: "black"
+      color: "#00FF00"
+      font_family: "monospace"
+      padding: "2px 5px"
+      border: "2px inset #808080"
+    label:
+      font_size: "12px"
+      color: "#808080"
+
+# アニメーション
+animations:
+  # 基本アニメーション
+  blink:
+    keyframes: "0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; }"
+    duration: "1s"
+    iteration: "infinite"
+    
+  marquee:
+    keyframes: "0% { transform: translateX(100%); } 100% { transform: translateX(-100%); }"
+    duration: "10s"
+    timing: "linear"
+    iteration: "infinite"
+    
+  rainbow:
+    keyframes: "0% { color: red; } 20% { color: orange; } 40% { color: yellow; } 60% { color: green; } 80% { color: blue; } 100% { color: violet; }"
+    duration: "3s"
+    timing: "linear"
+    iteration: "infinite"
+    
+  sparkle:
+    keyframes: "0%, 100% { opacity: 0; } 50% { opacity: 1; }"
+    duration: "0.5s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  float:
+    keyframes: "0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); }"
+    duration: "3s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  # GIFアニメーション設定
+  gif:
+    new_mark: "new.gif"
+    hot_mark: "hot.gif"
+    up_arrow: "up.gif"
+    mail: "mail.gif"
+    heart: "heart.gif"
+    star: "star.gif"
+    fire: "fire.gif"
+
+# インタラクション
+interactions:
+  # マウスカーソル
+  cursor:
+    default: "url('cursor-star.cur'), auto"
+    pointer: "url('cursor-heart.cur'), pointer"
+    text: "url('cursor-pen.cur'), text"
+    
+  # ホバーエフェクト
+  hover:
+    link:
+      text_decoration: "underline"
+      color: "#FF69B4"
+      background: "#FFFACD"
+    button:
+      transform: "scale(1.1)"
+      box_shadow: "3px 3px 5px rgba(0,0,0,0.3)"
+    image:
+      filter: "brightness(1.2)"
+      border: "3px solid #FFB6C1"
+      
+  # サウンド
+  sounds:
+    bgm:
+      enabled: true
+      autoplay: true
+      loop: true
+      volume: 0.3
+      file: "blog-bgm.midi"
+    click:
+      enabled: true
+      file: "click.wav"
+    hover:
+      enabled: false
+      file: "hover.wav"
+
+# プラグイン・ウィジェット
+widgets:
+  # ブログパーツ
+  blog_parts:
+    clock:
+      type: "flash"
+      size: "200x100"
+    calendar:
+      type: "javascript"
+      theme: "cute"
+    weather:
+      type: "iframe"
+      size: "200x150"
+    fortune:
+      type: "javascript"
+      daily: true
+      
+  # SNS連携
+  social:
+    twitter:
+      widget: true
+      timeline: true
+    instagram:
+      gallery: false  # まだ存在しない時代
+    mixi:
+      community: true
+      footprint: true
+      
+  # ランキング
+  ranking:
+    blog_ranking:
+      button: "ranking-button.gif"
+      position: "sidebar"
+    web_clap:
+      enabled: true
+      custom_image: true
+
+# レスポンシブ設定
+responsive:
+  # PC優先（当時の標準）
+  desktop:
+    width: "1000px"
+    layout: "3-column"
+    full_decoration: true
+    
+  # モバイル（限定対応）
+  mobile:
+    width: "100%"
+    layout: "1-column"
+    simplified: true
+    horizontal_scroll: true  # 横スクロール許容
+    
+# パフォーマンス設定
+performance:
+  # 最適化しない（当時の流儀）
+  optimization: false
+  inline_css: true  # インラインCSS多用
+  table_layout: true  # テーブルレイアウト
+  image_preload: false
+  lazy_load: false
+  
+# アクセシビリティ
+accessibility:
+  # 最低限の対応
+  alt_text: true
+  keyboard_nav: "partial"
+  screen_reader: "not-optimized"
+  color_contrast: "low"
+  animation_control: true  # BGMとアニメーションOFF機能
+
+# 特殊機能
+special_features:
+  # 同盟・ウェブリング
+  webring:
+    enabled: true
+    banner_size: "200x40"
+    position: "footer"
+    
+  # アクセス解析
+  analytics:
+    counter: true
+    access_log: true
+    visitor_tracking: true
+    
+  # 掲示板機能
+  bbs:
+    enabled: true
+    thread_style: "2ch"
+    anonymity: true
+    trip_code: true

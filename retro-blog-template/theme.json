@@ -1,0 +1,382 @@
+{
+  "name": "Retro Blog",
+  "version": "1.0.0",
+  "description": "2000年代ブログ・アメブロ風テーマ",
+  
+  "colors": {
+    "pastel": {
+      "pink": "#FFB6C1",
+      "blue": "#87CEEB",
+      "lavender": "#E6E6FA",
+      "mint": "#98FB98",
+      "peach": "#FFDAB9",
+      "lemon": "#FFFACD",
+      "lilac": "#DDA0DD",
+      "coral": "#F08080",
+      "cream": "#FFFDD0",
+      "baby_blue": "#B0E0E6"
+    },
+    
+    "vivid": {
+      "hot_pink": "#FF69B4",
+      "electric_blue": "#00BFFF",
+      "lime_green": "#32CD32",
+      "orange": "#FF6347",
+      "purple": "#9370DB",
+      "yellow": "#FFD700",
+      "red": "#FF1493",
+      "magenta": "#FF00FF"
+    },
+    
+    "base": {
+      "white": "#FFFFFF",
+      "cream": "#FFFDD0",
+      "beige": "#F5F5DC",
+      "light_gray": "#F0F0F0",
+      "gray": "#C0C0C0",
+      "dark_gray": "#808080",
+      "black": "#000000"
+    },
+    
+    "gradients": {
+      "pink_dream": "linear-gradient(180deg, #FFE0EC, #FFB6C1)",
+      "blue_sky": "linear-gradient(180deg, #E0F0FF, #87CEEB)",
+      "sunset": "linear-gradient(180deg, #FFDAB9, #F08080)",
+      "lavender_mist": "linear-gradient(180deg, #F0E6FA, #DDA0DD)",
+      "rainbow": "linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #9400D3)"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "title": "'Comic Sans MS', 'Chalkboard SE', 'Marker Felt', cursive",
+      "japanese": "'メイリオ', 'Hiragino Maru Gothic Pro', 'ヒラギノ丸ゴ Pro', sans-serif",
+      "handwritten": "'あずきフォント', 'みかちゃん', 'Klee', cursive",
+      "body": "'MS PGothic', 'ＭＳ Ｐゴシック', 'Hiragino Kaku Gothic Pro', sans-serif",
+      "pixel": "'美咲フォント', 'DotGothic16', 'MS Gothic', monospace",
+      "decorative": "'Curlz MT', 'Bradley Hand', 'Papyrus', fantasy"
+    },
+    
+    "sizes": {
+      "tiny": "10px",
+      "small": "12px",
+      "base": "14px",
+      "medium": "16px",
+      "large": "18px",
+      "xlarge": "24px",
+      "title": "32px",
+      "hero": "48px",
+      "mega": "64px"
+    },
+    
+    "lineHeights": {
+      "tight": "1.2",
+      "normal": "1.6",
+      "relaxed": "1.8",
+      "loose": "2.0",
+      "double": "2.5"
+    },
+    
+    "decorations": {
+      "textShadow": {
+        "soft": "1px 1px 2px rgba(0,0,0,0.2)",
+        "glow": "0 0 5px #FFB6C1",
+        "rainbow": "2px 2px 0 #FF0000, 4px 4px 0 #00FF00, 6px 6px 0 #0000FF",
+        "outline": "-1px -1px 0 #FFF, 1px -1px 0 #FFF, -1px 1px 0 #FFF, 1px 1px 0 #FFF"
+      },
+      "letterSpacing": {
+        "normal": "0",
+        "wide": "0.1em",
+        "wider": "0.2em",
+        "widest": "0.3em"
+      }
+    }
+  },
+  
+  "layout": {
+    "container": {
+      "width": "1000px",
+      "margin": "0 auto",
+      "padding": "10px",
+      "background": "#FFE0EC"
+    },
+    
+    "grid": {
+      "columns": {
+        "left_sidebar": "200px",
+        "main_content": "600px",
+        "right_sidebar": "200px"
+      },
+      "gaps": {
+        "column": "10px",
+        "row": "20px"
+      }
+    },
+    
+    "spacing": {
+      "micro": "5px",
+      "small": "10px",
+      "base": "15px",
+      "medium": "20px",
+      "large": "30px",
+      "xlarge": "40px",
+      "huge": "60px"
+    }
+  },
+  
+  "borders": {
+    "styles": {
+      "dotted": "1px dotted #FFB6C1",
+      "dashed": "2px dashed #87CEEB",
+      "solid": "2px solid #DDA0DD",
+      "double": "3px double #E6E6FA",
+      "groove": "5px groove #FFB6C1",
+      "ridge": "5px ridge #DDA0DD",
+      "inset": "5px inset #C0C0C0",
+      "outset": "5px outset #C0C0C0"
+    },
+    
+    "radius": {
+      "small": "5px",
+      "medium": "10px",
+      "large": "20px",
+      "round": "50%",
+      "pill": "999px"
+    }
+  },
+  
+  "decorations": {
+    "emoticons": {
+      "happy": "(´･ω･`)",
+      "love": "(｡♥‿♥｡)",
+      "sad": "(´；ω；｀)",
+      "surprise": "Σ(ﾟДﾟ)",
+      "music": "♪(´▽｀)",
+      "star": "☆",
+      "heart": "♡",
+      "flower": "✿",
+      "sparkle": "✨"
+    },
+    
+    "dividers": {
+      "simple": "━━━━━━━━━━━━━━━━━",
+      "dotted": "・・・・・・・・・・・・・・・・",
+      "wave": "～～～～～～～～～～～～～",
+      "star": "☆.。.:*・゜☆.。.:*・゜☆",
+      "heart": "♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡",
+      "flower": "❀ ✿ ❀ ✿ ❀ ✿ ❀ ✿",
+      "music": "♪ ♫ ♪ ♫ ♪ ♫ ♪ ♫"
+    },
+    
+    "frames": {
+      "simple": "┌─┐│└┘",
+      "double": "╔═╗║╚╝",
+      "rounded": "╭─╮│╰╯",
+      "decorative": "✿◆✿◆✿"
+    },
+    
+    "backgrounds": {
+      "patterns": {
+        "dots": "radial-gradient(circle, #FFB6C1 20%, transparent 20%)",
+        "stripes": "repeating-linear-gradient(45deg, #FFB6C1 0, #FFB6C1 10px, transparent 10px, transparent 20px)",
+        "hearts": "url('hearts-pattern.gif')",
+        "stars": "url('stars-pattern.gif')",
+        "sparkles": "url('sparkles.gif')"
+      }
+    }
+  },
+  
+  "animations": {
+    "blink": {
+      "duration": "1s",
+      "timing": "steps(2)",
+      "iteration": "infinite",
+      "keyframes": "0%, 50% { opacity: 1; } 51%, 100% { opacity: 0; }"
+    },
+    
+    "marquee": {
+      "duration": "10s",
+      "timing": "linear",
+      "iteration": "infinite",
+      "keyframes": "0% { transform: translateX(100%); } 100% { transform: translateX(-100%); }"
+    },
+    
+    "rainbow": {
+      "duration": "3s",
+      "timing": "linear",
+      "iteration": "infinite",
+      "keyframes": "0% { color: red; } 16% { color: orange; } 33% { color: yellow; } 50% { color: green; } 66% { color: blue; } 83% { color: indigo; } 100% { color: violet; }"
+    },
+    
+    "sparkle": {
+      "duration": "1s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": "0%, 100% { opacity: 0; transform: scale(0); } 50% { opacity: 1; transform: scale(1); }"
+    },
+    
+    "float": {
+      "duration": "3s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": "0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); }"
+    },
+    
+    "pulse": {
+      "duration": "2s",
+      "timing": "ease-in-out",
+      "iteration": "infinite",
+      "keyframes": "0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); }"
+    },
+    
+    "shake": {
+      "duration": "0.5s",
+      "timing": "linear",
+      "iteration": "infinite",
+      "keyframes": "0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); }"
+    }
+  },
+  
+  "components": {
+    "header": {
+      "height": "200px",
+      "background": "linear-gradient(180deg, #FFB6C1, #FFFFFF)",
+      "padding": "50px 20px",
+      "textAlign": "center"
+    },
+    
+    "sidebar": {
+      "width": "200px",
+      "padding": "10px",
+      "background": "#E6E6FA"
+    },
+    
+    "blogPost": {
+      "background": "white",
+      "border": "5px ridge #DDA0DD",
+      "padding": "20px",
+      "marginBottom": "30px"
+    },
+    
+    "widget": {
+      "background": "#FFFDD0",
+      "border": "3px double #FFB6C1",
+      "padding": "10px",
+      "marginBottom": "20px"
+    },
+    
+    "comment": {
+      "background": "#F5F5DC",
+      "border": "1px dashed #C0C0C0",
+      "padding": "15px",
+      "marginBottom": "10px"
+    },
+    
+    "button": {
+      "primary": {
+        "background": "#FF69B4",
+        "color": "white",
+        "border": "3px outset #FF69B4",
+        "padding": "5px 20px"
+      },
+      "secondary": {
+        "background": "#87CEEB",
+        "color": "white",
+        "border": "3px outset #87CEEB",
+        "padding": "5px 20px"
+      }
+    }
+  },
+  
+  "effects": {
+    "cursor": {
+      "default": "url('star-cursor.cur'), auto",
+      "pointer": "url('heart-cursor.cur'), pointer",
+      "text": "url('pen-cursor.cur'), text"
+    },
+    
+    "scrollbar": {
+      "track": "#FFE0EC",
+      "thumb": "#FF69B4",
+      "thumbHover": "#FF1493",
+      "width": "15px"
+    },
+    
+    "selection": {
+      "background": "#FFB6C1",
+      "color": "white"
+    },
+    
+    "glow": {
+      "text": "0 0 10px #FFB6C1",
+      "box": "0 0 20px rgba(255, 182, 193, 0.5)"
+    }
+  },
+  
+  "media": {
+    "images": {
+      "maxWidth": "100%",
+      "border": "5px ridge #DDA0DD",
+      "borderRadius": "5px"
+    },
+    
+    "gifs": {
+      "new": "new.gif",
+      "hot": "hot.gif",
+      "mail": "mail.gif",
+      "update": "update.gif",
+      "arrow": "arrow.gif"
+    },
+    
+    "banners": {
+      "sizes": {
+        "standard": "200x40",
+        "small": "88x31",
+        "square": "100x100"
+      }
+    }
+  },
+  
+  "sounds": {
+    "bgm": {
+      "file": "blog-bgm.midi",
+      "volume": 0.3,
+      "autoplay": true,
+      "loop": true
+    },
+    
+    "effects": {
+      "click": "click.wav",
+      "hover": "hover.wav",
+      "success": "success.wav"
+    }
+  },
+  
+  "breakpoints": {
+    "desktop": {
+      "min": "1024px",
+      "layout": "3-column",
+      "decorations": "full"
+    },
+    "tablet": {
+      "min": "768px",
+      "max": "1023px",
+      "layout": "2-column",
+      "decorations": "moderate"
+    },
+    "mobile": {
+      "max": "767px",
+      "layout": "1-column",
+      "decorations": "minimal",
+      "allowHorizontalScroll": true
+    }
+  },
+  
+  "accessibility": {
+    "altText": true,
+    "keyboardNav": "partial",
+    "contrastMode": false,
+    "animationControl": true,
+    "soundControl": true
+  }
+}

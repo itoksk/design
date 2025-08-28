@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♡ ゆきのブログ ♡ - Retro Blog Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'メイリオ', 'Meiryo', 'Hiragino Maru Gothic Pro', sans-serif;
+            background: linear-gradient(180deg, #FFE0EC, #FFFFFF);
+            background-attachment: fixed;
+            color: #333;
+            font-size: 14px;
+            line-height: 1.8;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><text y="15" font-size="15">⭐</text></svg>'), auto;
+        }
+
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 15px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #FFE0EC;
+            border: 2px solid #FFB6C1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #FF69B4;
+            border: 2px solid #FFB6C1;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FF1493;
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        /* Blink Animation */
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Float Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Rainbow Text */
+        @keyframes rainbow {
+            0% { color: red; }
+            16% { color: orange; }
+            33% { color: yellow; }
+            50% { color: green; }
+            66% { color: blue; }
+            83% { color: indigo; }
+            100% { color: violet; }
+        }
+
+        /* Container */
+        .container {
+            width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-left: 5px ridge #FFB6C1;
+            border-right: 5px ridge #FFB6C1;
+        }
+
+        /* Header */
+        .header {
+            height: 200px;
+            background: linear-gradient(180deg, #FFB6C1, #FFF);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 5px ridge #DDA0DD;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            font-size: 30px;
+            animation: float 3s ease-in-out infinite;
+            left: 10%;
+            top: 20%;
+        }
+
+        .header::after {
+            content: '💖';
+            position: absolute;
+            font-size: 30px;
+            animation: float 3s ease-in-out infinite 0.5s;
+            right: 10%;
+            top: 30%;
+        }
+
+        .blog-title {
+            font-family: 'Comic Sans MS', 'Marker Felt', cursive;
+            font-size: 48px;
+            color: #FF69B4;
+            text-shadow: 3px 3px 0 white, 5px 5px 10px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
+        }
+
+        .blog-subtitle {
+            font-size: 16px;
+            color: #808080;
+            font-style: italic;
+        }
+
+        /* Navigation */
+        .nav {
+            background: #E6E6FA;
+            border-bottom: 3px double #DDA0DD;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-item {
+            display: inline-block;
+            padding: 5px 20px;
+            margin: 0 5px;
+            background: #FFE0EC;
+            border: 3px outset #FFB6C1;
+            color: #FF69B4;
+            text-decoration: none;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .nav-item:hover {
+            background: #FF69B4;
+            color: white;
+            transform: scale(1.1) rotate(-2deg);
+        }
+
+        /* Main Layout */
+        .main-layout {
+            display: table;
+            width: 100%;
+        }
+
+        .sidebar-left, .content, .sidebar-right {
+            display: table-cell;
+            vertical-align: top;
+            padding: 20px;
+        }
+
+        .sidebar-left, .sidebar-right {
+            width: 200px;
+            background: #F5F5DC;
+        }
+
+        .content {
+            width: 600px;
+            background: white;
+        }
+
+        /* Blog Post */
+        .blog-post {
+            background: white;
+            border: 5px ridge #DDA0DD;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        .post-header {
+            border-bottom: 2px dotted #FFB6C1;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .post-date {
+            font-size: 12px;
+            color: #808080;
+        }
+
+        .post-title {
+            font-size: 24px;
+            color: #FF69B4;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .post-category {
+            display: inline-block;
+            background: #FFFACD;
+            padding: 2px 10px;
+            border: 1px solid #FFD700;
+            border-radius: 10px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+
+        .post-content {
+            line-height: 2;
+            margin: 20px 0;
+        }
+
+        .post-footer {
+            border-top: 1px dotted #DDA0DD;
+            padding-top: 10px;
+            font-size: 12px;
+            color: #808080;
+        }
+
+        /* Sidebar Widget */
+        .widget {
+            background: #FFFDD0;
+            border: 3px double #FFB6C1;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .widget-title {
+            background: #FFB6C1;
+            color: white;
+            padding: 5px 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .widget-content {
+            padding: 10px;
+        }
+
+        /* Profile Card */
+        .profile-card {
+            text-align: center;
+        }
+
+        .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border: 5px ridge #87CEEB;
+            border-radius: 50%;
+            margin: 10px auto;
+            background: linear-gradient(45deg, #FFB6C1, #87CEEB);
+        }
+
+        .profile-name {
+            font-size: 20px;
+            color: #FF69B4;
+            font-family: 'Comic Sans MS', cursive;
+            margin: 10px 0;
+        }
+
+        .profile-bio {
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        /* Counter */
+        .counter {
+            background: black;
+            border: 3px inset #808080;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .counter-digits {
+            font-family: monospace;
+            font-size: 20px;
+            color: #00FF00;
+            letter-spacing: 5px;
+        }
+
+        .counter-label {
+            font-size: 11px;
+            color: #808080;
+            margin-top: 5px;
+        }
+
+        /* Recent Posts */
+        .recent-post-item {
+            padding: 5px 0;
+            border-bottom: 1px dotted #DDA0DD;
+            font-size: 12px;
+        }
+
+        .recent-post-item:last-child {
+            border-bottom: none;
+        }
+
+        .new-badge {
+            color: #FF0000;
+            font-weight: bold;
+            animation: blink 1s infinite;
+            margin-right: 5px;
+        }
+
+        /* Decorative Divider */
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #FFB6C1;
+            font-size: 16px;
+        }
+
+        /* Marquee */
+        .marquee-container {
+            background: #E6E6FA;
+            padding: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+            border-top: 2px dashed #DDA0DD;
+            border-bottom: 2px dashed #DDA0DD;
+        }
+
+        .marquee-text {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+            color: #FF69B4;
+            font-weight: bold;
+        }
+
+        /* Comments */
+        .comment {
+            background: #F5F5DC;
+            border: 1px dashed #C0C0C0;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            border: 3px ridge #87CEEB;
+            border-radius: 50%;
+            float: left;
+            margin-right: 10px;
+            background: #FFB6C1;
+        }
+
+        .comment-author {
+            font-weight: bold;
+            color: #FF69B4;
+        }
+
+        .comment-date {
+            font-size: 10px;
+            color: #808080;
+            margin-left: 10px;
+        }
+
+        .comment-content {
+            margin-top: 5px;
+            margin-left: 50px;
+        }
+
+        /* Web Clap */
+        .web-clap {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .clap-button {
+            background: linear-gradient(180deg, #FFB6C1, #FF69B4);
+            color: white;
+            border: 3px outset #FF69B4;
+            padding: 10px 30px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+
+        .clap-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 5px 15px rgba(255, 105, 180, 0.5);
+        }
+
+        .clap-button:active {
+            border-style: inset;
+            transform: scale(0.95);
+        }
+
+        /* Footer */
+        .footer {
+            background: #E6E6FA;
+            border-top: 5px ridge #DDA0DD;
+            padding: 20px;
+            text-align: center;
+            font-size: 12px;
+            color: #808080;
+        }
+
+        .rainbow-text {
+            animation: rainbow 3s linear infinite;
+            font-weight: bold;
+        }
+
+        /* Mobile adjustment (limited) */
+        @media (max-width: 1000px) {
+            .container {
+                width: 100%;
+                overflow-x: auto;
+            }
+            
+            .main-layout {
+                min-width: 1000px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="blog-title">♡*:.｡. ゆきのブログ .｡.:*♡</h1>
+            <p class="blog-subtitle">～ まいにち楽しくブログ更新中 (*´▽｀*) ～</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="#" class="nav-item">Home</a>
+            <a href="#" class="nav-item">Profile</a>
+            <a href="#" class="nav-item">Diary</a>
+            <a href="#" class="nav-item">Photo</a>
+            <a href="#" class="nav-item">Link</a>
+        </nav>
+
+        <!-- Marquee -->
+        <div class="marquee-container">
+            <span class="marquee-text">
+                ★☆★ Welcome to my blog! リンクフリーです♪ 相互リンク募集中 ★☆★
+            </span>
+        </div>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Left Sidebar -->
+            <aside class="sidebar-left">
+                <!-- Profile Widget -->
+                <div class="widget">
+                    <div class="widget-title">☆ Profile ☆</div>
+                    <div class="widget-content profile-card">
+                        <div class="profile-avatar"></div>
+                        <div class="profile-name">ゆき</div>
+                        <div class="profile-bio">
+                            都内でOLしてます♪<br>
+                            趣味：カフェめぐり<br>
+                            好きなもの：猫、お菓子<br>
+                            <span style="color: #FF69B4;">♡</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Counter Widget -->
+                <div class="widget">
+                    <div class="widget-title">☆ Counter ☆</div>
+                    <div class="widget-content">
+                        <div class="counter">
+                            <div class="counter-digits">012345</div>
+                            <div class="counter-label">あなたは12345人目の訪問者です♪</div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="content">
+                <!-- Blog Post 1 -->
+                <article class="blog-post">
+                    <header class="post-header">
+                        <div class="post-date">♪ 2024.03.14 Thursday ♪</div>
+                        <h2 class="post-title">◆ 今日のカフェランチ ◆</h2>
+                        <span class="post-category">【日常】</span>
+                        <span class="post-category">【グルメ】</span>
+                    </header>
+                    
+                    <div class="post-content">
+                        こんにちは～ (｡･ω･｡)<br><br>
+                        今日は友達と渋谷の新しいカフェに行ってきました！<br>
+                        パンケーキがすごく美味しかった～ ♡<br><br>
+                        
+                        <div style="text-align: center; margin: 20px 0;">
+                            <div style="width: 300px; height: 200px; background: linear-gradient(45deg, #FFB6C1, #87CEEB); border: 5px ridge #DDA0DD; margin: 0 auto;"></div>
+                            <div style="font-size: 12px; color: #808080; margin-top: 5px;">↑ パンケーキの写真 ↑</div>
+                        </div>
+                        
+                        また行きたいな～ (*´▽｀*)<br>
+                        みんなのおすすめカフェも教えてね！
+                    </div>
+                    
+                    <footer class="post-footer">
+                        コメント(3) | いいね♡(25) | リブログ(2)
+                    </footer>
+                </article>
+
+                <!-- Divider -->
+                <div class="divider">
+                    ☆.。.:*・゜☆.。.:*・゜☆.。.:*・゜☆
+                </div>
+
+                <!-- Blog Post 2 -->
+                <article class="blog-post">
+                    <header class="post-header">
+                        <div class="post-date">♪ 2024.03.13 Wednesday ♪</div>
+                        <h2 class="post-title">◆ 春コスメ購入 ◆</h2>
+                        <span class="post-category">【美容】</span>
+                        <span class="post-category">【ショッピング】</span>
+                    </header>
+                    
+                    <div class="post-content">
+                        こんばんは～ ヽ(´▽｀)/<br><br>
+                        新作の春コスメを買っちゃいました！<br>
+                        ピンクのリップがすごくかわいい～ ✿<br><br>
+                        
+                        最近のお気に入り：<br>
+                        • リップ → ○○のピンク<br>
+                        • チーク → △△のコーラル<br>
+                        • アイシャドウ → □□のブラウン<br><br>
+                        
+                        春メイク楽しみ～ (◕‿◕)
+                    </div>
+                    
+                    <footer class="post-footer">
+                        コメント(7) | いいね♡(42) | リブログ(5)
+                    </footer>
+                </article>
+
+                <!-- Comments Section -->
+                <h3 style="color: #FF69B4; margin: 20px 0;">♡ Comments ♡</h3>
+                
+                <div class="comment">
+                    <div class="comment-avatar"></div>
+                    <div class="comment-author">
+                        みか
+                        <span class="comment-date">2024.03.14 15:30</span>
+                    </div>
+                    <div class="comment-content">
+                        パンケーキ美味しそう！今度一緒に行こう～ (*´▽｀*)
+                    </div>
+                </div>
+
+                <div class="comment">
+                    <div class="comment-avatar"></div>
+                    <div class="comment-author">
+                        さくら
+                        <span class="comment-date">2024.03.14 16:45</span>
+                    </div>
+                    <div class="comment-content">
+                        渋谷のカフェいいよね！私も行ってみたい ♪
+                    </div>
+                </div>
+
+                <!-- Web Clap -->
+                <div class="web-clap">
+                    <button class="clap-button">拍手する♪</button>
+                    <div style="margin-top: 10px; font-size: 12px; color: #808080;">
+                        今日の拍手数: 23
+                    </div>
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside class="sidebar-right">
+                <!-- Recent Posts Widget -->
+                <div class="widget">
+                    <div class="widget-title">☆ Recent Posts ☆</div>
+                    <div class="widget-content">
+                        <div class="recent-post-item">
+                            <span class="new-badge">NEW!</span>
+                            今日のカフェランチ
+                        </div>
+                        <div class="recent-post-item">
+                            <span class="new-badge">NEW!</span>
+                            春コスメ購入
+                        </div>
+                        <div class="recent-post-item">
+                            週末の予定
+                        </div>
+                        <div class="recent-post-item">
+                            お花見してきた
+                        </div>
+                        <div class="recent-post-item">
+                            誕生日でした★
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Categories Widget -->
+                <div class="widget">
+                    <div class="widget-title">☆ Categories ☆</div>
+                    <div class="widget-content">
+                        <div style="padding: 5px 0;">◇ 日常 (42)</div>
+                        <div style="padding: 5px 0;">◇ グルメ (38)</div>
+                        <div style="padding: 5px 0;">◇ 美容 (25)</div>
+                        <div style="padding: 5px 0;">◇ ショッピング (18)</div>
+                        <div style="padding: 5px 0;">◇ 旅行 (12)</div>
+                    </div>
+                </div>
+
+                <!-- Blog Ranking -->
+                <div class="widget">
+                    <div class="widget-title">☆ Ranking ☆</div>
+                    <div class="widget-content" style="text-align: center;">
+                        <div style="padding: 10px; background: #FF69B4; color: white; border: 3px outset #FF69B4; margin: 10px 0;">
+                            Blog Ranking<br>
+                            12位 ↑
+                        </div>
+                        <div style="font-size: 11px;">クリックで応援お願いします♪</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="divider" style="color: #808080;">
+                ♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡
+            </div>
+            <p>
+                <span class="rainbow-text">© 2024 ゆきのブログ</span><br>
+                このサイトはリンクフリーです♪<br>
+                相互リンク募集中 (´･ω･`)
+            </p>
+            <div class="divider" style="color: #808080;">
+                ♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡ ─ ♡
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Simple interaction
+        document.querySelector('.clap-button').addEventListener('click', function() {
+            alert('拍手ありがとうございます♪ (｡♥‿♥｡)');
+        });
+
+        // Add sparkles on mouse move (simple version)
+        document.addEventListener('mousemove', function(e) {
+            if (Math.random() > 0.98) {
+                const sparkle = document.createElement('div');
+                sparkle.innerHTML = '✨';
+                sparkle.style.position = 'fixed';
+                sparkle.style.left = e.clientX + 'px';
+                sparkle.style.top = e.clientY + 'px';
+                sparkle.style.pointerEvents = 'none';
+                sparkle.style.animation = 'float 1s ease-out forwards';
+                sparkle.style.zIndex = '9999';
+                document.body.appendChild(sparkle);
+                setTimeout(() => sparkle.remove(), 1000);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASCII TERMINAL /// SYSTEM ACTIVE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #0C0C0C;
+            color: #00FF00;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.2;
+            overflow-x: hidden;
+            cursor: text;
+        }
+        
+        /* CRT Effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                rgba(18, 16, 16, 0) 50%,
+                rgba(0, 0, 0, 0.25) 50%
+            );
+            background-size: 100% 2px;
+            z-index: 1000;
+            pointer-events: none;
+            animation: scanlines 8s linear infinite;
+        }
+        
+        @keyframes scanlines {
+            0% { background-position: 0 0; }
+            100% { background-position: 0 10px; }
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 255, 0, 0.02);
+            opacity: 0;
+            z-index: 1001;
+            pointer-events: none;
+            animation: flicker 0.1s infinite;
+        }
+        
+        @keyframes flicker {
+            0% { opacity: 0.027; }
+            50% { opacity: 0.013; }
+            100% { opacity: 0.025; }
+        }
+        
+        /* Terminal Window */
+        .terminal {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        
+        .terminal-header {
+            background: #333;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .terminal-button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        
+        .terminal-button.close { background: #FF5F56; }
+        .terminal-button.minimize { background: #FFBD2E; }
+        .terminal-button.maximize { background: #27C93F; }
+        
+        .terminal-title {
+            flex: 1;
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+        }
+        
+        .terminal-body {
+            padding: 20px;
+            min-height: 500px;
+        }
+        
+        /* ASCII Logo */
+        .ascii-logo {
+            white-space: pre;
+            font-size: 10px;
+            line-height: 1;
+            color: #00FF00;
+            text-align: center;
+            margin: 20px 0;
+            text-shadow: 0 0 5px currentColor;
+        }
+        
+        /* Typing Effect */
+        .typing {
+            overflow: hidden;
+            border-right: 2px solid #00FF00;
+            white-space: nowrap;
+            animation: typing 3.5s steps(40, end), blink-cursor 0.75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        @keyframes blink-cursor {
+            from, to { border-color: transparent; }
+            50% { border-color: #00FF00; }
+        }
+        
+        /* Command Line */
+        .command-line {
+            margin: 20px 0;
+        }
+        
+        .prompt {
+            color: #00FF00;
+            display: inline;
+        }
+        
+        .command {
+            color: #FFF;
+            display: inline;
+        }
+        
+        .output {
+            color: #999;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        
+        /* Menu */
+        .menu {
+            margin: 30px 0;
+        }
+        
+        .menu-item {
+            padding: 5px 0;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .menu-item:hover {
+            background: rgba(0, 255, 0, 0.1);
+            padding-left: 20px;
+            color: #FFFF00;
+            text-shadow: 0 0 10px currentColor;
+        }
+        
+        .menu-item::before {
+            content: "> ";
+            color: #00FF00;
+        }
+        
+        /* Matrix Rain */
+        .matrix-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .matrix-column {
+            position: absolute;
+            top: -100%;
+            font-size: 20px;
+            color: #00FF00;
+            text-shadow: 0 0 5px currentColor;
+            animation: matrix-fall 10s linear infinite;
+        }
+        
+        @keyframes matrix-fall {
+            to { transform: translateY(200vh); }
+        }
+        
+        /* Loading Bar */
+        .loading-bar {
+            width: 100%;
+            height: 20px;
+            background: #1a1a1a;
+            border: 1px solid #00FF00;
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            background: #00FF00;
+            width: 0%;
+            animation: load 3s ease-out forwards;
+            box-shadow: 0 0 10px #00FF00;
+        }
+        
+        @keyframes load {
+            to { width: 100%; }
+        }
+        
+        .loading-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            line-height: 20px;
+            color: #000;
+            font-weight: bold;
+            mix-blend-mode: difference;
+        }
+        
+        /* ASCII Art Box */
+        .ascii-box {
+            border: 1px solid #00FF00;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .ascii-box::before {
+            content: '╔═══════════════════════════════════════════════════════╗';
+            position: absolute;
+            top: -10px;
+            left: -1px;
+            color: #00FF00;
+            font-size: 12px;
+        }
+        
+        .ascii-box::after {
+            content: '╚═══════════════════════════════════════════════════════╝';
+            position: absolute;
+            bottom: -10px;
+            left: -1px;
+            color: #00FF00;
+            font-size: 12px;
+        }
+        
+        /* Glitch Text */
+        .glitch {
+            position: relative;
+            color: #00FF00;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                         0.025em 0.04em 0 #fffc00;
+            animation: glitch 725ms infinite;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                            0.025em 0.04em 0 #fffc00;
+            }
+            15% {
+                text-shadow: 0.05em 0 0 #00fffc, -0.03em -0.04em 0 #fc00ff,
+                            0.025em 0.04em 0 #fffc00;
+            }
+            16% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                            -0.05em -0.05em 0 #fffc00;
+            }
+            49% {
+                text-shadow: -0.05em -0.025em 0 #00fffc, 0.025em 0.035em 0 #fc00ff,
+                            -0.05em -0.05em 0 #fffc00;
+            }
+            50% {
+                text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                            0 -0.04em 0 #fffc00;
+            }
+            99% {
+                text-shadow: 0.05em 0.035em 0 #00fffc, 0.03em 0 0 #fc00ff,
+                            0 -0.04em 0 #fffc00;
+            }
+            100% {
+                text-shadow: -0.05em 0 0 #00fffc, -0.025em -0.04em 0 #fc00ff,
+                            -0.04em -0.025em 0 #fffc00;
+            }
+        }
+        
+        /* Table */
+        .ascii-table {
+            margin: 20px 0;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .ascii-table th,
+        .ascii-table td {
+            padding: 8px;
+            text-align: left;
+            border: 1px solid #00FF00;
+        }
+        
+        .ascii-table th {
+            background: rgba(0, 255, 0, 0.1);
+            color: #FFFF00;
+        }
+        
+        .ascii-table tr:hover {
+            background: rgba(0, 255, 0, 0.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Matrix Rain Background -->
+    <div class="matrix-rain" id="matrix"></div>
+    
+    <!-- Main Terminal -->
+    <div class="terminal">
+        <div class="terminal-header">
+            <span class="terminal-button close"></span>
+            <span class="terminal-button minimize"></span>
+            <span class="terminal-button maximize"></span>
+            <span class="terminal-title">terminal@ascii-design ~ zsh</span>
+        </div>
+        
+        <div class="terminal-body">
+            <!-- ASCII Logo -->
+            <pre class="ascii-logo">
+ █████╗ ███████╗ ██████╗██╗██╗
+██╔══██╗██╔════╝██╔════╝██║██║
+███████║███████╗██║     ██║██║
+██╔══██║╚════██║██║     ██║██║
+██║  ██║███████║╚██████╗██║██║
+╚═╝  ╚═╝╚══════╝ ╚═════╝╚═╝╚═╝
+▀▀█▀▀ █▀▀ █▀▀█ █▀▄▀█  ▀  █▀▀▄ █▀▀█ █
+  █   █▀▀ █▄▄▀ █ ▀ █ ▀█▀ █  █ █▄▄█ █
+  ▀   ▀▀▀ ▀ ▀▀ ▀   ▀ ▀▀▀ ▀  ▀ ▀  ▀ ▀▀▀
+            </pre>
+            
+            <!-- Boot Sequence -->
+            <div class="command-line">
+                <div>
+                    <span class="prompt">user@machine:~$</span>
+                    <span class="command typing"> initializing system...</span>
+                </div>
+            </div>
+            
+            <!-- Loading Bar -->
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+                <div class="loading-text">LOADING SYSTEM MODULES...</div>
+            </div>
+            
+            <!-- Command History -->
+            <div class="command-line">
+                <div>
+                    <span class="prompt">user@machine:~$</span>
+                    <span class="command"> ls -la</span>
+                </div>
+                <div class="output">
+                    <div>drwxr-xr-x  5 user user 4096 Jan 1 00:00 ./</div>
+                    <div>drwxr-xr-x  3 user user 4096 Jan 1 00:00 ../</div>
+                    <div>-rw-r--r--  1 user user  220 Jan 1 00:00 .bash_logout</div>
+                    <div>-rw-r--r--  1 user user 3526 Jan 1 00:00 .bashrc</div>
+                    <div>drwxr-xr-x  2 user user 4096 Jan 1 00:00 projects/</div>
+                </div>
+            </div>
+            
+            <!-- Navigation Menu -->
+            <div class="ascii-box">
+                <h2 class="glitch">MAIN MENU</h2>
+                <div class="menu">
+                    <div class="menu-item">HOME</div>
+                    <div class="menu-item">ABOUT</div>
+                    <div class="menu-item">PROJECTS</div>
+                    <div class="menu-item">SKILLS</div>
+                    <div class="menu-item">CONTACT</div>
+                    <div class="menu-item">EXIT</div>
+                </div>
+            </div>
+            
+            <!-- ASCII Table -->
+            <table class="ascii-table">
+                <thead>
+                    <tr>
+                        <th>PID</th>
+                        <th>PROCESS</th>
+                        <th>CPU%</th>
+                        <th>MEM%</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1337</td>
+                        <td>nginx</td>
+                        <td>0.1</td>
+                        <td>2.3</td>
+                        <td style="color: #00FF00">RUNNING</td>
+                    </tr>
+                    <tr>
+                        <td>2048</td>
+                        <td>node</td>
+                        <td>12.5</td>
+                        <td>8.7</td>
+                        <td style="color: #00FF00">RUNNING</td>
+                    </tr>
+                    <tr>
+                        <td>4096</td>
+                        <td>postgres</td>
+                        <td>3.2</td>
+                        <td>15.4</td>
+                        <td style="color: #00FF00">RUNNING</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <!-- ASCII Art -->
+            <pre style="color: #00FF00; font-size: 8px; line-height: 1; text-align: center;">
+                    ___====-_  _-====___
+              _--^^^#####//      \\#####^^^--_
+           _-^##########// (    ) \\##########^-_
+          -############//  |\^^/|  \\############-
+        _/############//   (@::@)   \\############\_
+       /#############((     \\//     ))#############\
+      -###############\\    (oo)    //###############-
+     -#################\\  / VV \  //#################-
+    -###################\\/      \//###################-
+   _#/|##########/\######(   /\   )######/\##########|\#_
+   |/ |#/\#/\#/\/  \#/\##\  |  |  /##/\#/  \/\#/\#/\#| \|
+   `  |/  V  V  `   V  \#\| |  | |/#/  V   '  V  V  \|  '
+      `   `  `      `   / | |  | | \   '      '  '   '
+                       (  | |  | |  )
+                      __\ | |  | | /__
+                     (vvv(VVV)(VVV)vvv)
+            </pre>
+            
+            <!-- Command Input -->
+            <div class="command-line" style="margin-top: 40px;">
+                <span class="prompt">user@machine:~$</span>
+                <span class="command"> <span style="animation: blink-cursor 1s step-end infinite;">_</span></span>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Matrix Rain Effect
+        const matrix = document.getElementById('matrix');
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
+        
+        for (let i = 0; i < 20; i++) {
+            const column = document.createElement('div');
+            column.className = 'matrix-column';
+            column.style.left = i * 5 + '%';
+            column.style.animationDelay = Math.random() * 10 + 's';
+            column.style.animationDuration = (10 + Math.random() * 10) + 's';
+            
+            let text = '';
+            for (let j = 0; j < 100; j++) {
+                text += chars.charAt(Math.floor(Math.random() * chars.length)) + '<br>';
+            }
+            column.innerHTML = text;
+            matrix.appendChild(column);
+        }
+        
+        // Typing effect for menu items
+        document.querySelectorAll('.menu-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const commandLine = document.querySelector('.command-line:last-child .command');
+                commandLine.textContent = ' cd ' + this.textContent.toLowerCase();
+            });
+        });
+    </script>
+</body>
+</html>

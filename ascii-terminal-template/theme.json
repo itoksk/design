@@ -1,0 +1,201 @@
+{
+  "name": "ASCII Terminal",
+  "version": "1.0.0",
+  "description": "レトロターミナルとASCIIアートデザインシステム",
+  
+  "colors": {
+    "phosphor": {
+      "p1_green": "#00FF00",
+      "p3_amber": "#FFAA00",
+      "p4_white": "#E0E0E0",
+      "matrix_green": "#00FF41",
+      "apple_green": "#33FF00"
+    },
+    "cga": {
+      "black": "#000000",
+      "blue": "#0000AA",
+      "green": "#00AA00",
+      "cyan": "#00AAAA",
+      "red": "#AA0000",
+      "magenta": "#AA00AA",
+      "brown": "#AA5500",
+      "light_gray": "#AAAAAA",
+      "dark_gray": "#555555",
+      "light_blue": "#5555FF",
+      "light_green": "#55FF55",
+      "light_cyan": "#55FFFF",
+      "light_red": "#FF5555",
+      "light_magenta": "#FF55FF",
+      "yellow": "#FFFF55",
+      "white": "#FFFFFF"
+    },
+    "terminal": {
+      "background": "#0C0C0C",
+      "foreground": "#00FF00",
+      "cursor": "#FFFFFF",
+      "selection": "rgba(0, 255, 0, 0.3)",
+      "comment": "#666666"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "primary": "'Fira Code', 'Courier New', monospace",
+      "display": "'IBM Plex Mono', 'Monaco', monospace",
+      "ascii": "'Courier', 'Courier New', monospace"
+    },
+    "sizes": {
+      "base": "14px",
+      "small": "12px",
+      "medium": "16px",
+      "large": "20px",
+      "xlarge": "24px",
+      "ascii_art": "10px"
+    },
+    "line_height": {
+      "tight": "1.0",
+      "normal": "1.2",
+      "relaxed": "1.4"
+    }
+  },
+  
+  "effects": {
+    "crt": {
+      "scanlines": {
+        "opacity": "0.1",
+        "size": "2px",
+        "speed": "8s"
+      },
+      "flicker": {
+        "intensity": "0.03",
+        "frequency": "0.1s"
+      },
+      "curvature": {
+        "amount": "2px",
+        "border_radius": "10px"
+      },
+      "chromatic_aberration": {
+        "red_offset": "1px",
+        "blue_offset": "-1px"
+      }
+    },
+    "glow": {
+      "text_shadow": "0 0 5px currentColor",
+      "box_shadow": "0 0 20px rgba(0, 255, 0, 0.5)"
+    },
+    "noise": {
+      "opacity": "0.02",
+      "blend_mode": "multiply"
+    }
+  },
+  
+  "animations": {
+    "typing": {
+      "speed": "50ms",
+      "cursor_blink": "1s",
+      "deletion_speed": "30ms"
+    },
+    "matrix_rain": {
+      "fall_speed": "10s",
+      "spawn_rate": "100ms",
+      "fade_duration": "2s"
+    },
+    "glitch": {
+      "duration": "0.2s",
+      "frequency": "10s",
+      "intensity": "5px"
+    },
+    "boot_sequence": {
+      "line_delay": "100ms",
+      "total_duration": "3s"
+    }
+  },
+  
+  "ascii": {
+    "borders": {
+      "single": "─│┌┐└┘├┤┬┴┼",
+      "double": "═║╔╗╚╝╠╣╦╩╬",
+      "rounded": "─│╭╮╰╯├┤┬┴┼",
+      "heavy": "━┃┏┓┗┛┣┫┳┻╋",
+      "dashed": "┄┆┌┐└┘├┤┬┴┼"
+    },
+    "blocks": {
+      "full": "█",
+      "dark": "▓",
+      "medium": "▒",
+      "light": "░"
+    },
+    "arrows": {
+      "up": "↑",
+      "down": "↓",
+      "left": "←",
+      "right": "→",
+      "double_up": "⇑",
+      "double_down": "⇓",
+      "double_left": "⇐",
+      "double_right": "⇒"
+    },
+    "symbols": {
+      "cursor": "▮",
+      "prompt": ">",
+      "bullet": "•",
+      "check": "✓",
+      "cross": "✗",
+      "star": "★"
+    }
+  },
+  
+  "components": {
+    "terminal_window": {
+      "header_height": "30px",
+      "padding": "10px",
+      "border_radius": "5px",
+      "buttons": {
+        "close": "#FF5F56",
+        "minimize": "#FFBD2E",
+        "maximize": "#27C93F"
+      }
+    },
+    "prompt": {
+      "format": "user@machine:~$",
+      "color": "#00FF00",
+      "cursor": "_"
+    },
+    "menu": {
+      "style": "list",
+      "prefix": ">",
+      "indent": "  ",
+      "selected": "[X]",
+      "unselected": "[ ]"
+    }
+  },
+  
+  "layouts": {
+    "grid": {
+      "columns": "80",
+      "rows": "24",
+      "character_width": "10px",
+      "character_height": "20px"
+    },
+    "margins": {
+      "screen": "20px",
+      "component": "10px"
+    }
+  },
+  
+  "sounds": {
+    "keyboard": {
+      "enabled": false,
+      "volume": "0.3",
+      "pitch_variation": true
+    },
+    "modem": {
+      "enabled": false,
+      "connection": "dial-up.mp3"
+    },
+    "beep": {
+      "frequency": "800Hz",
+      "duration": "100ms"
+    }
+  }
+}

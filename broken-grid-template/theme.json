@@ -1,0 +1,441 @@
+{
+  "name": "Broken Grid",
+  "version": "1.0.0",
+  "description": "アンチグリッドとカオスのテーマ",
+  
+  "colors": {
+    "base": {
+      "paper_white": "#FAFAFA",
+      "ink_black": "#0A0A0A",
+      "void": "#000000",
+      "pure": "#FFFFFF"
+    },
+    
+    "chaos": {
+      "danger_red": "#FF3B30",
+      "electric_blue": "#007AFF",
+      "acid_yellow": "#FFFF00",
+      "chaos_purple": "#8B00FF",
+      "glitch_green": "#00FF88",
+      "shock_pink": "#FF006E",
+      "toxic_orange": "#FF6600",
+      "static_cyan": "#00FFFF",
+      "blood_red": "#8B0000",
+      "neon_lime": "#C0FF00"
+    },
+    
+    "noise": {
+      "gray_10": "#1A1A1A",
+      "gray_20": "#333333",
+      "gray_30": "#4D4D4D",
+      "gray_40": "#666666",
+      "gray_50": "#808080",
+      "gray_60": "#999999",
+      "gray_70": "#B8B8B8",
+      "gray_80": "#CCCCCC",
+      "gray_90": "#E6E6E6",
+      "static": "rgba(128, 128, 128, 0.1)"
+    },
+    
+    "glitch": {
+      "red_shift": "rgba(255, 0, 0, 0.5)",
+      "green_shift": "rgba(0, 255, 0, 0.5)",
+      "blue_shift": "rgba(0, 0, 255, 0.5)",
+      "cyan_shift": "rgba(0, 255, 255, 0.3)",
+      "magenta_shift": "rgba(255, 0, 255, 0.3)",
+      "yellow_shift": "rgba(255, 255, 0, 0.3)"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "display": "'Bebas Neue', 'Impact', sans-serif",
+      "body": "'Work Sans', 'Helvetica Neue', sans-serif",
+      "accent": "'Playfair Display', 'Georgia', serif",
+      "chaos": "'Permanent Marker', 'Comic Sans MS', cursive",
+      "mono": "'Space Mono', 'Courier', monospace",
+      "graffiti": "'Sedgwick Ave Display', cursive",
+      "gothic": "'UnifrakturMaguntia', blackletter"
+    },
+    
+    "sizes": {
+      "micro": "8px",
+      "tiny": "11px",
+      "small": "14px",
+      "base": "16px",
+      "medium": "20px",
+      "large": "32px",
+      "huge": "48px",
+      "mega": "72px",
+      "giga": "120px",
+      "ultra": "200px"
+    },
+    
+    "weights": {
+      "thin": "100",
+      "light": "300",
+      "regular": "400",
+      "medium": "500",
+      "bold": "700",
+      "black": "900",
+      "variable": "100 900"
+    },
+    
+    "line_heights": {
+      "compressed": "0.8",
+      "tight": "1.0",
+      "normal": "1.5",
+      "loose": "2.0",
+      "extreme": "3.0"
+    },
+    
+    "letter_spacing": {
+      "tight": "-0.05em",
+      "normal": "0",
+      "loose": "0.1em",
+      "wide": "0.2em",
+      "extreme": "0.5em"
+    }
+  },
+  
+  "layout": {
+    "chaos_levels": {
+      "minimal": {
+        "rotation_range": [-5, 5],
+        "position_variance": "10px",
+        "overlap_probability": 0.1
+      },
+      "moderate": {
+        "rotation_range": [-15, 15],
+        "position_variance": "30px",
+        "overlap_probability": 0.3
+      },
+      "high": {
+        "rotation_range": [-30, 30],
+        "position_variance": "60px",
+        "overlap_probability": 0.5
+      },
+      "extreme": {
+        "rotation_range": [-45, 45],
+        "position_variance": "100px",
+        "overlap_probability": 0.7
+      },
+      "insane": {
+        "rotation_range": [-180, 180],
+        "position_variance": "200px",
+        "overlap_probability": 0.9
+      }
+    },
+    
+    "grid": {
+      "broken": {
+        "columns": "random",
+        "rows": "random",
+        "gap": "0 to 100px",
+        "alignment": "none"
+      },
+      "scattered": {
+        "distribution": "poisson",
+        "density": "variable",
+        "clustering": true
+      },
+      "collage": {
+        "layers": 10,
+        "overlap": true,
+        "blend_modes": ["multiply", "screen", "overlay", "difference"]
+      }
+    },
+    
+    "spacing": {
+      "micro": "2px",
+      "tiny": "4px",
+      "small": "8px",
+      "base": "16px",
+      "medium": "32px",
+      "large": "64px",
+      "huge": "128px",
+      "random": "calc(Math.random() * 100px)"
+    }
+  },
+  
+  "animations": {
+    "durations": {
+      "instant": "0s",
+      "glitch": "0.05s",
+      "fast": "0.2s",
+      "normal": "0.5s",
+      "slow": "1s",
+      "drift": "10s",
+      "eternal": "infinite"
+    },
+    
+    "easings": {
+      "linear": "linear",
+      "ease": "ease",
+      "elastic": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "bounce": "cubic-bezier(0.87, -0.41, 0.19, 1.44)",
+      "chaotic": "cubic-bezier(0.36, 0, 0.66, -0.56)",
+      "stutter": "steps(5, end)",
+      "glitch": "steps(2, jump-none)"
+    },
+    
+    "presets": {
+      "shake": {
+        "keyframes": "shake",
+        "duration": "0.5s",
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "float": {
+        "keyframes": "float",
+        "duration": "10s",
+        "timing": "ease-in-out",
+        "iteration": "infinite"
+      },
+      "rotate": {
+        "keyframes": "rotate",
+        "duration": "20s",
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "glitch": {
+        "keyframes": "glitch",
+        "duration": "0.3s",
+        "timing": "steps(2)",
+        "iteration": "infinite"
+      },
+      "morph": {
+        "keyframes": "morph",
+        "duration": "5s",
+        "timing": "ease-in-out",
+        "iteration": "infinite"
+      }
+    }
+  },
+  
+  "effects": {
+    "glitch": {
+      "intensity": {
+        "low": "2px",
+        "medium": "5px",
+        "high": "10px",
+        "extreme": "20px"
+      },
+      "colors": {
+        "red": "#FF0000",
+        "green": "#00FF00",
+        "blue": "#0000FF",
+        "cyan": "#00FFFF",
+        "magenta": "#FF00FF"
+      },
+      "frequency": {
+        "rare": "10s",
+        "occasional": "5s",
+        "frequent": "2s",
+        "constant": "0.5s"
+      }
+    },
+    
+    "distortion": {
+      "skew": {
+        "x": [-20, 20],
+        "y": [-20, 20]
+      },
+      "perspective": {
+        "near": "100px",
+        "normal": "500px",
+        "far": "1000px"
+      },
+      "wave": {
+        "amplitude": "10px",
+        "frequency": "5",
+        "speed": "2s"
+      }
+    },
+    
+    "noise": {
+      "grain": {
+        "size": "1px",
+        "opacity": 0.1,
+        "blend": "multiply"
+      },
+      "static": {
+        "opacity": 0.05,
+        "animation": true,
+        "speed": "0.1s"
+      },
+      "interference": {
+        "lines": true,
+        "color": "rgba(0, 0, 0, 0.1)",
+        "speed": "10s"
+      }
+    },
+    
+    "shadows": {
+      "sharp": "2px 2px 0 #000000",
+      "soft": "0 4px 6px rgba(0, 0, 0, 0.1)",
+      "long": "10px 10px 0 #000000",
+      "multiple": "2px 2px 0 #FF0000, -2px -2px 0 #0000FF",
+      "glitch": "2px 0 #FF0000, -2px 0 #00FFFF, 0 2px #FF00FF",
+      "chaotic": "random random random rgba(random, random, random, random)"
+    },
+    
+    "filters": {
+      "blur": {
+        "light": "blur(1px)",
+        "medium": "blur(3px)",
+        "heavy": "blur(5px)",
+        "extreme": "blur(10px)"
+      },
+      "color": {
+        "invert": "invert(1)",
+        "grayscale": "grayscale(1)",
+        "sepia": "sepia(1)",
+        "saturate": "saturate(2)",
+        "hue_rotate": "hue-rotate(90deg)"
+      },
+      "composite": {
+        "glitch": "contrast(1.2) brightness(1.1) hue-rotate(5deg)",
+        "vintage": "sepia(0.3) contrast(1.2) brightness(0.9)",
+        "psychedelic": "saturate(3) hue-rotate(180deg) contrast(2)"
+      }
+    }
+  },
+  
+  "interactions": {
+    "cursor": {
+      "repel": {
+        "distance": "50px",
+        "strength": 0.5,
+        "easing": "ease-out"
+      },
+      "attract": {
+        "distance": "100px",
+        "strength": 0.3,
+        "easing": "ease-in"
+      },
+      "distort": {
+        "range": "30px",
+        "intensity": "high"
+      }
+    },
+    
+    "hover": {
+      "shake": {
+        "amplitude": "5px",
+        "speed": "0.1s"
+      },
+      "rotate": {
+        "angle": "random",
+        "speed": "0.3s"
+      },
+      "glitch": {
+        "intensity": "high",
+        "duration": "0.2s"
+      },
+      "escape": {
+        "distance": "20px",
+        "speed": "0.2s"
+      }
+    },
+    
+    "click": {
+      "explode": {
+        "particles": 10,
+        "distance": "100px",
+        "duration": "0.5s"
+      },
+      "shatter": {
+        "pieces": 8,
+        "spread": "200px",
+        "gravity": true
+      },
+      "ripple": {
+        "size": "200px",
+        "duration": "0.6s",
+        "color": "currentColor"
+      }
+    },
+    
+    "scroll": {
+      "parallax": {
+        "layers": 5,
+        "speed_variance": 0.5,
+        "direction": "multi"
+      },
+      "reveal": {
+        "threshold": 0.1,
+        "stagger": "50ms",
+        "direction": "random"
+      },
+      "reorganize": {
+        "trigger": "50%",
+        "shuffle": true,
+        "duration": "0.5s"
+      }
+    }
+  },
+  
+  "breakpoints": {
+    "micro": {
+      "max": "320px",
+      "chaos_level": "minimal",
+      "animations": false
+    },
+    "mobile": {
+      "max": "480px",
+      "chaos_level": "minimal",
+      "animations": "reduced"
+    },
+    "tablet": {
+      "max": "768px",
+      "chaos_level": "moderate",
+      "animations": "balanced"
+    },
+    "desktop": {
+      "max": "1024px",
+      "chaos_level": "high",
+      "animations": "full"
+    },
+    "wide": {
+      "max": "1440px",
+      "chaos_level": "extreme",
+      "animations": "full"
+    },
+    "ultra": {
+      "min": "1441px",
+      "chaos_level": "insane",
+      "animations": "maximum"
+    }
+  },
+  
+  "accessibility": {
+    "order_mode": {
+      "enabled": true,
+      "trigger": "Alt+O",
+      "layout": "grid",
+      "animations": false,
+      "chaos_level": "none"
+    },
+    "reduced_motion": {
+      "animations": "fade only",
+      "transitions": "opacity 0.3s",
+      "transforms": "none",
+      "chaos_level": "minimal"
+    },
+    "high_contrast": {
+      "colors": {
+        "foreground": "#000000",
+        "background": "#FFFFFF",
+        "accent": "#0000FF"
+      },
+      "borders": "2px solid",
+      "shadows": "none"
+    },
+    "focus": {
+      "outline": "3px solid #007AFF",
+      "outline_offset": "2px",
+      "background": "rgba(0, 122, 255, 0.1)"
+    }
+  }
+}

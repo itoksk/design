@@ -1,0 +1,331 @@
+{
+  "name": "90s Web",
+  "version": "1.0.0",
+  "description": "1990年代WWW黎明期テーマ",
+  
+  "colors": {
+    "web_safe_16": {
+      "black": "#000000",
+      "silver": "#C0C0C0",
+      "gray": "#808080",
+      "white": "#FFFFFF",
+      "maroon": "#800000",
+      "red": "#FF0000",
+      "purple": "#800080",
+      "fuchsia": "#FF00FF",
+      "green": "#008000",
+      "lime": "#00FF00",
+      "olive": "#808000",
+      "yellow": "#FFFF00",
+      "navy": "#000080",
+      "blue": "#0000FF",
+      "teal": "#008080",
+      "aqua": "#00FFFF"
+    },
+    
+    "links": {
+      "unvisited": "#0000FF",
+      "visited": "#551A8B",
+      "active": "#FF0000",
+      "hover": "#FF0000"
+    },
+    
+    "backgrounds": {
+      "default": "#FFFFFF",
+      "gray": "#C0C0C0",
+      "black": "#000000",
+      "blue": "#000080",
+      "pattern": "url('bg.gif')"
+    },
+    
+    "text": {
+      "default": "#000000",
+      "inverse": "#FFFFFF",
+      "emphasis": "#FF0000",
+      "heading": "#000080"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "default": "Times New Roman, Times, serif",
+      "heading": "Arial, Helvetica, sans-serif",
+      "mono": "Courier New, Courier, monospace",
+      "comic": "Comic Sans MS, cursive"
+    },
+    
+    "sizes": {
+      "html_sizes": {
+        "1": "8pt",
+        "2": "10pt",
+        "3": "12pt",
+        "4": "14pt",
+        "5": "18pt",
+        "6": "24pt",
+        "7": "36pt"
+      },
+      "headings": {
+        "h1": "36pt",
+        "h2": "24pt",
+        "h3": "18pt",
+        "h4": "14pt",
+        "h5": "12pt",
+        "h6": "10pt"
+      }
+    },
+    
+    "decorations": {
+      "bold": "font-weight: bold",
+      "italic": "font-style: italic",
+      "underline": "text-decoration: underline",
+      "blink": "text-decoration: blink"
+    }
+  },
+  
+  "layout": {
+    "widths": {
+      "vga": "640px",
+      "svga": "800px",
+      "xga": "1024px",
+      "fullscreen": "100%"
+    },
+    
+    "table": {
+      "border": "1",
+      "cellpadding": "5",
+      "cellspacing": "2",
+      "width": "100%",
+      "align": "center"
+    },
+    
+    "frameset": {
+      "border": "5",
+      "bordercolor": "#808080",
+      "frameborder": "yes",
+      "scrolling": "auto"
+    },
+    
+    "spacing": {
+      "none": "0",
+      "small": "5",
+      "medium": "10",
+      "large": "20"
+    }
+  },
+  
+  "elements": {
+    "hr": {
+      "default": {
+        "size": "2",
+        "width": "100%",
+        "align": "center"
+      },
+      "thick": {
+        "size": "5",
+        "noshade": true
+      },
+      "colored": {
+        "color": "#FF0000",
+        "size": "3"
+      }
+    },
+    
+    "marquee": {
+      "direction": "left",
+      "behavior": "scroll",
+      "scrollamount": "6",
+      "scrolldelay": "85",
+      "loop": "infinite"
+    },
+    
+    "blink": {
+      "rate": "1s",
+      "support": "Netscape only"
+    }
+  },
+  
+  "images": {
+    "formats": {
+      "primary": "GIF",
+      "secondary": "JPEG",
+      "animated": "GIF89a"
+    },
+    
+    "common_gifs": {
+      "under_construction": "const.gif",
+      "email": "email.gif",
+      "new": "new.gif",
+      "hot": "hot.gif",
+      "welcome": "welcome.gif",
+      "enter": "enter.gif",
+      "home": "home.gif",
+      "back": "back.gif",
+      "next": "next.gif"
+    },
+    
+    "backgrounds": {
+      "stars": "stars.gif",
+      "clouds": "clouds.gif",
+      "marble": "marble.gif",
+      "paper": "paper.gif",
+      "wood": "wood.gif"
+    },
+    
+    "dimensions": {
+      "banner": "468x60",
+      "button": "88x31",
+      "thumbnail": "100x75",
+      "spacer": "1x1"
+    }
+  },
+  
+  "animations": {
+    "gif": {
+      "loop": "infinite",
+      "optimization": "none",
+      "transparency": true
+    },
+    
+    "marquee": {
+      "speed": "normal",
+      "smoothness": "depends on browser"
+    },
+    
+    "java_applet": {
+      "common": {
+        "lake": "reflection effect",
+        "ticker": "scrolling text",
+        "clock": "analog clock"
+      }
+    }
+  },
+  
+  "multimedia": {
+    "midi": {
+      "autoplay": true,
+      "loop": true,
+      "hidden": true,
+      "common_files": {
+        "canyon": "canyon.mid",
+        "passport": "passport.mid",
+        "town": "town.mid"
+      }
+    },
+    
+    "wav": {
+      "support": "limited",
+      "usage": "button clicks"
+    },
+    
+    "video": {
+      "formats": ["AVI", "MOV"],
+      "player": "embedded or external"
+    }
+  },
+  
+  "javascript": {
+    "version": "1.0-1.2",
+    "common_uses": {
+      "alert": "Welcome messages",
+      "status": "Scrolling text in status bar",
+      "rollover": "Image swaps",
+      "popup": "New windows",
+      "validation": "Basic form checks"
+    },
+    
+    "browser_detection": true,
+    "dom": "limited"
+  },
+  
+  "forms": {
+    "method": ["GET", "POST"],
+    "action": "/cgi-bin/formmail.cgi",
+    "elements": {
+      "text": "INPUT TYPE='TEXT'",
+      "submit": "INPUT TYPE='SUBMIT'",
+      "reset": "INPUT TYPE='RESET'",
+      "textarea": "TEXTAREA",
+      "select": "SELECT"
+    }
+  },
+  
+  "navigation": {
+    "types": {
+      "table": "Most common",
+      "imagemap": "Clickable image areas",
+      "frames": "Persistent navigation",
+      "list": "Simple link list"
+    },
+    
+    "home_icon": true,
+    "site_map": true,
+    "breadcrumbs": false
+  },
+  
+  "compatibility": {
+    "browsers": {
+      "netscape": "3.0+",
+      "ie": "3.0+",
+      "mosaic": "limited",
+      "lynx": "text only"
+    },
+    
+    "resolution": {
+      "minimum": "640x480",
+      "recommended": "800x600",
+      "optimal": "1024x768"
+    },
+    
+    "colors": {
+      "minimum": "256",
+      "recommended": "High Color (16-bit)",
+      "optimal": "True Color (24-bit)"
+    }
+  },
+  
+  "meta_tags": {
+    "author": true,
+    "keywords": true,
+    "description": true,
+    "generator": "Notepad",
+    "refresh": "optional",
+    "robots": "rarely used"
+  },
+  
+  "special_features": {
+    "guestbook": true,
+    "hit_counter": true,
+    "webring": true,
+    "awards": true,
+    "downloads": true,
+    "links_page": true,
+    "email_form": true,
+    "site_search": false
+  },
+  
+  "accessibility": {
+    "alt_text": "sometimes",
+    "table_headers": "never",
+    "skip_nav": "not invented",
+    "focus": "not considered",
+    "keyboard": "basic support",
+    "screen_reader": "not considered"
+  },
+  
+  "performance": {
+    "optimization": "none",
+    "caching": "browser default",
+    "compression": "not available",
+    "cdn": "not invented",
+    "lazy_loading": "not available",
+    "minification": "not practiced"
+  },
+  
+  "seo": {
+    "considered": false,
+    "meta_keywords": "stuffed",
+    "doorway_pages": "common",
+    "hidden_text": "sometimes",
+    "link_farms": "prevalent"
+  }
+}
