@@ -52,7 +52,7 @@
 
 ```bash
 # テンプレートをクローン
-git clone https://github.com/[your-username]/design-templates.git
+git clone https://github.com/itoksk/design.git
 cd design-templates
 
 # 特定のテンプレートに移動
@@ -157,7 +157,7 @@ MIT License - 詳細は[LICENSE](./LICENSE)ファイルを参照してくださ�
 
 質問や問題がある場合：
 - 各テンプレートのREADMEを確認
-- [Issues](https://github.com/[your-username]/design-templates/issues)で報告
+- [Issues](https://github.com/itoksk/design/issues)で報告
 - プルリクエストで改善提案
 
 ## 🌟 謝辞
