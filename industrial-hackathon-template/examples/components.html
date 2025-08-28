@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Components Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@200;400;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+        
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background: #0a0a0a;
+        }
+        
+        .bebas {
+            font-family: 'Bebas Neue', cursive;
+        }
+        
+        .oswald {
+            font-family: 'Oswald', sans-serif;
+        }
+        
+        /* ハザードストライプ */
+        .hazard-stripe {
+            background: repeating-linear-gradient(
+                45deg,
+                #fbbf24,
+                #fbbf24 10px,
+                #1f2937 10px,
+                #1f2937 20px
+            );
+        }
+        
+        /* インダストリアルグリッド */
+        .industrial-grid {
+            background-image: 
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+        
+        /* グリッチエフェクト */
+        .glitch {
+            position: relative;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
+                        -0.025em -0.05em 0 rgba(0, 255, 0, .75),
+                        0.025em 0.05em 0 rgba(0, 0, 255, .75);
+            animation: glitch 500ms infinite;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 0.05em 0 0 rgba(255, 0, 0, .75),
+                            -0.025em -0.05em 0 rgba(0, 255, 0, .75),
+                            0.025em 0.05em 0 rgba(0, 0, 255, .75);
+            }
+            15% {
+                text-shadow: -0.05em -0.025em 0 rgba(255, 0, 0, .75),
+                            0.025em 0.025em 0 rgba(0, 255, 0, .75),
+                            -0.05em -0.05em 0 rgba(0, 0, 255, .75);
+            }
+            50% {
+                text-shadow: 0.025em 0.05em 0 rgba(255, 0, 0, .75),
+                            0.05em 0 0 rgba(0, 255, 0, .75),
+                            0 -0.05em 0 rgba(0, 0, 255, .75);
+            }
+            100% {
+                text-shadow: -0.025em 0 0 rgba(255, 0, 0, .75),
+                            -0.025em -0.025em 0 rgba(0, 255, 0, .75),
+                            -0.025em -0.05em 0 rgba(0, 0, 255, .75);
+            }
+        }
+        
+        /* ブルータリストボックス */
+        .brutalist-box {
+            background: #1a1a1a;
+            border: 4px solid #fbbf24;
+            box-shadow: 8px 8px 0 #000;
+        }
+        
+        /* オフセットボックス */
+        .offset-box {
+            position: relative;
+            background: #1a1a1a;
+            border: 2px solid #fff;
+        }
+        
+        .offset-box::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: -4px;
+            bottom: -4px;
+            background: #fbbf24;
+            z-index: -1;
+        }
+        
+        /* タイムラインアイテム */
+        .timeline-item {
+            border-left: 4px solid #fbbf24;
+            border-radius: 0;
+            transform: skewX(-2deg);
+        }
+        
+        .timeline-item > * {
+            transform: skewX(2deg);
+        }
+    </style>
+</head>
+<body class="bg-black text-white p-8">
+    <div class="max-w-7xl mx-auto">
+        <!-- Title -->
+        <h1 class="bebas text-7xl text-amber-400 mb-4">COMPONENT LIBRARY</h1>
+        <div class="hazard-stripe h-2 w-64 mb-12"></div>
+        
+        <!-- Typography -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">TYPOGRAPHY</h2>
+            
+            <div class="space-y-4">
+                <div class="bebas text-9xl text-amber-400">HERO TEXT</div>
+                <div class="bebas text-6xl text-white">SECTION TITLE</div>
+                <div class="bebas text-4xl text-amber-400">SUBSECTION</div>
+                <div class="oswald text-2xl text-gray-400">OSWALD SUBTITLE</div>
+                <div class="text-base">通常のボディテキスト - Noto Sans JP</div>
+                <div class="bebas text-4xl glitch">GLITCH EFFECT</div>
+            </div>
+        </section>
+        
+        <!-- Colors -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">COLOR PALETTE</h2>
+            
+            <div class="grid grid-cols-3 md:grid-cols-6 gap-4">
+                <div>
+                    <div class="h-24 bg-black border-2 border-white"></div>
+                    <p class="text-xs mt-2">#0a0a0a</p>
+                    <p class="text-xs text-gray-400">Black</p>
+                </div>
+                <div>
+                    <div class="h-24 bg-amber-400"></div>
+                    <p class="text-xs mt-2">#fbbf24</p>
+                    <p class="text-xs text-gray-400">Amber</p>
+                </div>
+                <div>
+                    <div class="h-24 bg-white"></div>
+                    <p class="text-xs mt-2">#ffffff</p>
+                    <p class="text-xs text-gray-400">White</p>
+                </div>
+                <div>
+                    <div class="h-24 bg-gray-900 border border-gray-700"></div>
+                    <p class="text-xs mt-2">#1a1a1a</p>
+                    <p class="text-xs text-gray-400">Gray-900</p>
+                </div>
+                <div>
+                    <div class="h-24 bg-gray-400"></div>
+                    <p class="text-xs mt-2">#9ca3af</p>
+                    <p class="text-xs text-gray-400">Gray-400</p>
+                </div>
+                <div>
+                    <div class="h-24 bg-red-500"></div>
+                    <p class="text-xs mt-2">#ef4444</p>
+                    <p class="text-xs text-gray-400">Red-500</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Boxes -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">BOX COMPONENTS</h2>
+            
+            <div class="space-y-8">
+                <!-- Brutalist Box -->
+                <div>
+                    <p class="text-amber-400 mb-4">Brutalist Box</p>
+                    <div class="brutalist-box p-8 max-w-md">
+                        <h3 class="text-xl font-bold mb-2">ブルータリストボックス</h3>
+                        <p class="text-gray-400">黒い影付きの無骨なボックス。メインコンテンツに使用。</p>
+                    </div>
+                </div>
+                
+                <!-- Rotated Boxes -->
+                <div>
+                    <p class="text-amber-400 mb-4">Rotated Variants</p>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="brutalist-box p-8 transform rotate-1">
+                            <h3 class="text-xl font-bold mb-2">右に傾いたボックス</h3>
+                            <p class="text-gray-400">transform: rotate(1deg)</p>
+                        </div>
+                        <div class="brutalist-box p-8 transform -rotate-1">
+                            <h3 class="text-xl font-bold mb-2">左に傾いたボックス</h3>
+                            <p class="text-gray-400">transform: rotate(-1deg)</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Offset Box -->
+                <div>
+                    <p class="text-amber-400 mb-4">Offset Box</p>
+                    <div class="offset-box p-6 max-w-md">
+                        <h3 class="text-xl font-bold mb-2">オフセットボックス</h3>
+                        <p class="text-gray-400">黄色の影が特徴的な小型ボックス。</p>
+                    </div>
+                </div>
+                
+                <!-- Timeline Item -->
+                <div>
+                    <p class="text-amber-400 mb-4">Timeline Item</p>
+                    <div class="timeline-item bg-gray-900 p-8 max-w-md">
+                        <div class="bebas text-3xl text-amber-400">09:00</div>
+                        <h3 class="text-xl font-bold mt-2">タイムラインアイテム</h3>
+                        <p class="text-gray-400 mt-2">左のボーダーと歪みが特徴。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Special Elements -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">SPECIAL ELEMENTS</h2>
+            
+            <div class="space-y-8">
+                <!-- Hazard Stripes -->
+                <div>
+                    <p class="text-amber-400 mb-4">Hazard Stripes</p>
+                    <div class="hazard-stripe h-4 w-full"></div>
+                    <div class="hazard-stripe h-2 w-64 mt-4"></div>
+                    <div class="hazard-stripe h-8 w-32 mt-4"></div>
+                </div>
+                
+                <!-- Warning Box -->
+                <div>
+                    <p class="text-amber-400 mb-4">Warning Box</p>
+                    <div class="bg-red-900/20 border-2 border-red-500 p-8 max-w-md">
+                        <p class="text-red-400 font-bold mb-2">警告</p>
+                        <p class="text-gray-300">重要な注意事項やエラーメッセージに使用。</p>
+                    </div>
+                </div>
+                
+                <!-- Code Block -->
+                <div>
+                    <p class="text-amber-400 mb-4">Code Block</p>
+                    <div class="bg-black border-2 border-amber-400 p-4 max-w-md">
+                        <code class="text-amber-400 text-sm">
+                            const hackathon = {<br>
+                            &nbsp;&nbsp;theme: "industrial",<br>
+                            &nbsp;&nbsp;style: "brutalist"<br>
+                            };
+                        </code>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Buttons -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">BUTTONS & ACTIONS</h2>
+            
+            <div class="flex flex-wrap gap-4">
+                <button class="bg-amber-400 text-black px-6 py-3 font-bold">
+                    PRIMARY ACTION
+                </button>
+                <button class="border-2 border-amber-400 text-amber-400 px-6 py-3 font-bold">
+                    SECONDARY ACTION
+                </button>
+                <button class="bg-red-500 text-white px-6 py-3 font-bold">
+                    DANGER ACTION
+                </button>
+                <button class="bg-gray-900 border-2 border-white text-white px-6 py-3 font-bold">
+                    NEUTRAL ACTION
+                </button>
+            </div>
+        </section>
+        
+        <!-- Grid Background Demo -->
+        <section class="mb-16">
+            <h2 class="bebas text-4xl text-white mb-8">BACKGROUND PATTERNS</h2>
+            
+            <div class="industrial-grid h-64 border-2 border-amber-400 p-8 flex items-center justify-center">
+                <div class="text-center">
+                    <p class="bebas text-3xl text-amber-400">INDUSTRIAL GRID</p>
+                    <p class="text-gray-400 mt-2">工場の図面風グリッドパターン</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Usage Notes -->
+        <section>
+            <h2 class="bebas text-4xl text-white mb-8">USAGE NOTES</h2>
+            
+            <div class="bg-gray-900 border-l-4 border-amber-400 p-8">
+                <h3 class="text-xl font-bold mb-4">実装のポイント</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li>• 角丸は使用禁止（border-radius: 0）</li>
+                    <li>• 影はハードシャドウのみ（blur: 0）</li>
+                    <li>• トランジションやホバーエフェクトは最小限に</li>
+                    <li>• 傾きや歪みで動的な印象を与える</li>
+                    <li>• 高コントラストを維持</li>
+                    <li>• グラデーションは警告帯のみ</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

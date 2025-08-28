@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIRCUIT BREAKER - Electronics & DIY Tech Magazine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* テクノロジーカラーパレット */
+            --tech-blue: #0066CC;
+            --tech-cyan: #00A8CC;
+            --tech-dark: #001F3F;
+            --tech-gray: #2C3E50;
+            --tech-light: #ECF0F1;
+            --tech-accent: #FF6B35;
+            --paper-white: #F8F9FA;
+        }
+
+        body {
+            font-family: 'Zen Kaku Gothic New', sans-serif;
+            background: var(--paper-white);
+            color: var(--tech-dark);
+            line-height: 1.8;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* テクノロジー感のあるグリッドパターン背景 */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 102, 204, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 102, 204, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ヘッダー - テクノロジー雑誌風 */
+        .header {
+            padding: 48px 0 64px;
+            border-bottom: 3px solid var(--tech-blue);
+            margin-bottom: 64px;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%);
+        }
+
+        .header-tag {
+            display: inline-block;
+            background: var(--tech-blue);
+            color: white;
+            padding: 4px 16px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 24px;
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%);
+        }
+
+        .header-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 900;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            line-height: 0.9;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--tech-blue) 0%, var(--tech-cyan) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--tech-gray);
+            letter-spacing: 3px;
+            margin-bottom: 32px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .header-description {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--tech-gray);
+            max-width: 800px;
+        }
+
+        /* セクションスタイル */
+        .section {
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .section-number {
+            position: absolute;
+            left: -60px;
+            top: 0;
+            font-size: 72px;
+            font-weight: 900;
+            font-family: 'Bebas Neue', sans-serif;
+            color: rgba(0, 102, 204, 0.1);
+            line-height: 1;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: var(--tech-dark);
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--tech-blue);
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--tech-blue) 0%, transparent 100%);
+            margin-left: 24px;
+        }
+
+        /* テクノロジーカード */
+        .tech-card {
+            background: white;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+            padding: 32px;
+            margin-bottom: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        /* アニメーショングラデーションバー */
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--tech-blue) 0%, var(--tech-cyan) 50%, var(--tech-blue) 100%);
+            background-size: 200% 100%;
+            animation: gradientSlide 3s linear infinite;
+        }
+
+        @keyframes gradientSlide {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 200% 0%; }
+        }
+
+        .tech-card:hover {
+            transform: translateX(8px);
+            box-shadow: -4px 4px 20px rgba(0, 102, 204, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .card-number {
+            background: var(--tech-dark);
+            color: white;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
+        }
+
+        .card-title {
+            flex: 1;
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--tech-dark);
+            margin-left: 16px;
+        }
+
+        .card-badge {
+            background: var(--tech-cyan);
+            color: white;
+            padding: 4px 12px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            clip-path: polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%);
+        }
+
+        /* トピックチップ */
+        .card-topics {
+            margin-top: 16px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .topic-chip {
+            background: rgba(0, 168, 204, 0.08);
+            color: var(--tech-cyan);
+            padding: 4px 12px;
+            font-size: 13px;
+            font-weight: 500;
+            border-left: 2px solid var(--tech-cyan);
+        }
+
+        /* データパネル */
+        .overview-card {
+            background: white;
+            border: 1px solid rgba(0, 102, 204, 0.1);
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .overview-card::before {
+            content: attr(data-label);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: var(--tech-dark);
+            color: white;
+            padding: 4px 16px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .overview-content {
+            margin-top: 24px;
+        }
+
+        /* プログレスインジケーター */
+        .progress-container {
+            margin: 48px 0;
+            padding: 32px;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%);
+            border-left: 4px solid var(--tech-blue);
+        }
+
+        .progress-items {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .progress-items::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--tech-blue) 0%, var(--tech-cyan) 100%);
+            z-index: 0;
+        }
+
+        .progress-item {
+            background: white;
+            border: 2px solid var(--tech-blue);
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 20px;
+            position: relative;
+            z-index: 1;
+            clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+        }
+
+        /* スキルマトリックス */
+        .skill-matrix {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+            background: rgba(0, 102, 204, 0.1);
+            padding: 2px;
+            margin-top: 32px;
+        }
+
+        .skill-cell {
+            background: white;
+            padding: 16px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill-cell:hover {
+            background: var(--tech-blue);
+            color: white;
+            transform: scale(1.05);
+            z-index: 10;
+        }
+
+        /* グリッドレイアウト */
+        .grid {
+            display: grid;
+            gap: 24px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+        }
+
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        }
+
+        .grid-4 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+
+        /* レスポンシブ対応 */
+        @media (max-width: 768px) {
+            .section-number {
+                position: static;
+                margin-bottom: 16px;
+            }
+
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+
+            .header-title {
+                font-size: 48px;
+            }
+
+            .progress-items {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .skill-matrix {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <div class="header-tag">MAKER MOVEMENT MONTHLY</div>
+            <h1 class="header-title">CIRCUIT<br>BREAKER</h1>
+            <div class="header-subtitle">Electronics DIY & Hardware Hacking</div>
+            <p class="header-description">
+                From Arduino to Raspberry Pi, from soldering basics to robotics mastery.<br>
+                Your monthly guide to building, breaking, and reimagining electronic projects.
+            </p>
+        </header>
+
+        <!-- 概要セクション -->
+        <section class="section">
+            <div class="section-number">01</div>
+            <h2 class="section-title">This Month's Features</h2>
+            
+            <div class="grid grid-3">
+                <div class="overview-card" data-label="PROJECT">
+                    <div class="overview-content">
+                        <h3>Build a Retro Arcade</h3>
+                        <p>Transform a Raspberry Pi into a classic gaming powerhouse with custom controls</p>
+                    </div>
+                </div>
+                <div class="overview-card" data-label="TUTORIAL">
+                    <div class="overview-content">
+                        <h3>SMD Soldering Guide</h3>
+                        <p>Master surface-mount components with our step-by-step microscope techniques</p>
+                    </div>
+                </div>
+                <div class="overview-card" data-label="WORKSHOP">
+                    <div class="overview-content">
+                        <h3>3D Printer Mods</h3>
+                        <p>Upgrade your printer with auto-leveling, silent drivers, and custom firmware</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Build Process -->
+        <section class="section">
+            <div class="progress-container">
+                <h3>PROJECT COMPLEXITY</h3>
+                <div class="progress-items">
+                    <div class="progress-item">⚡</div>
+                    <div class="progress-item">🔧</div>
+                    <div class="progress-item">🤖</div>
+                    <div class="progress-item">🚀</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- カリキュラム詳細 -->
+        <section class="section">
+            <div class="section-number">02</div>
+            <h2 class="section-title">Weekend Projects</h2>
+
+            <div class="tech-card">
+                <div class="card-header">
+                    <div class="card-number">01</div>
+                    <h4 class="card-title">LED Music Visualizer</h4>
+                    <span class="card-badge">2HR BUILD</span>
+                </div>
+                <p>Build a reactive LED strip that dances to your music using an ESP32 and WLED firmware</p>
+                <div class="card-topics">
+                    <span class="topic-chip">ESP32</span>
+                    <span class="topic-chip">WS2812B</span>
+                    <span class="topic-chip">Audio Processing</span>
+                </div>
+            </div>
+
+            <div class="tech-card">
+                <div class="card-header">
+                    <div class="card-number">02</div>
+                    <h4 class="card-title">Weather Station with E-Ink Display</h4>
+                    <span class="card-badge">3HR BUILD</span>
+                </div>
+                <p>Create a low-power weather monitoring system with a crisp e-paper display and BME280 sensor</p>
+                <div class="card-topics">
+                    <span class="topic-chip">Arduino</span>
+                    <span class="topic-chip">E-Ink</span>
+                    <span class="topic-chip">Sensors</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- スキルマトリックス -->
+        <section class="section">
+            <div class="section-number">03</div>
+            <h2 class="section-title">Essential Components</h2>
+
+            <div class="skill-matrix">
+                <div class="skill-cell">
+                    <div>Arduino Uno</div>
+                </div>
+                <div class="skill-cell">
+                    <div>ESP8266</div>
+                </div>
+                <div class="skill-cell">
+                    <div>Raspberry Pi</div>
+                </div>
+                <div class="skill-cell">
+                    <div>STM32</div>
+                </div>
+                <div class="skill-cell">
+                    <div>ATtiny85</div>
+                </div>
+                <div class="skill-cell">
+                    <div>RP2040</div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

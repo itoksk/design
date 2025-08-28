@@ -1,0 +1,79 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# Build output
+dist/
+build/
+out/
+*.log
+logs/
+*.pid
+*.seed
+*.pid.lock
+
+# Environment and Config
+.env
+.env.local
+.env.*.local
+config.local.js
+config.local.json
+
+# Testing
+coverage/
+*.lcov
+.nyc_output
+test-results/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+.cache/
+
+# Package manager
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Generated files
+*.generated.*
+.sass-cache/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Other
+*.orig
+.history

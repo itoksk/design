@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDUSTRIAL CYBERPUNK /// SYSTEM ONLINE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #000;
+            color: #FFF;
+            font-family: 'Space Mono', monospace;
+            cursor: crosshair;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 255, 255, 0.03) 4px
+            );
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Warning Stripes */
+        .warning-stripe {
+            background: repeating-linear-gradient(
+                45deg,
+                #FF0 0,
+                #FF0 10px,
+                #000 10px,
+                #000 20px
+            );
+            height: 10px;
+            width: 100%;
+        }
+        
+        /* ASCII Borders */
+        .ascii-box {
+            border: 2px solid #FF0;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .ascii-box::before {
+            content: '╔═══════════════════════════════════════╗';
+            position: absolute;
+            top: -1rem;
+            left: 0;
+            color: #FF0;
+            font-size: 0.8rem;
+            letter-spacing: -1px;
+        }
+        
+        .ascii-box::after {
+            content: '╚═══════════════════════════════════════╝';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            color: #FF0;
+            font-size: 0.8rem;
+            letter-spacing: -1px;
+        }
+        
+        /* Typography */
+        .mega-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            color: #FF0;
+            line-height: 0.9;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .glitch {
+            animation: glitch 2s infinite;
+            position: relative;
+        }
+        
+        .glitch::before,
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch::before {
+            animation: glitch-1 0.5s infinite;
+            color: #FF0;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        .glitch::after {
+            animation: glitch-2 0.5s infinite;
+            color: #0FF;
+            z-index: -2;
+            opacity: 0.8;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-1px, 1px); }
+            40% { transform: translate(-1px, -1px); }
+            60% { transform: translate(1px, 1px); }
+            80% { transform: translate(1px, -1px); }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { clip: rect(0, 9999px, 9999px, 0); }
+            25% { clip: rect(20px, 9999px, 40px, 0); }
+            50% { clip: rect(60px, 9999px, 80px, 0); }
+            75% { clip: rect(100px, 9999px, 120px, 0); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { clip: rect(0, 9999px, 9999px, 0); }
+            25% { clip: rect(30px, 9999px, 50px, 0); }
+            50% { clip: rect(70px, 9999px, 90px, 0); }
+            75% { clip: rect(110px, 9999px, 130px, 0); }
+        }
+        
+        /* Terminal Style Components */
+        .terminal {
+            background: #1A1A1A;
+            border: 2px solid #0F0;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-family: 'Space Mono', monospace;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .terminal::before {
+            content: 'SYSTEM://TERMINAL_v2.0';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: #0F0;
+            color: #000;
+            padding: 0.25rem 1rem;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+        
+        .terminal-content {
+            margin-top: 1rem;
+            color: #0F0;
+        }
+        
+        .blink {
+            animation: blink 1s steps(2) infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        /* Data Grid */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .data-card {
+            background: #1A1A1A;
+            border: 2px solid #FF0;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .data-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 #FF0;
+            background: #000;
+        }
+        
+        .data-card-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #FF0;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .data-card-number {
+            background: #FF0;
+            color: #000;
+            padding: 0.25rem 0.5rem;
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+        
+        /* Warning Box */
+        .warning-box {
+            background: #FF0;
+            color: #000;
+            padding: 1rem;
+            margin: 2rem 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .warning-box::before,
+        .warning-box::after {
+            content: '⚠ ⚠ ⚠';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+        }
+        
+        .warning-box::before {
+            left: 1rem;
+        }
+        
+        .warning-box::after {
+            right: 1rem;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            background: #1A1A1A;
+            border: 2px solid #FF0;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: repeating-linear-gradient(
+                90deg,
+                #FF0 0,
+                #FF0 10px,
+                #FF8C00 10px,
+                #FF8C00 20px
+            );
+            animation: progress-move 2s linear infinite;
+            width: 75%;
+        }
+        
+        @keyframes progress-move {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 0; }
+        }
+        
+        /* Buttons */
+        .cyber-button {
+            background: transparent;
+            color: #FF0;
+            border: 2px solid #FF0;
+            padding: 1rem 2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+            margin: 0.5rem;
+        }
+        
+        .cyber-button:hover {
+            background: #FF0;
+            color: #000;
+            transform: translate(-2px, -2px);
+            box-shadow: 2px 2px 0 #FF0;
+        }
+        
+        .cyber-button.danger {
+            border-color: #F00;
+            color: #F00;
+        }
+        
+        .cyber-button.danger:hover {
+            background: #F00;
+            color: #FFF;
+            box-shadow: 2px 2px 0 #F00;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .mega-title {
+                font-size: 3rem;
+            }
+            
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Warning Header -->
+    <div class="warning-stripe"></div>
+    
+    <!-- Hero Section -->
+    <header class="container">
+        <h1 class="mega-title glitch" data-text="INDUSTRIAL">INDUSTRIAL</h1>
+        <h1 class="mega-title glitch" data-text="CYBERPUNK">CYBERPUNK</h1>
+        
+        <div class="ascii-box">
+            <p style="color: #0FF; font-size: 1.2rem;">
+                SYSTEM STATUS: <span style="color: #0F0;">ONLINE</span><br>
+                SECURITY LEVEL: <span style="color: #FF0;">ELEVATED</span><br>
+                TIME: <span id="time" style="color: #F00;">00:00:00</span>
+            </p>
+        </div>
+    </header>
+    
+    <!-- Warning Message -->
+    <div class="container">
+        <div class="warning-box">
+            <p style="text-align: center; padding: 0 4rem;">
+                CRITICAL SYSTEM ALERT - UNAUTHORIZED ACCESS DETECTED
+            </p>
+        </div>
+    </div>
+    
+    <!-- Terminal Section -->
+    <section class="container">
+        <div class="terminal">
+            <div class="terminal-content">
+                <p>> INITIALIZING PROTOCOLS...</p>
+                <p>> LOADING SECURITY MODULES... <span style="color: #0F0;">[OK]</span></p>
+                <p>> ESTABLISHING CONNECTION... <span style="color: #0F0;">[OK]</span></p>
+                <p>> SYSTEM READY<span class="blink">_</span></p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Data Grid -->
+    <section class="container">
+        <h2 style="font-family: 'Bebas Neue', sans-serif; font-size: 3rem; color: #FF0; margin-bottom: 2rem;">
+            SYSTEM MODULES
+        </h2>
+        
+        <div class="data-grid">
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-number">01</span>
+                    SECURITY
+                </div>
+                <p>Advanced threat detection system with real-time monitoring and automated response protocols.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" class="cyber-button">ACTIVATE</a>
+                </div>
+            </div>
+            
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-number">02</span>
+                    DATABASE
+                </div>
+                <p>Distributed ledger technology with quantum-resistant encryption and redundant backups.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" class="cyber-button">ACCESS</a>
+                </div>
+            </div>
+            
+            <div class="data-card">
+                <div class="data-card-header">
+                    <span class="data-card-number">03</span>
+                    NETWORK
+                </div>
+                <p>Neural network infrastructure with adaptive routing and self-healing capabilities.</p>
+                <div style="margin-top: 1rem;">
+                    <a href="#" class="cyber-button danger">OVERRIDE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Progress Section -->
+    <section class="container">
+        <h3 style="font-family: 'Orbitron', sans-serif; color: #FF0; margin-bottom: 1rem;">
+            SYSTEM OPTIMIZATION IN PROGRESS
+        </h3>
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+        <p style="color: #666; font-size: 0.875rem;">
+            Processing... 75% Complete
+        </p>
+    </section>
+    
+    <!-- ASCII Art Section -->
+    <section class="container" style="margin-top: 4rem;">
+        <pre style="color: #FF0; font-size: 0.8rem; line-height: 1;">
+╔════════════════════════════════════════════════════════════╗
+║                                                            ║
+║    ██╗███╗   ██╗██████╗ ██╗   ██╗███████╗████████╗       ║
+║    ██║████╗  ██║██╔══██╗██║   ██║██╔════╝╚══██╔══╝       ║
+║    ██║██╔██╗ ██║██║  ██║██║   ██║███████╗   ██║          ║
+║    ██║██║╚██╗██║██║  ██║██║   ██║╚════██║   ██║          ║
+║    ██║██║ ╚████║██████╔╝╚██████╔╝███████║   ██║          ║
+║    ╚═╝╚═╝  ╚═══╝╚═════╝  ╚═════╝ ╚══════╝   ╚═╝          ║
+║                                                            ║
+║    CYBERPUNK DESIGN SYSTEM v2.0                           ║
+║                                                            ║
+╚════════════════════════════════════════════════════════════╝
+        </pre>
+    </section>
+    
+    <!-- Footer -->
+    <footer style="margin-top: 4rem;">
+        <div class="warning-stripe"></div>
+        <div class="container" style="padding: 2rem; text-align: center;">
+            <p style="color: #666;">
+                INDUSTRIAL CYBERPUNK TEMPLATE © 2025<br>
+                <span style="color: #FF0;">[ END OF TRANSMISSION ]</span>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        // Time Display
+        function updateTime() {
+            const now = new Date();
+            const time = now.toTimeString().split(' ')[0];
+            document.getElementById('time').textContent = time;
+        }
+        setInterval(updateTime, 1000);
+        updateTime();
+        
+        // Random glitch effect
+        setInterval(() => {
+            const elements = document.querySelectorAll('.glitch');
+            elements.forEach(el => {
+                if (Math.random() > 0.9) {
+                    el.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                    setTimeout(() => {
+                        el.style.transform = 'translate(0, 0)';
+                    }, 100);
+                }
+            });
+        }, 2000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,195 @@
+{
+  "name": "Industrial Cyberpunk",
+  "version": "1.0.0",
+  "description": "工業的サイバーパンクデザインシステム - 警告色と技術的要素の融合",
+  
+  "colors": {
+    "primary": {
+      "warning_yellow": {
+        "value": "#FFFF00",
+        "rgb": "255, 255, 0",
+        "usage": "主要警告色、重要な情報、CTAボタン"
+      },
+      "pure_black": {
+        "value": "#000000",
+        "rgb": "0, 0, 0",
+        "usage": "背景、コントラスト要素"
+      },
+      "pure_white": {
+        "value": "#FFFFFF",
+        "rgb": "255, 255, 255",
+        "usage": "テキスト、ボーダー"
+      }
+    },
+    "accent": {
+      "danger_red": {
+        "value": "#FF0000",
+        "rgb": "255, 0, 0",
+        "usage": "エラー、緊急アラート、重要マーカー"
+      },
+      "electric_cyan": {
+        "value": "#00FFFF",
+        "rgb": "0, 255, 255",
+        "usage": "リンク、ハイライト、セカンダリアクション"
+      },
+      "terminal_green": {
+        "value": "#00FF00",
+        "rgb": "0, 255, 0",
+        "usage": "成功状態、コード、ターミナル風要素"
+      }
+    },
+    "neutral": {
+      "dark_gray": {
+        "value": "#1A1A1A",
+        "rgb": "26, 26, 26",
+        "usage": "セカンダリ背景"
+      },
+      "medium_gray": {
+        "value": "#666666",
+        "rgb": "102, 102, 102",
+        "usage": "無効状態、補助テキスト"
+      },
+      "light_gray": {
+        "value": "#999999",
+        "rgb": "153, 153, 153",
+        "usage": "ボーダー、区切り線"
+      }
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "mono": {
+        "family": "'Space Mono', 'Courier New', monospace",
+        "weights": [400, 700],
+        "usage": "本文、コード、技術的情報"
+      },
+      "display": {
+        "family": "'Bebas Neue', 'Impact', sans-serif",
+        "weights": [400],
+        "usage": "見出し、インパクトのある表示"
+      },
+      "accent": {
+        "family": "'Orbitron', 'Oswald', sans-serif",
+        "weights": [400, 700, 900],
+        "usage": "アクセント、数字、時間表示"
+      }
+    },
+    "scale": {
+      "mega": "clamp(4rem, 10vw, 8rem)",
+      "hero": "clamp(3rem, 8vw, 6rem)",
+      "display": "clamp(2rem, 5vw, 4rem)",
+      "title": "2rem",
+      "subtitle": "1.5rem",
+      "body": "1rem",
+      "small": "0.875rem",
+      "micro": "0.75rem"
+    }
+  },
+  
+  "spacing": {
+    "base": "8px",
+    "scale": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "32px",
+      "2xl": "48px",
+      "3xl": "64px",
+      "4xl": "96px"
+    }
+  },
+  
+  "effects": {
+    "shadows": {
+      "brutal": "8px 8px 0 #000000",
+      "glitch": "2px 2px 0 #FF0000, -2px -2px 0 #00FFFF",
+      "none": "none"
+    },
+    "borders": {
+      "default": "2px solid",
+      "thick": "4px solid",
+      "double": "4px double"
+    },
+    "animations": {
+      "blink": {
+        "duration": "1s",
+        "timing": "steps(2, start)",
+        "iteration": "infinite"
+      },
+      "glitch": {
+        "duration": "0.3s",
+        "timing": "steps(2, end)",
+        "iteration": "infinite"
+      },
+      "scan": {
+        "duration": "3s",
+        "timing": "linear",
+        "iteration": "infinite"
+      }
+    }
+  },
+  
+  "patterns": {
+    "warning_stripes": {
+      "angle": "45deg",
+      "color1": "#FFFF00",
+      "color2": "#000000",
+      "size": "20px"
+    },
+    "grid": {
+      "color": "rgba(255, 255, 0, 0.1)",
+      "size": "20px",
+      "thickness": "1px"
+    },
+    "scanlines": {
+      "color": "rgba(255, 255, 255, 0.03)",
+      "spacing": "4px",
+      "thickness": "1px"
+    }
+  },
+  
+  "components": {
+    "ascii_decorations": {
+      "border_horizontal": "═══════════════════════════════════",
+      "border_vertical": "║",
+      "corner_tl": "╔",
+      "corner_tr": "╗",
+      "corner_bl": "╚",
+      "corner_br": "╝",
+      "separator": "//////////////////////////////////",
+      "warning": "⚠ ⚠ ⚠ WARNING ⚠ ⚠ ⚠",
+      "danger": "☠ ☠ ☠ DANGER ☠ ☠ ☠"
+    },
+    "special_characters": {
+      "arrow_right": "▶",
+      "arrow_left": "◀",
+      "arrow_up": "▲",
+      "arrow_down": "▼",
+      "bullet": "■",
+      "check": "✓",
+      "cross": "✗",
+      "warning": "⚠",
+      "skull": "☠"
+    }
+  },
+  
+  "breakpoints": {
+    "mobile": "480px",
+    "tablet": "768px",
+    "desktop": "1024px",
+    "wide": "1440px",
+    "ultra": "1920px"
+  },
+  
+  "accessibility": {
+    "contrast_ratios": {
+      "yellow_on_black": "19.56:1",
+      "white_on_black": "21:1",
+      "black_on_yellow": "19.56:1"
+    },
+    "focus_style": "4px solid #FFFF00",
+    "reduced_motion": true
+  }
+}

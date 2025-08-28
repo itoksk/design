@@ -1,0 +1,339 @@
+{
+  "name": "Technology Editorial Components",
+  "version": "1.0",
+  "description": "Component definitions for technology magazine style template",
+  "components": {
+    "header": {
+      "name": "Tech Magazine Header",
+      "description": "Main page header with gradient text and tech styling",
+      "props": {
+        "tag": "string - Category tag (e.g., 'DEEP LEARNING EXPERIENCE')",
+        "title": "string - Main title text",
+        "subtitle": "string - Secondary title text",
+        "description": "string - Header description text"
+      },
+      "styling": {
+        "tag": {
+          "background": "var(--tech-blue)",
+          "color": "white",
+          "padding": "4px 16px",
+          "font-size": "12px",
+          "font-weight": "700",
+          "letter-spacing": "2px",
+          "clip-path": "polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%)"
+        },
+        "title": {
+          "font-size": "clamp(48px, 8vw, 96px)",
+          "font-family": "'Bebas Neue', sans-serif",
+          "font-weight": "900",
+          "letter-spacing": "2px",
+          "background": "linear-gradient(135deg, var(--tech-blue) 0%, var(--tech-cyan) 100%)",
+          "background-clip": "text",
+          "text-fill-color": "transparent"
+        },
+        "subtitle": {
+          "font-size": "20px",
+          "font-weight": "300",
+          "color": "var(--tech-gray)",
+          "letter-spacing": "3px",
+          "font-family": "'Montserrat', sans-serif"
+        }
+      }
+    },
+    "tech_card": {
+      "name": "Technology Card",
+      "description": "Card component with animated gradient bar and tech styling",
+      "props": {
+        "number": "string - Card number (01, 02, 03...)",
+        "title": "string - Card title",
+        "description": "string - Card description",
+        "badge": "string - Duration or category badge",
+        "topics": "array - Array of topic strings"
+      },
+      "styling": {
+        "container": {
+          "background": "white",
+          "border": "1px solid rgba(0, 102, 204, 0.1)",
+          "padding": "32px",
+          "position": "relative",
+          "transition": "all 0.3s ease",
+          "overflow": "hidden"
+        },
+        "gradient_bar": {
+          "position": "absolute",
+          "top": "0",
+          "left": "0",
+          "width": "100%",
+          "height": "4px",
+          "background": "linear-gradient(90deg, var(--tech-blue) 0%, var(--tech-cyan) 50%, var(--tech-blue) 100%)",
+          "background-size": "200% 100%",
+          "animation": "gradientSlide 3s linear infinite"
+        },
+        "number": {
+          "background": "var(--tech-dark)",
+          "color": "white",
+          "width": "40px",
+          "height": "40px",
+          "font-family": "'Bebas Neue', sans-serif",
+          "font-size": "20px",
+          "font-weight": "900",
+          "clip-path": "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)"
+        },
+        "badge": {
+          "background": "var(--tech-cyan)",
+          "color": "white",
+          "padding": "4px 12px",
+          "font-size": "11px",
+          "font-weight": "700",
+          "letter-spacing": "1px",
+          "clip-path": "polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)"
+        },
+        "hover": {
+          "transform": "translateX(8px)",
+          "box-shadow": "-4px 4px 20px rgba(0, 102, 204, 0.1)"
+        }
+      },
+      "animations": {
+        "gradientSlide": {
+          "keyframes": "0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; }"
+        }
+      }
+    },
+    "data_panel": {
+      "name": "Data Panel",
+      "description": "Information panel with fixed label positioning",
+      "props": {
+        "label": "string - Panel label (e.g., 'PURPOSE', 'TARGET')",
+        "title": "string - Panel title",
+        "content": "string - Panel content text"
+      },
+      "styling": {
+        "container": {
+          "background": "white",
+          "border": "1px solid rgba(0, 102, 204, 0.1)",
+          "padding": "24px",
+          "position": "relative",
+          "overflow": "hidden"
+        },
+        "label": {
+          "position": "absolute",
+          "top": "0",
+          "left": "0",
+          "background": "var(--tech-dark)",
+          "color": "white",
+          "padding": "4px 16px",
+          "font-size": "11px",
+          "font-weight": "700",
+          "letter-spacing": "1px"
+        },
+        "content": {
+          "margin-top": "24px"
+        }
+      }
+    },
+    "progress_indicator": {
+      "name": "Hexagonal Progress Indicator",
+      "description": "Progress visualization with hexagonal shapes",
+      "props": {
+        "steps": "array - Array of step numbers/labels",
+        "title": "string - Progress section title"
+      },
+      "styling": {
+        "container": {
+          "margin": "48px 0",
+          "padding": "32px",
+          "background": "linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%)",
+          "border-left": "4px solid var(--tech-blue)"
+        },
+        "items_container": {
+          "display": "flex",
+          "justify-content": "space-between",
+          "align-items": "center",
+          "position": "relative"
+        },
+        "connection_line": {
+          "position": "absolute",
+          "top": "24px",
+          "left": "10%",
+          "right": "10%",
+          "height": "2px",
+          "background": "linear-gradient(90deg, var(--tech-blue) 0%, var(--tech-cyan) 100%)",
+          "z-index": "0"
+        },
+        "item": {
+          "background": "white",
+          "border": "2px solid var(--tech-blue)",
+          "width": "48px",
+          "height": "48px",
+          "font-family": "'Bebas Neue', sans-serif",
+          "font-size": "20px",
+          "font-weight": "900",
+          "position": "relative",
+          "z-index": "1",
+          "clip-path": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
+        }
+      }
+    },
+    "skill_matrix": {
+      "name": "Skill Matrix Grid",
+      "description": "Interactive grid for displaying skills/technologies",
+      "props": {
+        "skills": "array - Array of skill objects with name and optional description"
+      },
+      "styling": {
+        "container": {
+          "display": "grid",
+          "grid-template-columns": "repeat(3, 1fr)",
+          "gap": "2px",
+          "background": "rgba(0, 102, 204, 0.1)",
+          "padding": "2px"
+        },
+        "cell": {
+          "background": "white",
+          "padding": "16px",
+          "text-align": "center",
+          "position": "relative",
+          "transition": "all 0.3s ease",
+          "cursor": "pointer"
+        },
+        "cell_hover": {
+          "background": "var(--tech-blue)",
+          "color": "white",
+          "transform": "scale(1.05)",
+          "z-index": "10"
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "grid-template-columns": "repeat(2, 1fr)"
+        }
+      }
+    },
+    "section": {
+      "name": "Tech Section",
+      "description": "Section container with large number styling",
+      "props": {
+        "number": "string - Section number (01, 02, 03...)",
+        "title": "string - Section title",
+        "children": "components - Child components"
+      },
+      "styling": {
+        "container": {
+          "margin-bottom": "80px",
+          "position": "relative"
+        },
+        "number": {
+          "position": "absolute",
+          "left": "-60px",
+          "top": "0",
+          "font-size": "72px",
+          "font-weight": "900",
+          "font-family": "'Bebas Neue', sans-serif",
+          "color": "rgba(0, 102, 204, 0.1)",
+          "line-height": "1"
+        },
+        "title": {
+          "font-size": "32px",
+          "font-weight": "700",
+          "margin-bottom": "32px",
+          "color": "var(--tech-dark)",
+          "display": "flex",
+          "align-items": "center",
+          "position": "relative",
+          "padding-left": "24px"
+        },
+        "title_bar": {
+          "position": "absolute",
+          "left": "0",
+          "width": "4px",
+          "height": "100%",
+          "background": "var(--tech-blue)"
+        },
+        "title_line": {
+          "flex": "1",
+          "height": "1px",
+          "background": "linear-gradient(90deg, var(--tech-blue) 0%, transparent 100%)",
+          "margin-left": "24px"
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "number": {
+            "position": "static",
+            "margin-bottom": "16px"
+          }
+        }
+      }
+    },
+    "topic_chip": {
+      "name": "Topic Chip",
+      "description": "Small chip for displaying topics/tags",
+      "props": {
+        "text": "string - Chip text content"
+      },
+      "styling": {
+        "chip": {
+          "background": "rgba(0, 168, 204, 0.08)",
+          "color": "var(--tech-cyan)",
+          "padding": "4px 12px",
+          "font-size": "13px",
+          "font-weight": "500",
+          "border-left": "2px solid var(--tech-cyan)",
+          "display": "inline-block"
+        }
+      }
+    },
+    "grid": {
+      "name": "Responsive Grid",
+      "description": "Flexible grid container with responsive breakpoints",
+      "props": {
+        "columns": "number - Number of columns (2, 3, or 4)",
+        "children": "components - Grid items"
+      },
+      "styling": {
+        "container": {
+          "display": "grid",
+          "gap": "24px"
+        },
+        "grid-2": {
+          "grid-template-columns": "repeat(auto-fit, minmax(500px, 1fr))"
+        },
+        "grid-3": {
+          "grid-template-columns": "repeat(auto-fit, minmax(350px, 1fr))"
+        },
+        "grid-4": {
+          "grid-template-columns": "repeat(auto-fit, minmax(250px, 1fr))"
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "grid-template-columns": "1fr"
+        }
+      }
+    }
+  },
+  "utilities": {
+    "animations": {
+      "gradientSlide": "@keyframes gradientSlide { 0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; } }",
+      "fadeIn": "@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }",
+      "slideRight": "@keyframes slideRight { from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; } }"
+    },
+    "clip_paths": {
+      "tech_badge": "polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%)",
+      "diagonal_number": "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)",
+      "subtle_diagonal": "polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)",
+      "hexagon": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
+    },
+    "gradients": {
+      "tech_primary": "linear-gradient(135deg, var(--tech-blue) 0%, var(--tech-cyan) 100%)",
+      "tech_subtle": "linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%)",
+      "connection_line": "linear-gradient(90deg, var(--tech-blue) 0%, var(--tech-cyan) 100%)",
+      "fade_right": "linear-gradient(90deg, var(--tech-blue) 0%, transparent 100%)"
+    }
+  },
+  "responsive_breakpoints": {
+    "mobile": "768px",
+    "tablet": "1024px",
+    "desktop": "1400px"
+  }
+}

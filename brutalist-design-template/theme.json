@@ -1,0 +1,230 @@
+{
+  "name": "Brutalist Design",
+  "version": "1.0.0",
+  "description": "Raw, uncompromising brutalist design system emphasizing functional beauty through extreme contrasts and experimental layouts",
+
+  "colors": {
+    "primary": {
+      "pure_black": {
+        "value": "#000000",
+        "rgb": "0, 0, 0",
+        "usage": "Primary background, raw foundation"
+      },
+      "electric_yellow": {
+        "value": "#FFFF00",
+        "rgb": "255, 255, 0",
+        "usage": "Primary accent, electric energy, disruption"
+      },
+      "pure_white": {
+        "value": "#FFFFFF",
+        "rgb": "255, 255, 255",
+        "usage": "Text, stark contrast, cleanliness"
+      },
+      "medium_gray": {
+        "value": "#666666",
+        "rgb": "102, 102, 102",
+        "usage": "Secondary text, subtle information"
+      }
+    },
+    "accent": {
+      "danger_red": {
+        "value": "#FF0000",
+        "rgb": "255, 0, 0",
+        "usage": "Alert, aggression, secondary accent"
+      },
+      "electric_cyan": {
+        "value": "#00FFFF",
+        "rgb": "0, 255, 255",
+        "usage": "Glitch effects, digital elements"
+      },
+      "success_green": {
+        "value": "#00FF00",
+        "rgb": "0, 255, 0",
+        "usage": "Success states, digital confirmation"
+      }
+    },
+    "neutral": {
+      "dark_gray": {
+        "value": "#1a1a1a",
+        "rgb": "26, 26, 26",
+        "usage": "Secondary background, depth"
+      },
+      "light_gray": {
+        "value": "#999999",
+        "rgb": "153, 153, 153",
+        "usage": "Borders, dividers, muted elements"
+      }
+    }
+  },
+
+  "typography": {
+    "fonts": {
+      "display": {
+        "family": "'Archivo Black', 'Arial Black', sans-serif",
+        "weights": [900],
+        "usage": "Massive headlines, powerful statements"
+      },
+      "body": {
+        "family": "'Inter', 'Helvetica', sans-serif",
+        "weights": [100, 400, 900],
+        "usage": "Body text, readable content"
+      },
+      "mono": {
+        "family": "'Space Mono', 'Courier New', monospace",
+        "weights": [400, 700],
+        "usage": "Technical text, ASCII elements, raw data"
+      }
+    },
+    "scale": {
+      "massive": "clamp(4rem, 15vw, 12rem)",
+      "large": "4rem",
+      "medium": "2rem",
+      "small": "0.875rem",
+      "tiny": "0.625rem"
+    },
+    "effects": {
+      "outline": {
+        "stroke_width": "2px",
+        "stroke_color": "#FFFF00",
+        "fill": "transparent"
+      }
+    }
+  },
+
+  "spacing": {
+    "base": "8px",
+    "scale": {
+      "massive": "10rem",
+      "large": "4rem",
+      "medium": "2rem",
+      "small": "1rem",
+      "tiny": "0.5rem"
+    }
+  },
+
+  "effects": {
+    "shadows": {
+      "brutal": "8px 8px 0 #000000",
+      "brutal_hover": "12px 12px 0 #000000",
+      "none": "none"
+    },
+    "transforms": {
+      "skew_section": "skewY(-5deg)",
+      "skew_counter": "skewY(5deg)",
+      "skew_button": "skewX(-10deg)",
+      "rotate_slight": "rotate(-2deg)"
+    },
+    "borders": {
+      "standard": "2px solid",
+      "thin": "1px solid"
+    },
+    "animations": {
+      "float": {
+        "duration": "20s",
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "rotate": {
+        "duration": "20s", 
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "glitch": {
+        "duration": "0.5s",
+        "timing": "steps(2, end)",
+        "iteration": "infinite"
+      }
+    }
+  },
+
+  "patterns": {
+    "none": {
+      "description": "Brutalism rejects decorative patterns in favor of raw materials"
+    },
+    "grid_overlay": {
+      "color": "rgba(255, 255, 0, 0.03)",
+      "size": "100px 100px",
+      "thickness": "1px",
+      "usage": "Subtle structural grid, technical overlay"
+    },
+    "zigzag": {
+      "angle": "135deg",
+      "color": "#FFFF00",
+      "size": "100px 100px",
+      "usage": "Harsh geometric dividers"
+    }
+  },
+
+  "components": {
+    "layout": {
+      "broken_grid": {
+        "columns": "1fr 2fr 1fr 3fr 2fr",
+        "gap": "2px",
+        "background": "#FFFF00"
+      },
+      "split_screen": {
+        "columns": "1fr 2px 1fr",
+        "divider_gradient": "linear-gradient(to bottom, transparent, #FFFF00, transparent)"
+      },
+      "oblique_section": {
+        "transform": "skewY(-5deg)",
+        "margin": "100px 0",
+        "counter_transform": "skewY(5deg)"
+      },
+      "rotated_section": {
+        "transform": "rotate(-2deg)",
+        "margin": "150px -100px"
+      }
+    },
+    "floating_elements": {
+      "corners": {
+        "positions": ["top-left", "top-right", "bottom-left", "bottom-right"],
+        "font_size": "10px",
+        "font_family": "monospace",
+        "color": "#666666"
+      },
+      "navigation": {
+        "position": "fixed",
+        "placement": "right",
+        "orientation": "vertical",
+        "transform": "translateY(-50%)"
+      }
+    },
+    "ascii_elements": {
+      "border_corners": "+",
+      "corner_offset": "-8px",
+      "border_style": "1px solid #FFFF00"
+    }
+  },
+
+  "breakpoints": {
+    "mobile": "768px",
+    "tablet": "1024px", 
+    "desktop": "1440px"
+  },
+
+  "accessibility": {
+    "contrast_ratios": {
+      "yellow_on_black": "19.56:1",
+      "white_on_black": "21:1",
+      "black_on_yellow": "19.56:1"
+    },
+    "focus_style": "4px solid #FFFF00",
+    "reduced_motion": true,
+    "cursor": "crosshair"
+  },
+
+  "philosophy": {
+    "principles": [
+      "Non-symmetrical layouts that challenge conventional design",
+      "Raw material aesthetic with minimal decoration",
+      "Functional beauty through honest structural expression",
+      "Bold contrasts that demand attention",
+      "Experimental approach to spatial relationships",
+      "Extreme typography scales for maximum impact",
+      "Broken grids that reflect honest construction",
+      "Hard shadows and sharp angles over soft curves"
+    ],
+    "approach": "Brutalist design embraces the raw, uncompromising nature of digital materials. Every element serves a function while making a bold statement about form following function."
+  }
+}

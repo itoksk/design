@@ -1,0 +1,214 @@
+# Industrial Hackathon Website Configuration
+
+site:
+  title: "UNDERGROUND CREATIVE JAM"
+  subtitle: "Break the rules. Build the impossible. 48 hours of chaos."
+  type: "creative-marathon"
+  duration: "48 hours"
+  team_size: "Solo or Squad"
+  level: "No limits"
+
+design:
+  theme: "brutalist-industrial"
+  
+  colors:
+    primary:
+      black: "#0a0a0a"
+      amber: "#fbbf24"
+      white: "#ffffff"
+    secondary:
+      gray-900: "#1a1a1a"
+      gray-700: "#374151"
+      gray-600: "#4b5556"
+      gray-400: "#9ca3af"
+      red-500: "#ef4444"
+    
+  typography:
+    fonts:
+      heading: "Bebas Neue"
+      subheading: "Oswald"
+      body: "Noto Sans JP"
+    sizes:
+      hero: "text-9xl"
+      section: "text-6xl"
+      subsection: "text-4xl"
+      body: "text-sm"
+      
+  effects:
+    glitch: true
+    hazard_stripes: true
+    brutalist_shadows: true
+    skew_transform: true
+    rotation: 
+      - "1deg"
+      - "-1deg"
+
+layout:
+  style: "asymmetric"
+  spacing:
+    section: "py-20"
+    content: "mb-16"
+    padding: "p-8"
+  grid: "industrial-pattern"
+  
+components:
+  brutalist_box:
+    background: "#1a1a1a"
+    border: "4px solid #fbbf24"
+    shadow: "8px 8px 0 #000"
+    padding: "p-8"
+    rotation: "alternate"
+    
+  hazard_stripe:
+    angle: "45deg"
+    color1: "#fbbf24"
+    color2: "#1f2937"
+    width: "10px"
+    
+  timeline_item:
+    border_left: "4px solid #fbbf24"
+    skew: "-2deg"
+    background: "#1a1a1a"
+    
+  warning_box:
+    background: "red-900/20"
+    border: "2px solid red-500"
+    text: "red-400"
+
+sections:
+  hero:
+    height: "min-h-screen"
+    background: "industrial-grid"
+    text_effect: "glitch"
+    
+  story:
+    title: "YAMADA FACTORY"
+    subtitle: "DISCOVER THE PROBLEMS"
+    timeline:
+      - time: "07:30"
+        title: "朝の始業"
+      - time: "09:00"
+        title: "午前の作業"
+      - time: "12:00"
+        title: "昼休み"
+      - time: "14:00"
+        title: "午後の作業"
+      - time: "17:30"
+        title: "夕方の片付け"
+      - time: "18:00"
+        title: "夜勤の引き継ぎ"
+      - time: "22:00"
+        title: "夜勤チーム"
+        
+  curriculum:
+    phases:
+      - id: 1
+        time: "00-10"
+        title: "ハッカソン開幕宣言"
+        color: "green"
+      - id: 2
+        time: "10-35"
+        title: "課題発見・アイデアソン"
+        color: "blue"
+      - id: 3
+        time: "35-70"
+        title: "開発スプリント"
+        color: "amber"
+      - id: 4
+        time: "70-90"
+        title: "ピッチ&審査"
+        color: "red"
+
+scoring:
+  total: 100
+  criteria:
+    - name: "課題設定力"
+      points: 25
+      icon: "🎯"
+    - name: "創造性・独自性"
+      points: 25
+      icon: "💡"
+    - name: "実用性・完成度"
+      points: 25
+      icon: "⚡"
+    - name: "プレゼン力"
+      points: 15
+      icon: "🎤"
+    - name: "技術活用度"
+      points: 10
+      icon: "🔧"
+
+awards:
+  - type: "grand_prix"
+    name: "総合グランプリ"
+    icon: "🥇"
+    style: "gradient-gold"
+  - type: "idea"
+    name: "最優秀アイデア賞"
+    icon: "🎯"
+  - type: "technical"
+    name: "技術賞"
+    icon: "⚡"
+  - type: "practical"
+    name: "現場目線賞"
+    icon: "👥"
+  - type: "challenge"
+    name: "チャレンジャー賞"
+    icon: "🔥"
+  - type: "pitch"
+    name: "ベストピッチ賞"
+    icon: "🎭"
+
+prompts:
+  safety:
+    title: "安全チェック系"
+    template: |
+      写真を撮ると、ヘルメットを着けているかどうかを判定してくれるアプリを作ってください。
+      スマートフォンで使えるWebアプリにしてください。
+      
+  quality:
+    title: "品質チェック系"
+    template: |
+      製品の写真を撮ると、キズがあるかないかを判定するアプリを作ってください。
+      判定結果を分かりやすく表示してください。
+      
+  organization:
+    title: "整理整頓系"
+    template: |
+      工具箱の写真を撮ると、きちんと整理されているかを判定するアプリを作ってください。
+      結果を◯×で表示してください。
+
+support:
+  magic_words:
+    - problem: "うまく動かない"
+      solution: "エラーを直してください"
+    - problem: "判定が間違ってる"
+      solution: "もっと正確に判定できるようにしてください"
+    - problem: "見た目がださい"
+      solution: "もっとかっこいい色にしてください"
+    - problem: "文字が小さい"
+      solution: "文字を大きくしてください"
+    - problem: "スマホで見づらい"
+      solution: "スマートフォンで使いやすくしてください"
+
+forbidden:
+  design:
+    - "グラデーション背景"
+    - "角丸（border-radius）"
+    - "ソフトシャドウ"
+    - "パステルカラー"
+    - "絵文字の多用"
+    - "整然としたグリッド"
+    - "スムーズトランジション"
+    
+requirements:
+  technical:
+    - "Tailwind CSS CDN"
+    - "単一HTMLファイル"
+    - "レスポンシブ対応"
+    - "モバイルファースト"
+  content:
+    - "工場ストーリー全文"
+    - "90分カリキュラム詳細"
+    - "審査基準明記"
+    - "サポート情報"

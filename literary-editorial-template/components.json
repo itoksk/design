@@ -1,0 +1,107 @@
+{
+  "components": {
+    "navigation": {
+      "fixedNav": {
+        "name": "Fixed Literary Navigation",
+        "description": "文芸誌スタイルの固定ナビゲーション",
+        "html": "<nav class=\"literary-nav\">\n  <div class=\"nav-container\">\n    <div class=\"nav-title\">PAPERCUTS</div>\n    <div class=\"nav-menu\">\n      <a href=\"#features\">Features</a>\n      <a href=\"#articles\">Articles</a>\n      <a href=\"#gallery\">Gallery</a>\n      <a href=\"#about\">About</a>\n    </div>\n  </div>\n</nav>",
+        "css": ".literary-nav {\n  position: fixed;\n  top: 0;\n  width: 100%;\n  background: rgba(254, 254, 248, 0.95);\n  backdrop-filter: blur(10px);\n  z-index: 1000;\n  padding: 1.5rem 0;\n  box-shadow: 0 1px 0 rgba(10, 14, 39, 0.1);\n}\n.nav-container {\n  max-width: 1400px;\n  margin: 0 auto;\n  padding: 0 2rem;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n}\n.nav-title {\n  font-size: 1.2rem;\n  font-weight: 700;\n  letter-spacing: -0.02em;\n}\n.nav-menu {\n  display: flex;\n  gap: 2rem;\n}\n.nav-menu a {\n  color: #0A0E27;\n  text-decoration: none;\n  position: relative;\n  transition: color 0.3s ease;\n}\n.nav-menu a::after {\n  content: '';\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 0;\n  height: 2px;\n  background: #00F0FF;\n  transition: width 0.3s ease;\n}\n.nav-menu a:hover::after {\n  width: 100%;\n}"
+      }
+    },
+    "hero": {
+      "literaryHero": {
+        "name": "Literary Hero Section",
+        "description": "文芸誌スタイルのヒーローセクション",
+        "html": "<div class=\"hero\">\n  <div class=\"hero-content\">\n    <div class=\"hero-label\">ISSUE NO. 42</div>\n    <h1 class=\"hero-title\">\n      Digital Typography\n      <span>The Art of Letters in Pixels</span>\n    </h1>\n    <p class=\"hero-description\">\n      Exploring the intersection of traditional print design and digital media.\n      From variable fonts to kinetic typography, discover how designers are\n      pushing the boundaries of letterforms in the digital age.\n    </p>\n  </div>\n</div>",
+        "css": ".hero {\n  min-height: 100vh;\n  display: flex;\n  align-items: center;\n  padding: 0 2rem;\n  margin-top: 80px;\n}\n.hero-content {\n  max-width: 1400px;\n  margin: 0 auto;\n  width: 100%;\n}\n.hero-label {\n  display: inline-block;\n  background: #0A0E27;\n  color: #FEFEF8;\n  padding: 0.5rem 1.5rem;\n  font-size: 0.8rem;\n  font-weight: 500;\n  letter-spacing: 0.1em;\n  margin-bottom: 2rem;\n  transform: rotate(-1deg);\n}\n.hero-title {\n  font-size: clamp(3rem, 8vw, 6rem);\n  font-weight: 900;\n  line-height: 0.9;\n  margin-bottom: 2rem;\n  letter-spacing: -0.03em;\n}\n.hero-title span {\n  display: block;\n  color: #00F0FF;\n  font-size: 0.7em;\n  margin-top: 0.2em;\n}\n.hero-description {\n  font-size: 1.25rem;\n  max-width: 800px;\n  margin-bottom: 3rem;\n  line-height: 1.8;\n  font-weight: 300;\n}"
+      }
+    },
+    "cards": {
+      "numberedCard": {
+        "name": "Numbered Literary Card",
+        "description": "番号付きの文芸誌風カード",
+        "html": "<div class=\"literary-card\">\n  <div class=\"card-number\">01</div>\n  <h3 class=\"card-title\">Featured</h3>\n  <p class=\"card-description\">\n    Behind the scenes of independent publishing:\n    from zine culture to digital distribution\n  </p>\n</div>",
+        "css": ".literary-card {\n  background: #FEFEF8;\n  border: 2px solid #0A0E27;\n  padding: 2rem;\n  position: relative;\n  transition: all 0.3s ease;\n  cursor: pointer;\n}\n.literary-card::before {\n  content: '';\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 100%;\n  height: 100%;\n  background: #0A0E27;\n  z-index: -1;\n  transition: all 0.3s ease;\n}\n.literary-card:hover {\n  transform: translate(-4px, -4px);\n  background: #0A0E27;\n  color: #FEFEF8;\n}\n.literary-card:hover::before {\n  top: 8px;\n  left: 8px;\n}\n.literary-card:hover .card-number {\n  background: #FEFEF8;\n  color: #0A0E27;\n}\n.card-number {\n  display: inline-block;\n  width: 40px;\n  height: 40px;\n  background: #00F0FF;\n  color: #0A0E27;\n  font-family: 'Space Grotesk', monospace;\n  font-weight: 700;\n  font-size: 1.2rem;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  margin-bottom: 1.5rem;\n  transition: all 0.3s ease;\n}\n.card-title {\n  font-size: 1.5rem;\n  font-weight: 700;\n  margin-bottom: 1rem;\n  line-height: 1.2;\n}\n.card-description {\n  font-size: 0.95rem;\n  opacity: 0.8;\n  line-height: 1.7;\n}"
+      },
+      "phaseCard": {
+        "name": "Phase Card",
+        "description": "Article or content phase card",
+        "html": "<div class=\"phase-card\">\n  <div class=\"phase-header\">\n    <div class=\"phase-number\">01</div>\n    <div class=\"phase-title\">Type Foundries Revolution</div>\n  </div>\n  <p class=\"phase-description\">How independent type designers are reshaping the font industry</p>\n</div>",
+        "css": ".phase-card {\n  background: linear-gradient(to right, #FEFEF8 50%, transparent 50%);\n  background-size: 20px 1px;\n  background-repeat: repeat-x;\n  background-position: 0 100%;\n  padding-bottom: 2rem;\n  margin-bottom: 3rem;\n}\n.phase-header {\n  display: flex;\n  align-items: baseline;\n  gap: 2rem;\n  margin-bottom: 2rem;\n}\n.phase-number {\n  font-family: 'Space Grotesk', monospace;\n  font-size: 5rem;\n  font-weight: 700;\n  line-height: 1;\n  color: #7C3AED;\n  opacity: 0.2;\n}\n.phase-title {\n  font-size: 2rem;\n  font-weight: 700;\n}\n.phase-description {\n  font-size: 1rem;\n  line-height: 1.7;\n}"
+      }
+    },
+    "tables": {
+      "scheduleTable": {
+        "name": "Schedule Table",
+        "description": "Content table for articles or issues",
+        "html": "<table class=\"schedule-table\">\n  <thead>\n    <tr>\n      <th>Issue</th>\n      <th>Title</th>\n      <th>Author</th>\n      <th>Pages</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"schedule-session\">01</td>\n      <td>Variable Fonts</td>\n      <td>Sarah Chen</td>\n      <td>12-24</td>\n    </tr>\n    <tr>\n      <td class=\"schedule-session\">02</td>\n      <td>Kinetic Type</td>\n      <td>Marcus Wu</td>\n      <td>26-35</td>\n    </tr>\n  </tbody>\n</table>",
+        "css": ".schedule-table {\n  width: 100%;\n  border-collapse: separate;\n  border-spacing: 0;\n  margin-top: 3rem;\n}\n.schedule-table th {\n  background: #0A0E27;\n  color: #FEFEF8;\n  padding: 1rem;\n  text-align: left;\n  font-weight: 500;\n  font-size: 0.9rem;\n  letter-spacing: 0.05em;\n}\n.schedule-table td {\n  padding: 1.25rem 1rem;\n  border-bottom: 1px solid rgba(0,0,0,0.1);\n  vertical-align: top;\n}\n.schedule-table tr:hover {\n  background: rgba(0,240,255,0.05);\n}\n.schedule-session {\n  font-family: 'Space Grotesk', monospace;\n  font-weight: 700;\n  color: #00F0FF;\n}"
+      }
+    },
+    "sections": {
+      "literarySection": {
+        "name": "Literary Section",
+        "description": "セクション見出しと内容エリア",
+        "html": "<section class=\"literary-section\">\n  <div class=\"section-label\">Featured</div>\n  <h2 class=\"section-title\">This Month</h2>\n  <div class=\"section-content\">\n    <!-- Content goes here -->\n  </div>\n</section>",
+        "css": ".literary-section {\n  max-width: 1400px;\n  margin: 80px auto;\n  padding: 0 2rem;\n}\n.section-label {\n  font-family: 'Space Grotesk', monospace;\n  font-size: 0.8rem;\n  font-weight: 700;\n  letter-spacing: 0.2em;\n  opacity: 0.5;\n  margin-bottom: 1rem;\n  text-transform: uppercase;\n}\n.section-title {\n  font-size: 2.5rem;\n  font-weight: 700;\n  margin-bottom: 3rem;\n  position: relative;\n  padding-bottom: 1rem;\n}\n.section-title::after {\n  content: '';\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  width: 60px;\n  height: 3px;\n  background: #00F0FF;\n}\n.section-content {\n  margin-top: 2rem;\n}"
+      }
+    },
+    "layouts": {
+      "gridLayout": {
+        "name": "Literary Grid Layout",
+        "description": "文芸誌スタイルのグリッドレイアウト",
+        "html": "<div class=\"literary-grid grid-3\">\n  <div class=\"grid-item\">Content 1</div>\n  <div class=\"grid-item\">Content 2</div>\n  <div class=\"grid-item\">Content 3</div>\n</div>",
+        "css": ".literary-grid {\n  display: grid;\n  gap: 2rem;\n}\n.grid-2 {\n  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));\n}\n.grid-3 {\n  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));\n}\n.grid-4 {\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n}\n@media (max-width: 768px) {\n  .grid-2, .grid-3, .grid-4 {\n    grid-template-columns: 1fr;\n  }\n}"
+      }
+    },
+    "effects": {
+      "paperTexture": {
+        "name": "Paper Texture Background",
+        "description": "紙の質感を演出する背景エフェクト",
+        "css": "body::before {\n  content: '';\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: \n    repeating-linear-gradient(\n      90deg,\n      transparent,\n      transparent 2px,\n      rgba(10, 14, 39, 0.01) 2px,\n      rgba(10, 14, 39, 0.01) 4px\n    );\n  pointer-events: none;\n  z-index: 1;\n}"
+      },
+      "shadowCard": {
+        "name": "Shadow Card Effect",
+        "description": "影付きカードエフェクト",
+        "css": ".shadow-card {\n  position: relative;\n}\n.shadow-card::before {\n  content: '';\n  position: absolute;\n  top: 4px;\n  left: 4px;\n  width: 100%;\n  height: 100%;\n  background: #0A0E27;\n  z-index: -1;\n  transition: all 0.3s ease;\n}\n.shadow-card:hover::before {\n  top: 8px;\n  left: 8px;\n}"
+      },
+      "invertHover": {
+        "name": "Invert Hover Effect",
+        "description": "白黒反転ホバーエフェクト",
+        "css": ".invert-hover {\n  background: #FEFEF8;\n  color: #0A0E27;\n  transition: all 0.3s ease;\n}\n.invert-hover:hover {\n  background: #0A0E27;\n  color: #FEFEF8;\n  transform: translate(-4px, -4px);\n}"
+      }
+    },
+    "typography": {
+      "literaryHeading": {
+        "name": "Literary Heading",
+        "description": "文芸誌スタイルの見出し",
+        "html": "<h1 class=\"literary-heading\">Independent Publishing</h1>",
+        "css": ".literary-heading {\n  font-family: 'Zen Kaku Gothic New', sans-serif;\n  font-size: clamp(2rem, 5vw, 4rem);\n  font-weight: 700;\n  line-height: 1.2;\n  letter-spacing: -0.02em;\n  color: #0A0E27;\n}"
+      },
+      "accentNumber": {
+        "name": "Accent Number",
+        "description": "アクセント用の数字スタイル",
+        "html": "<span class=\"accent-number\">01</span>",
+        "css": ".accent-number {\n  font-family: 'Space Grotesk', monospace;\n  font-weight: 700;\n  font-size: 1.2rem;\n  color: #00F0FF;\n  display: inline-block;\n  min-width: 2ch;\n  text-align: center;\n}"
+      },
+      "rotatedLabel": {
+        "name": "Rotated Label",
+        "description": "回転したラベル要素",
+        "html": "<div class=\"rotated-label\">EXPLORATION</div>",
+        "css": ".rotated-label {\n  display: inline-block;\n  background: #0A0E27;\n  color: #FEFEF8;\n  padding: 0.5rem 1.5rem;\n  font-size: 0.8rem;\n  font-weight: 500;\n  letter-spacing: 0.1em;\n  text-transform: uppercase;\n  transform: rotate(-1deg);\n}"
+      }
+    },
+    "animations": {
+      "fadeInUp": {
+        "name": "Fade In Up Animation",
+        "description": "下からフェードインするアニメーション",
+        "css": "@keyframes fadeInUp {\n  from {\n    opacity: 0;\n    transform: translateY(30px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n.fade-in-up {\n  animation: fadeInUp 0.8s ease-out;\n}"
+      },
+      "underlineSlide": {
+        "name": "Underline Slide Animation",
+        "description": "下線がスライドするアニメーション",
+        "css": ".underline-slide {\n  position: relative;\n}\n.underline-slide::after {\n  content: '';\n  position: absolute;\n  bottom: -4px;\n  left: 0;\n  width: 0;\n  height: 2px;\n  background: #00F0FF;\n  transition: width 0.3s ease;\n}\n.underline-slide:hover::after {\n  width: 100%;\n}"
+      }
+    }
+  }
+}

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUTALIST DESIGN SYSTEM</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Courier New', monospace;
+            background: #000000;
+            color: #FFFFFF;
+            cursor: crosshair;
+            overflow-x: hidden;
+        }
+        
+        /* Brutalist Typography */
+        .mega-title {
+            font-size: clamp(5rem, 15vw, 12rem);
+            font-weight: 900;
+            line-height: 0.85;
+            letter-spacing: -0.05em;
+            text-transform: uppercase;
+            color: #FFFF00;
+            transform: skewY(-2deg);
+        }
+        
+        .vertical-text {
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
+            font-size: 2rem;
+            position: absolute;
+            right: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666666;
+        }
+        
+        .outline-text {
+            font-size: 4rem;
+            font-weight: 900;
+            color: transparent;
+            -webkit-text-stroke: 2px #FFFF00;
+            text-stroke: 2px #FFFF00;
+            text-transform: uppercase;
+            margin: 2rem 0;
+        }
+        
+        /* Brutalist Layout Components */
+        .skewed-section {
+            transform: skewY(-5deg);
+            background: #FFFF00;
+            color: #000000;
+            padding: 4rem 2rem;
+            margin: 8rem 0;
+            position: relative;
+        }
+        
+        .skewed-section > * {
+            transform: skewY(5deg);
+        }
+        
+        .broken-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr 1.5fr;
+            gap: 2rem;
+            padding: 2rem;
+        }
+        
+        .broken-grid > div {
+            background: #FFFFFF;
+            color: #000000;
+            padding: 2rem;
+            border: 4px solid #000000;
+            position: relative;
+        }
+        
+        .broken-grid > div:nth-child(even) {
+            transform: translateY(3rem);
+        }
+        
+        .floating-element {
+            position: absolute;
+            background: #FFFF00;
+            color: #000000;
+            padding: 1rem 2rem;
+            font-weight: 900;
+            font-size: 1.5rem;
+            transform: rotate(-5deg);
+            z-index: 10;
+        }
+        
+        .split-screen {
+            display: grid;
+            grid-template-columns: 40% 60%;
+            min-height: 100vh;
+        }
+        
+        .split-left {
+            background: #FFFF00;
+            color: #000000;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .split-right {
+            background: #000000;
+            color: #FFFFFF;
+            padding: 4rem;
+            position: relative;
+        }
+        
+        /* Brutalist Components */
+        .brutal-card {
+            background: #000000;
+            border: 4px solid #FFFF00;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        
+        .brutal-card::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 100%;
+            height: 100%;
+            background: #666666;
+            z-index: -1;
+        }
+        
+        .brutal-card:hover {
+            transform: translate(-8px, -8px);
+            background: #FFFF00;
+            color: #000000;
+        }
+        
+        .brutal-card:hover::before {
+            top: 16px;
+            left: 16px;
+        }
+        
+        .brutal-button {
+            background: #FFFF00;
+            color: #000000;
+            border: 4px solid #000000;
+            padding: 1rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        
+        .brutal-button:hover {
+            background: #000000;
+            color: #FFFF00;
+            transform: translate(-4px, -4px);
+            box-shadow: 4px 4px 0 #FFFF00;
+        }
+        
+        .glitch-text {
+            position: relative;
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            animation: glitch 2s infinite;
+        }
+        
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .glitch-text::before {
+            animation: glitch-1 0.5s infinite;
+            color: #00F0FF;
+            z-index: -1;
+        }
+        
+        .glitch-text::after {
+            animation: glitch-2 0.5s infinite;
+            color: #FF00FF;
+            z-index: -2;
+        }
+        
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+        }
+        
+        @keyframes glitch-1 {
+            0%, 100% { clip: rect(0, 9999px, 9999px, 0); }
+            25% { clip: rect(20px, 9999px, 40px, 0); }
+            50% { clip: rect(60px, 9999px, 80px, 0); }
+            75% { clip: rect(100px, 9999px, 120px, 0); }
+        }
+        
+        @keyframes glitch-2 {
+            0%, 100% { clip: rect(0, 9999px, 9999px, 0); }
+            25% { clip: rect(30px, 9999px, 50px, 0); }
+            50% { clip: rect(70px, 9999px, 90px, 0); }
+            75% { clip: rect(110px, 9999px, 130px, 0); }
+        }
+        
+        .rotating-element {
+            animation: rotate 10s linear infinite;
+            display: inline-block;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .mega-title {
+                font-size: 3rem;
+            }
+            
+            .broken-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .split-screen {
+                grid-template-columns: 1fr;
+            }
+            
+            .vertical-text {
+                writing-mode: horizontal-tb;
+                position: static;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="split-screen">
+        <div class="split-left">
+            <div class="floating-element" style="top: 10%; left: 70%;">EXPERIMENTAL</div>
+            <h1 class="mega-title">BRUTAL</h1>
+            <p style="font-size: 1.5rem; font-weight: bold; margin-top: 2rem;">
+                DESIGN SYSTEM FOR THE BOLD
+            </p>
+        </div>
+        <div class="split-right">
+            <span class="vertical-text">UNCONVENTIONAL AESTHETICS</span>
+            <div style="padding: 4rem 0;">
+                <h2 class="outline-text">NO RULES</h2>
+                <p style="font-size: 1.2rem; line-height: 1.8;">
+                    破壊的なデザイン。予測不可能なレイアウト。<br>
+                    装飾を排除した生々しい素材感。<br>
+                    これはデザインの反逆です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skewed Section -->
+    <section class="skewed-section">
+        <div class="container">
+            <h2 style="font-size: 4rem; font-weight: 900;">COMPONENTS</h2>
+            <p style="font-size: 1.5rem; margin-top: 1rem;">
+                すべてが極端。すべてが大胆。妥協なし。
+            </p>
+        </div>
+    </section>
+
+    <!-- Broken Grid -->
+    <section class="container">
+        <div class="broken-grid">
+            <div>
+                <h3 style="font-size: 2rem; font-weight: 900;">01</h3>
+                <p style="margin-top: 1rem;">
+                    ASYMMETRIC<br>
+                    非対称レイアウト<br>
+                    予測不可能な配置
+                </p>
+            </div>
+            <div>
+                <h3 style="font-size: 2rem; font-weight: 900;">02</h3>
+                <p style="margin-top: 1rem;">
+                    RAW MATERIALS<br>
+                    生々しい素材感<br>
+                    装飾を完全排除
+                </p>
+            </div>
+            <div>
+                <h3 style="font-size: 2rem; font-weight: 900;">03</h3>
+                <p style="margin-top: 1rem;">
+                    EXTREME CONTRAST<br>
+                    極端なコントラスト<br>
+                    黒・白・黄色のみ
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brutal Cards -->
+    <section class="container" style="padding: 4rem 2rem;">
+        <div class="glitch-text" data-text="INTERACTIVE">INTERACTIVE</div>
+        
+        <div class="brutal-card">
+            <h3 style="font-size: 2rem; font-weight: 900;">HOVER EFFECTS</h3>
+            <p style="margin-top: 1rem;">
+                カーソルを乗せると変化。<br>
+                色の反転、影の移動、予測不能な動き。
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="#" class="brutal-button">EXPLORE</a>
+            </div>
+        </div>
+
+        <div class="brutal-card">
+            <h3 style="font-size: 2rem; font-weight: 900;">TYPOGRAPHY</h3>
+            <p style="margin-top: 1rem;">
+                巨大なテキスト。極細から極太まで。<br>
+                縦書き、斜体、アウトライン。すべてが表現。
+            </p>
+            <div style="margin-top: 2rem;">
+                <a href="#" class="brutal-button">DISCOVER</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Elements Demo -->
+    <section style="position: relative; min-height: 50vh; padding: 4rem 2rem;">
+        <div class="container">
+            <div class="floating-element" style="top: 10%; left: 5%;">
+                <span class="rotating-element">✦</span>
+            </div>
+            <div class="floating-element" style="top: 30%; right: 10%; background: #000; color: #FFFF00;">
+                CHAOS
+            </div>
+            <div class="floating-element" style="bottom: 20%; left: 40%;">
+                ORDER
+            </div>
+            
+            <div style="text-align: center; padding: 4rem 0;">
+                <h2 class="outline-text">BREAK THE GRID</h2>
+                <p style="font-size: 1.5rem; margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    グリッドを壊せ。ルールを破れ。<br>
+                    これがブルータリズムの本質。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: #FFFF00; color: #000; padding: 4rem 2rem; margin-top: 8rem;">
+        <div class="container">
+            <h3 style="font-size: 3rem; font-weight: 900;">BRUTALIST DESIGN TEMPLATE</h3>
+            <p style="font-size: 1.2rem; margin-top: 1rem;">
+                NO COMPROMISE. NO DECORATION. PURE FUNCTION.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

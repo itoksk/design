@@ -1,0 +1,156 @@
+# Literary Editorial Design System
+# 文芸誌スタイル エディトリアルデザインシステム
+
+version: "1.0"
+created: "2024"
+description: "クリエイティブ・ポートフォリオ向けの文芸誌風エディトリアルデザインシステム"
+
+# ===========================================
+# LITERARY MAGAZINE STYLE - 文芸誌スタイル
+# ===========================================
+
+name: "Literary Magazine Style"
+japanese_name: "文芸誌スタイル"
+target: "クリエイティブ・ポートフォリオサイト"
+
+design_concept:
+  description: "紙の質感と印刷物の温かみを感じさせる、文芸誌のようなエディトリアルデザイン"
+  keywords:
+    - "紙の質感"
+    - "インク感"
+    - "タイポグラフィ重視"
+    - "番号付きカード"
+    - "影付きレイアウト"
+
+color_scheme:
+  primary:
+    ink: "#0A0E27"        # 濃紺インク色
+    paper: "#FEFEF8"      # オフホワイト紙色
+  accent:
+    electric: "#00F0FF"   # 電気的な水色
+    coral: "#FF6B6B"      # コーラルピンク
+    violet: "#7C3AED"     # 紫
+  text:
+    primary: "#0A0E27"    # 本文用インク色
+    secondary: "#4A5568"  # サブテキスト用グレー
+
+typography:
+  fonts:
+    primary: "'Zen Kaku Gothic New', sans-serif"  # 日本語メインフォント
+    accent: "'Space Grotesk', monospace"          # 数字・英語アクセント
+    display: "'Bebas Neue', sans-serif"           # 見出し用（オプション）
+  font_weights:
+    - 300  # Light
+    - 400  # Regular
+    - 500  # Medium
+    - 700  # Bold
+    - 900  # Black
+  
+layout_components:
+  navigation:
+    style: "固定ナビゲーション"
+    background: "半透明白 (rgba(254, 254, 248, 0.95))"
+    shadow: "subtle"
+    hover_effect: "下線アニメーション"
+    
+  hero_section:
+    title_size: "clamp(3rem, 8vw, 6rem)"
+    layout: "縦積み中央揃え"
+    decorations:
+      - "回転したラベル (transform: rotate(-1deg))"
+      - "統計数値表示"
+      - "抽象的な背景シェイプ"
+  
+  cards:
+    structure:
+      - "白背景"
+      - "黒枠線 (2px solid)"
+      - "黒い影カード (::before疑似要素)"
+    numbering:
+      style: "四角形内の数字"
+      background: "電気的な水色"
+      size: "40x40px"
+    hover_effect:
+      - "白黒反転 (背景: 黒, 文字: 白)"
+      - "左上への移動 (translate(-4px, -4px))"
+      - "影の拡大"
+    spacing: "2rem padding"
+  
+  sections:
+    title_style:
+      - "大きな薄いセクション番号 (01, 02, 03...)"
+      - "セクションラベル (小文字、レタースペース広め)"
+      - "区切り線なし"
+    margin: "80px 0"
+  
+  phase_cards:
+    style: "点線の下線区切り"
+    numbering: "巨大な薄い数字 (opacity: 0.2)"
+    
+  table:
+    header: "黒背景白文字"
+    hover: "薄い水色背景"
+    cell_padding: "1.25rem 1rem"
+
+animations:
+  transitions:
+    default: "all 0.3s ease"
+    hover: "0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+  scroll_effects:
+    - "フェードイン"
+    - "視差効果 (パララックス)"
+
+responsive_breakpoints:
+  mobile: "768px"
+  tablet: "1024px"
+  desktop: "1400px"
+
+# ===========================================
+# 特別なエフェクト
+# ===========================================
+
+special_effects:
+  paper_texture:
+    background_pattern: |
+      repeating-linear-gradient(
+        90deg,
+        transparent,
+        transparent 2px,
+        rgba(10, 14, 39, 0.01) 2px,
+        rgba(10, 14, 39, 0.01) 4px
+      )
+    implementation: "body::before疑似要素で全面に適用"
+  
+  shadow_cards:
+    description: "カード背景に黒い影を配置"
+    z_index: "-1"
+    offset: "4px 4px"
+    
+  hover_inversion:
+    description: "ホバー時の白黒反転効果"
+    background_change: "white → black"
+    text_change: "black → white"
+    transform: "translate(-4px, -4px)"
+
+# ===========================================
+# カスタマイズガイドライン
+# ===========================================
+
+customization_guidelines:
+  dos:
+    - "一貫性のあるデザイン言語を維持"
+    - "読みやすさを最優先"
+    - "インタラクティブ要素は控えめに"
+    - "番号システムは統一"
+    
+  donts:
+    - "過度な絵文字の使用"
+    - "読みにくい配色"
+    - "過度なアニメーション"
+    - "一般的すぎるデザイン"
+
+metadata:
+  template_type: "Literary Editorial"
+  author: "Design System"
+  purpose: "クリエイター・アーティスト向けポートフォリオサイトのWebデザインテンプレート"
+  license: "MIT License - 個人・商用利用可"

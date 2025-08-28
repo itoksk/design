@@ -1,0 +1,136 @@
+{
+  "components": {
+    "layout": {
+      "warningStripe": {
+        "name": "Warning Stripe",
+        "description": "工業的な警告ストライプ",
+        "html": "<div class=\"warning-stripe\"></div>",
+        "css": ".warning-stripe {\n  height: 10px;\n  background: repeating-linear-gradient(\n    45deg,\n    #FF0,\n    #FF0 10px,\n    #000 10px,\n    #000 20px\n  );\n  margin: 2rem 0;\n}"
+      },
+      "terminalHeader": {
+        "name": "Terminal Header",
+        "description": "ターミナル風ヘッダー",
+        "html": "<header class=\"terminal-header\">\n  <span class=\"terminal-prompt\">$</span>\n  <span class=\"terminal-text\">SYSTEM.READY</span>\n  <span class=\"terminal-cursor\">_</span>\n</header>",
+        "css": ".terminal-header {\n  background: #000;\n  color: #0F0;\n  padding: 1rem;\n  font-family: 'Space Mono', monospace;\n  border: 1px solid #0F0;\n}\n.terminal-prompt { color: #FF0; }\n.terminal-cursor {\n  animation: blink 1s infinite;\n}\n@keyframes blink {\n  0%, 50% { opacity: 1; }\n  51%, 100% { opacity: 0; }\n}"
+      },
+      "gridOverlay": {
+        "name": "Grid Overlay",
+        "description": "技術的グリッドオーバーレイ",
+        "html": "<div class=\"grid-overlay\"></div>",
+        "css": ".grid-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-image:\n    linear-gradient(rgba(255,255,0,0.02) 1px, transparent 1px),\n    linear-gradient(90deg, rgba(255,255,0,0.02) 1px, transparent 1px);\n  background-size: 50px 50px;\n  pointer-events: none;\n  z-index: 1;\n}"
+      },
+      "splitPanel": {
+        "name": "Split Panel",
+        "description": "分割パネルレイアウト",
+        "html": "<div class=\"split-panel\">\n  <div class=\"panel-left\">LEFT PANEL</div>\n  <div class=\"panel-divider\"></div>\n  <div class=\"panel-right\">RIGHT PANEL</div>\n</div>",
+        "css": ".split-panel {\n  display: grid;\n  grid-template-columns: 1fr 4px 1fr;\n  gap: 0;\n  min-height: 400px;\n}\n.panel-divider {\n  background: linear-gradient(to bottom, transparent, #FF0, transparent);\n}\n.panel-left, .panel-right {\n  padding: 2rem;\n  background: #0A0A0A;\n  border: 1px solid #333;\n}"
+      }
+    },
+    "typography": {
+      "glowText": {
+        "name": "Glow Text",
+        "description": "ネオングロー効果テキスト",
+        "html": "<h1 class=\"glow-text\">CYBER TEXT</h1>",
+        "css": ".glow-text {\n  color: #FF0;\n  text-shadow:\n    0 0 10px #FF0,\n    0 0 20px #FF0,\n    0 0 30px #FF0,\n    0 0 40px #FF8800;\n  animation: pulse-glow 2s ease-in-out infinite;\n}\n@keyframes pulse-glow {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.8; }\n}"
+      },
+      "typewriterText": {
+        "name": "Typewriter Text",
+        "description": "タイプライター効果",
+        "html": "<div class=\"typewriter\">\n  <span class=\"typewriter-text\">INITIALIZING SYSTEM...</span>\n</div>",
+        "css": ".typewriter {\n  font-family: 'Space Mono', monospace;\n  color: #0F0;\n}\n.typewriter-text {\n  overflow: hidden;\n  border-right: 3px solid #0F0;\n  white-space: nowrap;\n  animation:\n    typing 3s steps(40, end),\n    cursor 1s step-end infinite;\n}\n@keyframes typing {\n  from { width: 0; }\n  to { width: 100%; }\n}\n@keyframes cursor {\n  from, to { border-color: transparent; }\n  50% { border-color: #0F0; }\n}"
+      },
+      "dataLabel": {
+        "name": "Data Label",
+        "description": "データラベル表示",
+        "html": "<span class=\"data-label\">\n  <span class=\"label-key\">STATUS:</span>\n  <span class=\"label-value\">ACTIVE</span>\n</span>",
+        "css": ".data-label {\n  font-family: 'Space Mono', monospace;\n  font-size: 0.875rem;\n}\n.label-key {\n  color: #888;\n  margin-right: 0.5rem;\n}\n.label-value {\n  color: #FF0;\n  font-weight: bold;\n}"
+      },
+      "warningText": {
+        "name": "Warning Text",
+        "description": "警告テキスト",
+        "html": "<div class=\"warning-text\">⚠ WARNING: CRITICAL ERROR</div>",
+        "css": ".warning-text {\n  color: #F00;\n  font-weight: bold;\n  font-family: 'Space Mono', monospace;\n  padding: 0.5rem 1rem;\n  background: rgba(255,0,0,0.1);\n  border: 2px solid #F00;\n  animation: warning-pulse 1s infinite;\n}\n@keyframes warning-pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.6; }\n}"
+      }
+    },
+    "elements": {
+      "asciiBorder": {
+        "name": "ASCII Border",
+        "description": "ASCII装飾ボーダー",
+        "html": "<div class=\"ascii-border\">\n  <div class=\"ascii-content\">CONTENT</div>\n</div>",
+        "css": ".ascii-border {\n  position: relative;\n  border: 1px dashed #FF0;\n  padding: 2rem;\n  margin: 2rem 0;\n}\n.ascii-border::before {\n  content: '[===================]';\n  position: absolute;\n  top: -10px;\n  left: 20px;\n  background: #000;\n  color: #FF0;\n  padding: 0 10px;\n  font-family: monospace;\n}"
+      },
+      "timelineBlock": {
+        "name": "Timeline Block",
+        "description": "タイムラインブロック",
+        "html": "<div class=\"timeline-block\">\n  <div class=\"timeline-time\">09:00</div>\n  <div class=\"timeline-content\">\n    <h3>イベント開始</h3>\n    <p>説明テキスト</p>\n  </div>\n</div>",
+        "css": ".timeline-block {\n  display: grid;\n  grid-template-columns: 100px 1fr;\n  gap: 20px;\n  padding: 1rem 0;\n  border-left: 4px solid #FF0;\n  margin-left: 50px;\n}\n.timeline-time {\n  color: #FF0;\n  font-weight: bold;\n  font-family: 'Space Mono', monospace;\n  font-size: 1.2rem;\n}\n.timeline-content {\n  padding-left: 20px;\n}\n.timeline-block.urgent .timeline-time {\n  color: #F00;\n  animation: blink 1s infinite;\n}"
+      },
+      "statusIndicator": {
+        "name": "Status Indicator",
+        "description": "ステータスインジケーター",
+        "html": "<div class=\"status-indicator active\">\n  <span class=\"status-dot\"></span>\n  <span class=\"status-text\">ONLINE</span>\n</div>",
+        "css": ".status-indicator {\n  display: inline-flex;\n  align-items: center;\n  gap: 0.5rem;\n  font-family: 'Space Mono', monospace;\n  font-size: 0.875rem;\n}\n.status-dot {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: #888;\n}\n.status-indicator.active .status-dot {\n  background: #0F0;\n  box-shadow: 0 0 10px #0F0;\n  animation: pulse 2s infinite;\n}\n.status-indicator.error .status-dot {\n  background: #F00;\n  box-shadow: 0 0 10px #F00;\n}\n@keyframes pulse {\n  0%, 100% { opacity: 1; }\n  50% { opacity: 0.5; }\n}"
+      },
+      "dataCard": {
+        "name": "Data Card",
+        "description": "データカード",
+        "html": "<div class=\"data-card\">\n  <div class=\"data-card-header\">SYSTEM STATUS</div>\n  <div class=\"data-card-body\">\n    <div class=\"data-row\">\n      <span>CPU:</span>\n      <span>87%</span>\n    </div>\n  </div>\n</div>",
+        "css": ".data-card {\n  background: #0A0A0A;\n  border: 1px solid #333;\n  margin: 1rem 0;\n}\n.data-card-header {\n  background: repeating-linear-gradient(\n    45deg,\n    #FF0,\n    #FF0 10px,\n    #000 10px,\n    #000 20px\n  );\n  color: #000;\n  padding: 0.5rem 1rem;\n  font-weight: bold;\n  font-family: 'Space Mono', monospace;\n}\n.data-card-body {\n  padding: 1rem;\n}\n.data-row {\n  display: flex;\n  justify-content: space-between;\n  padding: 0.5rem 0;\n  border-bottom: 1px dotted #333;\n  font-family: monospace;\n}\n.data-row span:last-child {\n  color: #FF0;\n}"
+      }
+    },
+    "buttons": {
+      "primaryButton": {
+        "name": "Primary Button",
+        "description": "メインアクションボタン",
+        "html": "<button class=\"btn-primary\">EXECUTE</button>",
+        "css": ".btn-primary {\n  background: #FF0;\n  color: #000;\n  border: none;\n  padding: 1rem 2rem;\n  font-family: 'Space Mono', monospace;\n  font-weight: bold;\n  font-size: 1rem;\n  cursor: pointer;\n  transform: skewX(-10deg);\n  transition: all 0.3s;\n  text-transform: uppercase;\n}\n.btn-primary:hover {\n  background: #F00;\n  color: #FFF;\n  transform: skewX(-10deg) scale(1.05);\n  box-shadow: 0 0 20px rgba(255,0,0,0.5);\n}"
+      },
+      "secondaryButton": {
+        "name": "Secondary Button",
+        "description": "セカンダリボタン",
+        "html": "<button class=\"btn-secondary\">CANCEL</button>",
+        "css": ".btn-secondary {\n  background: transparent;\n  color: #FF0;\n  border: 2px solid #FF0;\n  padding: 0.75rem 1.5rem;\n  font-family: 'Space Mono', monospace;\n  font-weight: bold;\n  cursor: pointer;\n  transition: all 0.3s;\n  text-transform: uppercase;\n}\n.btn-secondary:hover {\n  background: #FF0;\n  color: #000;\n  box-shadow: 0 0 15px rgba(255,255,0,0.5);\n}"
+      },
+      "dangerButton": {
+        "name": "Danger Button",
+        "description": "危険アクションボタン",
+        "html": "<button class=\"btn-danger\">⚠ EMERGENCY STOP</button>",
+        "css": ".btn-danger {\n  background: #F00;\n  color: #FFF;\n  border: 2px solid #F00;\n  padding: 1rem 2rem;\n  font-family: 'Space Mono', monospace;\n  font-weight: bold;\n  cursor: pointer;\n  animation: danger-pulse 1s infinite;\n  text-transform: uppercase;\n}\n@keyframes danger-pulse {\n  0%, 100% {\n    background: #F00;\n    box-shadow: 0 0 0 0 rgba(255,0,0,0.7);\n  }\n  50% {\n    background: #CC0000;\n    box-shadow: 0 0 0 10px rgba(255,0,0,0);\n  }\n}"
+      }
+    },
+    "tables": {
+      "dataTable": {
+        "name": "Data Table",
+        "description": "データテーブル",
+        "html": "<table class=\"data-table\">\n  <thead>\n    <tr>\n      <th>ID</th>\n      <th>STATUS</th>\n      <th>VALUE</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>001</td>\n      <td class=\"status-active\">ACTIVE</td>\n      <td>98.5%</td>\n    </tr>\n  </tbody>\n</table>",
+        "css": ".data-table {\n  width: 100%;\n  border-collapse: collapse;\n  font-family: 'Space Mono', monospace;\n  background: #0A0A0A;\n}\n.data-table thead {\n  background: repeating-linear-gradient(\n    45deg,\n    #FF0,\n    #FF0 10px,\n    #000 10px,\n    #000 20px\n  );\n}\n.data-table th {\n  color: #000;\n  padding: 0.75rem;\n  text-align: left;\n  font-weight: bold;\n}\n.data-table td {\n  border: 1px solid #333;\n  padding: 0.75rem;\n  color: #CCC;\n}\n.data-table .status-active {\n  color: #0F0;\n}\n.data-table .status-error {\n  color: #F00;\n}\n.data-table tr:hover {\n  background: #1A1A1A;\n}"
+      },
+      "scoreGrid": {
+        "name": "Score Grid",
+        "description": "スコアグリッド",
+        "html": "<div class=\"score-grid\">\n  <div class=\"score-header\">評価項目</div>\n  <div class=\"score-header\">配点</div>\n  <div class=\"score-item\">技術実装</div>\n  <div class=\"score-value\">40</div>\n</div>",
+        "css": ".score-grid {\n  display: grid;\n  grid-template-columns: 2fr 1fr;\n  gap: 1px;\n  background: #FF0;\n  border: 2px solid #FF0;\n}\n.score-header {\n  background: #FF0;\n  color: #000;\n  padding: 0.75rem;\n  font-weight: bold;\n  font-family: 'Space Mono', monospace;\n}\n.score-item, .score-value {\n  background: #000;\n  padding: 0.75rem;\n  color: #FFF;\n}\n.score-value {\n  text-align: center;\n  color: #FF0;\n  font-weight: bold;\n}"
+      }
+    },
+    "animations": {
+      "scanLine": {
+        "name": "Scan Line",
+        "description": "スキャンライン効果",
+        "html": "<div class=\"scan-container\">\n  <div class=\"scan-line\"></div>\n  <div class=\"content\">SCANNING...</div>\n</div>",
+        "css": ".scan-container {\n  position: relative;\n  overflow: hidden;\n  padding: 2rem;\n  background: #0A0A0A;\n  border: 1px solid #333;\n}\n.scan-line {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  height: 2px;\n  background: linear-gradient(to right, transparent, #0F0, transparent);\n  animation: scan 3s linear infinite;\n}\n@keyframes scan {\n  0% { transform: translateY(0); }\n  100% { transform: translateY(200px); }\n}"
+      },
+      "glitchEffect": {
+        "name": "Glitch Effect",
+        "description": "グリッチエフェクト",
+        "html": "<h2 class=\"glitch\" data-text=\"GLITCH\">GLITCH</h2>",
+        "css": ".glitch {\n  position: relative;\n  color: #FFF;\n  font-size: 3rem;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n.glitch::before,\n.glitch::after {\n  content: attr(data-text);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.glitch::before {\n  animation: glitch-1 0.5s infinite;\n  color: #F00;\n  z-index: -1;\n}\n.glitch::after {\n  animation: glitch-2 0.5s infinite;\n  color: #0FF;\n  z-index: -1;\n}\n@keyframes glitch-1 {\n  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px); }\n  20% { clip-path: inset(92% 0 1% 0); transform: translate(2px); }\n  40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px); }\n  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px); }\n  80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px); }\n  100% { clip-path: inset(58% 0 43% 0); transform: translate(2px); }\n}\n@keyframes glitch-2 {\n  0% { clip-path: inset(25% 0 58% 0); transform: translate(2px); }\n  20% { clip-path: inset(54% 0 7% 0); transform: translate(-2px); }\n  40% { clip-path: inset(58% 0 43% 0); transform: translate(2px); }\n  60% { clip-path: inset(40% 0 61% 0); transform: translate(-2px); }\n  80% { clip-path: inset(92% 0 1% 0); transform: translate(2px); }\n  100% { clip-path: inset(43% 0 1% 0); transform: translate(-2px); }\n}"
+      },
+      "matrixRain": {
+        "name": "Matrix Rain",
+        "description": "マトリックスレイン効果",
+        "html": "<div class=\"matrix-rain\">\n  <span>0</span><span>1</span><span>0</span>\n</div>",
+        "css": ".matrix-rain {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n  pointer-events: none;\n  z-index: -1;\n}\n.matrix-rain span {\n  position: absolute;\n  color: #0F0;\n  font-family: monospace;\n  font-size: 20px;\n  animation: fall linear infinite;\n}\n@keyframes fall {\n  to { transform: translateY(100vh); }\n}"
+      }
+    }
+  }
+}

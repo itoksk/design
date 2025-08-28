@@ -1,0 +1,168 @@
+# Brutalist Design System Configuration
+
+typography:
+  fonts:
+    display:
+      primary: "Archivo Black"
+      fallback: "Arial Black, sans-serif"
+      weight: 900
+    
+    body:
+      primary: "Inter"
+      fallback: "Helvetica, sans-serif"
+      weights: [100, 400, 900]
+    
+    mono:
+      primary: "Space Mono"
+      fallback: "Courier New, monospace"
+      weights: [400, 700]
+  
+  scales:
+    massive:
+      min: "4rem"
+      preferred: "15vw"
+      max: "12rem"
+    
+    large:
+      size: "4rem"
+    
+    medium:
+      size: "2rem"
+    
+    small:
+      size: "0.875rem"
+    
+    tiny:
+      size: "0.625rem"
+
+colors:
+  scheme:
+    background:
+      primary: "#000000"
+      secondary: "#1a1a1a"
+    
+    foreground:
+      primary: "#FFFFFF"
+      secondary: "#999999"
+      muted: "#666666"
+    
+    accent:
+      primary: "#FFFF00"  # Electric Yellow
+      secondary: "#FF0000" # Pure Red
+      tertiary: "#00FFFF" # Cyan
+    
+    states:
+      error: "#FF0000"
+      success: "#00FF00"
+      warning: "#FFFF00"
+
+layout:
+  grid:
+    broken:
+      columns: "1fr 2fr 1fr 3fr 2fr"
+      gap: "2px"
+      background: "accent.primary"
+    
+    split:
+      columns: "1fr 2px 1fr"
+      divider: "linear-gradient(to bottom, transparent, accent.primary, transparent)"
+  
+  sections:
+    oblique:
+      transform: "skewY(-5deg)"
+      margin: "100px 0"
+      counter-transform: "skewY(5deg)"
+    
+    rotated:
+      transform: "rotate(-2deg)"
+      margin: "150px -100px"
+  
+  spacing:
+    massive: "10rem"
+    large: "4rem"
+    medium: "2rem"
+    small: "1rem"
+    tiny: "0.5rem"
+
+components:
+  borders:
+    ascii:
+      width: "1px"
+      style: "solid"
+      color: "accent.primary"
+      corners: "+"
+      corner-offset: "-8px"
+    
+    standard:
+      width: "2px"
+      style: "solid"
+      color: "accent.primary"
+  
+  floating:
+    navigation:
+      position: "fixed"
+      orientation: "vertical"
+      placement: "right"
+      transform: "translateY(-50%)"
+    
+    corners:
+      positions: ["top-left", "top-right", "bottom-left", "bottom-right"]
+      font-size: "10px"
+      color: "foreground.muted"
+  
+  dividers:
+    zigzag:
+      height: "50px"
+      pattern: "135deg, accent.primary 25%, transparent 25%"
+      size: "100px 100px"
+    
+    vertical:
+      width: "2px"
+      gradient: "linear-gradient(to bottom, transparent, accent.primary, transparent)"
+
+animations:
+  float:
+    duration: "20s"
+    timing: "linear"
+    keyframes:
+      - "translate(0, 0) rotate(0deg)"
+      - "translate(100px, -50px) rotate(120deg)"
+      - "translate(-50px, 100px) rotate(240deg)"
+      - "translate(0, 0) rotate(360deg)"
+  
+  glitch:
+    duration: "0.5s"
+    iteration: "infinite"
+    colors: ["#FF0000", "#00FFFF"]
+  
+  rotate:
+    duration: "20s"
+    timing: "linear"
+    iteration: "infinite"
+
+effects:
+  cursor:
+    default: "crosshair"
+  
+  hover:
+    text:
+      letter-spacing: "2px"
+      color: "accent.primary"
+  
+  grid-overlay:
+    opacity: 0.03
+    size: "100px 100px"
+    color: "accent.primary"
+
+responsive:
+  breakpoints:
+    mobile: "768px"
+    tablet: "1024px"
+    desktop: "1440px"
+  
+  adjustments:
+    mobile:
+      massive-text: "clamp(3rem, 10vw, 6rem)"
+      columns: 1
+      oblique: "none"
+      floating-nav: "hidden"

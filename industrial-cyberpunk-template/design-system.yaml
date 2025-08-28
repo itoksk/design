@@ -1,0 +1,351 @@
+# Industrial Cyberpunk Design System Configuration
+
+typography:
+  fonts:
+    display:
+      primary: "Bebas Neue"
+      fallback: "Arial Black, sans-serif"
+      weight: 400
+      usage: "巨大見出し、警告テキスト"
+    
+    body:
+      primary: "Inter"
+      fallback: "Helvetica, sans-serif"
+      weights: [400, 700, 900]
+      usage: "本文、説明文"
+    
+    mono:
+      primary: "Space Mono"
+      fallback: "Courier New, monospace"
+      weights: [400, 700]
+      usage: "技術情報、コード、タイムライン"
+    
+    technical:
+      primary: "Share Tech Mono"
+      fallback: "monospace"
+      weight: 400
+      usage: "データ表示、ステータス情報"
+  
+  scales:
+    massive:
+      size: "8rem"
+      line-height: 0.9
+      usage: "メインタイトル"
+    
+    large:
+      size: "3rem"
+      line-height: 1.1
+      usage: "セクションタイトル"
+    
+    medium:
+      size: "1.5rem"
+      line-height: 1.4
+      usage: "サブタイトル"
+    
+    body:
+      size: "1rem"
+      line-height: 1.6
+      usage: "本文"
+    
+    small:
+      size: "0.875rem"
+      line-height: 1.5
+      usage: "補助情報"
+    
+    micro:
+      size: "0.75rem"
+      line-height: 1.4
+      usage: "ステータス、タイムスタンプ"
+
+colors:
+  scheme:
+    # 基本色
+    background:
+      primary: "#000000"      # 純粋な黒
+      secondary: "#0A0A0A"    # わずかに明るい黒
+      tertiary: "#1A1A1A"     # ダークグレー
+    
+    foreground:
+      primary: "#FFFFFF"      # 白
+      secondary: "#CCCCCC"    # ライトグレー
+      muted: "#888888"        # ミュートグレー
+    
+    # 警告・アクセント色
+    warning:
+      primary: "#FFFF00"      # 電気イエロー
+      secondary: "#FFD700"    # ゴールド
+      dim: "#998800"          # 暗いイエロー
+    
+    danger:
+      primary: "#FF0000"      # 純粋な赤
+      secondary: "#FF3333"    # 明るい赤
+      dim: "#990000"          # 暗い赤
+    
+    info:
+      primary: "#00FFFF"      # シアン
+      secondary: "#00CCCC"    # 暗いシアン
+    
+    success:
+      primary: "#00FF00"      # ネオングリーン
+      secondary: "#00CC00"    # 暗いグリーン
+    
+    # 特殊効果色
+    glitch:
+      red: "#FF0000"
+      cyan: "#00FFFF"
+      yellow: "#FFFF00"
+
+layout:
+  containers:
+    max-width: "1400px"
+    padding: "2rem"
+    margin: "0 auto"
+  
+  grid:
+    industrial:
+      columns: "repeat(12, 1fr)"
+      gap: "2px"
+      background: "warning.primary"
+    
+    timeline:
+      columns: "100px 1fr"
+      gap: "20px"
+      border: "2px solid warning.primary"
+    
+    support:
+      columns: "200px 1fr auto"
+      gap: "1rem"
+      background: "background.secondary"
+  
+  sections:
+    hero:
+      min-height: "100vh"
+      padding: "4rem 2rem"
+      background: "linear-gradient(180deg, #000 0%, #0A0A0A 100%)"
+    
+    content:
+      padding: "4rem 2rem"
+      margin: "2rem 0"
+    
+    divider:
+      height: "10px"
+      pattern: "repeating-linear-gradient(45deg, warning.primary, warning.primary 10px, background.primary 10px, background.primary 20px)"
+  
+  spacing:
+    massive: "8rem"
+    large: "4rem"
+    medium: "2rem"
+    small: "1rem"
+    tiny: "0.5rem"
+    micro: "0.25rem"
+
+components:
+  borders:
+    ascii:
+      style: "1px dashed"
+      color: "warning.primary"
+      padding: "1rem"
+      decoration: "[===]"
+    
+    technical:
+      style: "2px solid"
+      color: "warning.primary"
+      corners: "+"
+      sides: "|"
+    
+    warning:
+      style: "3px solid"
+      color: "danger.primary"
+      animation: "pulse 2s infinite"
+  
+  buttons:
+    primary:
+      background: "warning.primary"
+      color: "background.primary"
+      padding: "1rem 2rem"
+      font-weight: "bold"
+      transform: "skewX(-10deg)"
+      hover:
+        background: "danger.primary"
+        transform: "skewX(-10deg) scale(1.05)"
+    
+    secondary:
+      background: "transparent"
+      border: "2px solid warning.primary"
+      color: "warning.primary"
+      padding: "0.75rem 1.5rem"
+      hover:
+        background: "warning.primary"
+        color: "background.primary"
+    
+    danger:
+      background: "danger.primary"
+      color: "foreground.primary"
+      animation: "pulse 1s infinite"
+  
+  cards:
+    timeline:
+      border-left: "4px solid warning.primary"
+      padding: "1rem"
+      margin: "1rem 0"
+      time:
+        color: "warning.primary"
+        font-size: "1.2rem"
+        font-weight: "bold"
+      urgent:
+        color: "danger.primary"
+        animation: "blink 1s infinite"
+    
+    story:
+      background: "background.secondary"
+      border: "1px solid warning.dim"
+      padding: "2rem"
+      quotes:
+        color: "warning.primary"
+        font-size: "3rem"
+    
+    data:
+      background: "background.tertiary"
+      header:
+        background: "warning-stripe"
+        color: "background.primary"
+        padding: "0.5rem"
+      cell:
+        border: "1px solid #333"
+        padding: "0.75rem"
+  
+  navigation:
+    main:
+      background: "background.primary"
+      border-bottom: "2px solid warning.primary"
+      height: "60px"
+      sticky: true
+    
+    items:
+      color: "foreground.secondary"
+      padding: "0 1rem"
+      hover:
+        color: "warning.primary"
+        text-decoration: "underline"
+    
+    mobile:
+      background: "background.secondary"
+      border: "2px solid warning.primary"
+
+animations:
+  pulse:
+    keyframes:
+      "0%, 100%": "opacity: 1"
+      "50%": "opacity: 0.5"
+    duration: "2s"
+    iteration: "infinite"
+  
+  blink:
+    keyframes:
+      "0%, 50%, 100%": "opacity: 1"
+      "25%, 75%": "opacity: 0"
+    duration: "1s"
+    iteration: "infinite"
+  
+  typewriter:
+    keyframes:
+      "from": "width: 0"
+      "to": "width: 100%"
+    duration: "3s"
+    timing: "steps(40, end)"
+  
+  glitch:
+    keyframes:
+      "0%": "transform: translate(0)"
+      "20%": "transform: translate(-2px, 2px)"
+      "40%": "transform: translate(-2px, -2px)"
+      "60%": "transform: translate(2px, 2px)"
+      "80%": "transform: translate(2px, -2px)"
+      "100%": "transform: translate(0)"
+    duration: "0.5s"
+    iteration: "infinite"
+  
+  scan:
+    keyframes:
+      "0%": "transform: translateY(-100%)"
+      "100%": "transform: translateY(100%)"
+    duration: "4s"
+    iteration: "infinite"
+    timing: "linear"
+
+effects:
+  cursor:
+    default: "crosshair"
+    hover: "pointer"
+    active: "grabbing"
+  
+  hover:
+    text:
+      color: "warning.primary"
+      text-decoration: "underline"
+      text-decoration-style: "wavy"
+    
+    box:
+      transform: "translate(-2px, -2px)"
+      box-shadow: "4px 4px 0 warning.primary"
+    
+    glow:
+      text-shadow: "0 0 10px warning.primary"
+  
+  overlays:
+    scanlines:
+      opacity: 0.05
+      pattern: "linear-gradient(transparent 50%, rgba(255,255,0,0.03) 50%)"
+      size: "100% 4px"
+      animation: "scan 8s linear infinite"
+    
+    grid:
+      opacity: 0.02
+      color: "warning.primary"
+      size: "50px 50px"
+    
+    vignette:
+      gradient: "radial-gradient(ellipse at center, transparent 0%, rgba(0,0,0,0.4) 100%)"
+
+responsive:
+  breakpoints:
+    mobile: "640px"
+    tablet: "768px"
+    desktop: "1024px"
+    wide: "1280px"
+  
+  adjustments:
+    mobile:
+      font-scale: 0.9
+      spacing-scale: 0.75
+      columns: 1
+      hide: ["decorative-elements", "ascii-art", "floating-nav"]
+    
+    tablet:
+      font-scale: 0.95
+      spacing-scale: 0.85
+      columns: 2
+      simplify: ["animations", "effects"]
+    
+    desktop:
+      font-scale: 1
+      spacing-scale: 1
+      columns: "auto"
+      enable: "all"
+
+accessibility:
+  motion:
+    prefers-reduced:
+      disable: ["animations", "parallax", "auto-scroll"]
+      simplify: ["transitions", "transforms"]
+  
+  contrast:
+    high:
+      warning-color: "#FFFF00"
+      danger-color: "#FF6666"
+      background: "#000000"
+      foreground: "#FFFFFF"
+  
+  focus:
+    outline: "3px solid warning.primary"
+    outline-offset: "2px"

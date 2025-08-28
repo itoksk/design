@@ -1,0 +1,119 @@
+{
+  "components": {
+    "layout": {
+      "brokenGrid": {
+        "name": "Broken Grid",
+        "description": "不規則な列幅のグリッドレイアウト",
+        "html": "<div class=\"broken-grid\">\n  <div>Content 1</div>\n  <div>Content 2</div>\n  <div>Content 3</div>\n</div>",
+        "css": ".broken-grid {\n  display: grid;\n  grid-template-columns: 1fr 2fr 1fr 3fr 2fr;\n  grid-auto-rows: minmax(200px, auto);\n  gap: 2px;\n  background: #FF0;\n  padding: 2px;\n}\n.broken-grid > div {\n  background: #000;\n  padding: 2rem;\n  color: #FFF;\n}"
+      },
+      "obliqueSection": {
+        "name": "Oblique Section",
+        "description": "斜めに傾いたセクション",
+        "html": "<section class=\"oblique-section\">\n  <div class=\"content\">Your content here</div>\n</section>",
+        "css": ".oblique-section {\n  transform: skewY(-5deg);\n  margin: 100px 0;\n  background: #FF0;\n  color: #000;\n}\n.oblique-section > * {\n  transform: skewY(5deg);\n}"
+      },
+      "splitScreen": {
+        "name": "Split Screen",
+        "description": "縦分割レイアウト",
+        "html": "<div class=\"split-screen\">\n  <div class=\"left\">Left Content</div>\n  <div class=\"vertical-divider\"></div>\n  <div class=\"right\">Right Content</div>\n</div>",
+        "css": ".split-screen {\n  display: grid;\n  grid-template-columns: 1fr 2px 1fr;\n  gap: 0;\n  min-height: 100vh;\n}\n.vertical-divider {\n  background: linear-gradient(to bottom, transparent, #FF0, transparent);\n  width: 2px;\n}"
+      },
+      "floatingCorners": {
+        "name": "Floating Corners",
+        "description": "画面四隅の固定情報",
+        "html": "<div class=\"corner-info top-left\">TL INFO</div>\n<div class=\"corner-info top-right\">TR INFO</div>\n<div class=\"corner-info bottom-left\">BL INFO</div>\n<div class=\"corner-info bottom-right\">BR INFO</div>",
+        "css": ".corner-info {\n  position: fixed;\n  font-size: 10px;\n  color: #666;\n  z-index: 1000;\n  font-family: monospace;\n}\n.corner-info.top-left { top: 20px; left: 20px; }\n.corner-info.top-right { top: 20px; right: 20px; text-align: right; }\n.corner-info.bottom-left { bottom: 20px; left: 20px; }\n.corner-info.bottom-right { bottom: 20px; right: 20px; text-align: right; }"
+      }
+    },
+    "typography": {
+      "massiveText": {
+        "name": "Massive Text",
+        "description": "巨大なディスプレイテキスト",
+        "html": "<h1 class=\"massive-text\">MASSIVE</h1>",
+        "css": ".massive-text {\n  font-size: clamp(4rem, 15vw, 12rem);\n  line-height: 0.8;\n  font-weight: 900;\n  font-family: 'Archivo Black', sans-serif;\n}"
+      },
+      "outlineText": {
+        "name": "Outline Text",
+        "description": "アウトラインテキスト",
+        "html": "<span class=\"text-outline\">OUTLINE</span>",
+        "css": ".text-outline {\n  color: transparent;\n  -webkit-text-stroke: 2px #FF0;\n  text-stroke: 2px #FF0;\n}"
+      },
+      "verticalText": {
+        "name": "Vertical Text",
+        "description": "縦書きテキスト",
+        "html": "<div class=\"vertical-text\">VERTICAL</div>",
+        "css": ".vertical-text {\n  writing-mode: vertical-rl;\n  text-orientation: mixed;\n}"
+      },
+      "glitchText": {
+        "name": "Glitch Text",
+        "description": "グリッチエフェクト付きテキスト",
+        "html": "<h2 class=\"glitch\" data-text=\"GLITCH\">GLITCH</h2>",
+        "css": ".glitch {\n  position: relative;\n  color: white;\n  font-size: 4rem;\n  font-weight: bold;\n  text-transform: uppercase;\n}\n.glitch::before,\n.glitch::after {\n  content: attr(data-text);\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n}\n.glitch::before {\n  animation: glitch-1 0.5s infinite;\n  color: #FF0;\n  z-index: -1;\n}\n.glitch::after {\n  animation: glitch-2 0.5s infinite;\n  color: #0FF;\n  z-index: -1;\n}"
+      }
+    },
+    "elements": {
+      "asciiBorder": {
+        "name": "ASCII Border",
+        "description": "ASCIIアート風ボーダー",
+        "html": "<div class=\"ascii-border\">\n  <div class=\"content\">Content</div>\n</div>",
+        "css": ".ascii-border {\n  border: 1px solid #FF0;\n  position: relative;\n  padding: 1rem;\n}\n.ascii-border::before {\n  content: '+';\n  position: absolute;\n  top: -8px;\n  left: -8px;\n  color: #FF0;\n  font-size: 16px;\n  font-family: monospace;\n}\n.ascii-border::after {\n  content: '+';\n  position: absolute;\n  bottom: -8px;\n  right: -8px;\n  color: #FF0;\n  font-size: 16px;\n  font-family: monospace;\n}"
+      },
+      "zigzagDivider": {
+        "name": "Zigzag Divider",
+        "description": "ジグザグ分割線",
+        "html": "<div class=\"zigzag-line\"></div>",
+        "css": ".zigzag-line {\n  height: 50px;\n  background: \n    linear-gradient(135deg, #FF0 25%, transparent 25%) -50px 0,\n    linear-gradient(225deg, #FF0 25%, transparent 25%) -50px 0,\n    linear-gradient(315deg, #FF0 25%, transparent 25%),\n    linear-gradient(45deg, #FF0 25%, transparent 25%);\n  background-size: 100px 100px;\n}"
+      },
+      "cutoutButton": {
+        "name": "Cutout Button",
+        "description": "切り抜きスタイルボタン",
+        "html": "<button class=\"cutout-btn\">CLICK ME</button>",
+        "css": ".cutout-btn {\n  background: #FFF;\n  color: #000;\n  padding: 10px 20px;\n  display: inline-block;\n  transform: skewX(-10deg);\n  border: none;\n  font-weight: bold;\n  cursor: crosshair;\n  transition: all 0.3s;\n}\n.cutout-btn:hover {\n  background: #FF0;\n  transform: skewX(-10deg) scale(1.1);\n}"
+      },
+      "floatingNav": {
+        "name": "Floating Navigation",
+        "description": "浮遊する縦型ナビゲーション",
+        "html": "<nav class=\"floating-nav\">\n  <a href=\"#\">ITEM 1</a>\n  <a href=\"#\">ITEM 2</a>\n  <a href=\"#\">ITEM 3</a>\n</nav>",
+        "css": ".floating-nav {\n  position: fixed;\n  right: 2rem;\n  top: 50%;\n  transform: translateY(-50%);\n  z-index: 1000;\n  writing-mode: vertical-lr;\n}\n.floating-nav a {\n  display: block;\n  margin: 1rem 0;\n  color: #999;\n  text-decoration: none;\n  transition: all 0.3s;\n  font-family: monospace;\n}\n.floating-nav a:hover {\n  color: #FF0;\n  letter-spacing: 2px;\n}"
+      }
+    },
+    "animations": {
+      "floatingElement": {
+        "name": "Floating Element",
+        "description": "浮遊するアニメーション要素",
+        "html": "<div class=\"floating-element\">FLOAT</div>",
+        "css": ".floating-element {\n  position: absolute;\n  animation: float 20s infinite linear;\n}\n@keyframes float {\n  0% { transform: translate(0, 0) rotate(0deg); }\n  33% { transform: translate(100px, -50px) rotate(120deg); }\n  66% { transform: translate(-50px, 100px) rotate(240deg); }\n  100% { transform: translate(0, 0) rotate(360deg); }\n}"
+      },
+      "rotatingText": {
+        "name": "Rotating Text",
+        "description": "回転するテキスト",
+        "html": "<div class=\"rotating-text\">ROTATING</div>",
+        "css": ".rotating-text {\n  animation: rotate 20s linear infinite;\n}\n@keyframes rotate {\n  from { transform: rotate(0deg); }\n  to { transform: rotate(360deg); }\n}"
+      },
+      "glitchAnimation": {
+        "name": "Glitch Animation",
+        "description": "グリッチアニメーション",
+        "css": "@keyframes glitch-1 {\n  0% { clip-path: inset(40% 0 61% 0); transform: translate(-2px); }\n  20% { clip-path: inset(92% 0 1% 0); transform: translate(2px); }\n  40% { clip-path: inset(43% 0 1% 0); transform: translate(-2px); }\n  60% { clip-path: inset(25% 0 58% 0); transform: translate(2px); }\n  80% { clip-path: inset(54% 0 7% 0); transform: translate(-2px); }\n  100% { clip-path: inset(58% 0 43% 0); transform: translate(2px); }\n}\n@keyframes glitch-2 {\n  0% { clip-path: inset(25% 0 58% 0); transform: translate(2px); }\n  20% { clip-path: inset(54% 0 7% 0); transform: translate(-2px); }\n  40% { clip-path: inset(58% 0 43% 0); transform: translate(2px); }\n  60% { clip-path: inset(40% 0 61% 0); transform: translate(-2px); }\n  80% { clip-path: inset(92% 0 1% 0); transform: translate(2px); }\n  100% { clip-path: inset(43% 0 1% 0); transform: translate(-2px); }\n}"
+      }
+    },
+    "effects": {
+      "gridOverlay": {
+        "name": "Grid Overlay",
+        "description": "グリッドオーバーレイ効果",
+        "html": "<div class=\"grid-overlay\"></div>",
+        "css": ".grid-overlay {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-image: \n    linear-gradient(rgba(255,255,0,0.03) 1px, transparent 1px),\n    linear-gradient(90deg, rgba(255,255,0,0.03) 1px, transparent 1px);\n  background-size: 100px 100px;\n  pointer-events: none;\n  z-index: 1;\n}"
+      },
+      "crosshairCursor": {
+        "name": "Crosshair Cursor",
+        "description": "クロスヘアカーソル",
+        "css": "body {\n  cursor: crosshair;\n}"
+      },
+      "brutalShadow": {
+        "name": "Brutal Shadow",
+        "description": "ブルータルな影",
+        "css": ".brutal-shadow {\n  box-shadow: 8px 8px 0 #000;\n}\n.brutal-shadow:hover {\n  box-shadow: 12px 12px 0 #000;\n  transform: translate(-2px, -2px);\n}"
+      }
+    }
+  }
+}

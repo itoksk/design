@@ -1,0 +1,231 @@
+{
+  "name": "Industrial Brutalist",
+  "version": "1.0.0",
+  "description": "工業系ハッカソン向けブルータリズムデザインテーマ",
+  
+  "colors": {
+    "palette": {
+      "primary": {
+        "black": "#0a0a0a",
+        "amber-400": "#fbbf24",
+        "white": "#ffffff"
+      },
+      "secondary": {
+        "gray-900": "#1a1a1a",
+        "gray-700": "#374151",
+        "gray-600": "#4b5556",
+        "gray-400": "#9ca3af"
+      },
+      "accent": {
+        "red-500": "#ef4444",
+        "red-400": "#f87171",
+        "red-900-20": "rgba(127, 29, 29, 0.2)"
+      }
+    },
+    "usage": {
+      "background": "#0a0a0a",
+      "surface": "#1a1a1a",
+      "text": "#ffffff",
+      "textSecondary": "#9ca3af",
+      "accent": "#fbbf24",
+      "warning": "#ef4444",
+      "border": "#fbbf24"
+    }
+  },
+  
+  "typography": {
+    "fontImports": [
+      "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap",
+      "https://fonts.googleapis.com/css2?family=Oswald:wght@200;400;700&display=swap",
+      "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700;900&display=swap"
+    ],
+    "fontFamilies": {
+      "heading": "'Bebas Neue', cursive",
+      "subheading": "'Oswald', sans-serif",
+      "body": "'Noto Sans JP', sans-serif",
+      "mono": "monospace"
+    },
+    "fontSizes": {
+      "hero": "9xl",
+      "section": "6xl",
+      "subsection": "4xl",
+      "heading": "2xl",
+      "body": "sm",
+      "small": "xs"
+    }
+  },
+  
+  "effects": {
+    "glitch": {
+      "enabled": true,
+      "shadows": [
+        "0.05em 0 0 rgba(255, 0, 0, .75)",
+        "-0.025em -0.05em 0 rgba(0, 255, 0, .75)",
+        "0.025em 0.05em 0 rgba(0, 0, 255, .75)"
+      ],
+      "animation": "glitch 500ms infinite"
+    },
+    "hazardStripe": {
+      "enabled": true,
+      "gradient": "repeating-linear-gradient(45deg, #fbbf24, #fbbf24 10px, #1f2937 10px, #1f2937 20px)"
+    },
+    "brutalistShadow": {
+      "enabled": true,
+      "shadow": "8px 8px 0 #000000"
+    },
+    "industrialGrid": {
+      "enabled": true,
+      "pattern": {
+        "horizontal": "linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px)",
+        "vertical": "linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px)",
+        "size": "50px 50px"
+      }
+    }
+  },
+  
+  "components": {
+    "brutalistBox": {
+      "background": "#1a1a1a",
+      "border": {
+        "width": "4px",
+        "style": "solid",
+        "color": "#fbbf24"
+      },
+      "shadow": {
+        "x": "8px",
+        "y": "8px",
+        "blur": "0",
+        "color": "#000000"
+      },
+      "padding": "2rem",
+      "transform": {
+        "rotate": ["1deg", "-1deg"]
+      }
+    },
+    "offsetBox": {
+      "background": "#1a1a1a",
+      "border": {
+        "width": "2px",
+        "style": "solid",
+        "color": "#ffffff"
+      },
+      "pseudoElement": {
+        "top": "4px",
+        "left": "4px",
+        "right": "-4px",
+        "bottom": "-4px",
+        "background": "#fbbf24",
+        "zIndex": -1
+      }
+    },
+    "timelineItem": {
+      "borderLeft": {
+        "width": "4px",
+        "style": "solid",
+        "color": "#fbbf24"
+      },
+      "transform": {
+        "skewX": "-2deg"
+      },
+      "background": "#1a1a1a",
+      "padding": "2rem"
+    },
+    "warningBox": {
+      "background": "rgba(127, 29, 29, 0.2)",
+      "border": {
+        "width": "2px",
+        "style": "solid",
+        "color": "#ef4444"
+      },
+      "textColor": "#f87171"
+    }
+  },
+  
+  "layout": {
+    "spacing": {
+      "section": {
+        "vertical": "5rem",
+        "horizontal": "2rem"
+      },
+      "component": {
+        "margin": "4rem",
+        "padding": "2rem"
+      },
+      "content": {
+        "gap": "1.5rem"
+      }
+    },
+    "grid": {
+      "columns": {
+        "mobile": 1,
+        "tablet": 2,
+        "desktop": 4
+      },
+      "gap": "2rem"
+    },
+    "maxWidth": {
+      "container": "1280px",
+      "content": "1024px",
+      "narrow": "768px"
+    }
+  },
+  
+  "animations": {
+    "glitch": {
+      "keyframes": {
+        "0%": {
+          "textShadow": "0.05em 0 0 rgba(255, 0, 0, .75), -0.025em -0.05em 0 rgba(0, 255, 0, .75), 0.025em 0.05em 0 rgba(0, 0, 255, .75)"
+        },
+        "15%": {
+          "textShadow": "-0.05em -0.025em 0 rgba(255, 0, 0, .75), 0.025em 0.025em 0 rgba(0, 255, 0, .75), -0.05em -0.05em 0 rgba(0, 0, 255, .75)"
+        },
+        "50%": {
+          "textShadow": "0.025em 0.05em 0 rgba(255, 0, 0, .75), 0.05em 0 0 rgba(0, 255, 0, .75), 0 -0.05em 0 rgba(0, 0, 255, .75)"
+        },
+        "100%": {
+          "textShadow": "-0.025em 0 0 rgba(255, 0, 0, .75), -0.025em -0.025em 0 rgba(0, 255, 0, .75), -0.025em -0.05em 0 rgba(0, 0, 255, .75)"
+        }
+      },
+      "duration": "500ms",
+      "timing": "infinite"
+    }
+  },
+  
+  "breakpoints": {
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  
+  "rules": {
+    "forbidden": [
+      "border-radius",
+      "linear-gradient (except repeating for stripes)",
+      "box-shadow with blur",
+      "transition",
+      "hover effects",
+      "smooth animations",
+      "pastel colors",
+      "centered layouts"
+    ],
+    "required": [
+      "hard edges",
+      "solid colors",
+      "hard shadows",
+      "asymmetric layouts",
+      "high contrast",
+      "brutalist elements"
+    ]
+  },
+  
+  "metadata": {
+    "author": "Industrial Hackathon Team",
+    "license": "MIT",
+    "compatibility": {
+      "tailwind": "3.x",
+      "browsers": ["chrome", "firefox", "safari", "edge"]
+    }
+  }
+}

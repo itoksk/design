@@ -1,0 +1,137 @@
+# Technology Editorial Design System
+# テクノロジー雑誌風エディトリアルデザインシステム
+
+version: "1.0"
+created: "2024"
+description: "テクノロジー雑誌風デザインシステム"
+
+# ===========================================
+# TEMPLATE: AI技術実践型 - テクノロジー誌スタイル
+# ===========================================
+
+name: "Technology Magazine Style"
+japanese_name: "テクノロジー誌スタイル"
+target: "テクノロジー系出版物・ウェブマガジン"
+
+design_concept:
+  description: "サーキット基板やデジタル要素を取り入れた、テック系雑誌のようなモダンデザイン"
+  keywords:
+    - "サーキット基板"
+    - "グリッドパターン"
+    - "幾何学的形状"
+    - "グラデーション"
+    - "データパネル"
+
+color_scheme:
+  primary:
+    tech_blue: "#0066CC"      # テクノロジーブルー
+    tech_cyan: "#00A8CC"      # シアン
+    tech_dark: "#001F3F"      # ダークネイビー
+  secondary:
+    tech_gray: "#2C3E50"      # グレー
+    tech_light: "#ECF0F1"     # ライトグレー
+    tech_accent: "#FF6B35"    # アクセントオレンジ
+  background:
+    paper_white: "#F8F9FA"    # ペーパーホワイト
+
+typography:
+  fonts:
+    primary: "'Zen Kaku Gothic New', sans-serif"   # 日本語本文
+    display: "'Bebas Neue', sans-serif"            # 英語見出し
+    accent: "'Montserrat', sans-serif"             # サブタイトル
+  styles:
+    headers: "大文字、レタースペース広め"
+    labels: "極小サイズ、太字、トラッキング広め"
+
+layout_components:
+  background_pattern:
+    type: "グリッドパターン"
+    implementation: |
+      background-image: 
+        linear-gradient(rgba(0, 102, 204, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 102, 204, 0.03) 1px, transparent 1px);
+      background-size: 50px 50px;
+  
+  header:
+    style: "テクノロジー雑誌風"
+    elements:
+      - "クリップパス付きタグ (polygon)"
+      - "グラデーション文字"
+      - "英語メインタイトル"
+      - "日本語サブタイトル"
+  
+  cards:
+    tech_card:
+      border: "1px solid rgba(0, 102, 204, 0.1)"
+      top_bar: "アニメーショングラデーションライン"
+      hover: "右へスライド + 影"
+    numbering:
+      shape: "斜めクリップパス (polygon)"
+      background: "ダークネイビー"
+      color: "白"
+    badges:
+      style: "斜めクリップパス"
+      colors: ["tech_cyan", "tech_blue", "tech_accent"]
+  
+  data_panels:
+    style: "ラベル付きパネル"
+    label_position: "左上固定"
+    label_style: "大文字、黒背景白文字"
+    
+  progress_indicator:
+    shape: "六角形 (hexagon clip-path)"
+    connection: "グラデーションライン"
+    numbering: "01, 02, 03, 04"
+    
+  skill_matrix:
+    layout: "3x2 or 3x3 グリッド"
+    hover_effect: "背景色反転 + スケール"
+    gap: "2px (境界線風)"
+    
+  timeline:
+    marker: "五角形 (pentagon clip-path)"
+    line: "グラデーション垂直線"
+    content_arrow: "45度回転した四角形"
+
+special_effects:
+  animations:
+    gradient_slide: |
+      @keyframes gradientSlide {
+        0% { background-position: 0% 0%; }
+        100% { background-position: 200% 0%; }
+      }
+    typing_effect: "オプション"
+    
+  hover_states:
+    cards: "translateX(8px)"
+    skills: "scale(1.05) + 色反転"
+    navigation: "プログレスバー風下線"
+
+responsive_design:
+  mobile_adjustments:
+    - "グリッドを単一カラムに"
+    - "六角形を縦並びに"
+    - "フォントサイズの調整"
+    - "パディングの削減"
+
+# ===========================================
+# カスタマイズガイドライン
+# ===========================================
+
+customization_guidelines:
+  dos:
+    - "一貫性のあるデザイン言語を維持"
+    - "読みやすさを最優先"
+    - "インタラクティブ要素は控えめに"
+    - "番号システムは統一"
+    
+  donts:
+    - "過度な絵文字の使用"
+    - "読みにくい配色"
+    - "過度なアニメーション"
+    - "一般的すぎるデザイン"
+
+metadata:
+  author: "AI Assistant"
+  purpose: "AI/技術実践型カリキュラムのWebデザインテンプレート"
+  license: "教育目的での自由使用可"

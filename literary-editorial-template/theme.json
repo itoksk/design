@@ -1,0 +1,340 @@
+{
+  "name": "Literary Editorial Theme",
+  "description": "文芸誌スタイルのエディトリアルテーマ - 紙とインクの質感を重視したデザイン",
+  "version": "1.0.0",
+  "author": "Design System",
+  "type": "editorial",
+  "target_audience": "exploratory_curriculum",
+  
+  "colors": {
+    "primary": {
+      "ink": {
+        "value": "#0A0E27",
+        "description": "濃紺のインク色 - メインテキストと枠線に使用",
+        "usage": ["text", "borders", "backgrounds"]
+      },
+      "paper": {
+        "value": "#FEFEF8", 
+        "description": "オフホワイトの紙色 - 背景色として使用",
+        "usage": ["backgrounds", "cards"]
+      }
+    },
+    "accent": {
+      "electric": {
+        "value": "#00F0FF",
+        "description": "電気的な水色 - アクセント要素に使用",
+        "usage": ["highlights", "numbers", "links", "underlines"]
+      },
+      "coral": {
+        "value": "#FF6B6B",
+        "description": "コーラルピンク - 補助的なアクセント",
+        "usage": ["secondary_accents", "alerts"]
+      },
+      "violet": {
+        "value": "#7C3AED",
+        "description": "紫 - フェーズ番号や特別な強調に使用",
+        "usage": ["phase_numbers", "special_emphasis"]
+      }
+    },
+    "text": {
+      "primary": {
+        "value": "#0A0E27",
+        "description": "メインテキスト色",
+        "usage": ["body_text", "headings"]
+      },
+      "secondary": {
+        "value": "#4A5568",
+        "description": "サブテキスト・説明文用グレー",
+        "usage": ["captions", "meta_text", "labels"]
+      }
+    },
+    "interactions": {
+      "hover_background": {
+        "value": "rgba(0, 240, 255, 0.05)",
+        "description": "ホバー時の薄い背景色",
+        "usage": ["table_rows", "subtle_hovers"]
+      }
+    }
+  },
+
+  "typography": {
+    "font_families": {
+      "primary": {
+        "name": "Zen Kaku Gothic New",
+        "fallback": "sans-serif",
+        "description": "日本語メインフォント - 読みやすさを重視",
+        "usage": ["body_text", "headings", "general_content"],
+        "weights": [300, 400, 500, 700, 900]
+      },
+      "accent": {
+        "name": "Space Grotesk",
+        "fallback": "monospace", 
+        "description": "数字・英語アクセント用 - モダンな印象",
+        "usage": ["numbers", "labels", "technical_text"],
+        "weights": [400, 700]
+      },
+      "display": {
+        "name": "Bebas Neue",
+        "fallback": "sans-serif",
+        "description": "見出し用（オプション） - インパクトのあるタイトル",
+        "usage": ["large_headings", "display_text"],
+        "weights": [400]
+      }
+    },
+    "scale": {
+      "hero_title": {
+        "size": "clamp(3rem, 8vw, 6rem)",
+        "line_height": "0.9",
+        "font_weight": "900",
+        "letter_spacing": "-0.03em"
+      },
+      "section_title": {
+        "size": "2.5rem",
+        "line_height": "1.2", 
+        "font_weight": "700",
+        "margin_bottom": "3rem"
+      },
+      "card_title": {
+        "size": "1.5rem",
+        "line_height": "1.2",
+        "font_weight": "700",
+        "margin_bottom": "1rem"
+      },
+      "body_text": {
+        "size": "1rem",
+        "line_height": "1.7",
+        "font_weight": "400"
+      },
+      "large_body": {
+        "size": "1.25rem",
+        "line_height": "1.8",
+        "font_weight": "300"
+      },
+      "small_text": {
+        "size": "0.8rem",
+        "line_height": "1.5",
+        "font_weight": "400"
+      }
+    }
+  },
+
+  "spacing": {
+    "section_margins": {
+      "default": "80px 0",
+      "large": "120px 0",
+      "small": "40px 0"
+    },
+    "card_padding": {
+      "default": "2rem",
+      "mobile": "1.5rem"
+    },
+    "grid_gap": {
+      "default": "2rem",
+      "small": "1rem"
+    },
+    "element_spacing": {
+      "xs": "0.5rem",
+      "sm": "1rem", 
+      "md": "1.5rem",
+      "lg": "2rem",
+      "xl": "3rem"
+    }
+  },
+
+  "layout": {
+    "containers": {
+      "max_width": "1400px",
+      "padding": "0 2rem",
+      "mobile_padding": "0 1rem"
+    },
+    "grid": {
+      "columns_2": "repeat(auto-fit, minmax(400px, 1fr))",
+      "columns_3": "repeat(auto-fit, minmax(280px, 1fr))",
+      "columns_4": "repeat(auto-fit, minmax(250px, 1fr))",
+      "gap": "2rem"
+    },
+    "breakpoints": {
+      "mobile": "768px",
+      "tablet": "1024px", 
+      "desktop": "1400px"
+    }
+  },
+
+  "components": {
+    "cards": {
+      "numbered_card": {
+        "background": "#FEFEF8",
+        "border": "2px solid #0A0E27",
+        "padding": "2rem",
+        "shadow_offset": "4px",
+        "hover_translate": "-4px, -4px",
+        "number_size": "40px",
+        "number_background": "#00F0FF"
+      },
+      "phase_card": {
+        "border_pattern": "20px dotted line",
+        "number_size": "5rem",
+        "number_opacity": "0.2",
+        "number_color": "#7C3AED"
+      }
+    },
+    "navigation": {
+      "background": "rgba(254, 254, 248, 0.95)",
+      "blur": "blur(10px)",
+      "shadow": "0 1px 0 rgba(10, 14, 39, 0.1)",
+      "padding": "1.5rem 0",
+      "underline_color": "#00F0FF",
+      "underline_height": "2px"
+    },
+    "tables": {
+      "header_background": "#0A0E27",
+      "header_color": "#FEFEF8", 
+      "cell_padding": "1.25rem 1rem",
+      "hover_background": "rgba(0, 240, 255, 0.05)",
+      "border_spacing": "0"
+    }
+  },
+
+  "animations": {
+    "transitions": {
+      "default": "all 0.3s ease",
+      "smooth": "0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+      "quick": "0.15s ease-out"
+    },
+    "hover_effects": {
+      "card_invert": {
+        "background": "#0A0E27 → #FEFEF8",
+        "color": "#FEFEF8 → #0A0E27", 
+        "transform": "translate(-4px, -4px)",
+        "shadow_expand": "4px → 8px"
+      },
+      "underline_slide": {
+        "width": "0 → 100%",
+        "transition": "width 0.3s ease"
+      }
+    },
+    "keyframes": {
+      "fadeInUp": {
+        "from": "opacity: 0, translateY(30px)",
+        "to": "opacity: 1, translateY(0)",
+        "duration": "0.8s",
+        "timing": "ease-out"
+      }
+    }
+  },
+
+  "effects": {
+    "paper_texture": {
+      "type": "background_overlay",
+      "pattern": "repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(10, 14, 39, 0.01) 2px, rgba(10, 14, 39, 0.01) 4px)",
+      "position": "fixed",
+      "z_index": "1",
+      "pointer_events": "none"
+    },
+    "shadow_cards": {
+      "type": "pseudo_element",
+      "element": "::before",
+      "background": "#0A0E27",
+      "offset": "4px 4px",
+      "z_index": "-1"
+    },
+    "rotated_elements": {
+      "label_rotation": "rotate(-1deg)",
+      "subtle_skew": "skewY(-1deg)"
+    }
+  },
+
+  "numbering_system": {
+    "format": "01, 02, 03...",
+    "font_family": "Space Grotesk",
+    "font_weight": "700",
+    "min_width": "2ch",
+    "text_align": "center",
+    "background_shape": "square",
+    "size": "40px × 40px"
+  },
+
+  "accessibility": {
+    "contrast_ratios": {
+      "ink_on_paper": "13.8:1",
+      "paper_on_ink": "13.8:1",
+      "electric_on_paper": "4.8:1"
+    },
+    "focus_styles": {
+      "outline": "2px solid #00F0FF",
+      "outline_offset": "2px"
+    },
+    "reduced_motion": {
+      "respect_prefers_reduced_motion": true,
+      "fallback_transitions": "none"
+    }
+  },
+
+  "responsive_adjustments": {
+    "mobile": {
+      "hero_title_size": "clamp(2rem, 8vw, 4rem)",
+      "section_margins": "40px 0",
+      "card_padding": "1.5rem",
+      "grid_columns": "1fr",
+      "navigation_menu": "hidden",
+      "phase_number_size": "3rem"
+    },
+    "tablet": {
+      "grid_adjustments": "maintain 2-3 columns where appropriate",
+      "font_size_scaling": "slight reduction"
+    }
+  },
+
+  "usage_guidelines": {
+    "primary_usage": [
+      "exploratory_curriculum_pages",
+      "research_presentation_sites", 
+      "academic_content_sites",
+      "literary_creative_websites"
+    ],
+    "design_principles": [
+      "readability_first",
+      "consistent_design_language",
+      "subtle_decorative_elements",
+      "accessibility_compliance"
+    ],
+    "avoid": [
+      "excessive_emoji_usage",
+      "ai_like_patterns",
+      "overwhelming_animations",
+      "poor_color_contrast"
+    ]
+  },
+
+  "customization": {
+    "color_variations": {
+      "warm_tone": {
+        "ink": "#2D1810",
+        "paper": "#FFF8F0", 
+        "accent": "#FF7A00"
+      },
+      "cool_tone": {
+        "ink": "#0F1419",
+        "paper": "#F8FAFC",
+        "accent": "#0EA5E9"
+      },
+      "monochrome": {
+        "ink": "#1F2937",
+        "paper": "#F9FAFB",
+        "accent": "#6B7280"
+      }
+    },
+    "font_alternatives": {
+      "classic": {
+        "primary": "Noto Serif JP",
+        "accent": "JetBrains Mono",
+        "display": "Playfair Display"
+      },
+      "modern": {
+        "primary": "Inter",
+        "accent": "Fira Code",
+        "display": "Poppins"
+      }
+    }
+  }
+}

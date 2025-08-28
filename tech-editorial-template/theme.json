@@ -1,0 +1,345 @@
+{
+  "name": "Technology Editorial Theme",
+  "version": "1.0",
+  "description": "Complete theme configuration for technology magazine style template",
+  "theme": {
+    "identity": {
+      "name": "Technology Magazine",
+      "style": "Modern tech editorial with circuit board aesthetics",
+      "target_audience": "High school students, tech educators, AI/ML practitioners"
+    },
+    "colors": {
+      "primary": {
+        "tech_blue": {
+          "hex": "#0066CC",
+          "rgb": "rgb(0, 102, 204)",
+          "hsl": "hsl(210, 100%, 40%)",
+          "usage": "Primary brand color, headers, buttons, links, progress indicators"
+        },
+        "tech_cyan": {
+          "hex": "#00A8CC", 
+          "rgb": "rgb(0, 168, 204)",
+          "hsl": "hsl(191, 100%, 40%)",
+          "usage": "Secondary accents, badges, topic chips, highlights"
+        },
+        "tech_dark": {
+          "hex": "#001F3F",
+          "rgb": "rgb(0, 31, 63)", 
+          "hsl": "hsl(210, 100%, 12%)",
+          "usage": "Primary text, dark elements, number backgrounds"
+        }
+      },
+      "secondary": {
+        "tech_gray": {
+          "hex": "#2C3E50",
+          "rgb": "rgb(44, 62, 80)",
+          "hsl": "hsl(210, 29%, 24%)",
+          "usage": "Secondary text, neutral elements, descriptions"
+        },
+        "tech_light": {
+          "hex": "#ECF0F1",
+          "rgb": "rgb(236, 240, 241)",
+          "hsl": "hsl(192, 15%, 94%)",
+          "usage": "Light backgrounds, subtle elements, borders"
+        },
+        "tech_accent": {
+          "hex": "#FF6B35",
+          "rgb": "rgb(255, 107, 53)",
+          "hsl": "hsl(16, 100%, 60%)",
+          "usage": "Call-to-action, warnings, important highlights"
+        }
+      },
+      "background": {
+        "paper_white": {
+          "hex": "#F8F9FA",
+          "rgb": "rgb(248, 249, 250)",
+          "hsl": "hsl(210, 17%, 98%)",
+          "usage": "Main background, card backgrounds, clean surfaces"
+        }
+      },
+      "opacity_variants": {
+        "tech_blue_003": "rgba(0, 102, 204, 0.03)",
+        "tech_blue_005": "rgba(0, 102, 204, 0.05)", 
+        "tech_blue_01": "rgba(0, 102, 204, 0.1)",
+        "tech_blue_02": "rgba(0, 102, 204, 0.2)",
+        "tech_cyan_008": "rgba(0, 168, 204, 0.08)"
+      }
+    },
+    "typography": {
+      "font_families": {
+        "primary": {
+          "name": "Zen Kaku Gothic New",
+          "fallback": "sans-serif",
+          "usage": "Japanese text, body text, general content",
+          "weights": [300, 400, 500, 700, 900],
+          "google_fonts": "https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap"
+        },
+        "display": {
+          "name": "Bebas Neue",
+          "fallback": "sans-serif", 
+          "usage": "English headers, numbers, large display text",
+          "weights": [400],
+          "google_fonts": "https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+        },
+        "accent": {
+          "name": "Montserrat",
+          "fallback": "sans-serif",
+          "usage": "Subtitles, labels, secondary headers",
+          "weights": [300, 400, 500, 600, 700, 800],
+          "google_fonts": "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap"
+        }
+      },
+      "scale": {
+        "display_large": {
+          "size": "clamp(48px, 8vw, 96px)",
+          "line_height": "0.9",
+          "font_family": "Bebas Neue",
+          "font_weight": "900",
+          "letter_spacing": "2px",
+          "usage": "Main page titles"
+        },
+        "display_medium": {
+          "size": "clamp(36px, 6vw, 72px)",
+          "line_height": "1",
+          "font_family": "Bebas Neue",
+          "font_weight": "900",
+          "usage": "Section numbers (background)"
+        },
+        "heading_1": {
+          "size": "32px",
+          "line_height": "1.2",
+          "font_weight": "700",
+          "usage": "Section titles"
+        },
+        "heading_2": {
+          "size": "24px",
+          "line_height": "1.3",
+          "font_weight": "700",
+          "usage": "Card titles"
+        },
+        "heading_3": {
+          "size": "20px", 
+          "line_height": "1.4",
+          "font_weight": "700",
+          "usage": "Sub-section titles"
+        },
+        "subtitle": {
+          "size": "20px",
+          "line_height": "1.5",
+          "font_family": "Montserrat",
+          "font_weight": "300",
+          "letter_spacing": "3px",
+          "usage": "Page subtitles"
+        },
+        "body": {
+          "size": "16px",
+          "line_height": "1.8",
+          "font_weight": "400",
+          "usage": "Body text, descriptions"
+        },
+        "small": {
+          "size": "13px",
+          "line_height": "1.6",
+          "font_weight": "500",
+          "usage": "Topic chips, meta text"
+        },
+        "label": {
+          "size": "12px",
+          "line_height": "1.4",
+          "font_weight": "700",
+          "letter_spacing": "2px",
+          "text_transform": "uppercase",
+          "usage": "Tags, badges, labels"
+        },
+        "micro": {
+          "size": "11px",
+          "line_height": "1.3",
+          "font_weight": "700", 
+          "letter_spacing": "1px",
+          "text_transform": "uppercase",
+          "usage": "Data panel labels, badges"
+        }
+      }
+    },
+    "spacing": {
+      "base": "8px",
+      "scale": {
+        "xs": "4px",
+        "sm": "8px",
+        "md": "16px", 
+        "lg": "24px",
+        "xl": "32px",
+        "2xl": "48px",
+        "3xl": "64px",
+        "4xl": "80px"
+      },
+      "component_specific": {
+        "card_padding": "32px",
+        "section_margin": "80px",
+        "grid_gap": "24px",
+        "chip_padding": "4px 12px",
+        "badge_padding": "4px 16px"
+      }
+    },
+    "layout": {
+      "container": {
+        "max_width": "1200px",
+        "padding": "0 24px",
+        "margin": "0 auto"
+      },
+      "grid": {
+        "columns_2": "repeat(auto-fit, minmax(500px, 1fr))",
+        "columns_3": "repeat(auto-fit, minmax(350px, 1fr))",
+        "columns_4": "repeat(auto-fit, minmax(250px, 1fr))",
+        "gap": "24px"
+      },
+      "responsive": {
+        "mobile_breakpoint": "768px",
+        "tablet_breakpoint": "1024px",
+        "desktop_breakpoint": "1400px"
+      }
+    },
+    "visual_effects": {
+      "shadows": {
+        "card_default": "0 2px 4px rgba(0, 0, 0, 0.1)",
+        "card_hover": "-4px 4px 20px rgba(0, 102, 204, 0.1)",
+        "elevated": "0 8px 24px rgba(0, 0, 0, 0.15)"
+      },
+      "borders": {
+        "card": "1px solid rgba(0, 102, 204, 0.1)",
+        "accent": "4px solid #0066CC",
+        "light": "1px solid rgba(0, 102, 204, 0.05)"
+      },
+      "clip_paths": {
+        "tech_badge": "polygon(0 0, calc(100% - 10px) 0, 100% 100%, 10px 100%)",
+        "diagonal_number": "polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%)",
+        "subtle_diagonal": "polygon(5% 0%, 100% 0%, 95% 100%, 0% 100%)",
+        "hexagon": "polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)"
+      },
+      "gradients": {
+        "primary_text": "linear-gradient(135deg, #0066CC 0%, #00A8CC 100%)",
+        "background_subtle": "linear-gradient(135deg, rgba(0, 102, 204, 0.05) 0%, transparent 100%)",
+        "connection_line": "linear-gradient(90deg, #0066CC 0%, #00A8CC 100%)",
+        "fade_right": "linear-gradient(90deg, #0066CC 0%, transparent 100%)",
+        "animated_bar": "linear-gradient(90deg, #0066CC 0%, #00A8CC 50%, #0066CC 100%)"
+      }
+    },
+    "animations": {
+      "transitions": {
+        "default": "all 0.3s ease",
+        "smooth": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce": "all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+      },
+      "keyframes": {
+        "gradient_slide": {
+          "name": "gradientSlide",
+          "duration": "3s",
+          "timing": "linear",
+          "iteration": "infinite",
+          "definition": "0% { background-position: 0% 0%; } 100% { background-position: 200% 0%; }"
+        },
+        "fade_in": {
+          "name": "fadeIn", 
+          "duration": "0.6s",
+          "timing": "ease-out",
+          "definition": "from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }"
+        },
+        "slide_right": {
+          "name": "slideRight",
+          "duration": "0.4s", 
+          "timing": "ease-out",
+          "definition": "from { transform: translateX(-20px); opacity: 0; } to { transform: translateX(0); opacity: 1; }"
+        }
+      },
+      "hover_effects": {
+        "card_slide": "transform: translateX(8px)",
+        "skill_scale": "transform: scale(1.05)",
+        "color_invert": "background: var(--tech-blue); color: white"
+      }
+    },
+    "background_patterns": {
+      "circuit_grid": {
+        "background_image": "linear-gradient(rgba(0, 102, 204, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 102, 204, 0.03) 1px, transparent 1px)",
+        "background_size": "50px 50px",
+        "background_attachment": "fixed"
+      },
+      "subtle_dots": {
+        "background_image": "radial-gradient(circle, rgba(0, 102, 204, 0.05) 1px, transparent 1px)",
+        "background_size": "25px 25px"
+      }
+    },
+    "component_variants": {
+      "cards": {
+        "tech_card": {
+          "has_gradient_bar": true,
+          "hover_direction": "right",
+          "number_style": "diagonal_clip"
+        },
+        "data_panel": {
+          "has_fixed_label": true,
+          "label_position": "top_left",
+          "label_style": "dark"
+        }
+      },
+      "indicators": {
+        "progress": {
+          "shape": "hexagon",
+          "connection": "gradient_line",
+          "numbering": "sequential"
+        },
+        "timeline": {
+          "marker": "pentagon", 
+          "line": "vertical_gradient",
+          "content_arrow": "rotated_square"
+        }
+      }
+    },
+    "accessibility": {
+      "contrast_ratios": {
+        "text_on_white": "AAA (7.8:1)",
+        "text_on_blue": "AAA (4.9:1)",
+        "cyan_on_white": "AA (3.1:1)"
+      },
+      "focus_styles": {
+        "outline": "2px solid #0066CC",
+        "outline_offset": "2px",
+        "border_radius": "2px"
+      },
+      "reduced_motion": {
+        "respect_prefers_reduced_motion": true,
+        "fallback_transitions": "all 0.1s ease"
+      }
+    },
+    "print_styles": {
+      "background": "Remove grid patterns and gradients",
+      "colors": "Convert to high-contrast black/white",
+      "fonts": "Ensure web-safe fallbacks",
+      "layout": "Single column, increased margins"
+    }
+  },
+  "usage_guidelines": {
+    "color_combinations": {
+      "primary_text": "tech_dark on paper_white",
+      "accent_elements": "tech_blue or tech_cyan on paper_white",
+      "highlights": "tech_accent sparingly for CTAs",
+      "backgrounds": "paper_white with subtle tech_blue overlays"
+    },
+    "typography_hierarchy": {
+      "page_title": "display_large with gradient text",
+      "section_titles": "heading_1 with accent bar",
+      "card_titles": "heading_2 regular weight", 
+      "body_text": "body size with 1.8 line height",
+      "labels": "micro size uppercase with tracking"
+    },
+    "spacing_rhythm": {
+      "vertical_spacing": "Use 8px base with 24px, 32px, 48px, 80px scale",
+      "component_padding": "32px for cards, 24px for panels",
+      "grid_gaps": "24px standard, 2px for matrix grids"
+    },
+    "animation_principles": {
+      "duration": "0.3s for micro-interactions, 3s for ambient animations",
+      "easing": "ease for standard, cubic-bezier for elastic effects",
+      "performance": "Use transform and opacity for smooth animations"
+    }
+  }
+}

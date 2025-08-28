@@ -1,0 +1,33 @@
+{
+  "name": "design-templates-collection",
+  "version": "1.0.0",
+  "description": "A collection of unique, non-AI-like design templates for various purposes",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npx http-server . -p 8080 -c-1",
+    "test": "echo \"No tests configured\""
+  },
+  "keywords": [
+    "design",
+    "templates",
+    "brutalism",
+    "editorial",
+    "industrial",
+    "web-design",
+    "css",
+    "html"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/[your-username]/design-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/[your-username]/design-templates/issues"
+  },
+  "homepage": "https://github.com/[your-username]/design-templates#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
