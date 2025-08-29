@@ -19,13 +19,13 @@ Create a stadium-inspired layout with:
 ### ヒーローセクション
 ```
 Design a hero section featuring:
-- Full-width diagonal split background (white/black)
-- Crimson red CTA button with hover effect
+- Full-width diagonal split background at 135deg angle
+- Rotated -15deg for dynamic effect
+- Pure white (#FFFFFF) and stadium black (#0A0A0A) split at 49%/51%
 - Bold display typography (Bebas Neue or similar)
-- Animated score counter or statistics
-- Parallax scrolling effect
-- Sharp angles and clean lines
-- Optional video background with overlay
+- Title split across white/black with mix-blend-mode: difference
+- Crimson red (#DC143C) accent text with pulse animation
+- Score counter in top-right with polygon clip-path
 - Mobile-responsive diagonal adjustment
 ```
 
@@ -50,14 +50,14 @@ Format:
 ### チームカードグリッド
 ```
 Design team/player cards with:
-- White background with 2px black border
-- Hover: crimson red accent appears
-- Player number in huge display font
-- Monochrome photo that colorizes on hover
-- Name in bold uppercase
-- Position/stats in smaller text
-- Diagonal accent line
-- Card flip animation option
+- White background with clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%)
+- Hover: clip-path transitions to full rectangle
+- Player number in Teko font, 8rem size, #0A0A0A color
+- Hover: number transitions to crimson red (#DC143C)
+- Transform: translateY(-10px) on hover
+- Name in 1.5rem bold uppercase
+- Position in silver (#C0C0C0) uppercase
+- Grid layout with auto-fit, minmax(300px, 1fr)
 ```
 
 ## ナビゲーション・ヘッダー
@@ -89,16 +89,17 @@ Design mobile navigation menu:
 
 ## コンテンツセクション
 
-### 統計グリッド
+### パワーグリッド
 ```
-Create statistics display grid:
-- Black numbers on white background
-- Crimson red for highlighted stats
-- Large number (72px+) with label below
-- Grid layout (3-4 columns desktop)
-- Counter animation on scroll
-- Percentage bars with red fill
-- Comparison charts (black vs red)
+Create asymmetric power grid:
+- Grid template: 2fr 1fr 1fr columns
+- 2px gap with black (#0A0A0A) background
+- Transform: skewY(-2deg) for dynamic angle
+- White (#FFFFFF) grid items with 40px padding
+- First item spans 2 rows, fourth spans 2 columns
+- Hover: background to crimson, scale(1.02)
+- Grid numbers in top-right, 5rem Teko font
+- Opacity 0.3, transitions to 0.2 on hover
 ```
 
 ### ニュースカード
@@ -115,14 +116,15 @@ Design news/blog cards:
 
 ### CTAセクション
 ```
-Create call-to-action sections:
-- Diagonal split background
-- White text on black side
-- Crimson red button prominent
-- Bold uppercase heading
-- Minimal supporting text
-- Arrow or chevron icons
-- Hover animations on buttons
+Create call-to-action section with moving stripes:
+- Background: repeating-linear-gradient(45deg, transparent 0, transparent 50px, #F5F5F5 50px, #F5F5F5 100px)
+- Animation: translateX movement over 20s linear infinite
+- Crimson red (#DC143C) button, 20px 60px padding
+- Button with ::before pseudo-element slide effect
+- Black background slides in from left on hover
+- Transform: scale(1.05) on hover
+- Bold Bebas Neue heading, 4rem size
+- Centered content, max-width 800px
 ```
 
 ## インタラクション要素

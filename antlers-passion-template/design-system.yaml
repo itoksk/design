@@ -1,0 +1,394 @@
+# Antlers Passion Design System
+# 情熱と海のデザインシステム
+
+metadata:
+  name: "Antlers Passion System"
+  version: "1.0.0"
+  description: "アントラーズレッドと鹿島灘ネイビーによる情熱的デザインシステム"
+  author: "Passion Design Team"
+  created: "2024"
+  philosophy: "Burning Passion, Ocean Depth, Rose Elegance"
+
+# カラーシステム
+colors:
+  # プライマリカラー
+  primary:
+    antlers_red: "#B01224"
+    kashima_navy: "#001E62"
+    rose_crimson: "#DC143C"
+    ocean_blue: "#003087"
+    
+  # セカンダリカラー
+  secondary:
+    sunset_orange: "#FF4500"
+    pearl_white: "#FAFAFA"
+    steel_gray: "#71797E"
+    sakura_pink: "#FFB7C5"
+    wave_teal: "#008B8B"
+    coral_red: "#FF6B6B"
+    midnight_blue: "#191970"
+    
+  # グラデーション
+  gradients:
+    passion_flame: "linear-gradient(135deg, #B01224 0%, #FF4500 100%)"
+    ocean_depth: "linear-gradient(180deg, #001E62 0%, #003087 100%)"
+    sunset_wave: "linear-gradient(90deg, #B01224 0%, #FF4500 50%, #001E62 100%)"
+    rose_bloom: "radial-gradient(circle, #DC143C 0%, #FFB7C5 100%)"
+    
+  # 透明度
+  opacity:
+    red_90: "rgba(176, 18, 36, 0.9)"
+    red_50: "rgba(176, 18, 36, 0.5)"
+    navy_90: "rgba(0, 30, 98, 0.9)"
+    navy_50: "rgba(0, 30, 98, 0.5)"
+    white_90: "rgba(250, 250, 250, 0.9)"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー
+  families:
+    display:
+      primary: "'Oswald', sans-serif"
+      secondary: "'Bebas Neue', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    body:
+      primary: "'Roboto', sans-serif"
+      secondary: "'Inter', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    accent:
+      primary: "'Playfair Display', serif"
+      secondary: "'Crimson Text', serif"
+    number:
+      primary: "'Barlow Condensed', sans-serif"
+      secondary: "'Teko', sans-serif"
+    script:
+      primary: "'Dancing Script', cursive"
+      secondary: "'Pacifico', cursive"
+      
+  # サイズスケール
+  sizes:
+    xs: "12px"
+    sm: "14px"
+    base: "16px"
+    lg: "18px"
+    xl: "20px"
+    "2xl": "24px"
+    "3xl": "30px"
+    "4xl": "36px"
+    "5xl": "48px"
+    "6xl": "60px"
+    "7xl": "72px"
+    "8xl": "96px"
+    
+  # 文字の太さ
+  weights:
+    light: 300
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extrabold: 800
+    black: 900
+
+# レイアウト
+layout:
+  # グリッドシステム
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1440px"
+    
+  # 波形レイアウト
+  wave_layout:
+    amplitude: "30px"
+    frequency: "200px"
+    direction: "horizontal"
+    
+  # スペーシング
+  spacing:
+    "0": "0"
+    "1": "4px"
+    "2": "8px"
+    "3": "12px"
+    "4": "16px"
+    "5": "20px"
+    "6": "24px"
+    "8": "32px"
+    "10": "40px"
+    "12": "48px"
+    "16": "64px"
+    "20": "80px"
+    
+  # ブレークポイント
+  breakpoints:
+    xs: "320px"
+    sm: "640px"
+    md: "768px"
+    lg: "1024px"
+    xl: "1280px"
+    "2xl": "1440px"
+
+# コンポーネント
+components:
+  # ボタン
+  buttons:
+    passion:
+      background: "#B01224"
+      color: "#FAFAFA"
+      hover_gradient: "linear-gradient(135deg, #B01224 0%, #FF4500 100%)"
+      padding: "14px 36px"
+      font_weight: 700
+      text_transform: "uppercase"
+      border_radius: "50px"
+      transition: "all 0.3s ease"
+      
+    ocean:
+      background: "#001E62"
+      color: "#FAFAFA"
+      hover_background: "#003087"
+      padding: "14px 36px"
+      border: "2px solid #001E62"
+      
+    wave:
+      background: "transparent"
+      border: "2px solid #B01224"
+      color: "#B01224"
+      hover_background: "#B01224"
+      hover_color: "#FAFAFA"
+      
+  # カード
+  cards:
+    wave_card:
+      background: "#FAFAFA"
+      header_gradient: "linear-gradient(135deg, #B01224 0%, #DC143C 100%)"
+      footer_background: "#001E62"
+      padding: "0"
+      border_radius: "16px"
+      overflow: "hidden"
+      shadow: "0 8px 32px rgba(0, 30, 98, 0.15)"
+      
+    rose_card:
+      background: "#FAFAFA"
+      border: "2px solid #FFB7C5"
+      accent_color: "#B01224"
+      padding: "24px"
+      border_radius: "20px"
+      
+    floating_card:
+      background: "rgba(250, 250, 250, 0.95)"
+      backdrop_filter: "blur(10px)"
+      border: "1px solid rgba(176, 18, 36, 0.2)"
+      padding: "32px"
+      
+  # ナビゲーション
+  navigation:
+    header:
+      background: "rgba(0, 30, 98, 0.95)"
+      backdrop_filter: "blur(10px)"
+      color: "#FAFAFA"
+      height: "72px"
+      active_color: "#B01224"
+      
+    mobile_menu:
+      background: "#001E62"
+      overlay: "rgba(0, 30, 98, 0.98)"
+      accent: "#B01224"
+      
+    links:
+      color: "#FAFAFA"
+      hover_color: "#B01224"
+      active_underline: "3px solid #B01224"
+      transition: "color 0.3s ease"
+      
+  # バッジ
+  badges:
+    rose:
+      background: "linear-gradient(135deg, #DC143C 0%, #FFB7C5 100%)"
+      color: "#FAFAFA"
+      padding: "6px 12px"
+      border_radius: "20px 5px 20px 5px"
+      font_size: "12px"
+      font_weight: 700
+      
+    ocean:
+      background: "#003087"
+      color: "#FAFAFA"
+      padding: "6px 12px"
+      border_radius: "4px"
+      
+    pulse:
+      background: "#B01224"
+      color: "#FAFAFA"
+      animation: "passion-pulse 2s infinite"
+
+# エフェクト
+effects:
+  # シャドウ
+  shadows:
+    soft: "0 4px 16px rgba(0, 30, 98, 0.1)"
+    medium: "0 8px 32px rgba(0, 30, 98, 0.15)"
+    strong: "0 16px 48px rgba(0, 30, 98, 0.2)"
+    glow_red: "0 0 20px rgba(176, 18, 36, 0.4)"
+    glow_navy: "0 0 20px rgba(0, 30, 98, 0.4)"
+    
+  # ボーダー
+  borders:
+    thin: "1px solid"
+    medium: "2px solid"
+    thick: "3px solid"
+    wave: "2px wavy"
+    
+  # 角丸
+  radius:
+    none: "0"
+    sm: "4px"
+    md: "8px"
+    lg: "16px"
+    xl: "24px"
+    full: "9999px"
+    petal: "20px 5px 20px 5px"
+    
+  # トランジション
+  transitions:
+    fast: "all 0.2s ease"
+    normal: "all 0.3s ease"
+    slow: "all 0.5s ease"
+    wave: "all 1s cubic-bezier(0.4, 0, 0.2, 1)"
+
+# アニメーション
+animations:
+  wave:
+    keyframes: |
+      0% { transform: translateX(0) translateY(0); }
+      50% { transform: translateX(-25px) translateY(-5px); }
+      100% { transform: translateX(0) translateY(0); }
+    duration: "3s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  passion_pulse:
+    keyframes: |
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.05); opacity: 0.9; }
+      100% { transform: scale(1); opacity: 1; }
+    duration: "2s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  petal_fall:
+    keyframes: |
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    duration: "10s"
+    timing: "linear"
+    
+  ripple:
+    keyframes: |
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(4); opacity: 0; }
+    duration: "0.6s"
+    timing: "ease-out"
+
+# パターン
+patterns:
+  # 波形パターン
+  wave_pattern:
+    type: "svg"
+    path: "M0,50 Q25,30 50,50 T100,50"
+    stroke: "#B01224"
+    fill: "none"
+    stroke_width: "2px"
+    
+  # バラパターン
+  rose_pattern:
+    type: "radial"
+    colors: ["#DC143C", "#FFB7C5", "transparent"]
+    size: "100px"
+    spacing: "150px"
+    
+  # 海洋パターン
+  ocean_pattern:
+    type: "linear"
+    angle: "180deg"
+    colors: ["#001E62", "#003087", "#001E62"]
+    size: "200px"
+
+# 特殊要素
+special:
+  # 波形分割
+  wave_divider:
+    height: "100px"
+    color: "#B01224"
+    background: "#001E62"
+    amplitude: "30px"
+    
+  # 花びら装飾
+  petal_decoration:
+    size: "50px"
+    colors: ["#DC143C", "#FFB7C5"]
+    rotation: "random"
+    opacity: 0.8
+    
+  # 情熱メーター
+  passion_meter:
+    background: "#F5F5F5"
+    fill: "linear-gradient(90deg, #B01224 0%, #FF4500 100%)"
+    height: "12px"
+    border_radius: "6px"
+    animated: true
+    
+  # 海洋オーバーレイ
+  ocean_overlay:
+    background: "linear-gradient(180deg, transparent 0%, rgba(0, 30, 98, 0.1) 100%)"
+    blend_mode: "multiply"
+    animation: "wave 5s infinite"
+
+# レスポンシブ設定
+responsive:
+  # モバイル
+  mobile:
+    wave_amplitude: "15px"
+    gradient_simplify: true
+    animation_reduce: true
+    font_scale: 0.9
+    
+  # タブレット
+  tablet:
+    wave_amplitude: "20px"
+    gradient_quality: "medium"
+    animation_quality: "medium"
+    font_scale: 0.95
+    
+  # デスクトップ
+  desktop:
+    wave_amplitude: "30px"
+    gradient_quality: "high"
+    animation_quality: "high"
+    font_scale: 1
+
+# アクセシビリティ
+accessibility:
+  # コントラスト
+  contrast:
+    red_on_white: 7.5  # AAA
+    navy_on_white: 15  # AAA
+    white_on_red: 7.5  # AAA
+    white_on_navy: 15  # AAA
+    
+  # フォーカス
+  focus:
+    outline: "3px solid #FF4500"
+    outline_offset: "2px"
+    
+  # カラーブラインド対応
+  colorblind:
+    protanopia_safe: false  # 赤緑色盲には注意が必要
+    deuteranopia_safe: false
+    tritanopia_safe: true
+    
+  # 代替表現
+  alternatives:
+    use_patterns: true
+    use_labels: true
+    use_icons: true

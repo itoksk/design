@@ -342,8 +342,9 @@ patterns:
 special:
   # 対角線分割
   diagonal_split:
-    angle: "45deg"
-    transition_width: "100px"
+    angle: "135deg"
+    rotation: "-15deg"
+    split_point: "49% / 51%"
     colors: ["#FFFFFF", "#0A0A0A"]
     
   # スコア表示

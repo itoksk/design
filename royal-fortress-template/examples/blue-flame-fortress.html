@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Flame Fortress - Dual Core Power</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --base-blue: #003DA5;
+            --base-black: #0D0D0D;
+            --accent-gold: #FFD700;
+            --accent-white: #FFFFFF;
+            --blue-flame-light: #4A90E2;
+            --blue-flame-hot: #0066FF;
+            --blue-flame-core: #001E4D;
+            --steel-gray: #434B56;
+            --platinum: #E5E4E2;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--base-black);
+            color: var(--accent-white);
+            overflow-x: hidden;
+        }
+
+        /* Fortress Rampart Header */
+        .rampart-header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: var(--base-black);
+            z-index: 1000;
+            border-bottom: 4px solid var(--accent-gold);
+            clip-path: polygon(
+                0 0, 100% 0, 100% 70%,
+                98% 100%, 96% 70%, 94% 100%, 92% 70%, 90% 100%,
+                88% 70%, 86% 100%, 84% 70%, 82% 100%, 80% 70%,
+                20% 70%, 18% 100%, 16% 70%, 14% 100%, 12% 70%,
+                10% 100%, 8% 70%, 6% 100%, 4% 70%, 2% 100%, 0 70%
+            );
+        }
+
+        .header-structure {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5% 35px;
+            position: relative;
+        }
+
+        .fortress-brand {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--base-blue);
+            text-transform: uppercase;
+            letter-spacing: -0.03em;
+            text-shadow: 
+                0 0 30px rgba(0, 61, 165, 0.5),
+                2px 2px 0 var(--accent-gold);
+            transform: skewX(-10deg);
+        }
+
+        .rampart-nav {
+            display: flex;
+            gap: 0;
+        }
+
+        .rampart-link {
+            color: var(--accent-white);
+            text-decoration: none;
+            padding: 15px 30px;
+            background: var(--base-blue);
+            clip-path: polygon(15% 0, 100% 0, 85% 100%, 0 100%);
+            margin-left: -15px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rampart-link:first-child {
+            margin-left: 0;
+        }
+
+        .rampart-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--accent-gold);
+            transition: left 0.3s ease;
+        }
+
+        .rampart-link:hover {
+            color: var(--base-black);
+            z-index: 1;
+            transform: translateY(-3px);
+        }
+
+        .rampart-link:hover::before {
+            left: 0;
+        }
+
+        .rampart-link span {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Blue Flame Core Hero */
+        .flame-core-hero {
+            margin-top: 100px;
+            height: 100vh;
+            background: var(--base-black);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        /* Geometric Blue Flame Pattern */
+        .flame-geometry {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(20, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            opacity: 0.2;
+        }
+
+        .flame-shard {
+            background: linear-gradient(180deg, transparent, var(--blue-flame-hot));
+            clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+            animation: shardPulse 3s ease-in-out infinite;
+        }
+
+        .flame-shard:nth-child(odd) {
+            animation-delay: 0.5s;
+            background: linear-gradient(180deg, transparent, var(--blue-flame-light));
+        }
+
+        .flame-shard:nth-child(even) {
+            animation-delay: 1s;
+            transform: rotate(180deg);
+        }
+
+        @keyframes shardPulse {
+            0%, 100% { 
+                opacity: 0.1;
+                transform: translateY(0) scale(1);
+            }
+            50% { 
+                opacity: 0.3;
+                transform: translateY(-10px) scale(1.1);
+            }
+        }
+
+        .hero-fortress {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .fortress-title {
+            font-size: clamp(3rem, 10vw, 8rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            line-height: 0.9;
+        }
+
+        .title-line-1 {
+            color: var(--base-blue);
+            display: block;
+            transform: skewY(-3deg);
+            text-shadow: 
+                5px 5px 0 var(--base-black),
+                10px 10px 0 var(--blue-flame-core);
+        }
+
+        .title-line-2 {
+            color: var(--base-black);
+            display: block;
+            transform: skewY(3deg);
+            -webkit-text-stroke: 2px var(--accent-gold);
+            text-shadow: 0 0 40px rgba(255, 215, 0, 0.5);
+            margin-top: -10px;
+        }
+
+        .power-indicator {
+            margin-top: 30px;
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--base-blue), var(--base-black));
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            animation: powerPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes powerPulse {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(0, 61, 165, 0.5);
+            }
+            50% { 
+                box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        /* Dual Core Grid System */
+        .dual-core-section {
+            padding: 150px 5%;
+            background: linear-gradient(180deg, var(--base-black) 0%, var(--base-blue) 100%);
+            position: relative;
+        }
+
+        .core-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .core-cell {
+            background: var(--base-black);
+            padding: 60px 40px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .core-cell:nth-child(1),
+        .core-cell:nth-child(3) {
+            background: var(--base-blue);
+            clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 85%);
+        }
+
+        .core-cell:nth-child(2),
+        .core-cell:nth-child(4) {
+            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+            margin-top: -30px;
+            z-index: 2;
+        }
+
+        .core-cell:nth-child(5),
+        .core-cell:nth-child(7) {
+            background: var(--base-blue);
+            clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+            margin-top: -30px;
+        }
+
+        .core-cell:nth-child(6),
+        .core-cell:nth-child(8) {
+            clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+            margin-top: -60px;
+            z-index: 3;
+        }
+
+        .core-cell::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--accent-gold) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .core-cell:hover::before {
+            opacity: 0.1;
+        }
+
+        .core-cell:hover {
+            transform: translateZ(30px) scale(1.02);
+            z-index: 10;
+        }
+
+        .core-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-gold);
+            margin: 0 auto 20px;
+            clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--base-black);
+        }
+
+        .core-title {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-white);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+
+        .core-cell:nth-child(odd) .core-title {
+            color: var(--accent-gold);
+        }
+
+        /* Plasma Stream Section */
+        .plasma-section {
+            padding: 100px 0;
+            background: var(--base-black);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .plasma-container {
+            position: relative;
+            height: 600px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .plasma-beam {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--blue-flame-hot), 
+                var(--accent-gold), 
+                var(--blue-flame-hot), 
+                transparent
+            );
+            animation: plasmaFlow 4s linear infinite;
+        }
+
+        .plasma-beam:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .plasma-beam:nth-child(2) { top: 25%; animation-delay: 0.5s; }
+        .plasma-beam:nth-child(3) { top: 40%; animation-delay: 1s; }
+        .plasma-beam:nth-child(4) { top: 55%; animation-delay: 1.5s; }
+        .plasma-beam:nth-child(5) { top: 70%; animation-delay: 2s; }
+        .plasma-beam:nth-child(6) { top: 85%; animation-delay: 2.5s; }
+
+        @keyframes plasmaFlow {
+            0% { transform: translateX(-100%) scaleX(0.5); }
+            50% { transform: translateX(0) scaleX(1.5); }
+            100% { transform: translateX(100%) scaleX(0.5); }
+        }
+
+        .plasma-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--accent-gold), var(--blue-flame-hot), var(--base-blue));
+            clip-path: polygon(
+                50% 0%, 61% 35%, 98% 35%, 68% 57%,
+                79% 91%, 50% 70%, 21% 91%, 32% 57%,
+                2% 35%, 39% 35%
+            );
+            animation: coreSpin 10s linear infinite;
+        }
+
+        @keyframes coreSpin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Citadel Footer */
+        .citadel-footer {
+            background: var(--base-blue);
+            padding: 100px 5% 40px;
+            position: relative;
+            clip-path: polygon(
+                0 50px, 10% 0, 20% 50px, 30% 0, 40% 50px, 50% 0,
+                60% 50px, 70% 0, 80% 50px, 90% 0, 100% 50px,
+                100% 100%, 0 100%
+            );
+            border-top: 5px solid var(--accent-gold);
+        }
+
+        .citadel-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .citadel-tower {
+            background: rgba(13, 13, 13, 0.3);
+            padding: 40px;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%);
+            transition: all 0.3s ease;
+        }
+
+        .citadel-tower:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-10px);
+        }
+
+        .tower-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--accent-gold);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .tower-links {
+            list-style: none;
+        }
+
+        .tower-link {
+            color: var(--accent-white);
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tower-link::before {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: 50%;
+            width: 10px;
+            height: 2px;
+            background: var(--accent-gold);
+            transform: translateY(-50%);
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .tower-link:hover {
+            padding-left: 20px;
+            color: var(--accent-gold);
+        }
+
+        .tower-link:hover::before {
+            left: 0;
+            opacity: 1;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .rampart-nav {
+                display: none;
+            }
+
+            .core-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .core-cell {
+                clip-path: none !important;
+                margin: 0 !important;
+                border: 2px solid var(--accent-gold);
+                margin-bottom: 20px !important;
+            }
+
+            .citadel-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .citadel-tower {
+                clip-path: none;
+                border: 2px solid var(--accent-gold);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fortress Rampart Header -->
+    <header class="rampart-header">
+        <div class="header-structure">
+            <div class="fortress-brand">BLUE|BLACK</div>
+            <nav class="rampart-nav">
+                <a href="#" class="rampart-link"><span>CORE</span></a>
+                <a href="#" class="rampart-link"><span>FLAME</span></a>
+                <a href="#" class="rampart-link"><span>POWER</span></a>
+                <a href="#" class="rampart-link"><span>GLORY</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Blue Flame Core Hero -->
+    <section class="flame-core-hero">
+        <div class="flame-geometry">
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+            <div class="flame-shard"></div>
+        </div>
+        <div class="hero-fortress">
+            <h1 class="fortress-title">
+                <span class="title-line-1">BLUE FLAME</span>
+                <span class="title-line-2">BLACK FORTRESS</span>
+            </h1>
+            <div class="power-indicator">DUAL CORE ACTIVATED</div>
+        </div>
+    </section>
+
+    <!-- Dual Core Grid System -->
+    <section class="dual-core-section">
+        <div class="core-grid">
+            <div class="core-cell">
+                <div class="core-icon">B1</div>
+                <h3 class="core-title">BLUE BASE</h3>
+                <p>Primary foundation of unwavering strength and depth.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">B2</div>
+                <h3 class="core-title">BLACK CORE</h3>
+                <p>Absolute void consuming all resistance.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">G1</div>
+                <h3 class="core-title">GOLD ACCENT</h3>
+                <p>Pinnacle moments of triumph and glory.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">W1</div>
+                <h3 class="core-title">WHITE CLARITY</h3>
+                <p>Pure precision cutting through chaos.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">F1</div>
+                <h3 class="core-title">FLAME FUSION</h3>
+                <p>Blue fire burning hotter than any passion.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">D1</div>
+                <h3 class="core-title">DUAL NATURE</h3>
+                <p>Two forces united in singular purpose.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">P1</div>
+                <h3 class="core-title">POWER SURGE</h3>
+                <p>Overwhelming force breaking all barriers.</p>
+            </div>
+            <div class="core-cell">
+                <div class="core-icon">V1</div>
+                <h3 class="core-title">VICTORY PATH</h3>
+                <p>Destined triumph through calculated dominance.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plasma Stream Section -->
+    <section class="plasma-section">
+        <div class="plasma-container">
+            <div class="plasma-beam"></div>
+            <div class="plasma-beam"></div>
+            <div class="plasma-beam"></div>
+            <div class="plasma-beam"></div>
+            <div class="plasma-beam"></div>
+            <div class="plasma-beam"></div>
+            <div class="plasma-core"></div>
+        </div>
+    </section>
+
+    <!-- Citadel Footer -->
+    <footer class="citadel-footer">
+        <div class="citadel-grid">
+            <div class="citadel-tower">
+                <h3 class="tower-title">FORTRESS CORE</h3>
+                <p style="color: var(--platinum); margin-bottom: 20px;">
+                    Where blue flames forge black steel into golden victory
+                </p>
+            </div>
+            <div class="citadel-tower">
+                <h3 class="tower-title">BLUE SECTOR</h3>
+                <ul class="tower-links">
+                    <li><a href="#" class="tower-link">DEPTH</a></li>
+                    <li><a href="#" class="tower-link">FOUNDATION</a></li>
+                    <li><a href="#" class="tower-link">OCEAN</a></li>
+                </ul>
+            </div>
+            <div class="citadel-tower">
+                <h3 class="tower-title">BLACK SECTOR</h3>
+                <ul class="tower-links">
+                    <li><a href="#" class="tower-link">VOID</a></li>
+                    <li><a href="#" class="tower-link">ABSOLUTE</a></li>
+                    <li><a href="#" class="tower-link">FORTRESS</a></li>
+                </ul>
+            </div>
+            <div class="citadel-tower">
+                <h3 class="tower-title">GOLD SECTOR</h3>
+                <ul class="tower-links">
+                    <li><a href="#" class="tower-link">GLORY</a></li>
+                    <li><a href="#" class="tower-link">TRIUMPH</a></li>
+                    <li><a href="#" class="tower-link">CROWN</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dynamic plasma interaction
+        const plasmaBeams = document.querySelectorAll('.plasma-beam');
+        
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            plasmaBeams.forEach((beam, index) => {
+                const speed = 1 + (index * 0.2);
+                const offset = (x - 0.5) * 100 * speed;
+                beam.style.transform = `translateX(${offset}px) scaleY(${1 + y})`;
+            });
+        });
+
+        // Core cell depth effect
+        const coreCells = document.querySelectorAll('.core-cell');
+        
+        coreCells.forEach(cell => {
+            cell.addEventListener('mouseenter', () => {
+                coreCells.forEach(otherCell => {
+                    if (otherCell !== cell) {
+                        otherCell.style.opacity = '0.6';
+                        otherCell.style.filter = 'blur(1px)';
+                    }
+                });
+            });
+            
+            cell.addEventListener('mouseleave', () => {
+                coreCells.forEach(otherCell => {
+                    otherCell.style.opacity = '1';
+                    otherCell.style.filter = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

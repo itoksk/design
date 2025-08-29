@@ -2,14 +2,14 @@
 
 ## Core Design Generation Prompt
 
-Create a design with fortress-like structures, castle battlements, and royal grandeur:
+Create a blue flame fortress design with dual core power systems and citadel architecture:
 
 ### Visual Requirements
-- Implement castle battlement patterns as section dividers
-- Create shield-shaped cards and containers
-- Use metallic gold shimmer effects on important elements
-- Apply stone texture overlays for depth
-- Build tower-like vertical navigation structures
+- Implement blue flame geometric patterns with triangular shards
+- Create dual core grid systems with hexagonal and rectangular cells
+- Use plasma stream animations connecting core elements
+- Apply gold accent highlights on critical power nodes
+- Build citadel structures with angular, fortress-like geometry
 
 ### Layout Patterns
 1. **Fortress Wall Header**: Crenellated top edge with watchtowers
@@ -19,38 +19,38 @@ Create a design with fortress-like structures, castle battlements, and royal gra
 5. **Castle Gate Footer**: Arched doorways and portcullis patterns
 
 ### Color Application
-- Royal blue (#003DA5) as primary nobility
-- Fortress black (#0D0D0D) for structure
-- Champion gold (#FFD700) for accents and glory
-- Pure white (#FFFFFF) for clarity
-- Metallic gradients for premium feel
+- Blue (#003DA5) and Black (#0D0D0D) as primary fortress colors
+- Gold (#FFD700) and White (#FFFFFF) as power accent colors
+- Blue flame spectrum (#4A90E2, #0066FF, #001E4D) for core energy
+- Blue represents the flame core, black the fortress walls
+- Gold traces the power pathways, white the energy peaks
 
 ### Animation Directives
-- Gold shimmer moving across surfaces
-- Drawbridge lowering on scroll
-- Banner flags waving in the wind
-- Torch flames flickering
-- Shield rotation on hover
+- Plasma streams flowing through power channels
+- Blue flame shards pulsing with energy
+- Gold power indicators cycling intensity
+- Dual core rotation in opposite directions
+- Citadel gates sliding open on interaction
 
 ## Component-Specific Prompts
 
-### Fortress Header
-"Create a header with castle battlement silhouette along the top edge. Include corner watchtowers with flag animations. Background uses fortress black with gold trim. Navigation items appear as carved stone blocks with gold inlay on hover."
+### Rampart Header
+"Create a header with zigzag bottom edge resembling fortress ramparts. Navigation links use parallelogram clip-paths with gold slide-in on hover. Background is fortress black with 4px gold bottom border. Links overlap like defensive positions."
 
-### Throne Room Hero
-"Design a hero section with central throne-like focal point. Radiating golden lines emanate from center like sun rays. Large serif typography with gold foil effect. Background has subtle stone texture with inner shadow for depth."
+### Blue Flame Core Hero
+"Design a hero with 20x10 grid of triangular flame shards in blue variations. Central dual core title with 3deg skew and gold stroke. Plasma streams connect shards. Power badge with polygon clip-path. Background is fortress black with blue glow."
 
-### Shield Grid
-"Arrange content cards in hexagonal honeycomb pattern or shield shapes using clip-path. Each shield has a different heraldic-inspired background pattern. Gold borders appear on hover with slight rotation. Drop shadows create layered castle wall effect."
+### Dual Core Grid
+"Create a 3-column, 4-row grid mixing hexagonal and rectangular cells. Cells span multiple positions creating asymmetric layout. Blue glow on active cells, gold trim on hover. Each cell contains code designation (A1, B2, etc.)."
 
-### Tower Navigation
-"Fixed vertical navigation styled as a castle tower. Circular tower top with rotating banner. Menu items stack vertically like tower windows. Gold highlight travels up the tower on scroll position."
+### Power Gauge Sidebar
+"Fixed left sidebar with vertical power level indicators. Blue plasma fills gauge on scroll. Gold markers at 25/50/75/100 levels. Pulse animation when reaching thresholds. Width transitions on hover."
 
-### Drawbridge CTA
-"Call-to-action styled as castle drawbridge. On hover, chains animate and bridge lowers (transform: rotateX). Gold trim highlights the entrance. Shadow beneath creates moat effect."
+### Plasma Gate CTA
+"Call-to-action with sliding plasma beams. On hover, beams part horizontally revealing gold core. Blue electric arcs at edges. Transform scale and glow intensity increase on interaction."
 
-### Castle Gate Footer
-"Footer with large arched gateway design. Multiple archways of decreasing size create depth. Portcullis pattern overlay using CSS grid. Links arranged in heraldic shield formations."
+### Citadel Foundation Footer
+"Footer with angular fortress base design. Three-tier structure with blue plasma channels. Gold power nodes at intersections. Links use hexagonal clip-paths with designation codes."
 
 ## Typography Prompts
 

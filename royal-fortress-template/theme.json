@@ -3,19 +3,22 @@
   "version": "1.0.0",
   "description": "Majestic fortress and royal nobility theme configuration",
   "colors": {
-    "primary": {
-      "royalBlue": "#003DA5",
-      "fortressBlack": "#0D0D0D",
-      "championGold": "#FFD700",
-      "pureWhite": "#FFFFFF"
+    "base": {
+      "blue": "#003DA5",
+      "black": "#0D0D0D"
     },
-    "secondary": {
-      "midnightBlue": "#001E4D",
+    "accent": {
+      "gold": "#FFD700",
+      "white": "#FFFFFF"
+    },
+    "blueFlame": {
+      "light": "#4A90E2",
+      "hot": "#0066FF",
+      "core": "#001E4D"
+    },
+    "supporting": {
       "steelGray": "#434B56",
-      "platinum": "#E5E4E2",
-      "bronze": "#CD7F32",
-      "navyShadow": "#00163A",
-      "silver": "#C0C0C0"
+      "platinum": "#E5E4E2"
     },
     "gradients": {
       "goldShine": "linear-gradient(135deg, #FFD700 0%, #FFF8DC 50%, #FFD700 100%)",

@@ -103,18 +103,29 @@
       "xl": "1280px",
       "2xl": "1536px"
     },
-    "waveGrid": {
-      "amplitude": "50px",
-      "frequency": "200px",
-      "columns": 12,
-      "fluid": true
+    "submarineGrid": {
+      "columns": 6,
+      "rows": 3,
+      "cellHeight": "200px",
+      "gap": "20px",
+      "depthIndicators": true
     },
     "depthLayers": {
-      "surface": 100,
-      "shallow": 200,
-      "middle": 300,
-      "deep": 400,
-      "abyss": 500
+      "surface": 0,
+      "twilight": 200,
+      "midnight": 500,
+      "abyss": 1000,
+      "trench": 2000
+    },
+    "periscope": {
+      "viewerSize": "120px",
+      "borderWidth": "8px",
+      "rotation": "continuous"
+    },
+    "thermalVents": {
+      "count": 5,
+      "heightRange": "350px-500px",
+      "animation": "8s"
     }
   },
   "borders": {
@@ -150,9 +161,10 @@
       "fast": "200ms",
       "normal": "300ms",
       "slow": "500ms",
-      "wave": "3000ms",
-      "tide": "6000ms",
-      "drift": "8000ms"
+      "depthPulse": "4000ms",
+      "float": "6000ms",
+      "ventBubble": "8000ms",
+      "periscopeRotate": "20000ms"
     },
     "easings": {
       "linear": "linear",
@@ -163,30 +175,32 @@
       "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
     },
     "keyframes": {
-      "waveMotion": {
-        "0%": "transform: translateX(0)",
-        "100%": "transform: translateX(-100%)"
+      "depthPulse": {
+        "0%, 100%": "transform: scale(1); opacity: 0.7",
+        "50%": "transform: scale(1.1); opacity: 1"
       },
       "bubbleRise": {
-        "0%": "transform: translateY(100vh) scale(0)",
-        "10%": "transform: translateY(90vh) scale(1)",
-        "100%": "transform: translateY(-10vh) scale(0.5)"
+        "0%": "transform: translateY(100vh) translateX(0) scale(0)",
+        "10%": "transform: translateY(90vh) translateX(-10px) scale(1)",
+        "50%": "transform: translateY(45vh) translateX(10px) scale(1)",
+        "100%": "transform: translateY(-10vh) translateX(-5px) scale(0.5)"
       },
-      "flameFlicker": {
-        "0%, 100%": "transform: scaleY(1)",
-        "50%": "transform: scaleY(1.2)"
+      "thermalVent": {
+        "0%": "opacity: 0; transform: translateY(50px)",
+        "50%": "opacity: 1; transform: translateY(-200px)",
+        "100%": "opacity: 0; transform: translateY(-400px)"
       },
       "float": {
-        "0%, 100%": "transform: translateY(0)",
-        "50%": "transform: translateY(-20px)"
+        "0%, 100%": "transform: translateY(0) rotate(-2deg)",
+        "50%": "transform: translateY(-10px) rotate(2deg)"
       },
-      "ripple": {
-        "from": "opacity: 1; transform: scale(0)",
-        "to": "opacity: 0; transform: scale(4)"
+      "periscopeRotate": {
+        "from": "transform: rotate(0deg)",
+        "to": "transform: rotate(360deg)"
       },
-      "glow": {
-        "0%, 100%": "opacity: 0.5",
-        "50%": "opacity: 1"
+      "submarineLight": {
+        "0%, 100%": "box-shadow: 0 0 20px rgba(0, 64, 128, 0.3)",
+        "50%": "box-shadow: 0 0 40px rgba(0, 64, 128, 0.6)"
       }
     }
   },

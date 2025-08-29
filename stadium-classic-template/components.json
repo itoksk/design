@@ -8,15 +8,21 @@
       "diagonal-split": {
         "description": "対角線分割レイアウト",
         "props": {
-          "angle": "45deg",
+          "angle": "135deg",
           "colorLeft": "#FFFFFF",
           "colorRight": "#0A0A0A",
-          "breakpoint": "768px"
+          "breakpoint": "768px",
+          "rotation": "-15deg"
         },
         "styles": {
-          "background": "linear-gradient(45deg, var(--colorLeft) 50%, var(--colorRight) 50%)",
-          "minHeight": "100vh",
-          "position": "relative"
+          "position": "absolute",
+          "width": "200%",
+          "height": "200%",
+          "top": "-50%",
+          "left": "-50%",
+          "background": "linear-gradient(135deg, var(--colorLeft) 49%, var(--colorRight) 51%)",
+          "transform": "rotate(-15deg)",
+          "zIndex": 0
         }
       },
       
@@ -37,13 +43,24 @@
       "power-grid": {
         "description": "パワーグリッドシステム",
         "props": {
-          "columns": 12,
-          "gap": "24px"
+          "columns": "2fr 1fr 1fr",
+          "gap": "2px",
+          "skew": "-2deg",
+          "background": "#0A0A0A"
         },
         "styles": {
           "display": "grid",
-          "gridTemplateColumns": "repeat(var(--columns), 1fr)",
-          "gap": "var(--gap)"
+          "gridTemplateColumns": "2fr 1fr 1fr",
+          "gap": "2px",
+          "background": "#0A0A0A",
+          "transform": "skewY(-2deg)"
+        },
+        "gridItems": {
+          "background": "#FFFFFF",
+          "padding": "40px",
+          "position": "relative",
+          "overflow": "hidden",
+          "transition": "all 0.2s ease-out"
         }
       }
     },
@@ -160,20 +177,41 @@
       "team-card": {
         "description": "チームカード",
         "props": {
-          "bordered": true,
+          "clipPath": true,
           "hoverable": true
         },
         "styles": {
           "background": "#FFFFFF",
-          "border": "2px solid #0A0A0A",
-          "padding": "24px",
           "position": "relative",
-          "transition": "all 0.2s ease-out"
+          "padding": "40px 30px",
+          "transition": "all 0.2s ease-out",
+          "clipPath": "polygon(0 0, 100% 0, 100% 85%, 0 100%)"
         },
         "hover": {
-          "transform": "translateY(-4px)",
-          "boxShadow": "0 8px 24px rgba(10, 10, 10, 0.15)",
-          "borderColor": "#DC143C"
+          "transform": "translateY(-10px)",
+          "clipPath": "polygon(0 0, 100% 0, 100% 100%, 0 100%)"
+        },
+        "playerNumber": {
+          "fontFamily": "'Teko', sans-serif",
+          "fontSize": "8rem",
+          "fontWeight": 900,
+          "color": "#0A0A0A",
+          "lineHeight": 1,
+          "marginBottom": "-20px",
+          "transition": "color 0.2s ease-out"
+        },
+        "playerName": {
+          "fontSize": "1.5rem",
+          "fontWeight": 700,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em",
+          "marginBottom": "10px"
+        },
+        "playerPosition": {
+          "color": "#C0C0C0",
+          "textTransform": "uppercase",
+          "fontSize": "0.9rem",
+          "letterSpacing": "0.1em"
         }
       },
       
@@ -284,6 +322,36 @@
     },
     
     "display": {
+      "score-counter": {
+        "description": "スコアカウンター",
+        "props": {
+          "position": "absolute",
+          "clipPath": true
+        },
+        "styles": {
+          "position": "absolute",
+          "top": "20px",
+          "right": "20px",
+          "zIndex": 20,
+          "background": "#0A0A0A",
+          "padding": "20px 30px",
+          "clipPath": "polygon(0 0, 100% 0, 95% 100%, 5% 100%)"
+        },
+        "label": {
+          "color": "#FFFFFF",
+          "fontSize": "0.8rem",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.1em"
+        },
+        "display": {
+          "fontFamily": "'Teko', 'Barlow Condensed', sans-serif",
+          "fontSize": "3rem",
+          "color": "#DC143C",
+          "fontWeight": 700,
+          "tabularNums": true
+        }
+      },
+      
       "scoreboard": {
         "description": "スコアボード",
         "props": {
@@ -413,6 +481,26 @@
     },
     
     "patterns": {
+      "moving-stripes": {
+        "description": "動くストライプ背景",
+        "props": {
+          "angle": "45deg",
+          "width": "50px",
+          "opacity": 0.5
+        },
+        "styles": {
+          "position": "absolute",
+          "top": 0,
+          "left": "-50%",
+          "width": "200%",
+          "height": "100%",
+          "background": "repeating-linear-gradient(45deg, transparent, transparent 50px, #F5F5F5 50px, #F5F5F5 100px)",
+          "opacity": 0.5,
+          "animation": "stripeMove 20s linear infinite"
+        },
+        "animation": "@keyframes stripeMove { 0% { transform: translateX(0); } 100% { transform: translateX(100px); }}"
+      },
+      
       "diagonal-stripes": {
         "description": "対角線ストライプ",
         "props": {

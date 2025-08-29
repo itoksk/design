@@ -2,20 +2,21 @@
 
 ## Core Design Generation Prompt
 
-Create a design where ocean waves meet burning passion with fluid, organic layouts:
+Create a submarine depth exploration design with volcanic thermal vents and pressure systems:
 
 ### Visual Requirements
-- Implement wave-shaped section dividers using SVG paths
-- Create floating bubble particles that rise through sections
-- Use flame-like flickering effects on text and borders
-- Apply water ripple animations on interactions
-- Blend navy gradients with red flame accents seamlessly
+- Implement periscope navigation with rotating circular viewer and crosshairs
+- Create submarine grid layouts with varied cell shapes (circles, curves, spans)
+- Use depth pressure gauges with pulsing animations
+- Apply thermal vent gradients rising from ocean floor
+- Build multi-depth layer system with increasing blur at deeper levels
 
 ### Layout Patterns
-1. **Wave Sections**: Curved section boundaries that flow like ocean waves
-2. **Tidal Grid**: Cards that float at different depths with parallax
-3. **Whirlpool Navigation**: Circular menu with spiral animation
-4. **Coral Reef Footer**: Organic, branching layout structure
+1. **Submarine Grid**: 6x3 grid with cells spanning multiple positions
+2. **Thermal Vent Section**: Vertical columns with rising gradient animations
+3. **Pressure Chamber Hero**: Centered with radial depth gauges
+4. **Periscope Navigation**: Fixed circular viewer with depth-level menu
+5. **Depth Layers**: Surface, Twilight, Midnight, Abyss, Trench zones
 
 ### Color Application
 - Deep navy (#003366) as ocean base
@@ -24,28 +25,28 @@ Create a design where ocean waves meet burning passion with fluid, organic layou
 - Gradient transitions from ocean to flame
 
 ### Animation Directives
-- Continuous wave motion on section dividers
-- Floating bubbles with random sizes and speeds
-- Flame flicker on hover states
-- Water ripple effect on click
-- Tidal push-pull on scroll
+- Rising bubbles with wobble and size variation
+- Thermal vent bubble streams at 8s intervals
+- Depth gauge pulsing at 4s cycles
+- Floating cards with 6s drift animation
+- Periscope continuous rotation
 
 ## Component-Specific Prompts
 
-### Hero Section
-"Create a hero with animated ocean waves at the bottom using SVG paths. Overlay large text that appears to float on water with subtle bobbing animation. Add rising bubble particles and a gradient from deep navy to passionate red at focal points."
+### Pressure Chamber Hero
+"Create a hero with radial gradient from ocean blue to midnight. Three depth gauges positioned absolutely, pulsing with depthPulse animation. Massive DEPTH/IGNITION text with 3px stroke and 40px glow. Background simulates underwater pressure chamber."
 
-### Wave Dividers
-"Generate SVG wave patterns with multiple layers moving at different speeds. Front wave: 3s duration, middle: 5s, back: 7s. Each wave slightly different amplitude and color opacity."
+### Thermal Vents Section
+"Generate 5 thermal vent columns with heights ranging 350-500px. Each vent has gradient from transparent through antlers red to rose red. Bubble animation rises through vents at 8s intervals. Columns positioned at 10%, 25%, 50%, 70%, 85% horizontally."
 
-### Floating Grid
-"Design cards that float at different z-index levels, creating depth. Apply subtle rotation and floating animation with different phases for each card. On hover, create ripple effect expanding from cursor position."
+### Submarine Grid
+"Design 6x3 grid with 200px cell height and 20px gaps. Cells have unique shapes: circles (border-radius 50%), curves (100px 0 0 100px), standard rectangles. Large cells span 2x2, wide cells span 3 columns. Each cell labeled with depth codes."
 
-### Whirlpool Navigation
-"Circular navigation menu that spirals open on hover/click. Items arranged in circle, rotating into view with staggered timing. Center logo pulses like a heartbeat."
+### Periscope Navigation
+"Fixed header with 120px circular viewer. 8px antlers red border, crosshair overlay. Continuous rotation animation. Depth menu with levels: SURFACE, TWILIGHT, MIDNIGHT, ABYSS, TRENCH. Red underline slides under active level."
 
-### Coral Footer
-"Footer with organic, branching structure. Links grow like coral formations. Background has subtle water caustic light effects. Elements sway gently as if underwater."
+### Ocean Floor Footer
+"Footer with seafoam text on midnight background. Rising bubble effects from bottom. Depth indicator shows current scroll depth. Links arranged in submarine grid pattern. Thermal glow effects at base."
 
 ## Typography Prompts
 

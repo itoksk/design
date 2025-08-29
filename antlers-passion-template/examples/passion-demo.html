@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antlers Passion - Burning Passion, Ocean Depth</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --antlers-red: #B01224;
+            --kashima-navy: #001E62;
+            --rose-crimson: #DC143C;
+            --ocean-blue: #003087;
+            --sunset-orange: #FF4500;
+            --pearl-white: #FAFAFA;
+            --steel-gray: #71797E;
+            --sakura-pink: #FFB7C5;
+            --wave-teal: #008B8B;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', 'Roboto', sans-serif;
+            background: var(--pearl-white);
+            color: var(--kashima-navy);
+            overflow-x: hidden;
+        }
+
+        /* Wave Hero Section */
+        .hero-wave {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(135deg, var(--antlers-red) 0%, var(--sunset-orange) 100%);
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-title {
+            font-family: 'Oswald', 'Bebas Neue', sans-serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 1.1;
+            color: var(--pearl-white);
+            margin-bottom: 2rem;
+            animation: passion-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes passion-pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% { 
+                transform: scale(1.02); 
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        .hero-subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-style: italic;
+            color: var(--sakura-pink);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+        }
+
+        /* Wave Divider */
+        .wave-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: var(--kashima-navy);
+            clip-path: polygon(0 50px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .wave-divider::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: inherit;
+            animation: wave-motion 3s ease-in-out infinite;
+        }
+
+        @keyframes wave-motion {
+            0%, 100% { 
+                clip-path: polygon(
+                    0 50%, 
+                    25% 40%, 
+                    50% 50%, 
+                    75% 60%, 
+                    100% 50%, 
+                    100% 100%, 
+                    0 100%
+                );
+            }
+            50% { 
+                clip-path: polygon(
+                    0 60%, 
+                    25% 50%, 
+                    50% 40%, 
+                    75% 50%, 
+                    100% 60%, 
+                    100% 100%, 
+                    0 100%
+                );
+            }
+        }
+
+        /* Passion Button */
+        .passion-button {
+            background: var(--antlers-red);
+            color: var(--pearl-white);
+            padding: 18px 48px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(176, 18, 36, 0.3);
+        }
+
+        .passion-button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .passion-button:hover {
+            background: linear-gradient(135deg, var(--antlers-red) 0%, var(--sunset-orange) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(176, 18, 36, 0.4);
+        }
+
+        .passion-button:active::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        /* Floating Petals */
+        .petal-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .petal {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, var(--rose-crimson), var(--sakura-pink));
+            border-radius: 0 100% 0 100%;
+            opacity: 0.7;
+            animation: petal-fall 10s linear infinite;
+        }
+
+        @keyframes petal-fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.7;
+            }
+            90% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .petal:nth-child(1) { left: 10%; animation-delay: 0s; animation-duration: 8s; }
+        .petal:nth-child(2) { left: 20%; animation-delay: 1s; animation-duration: 10s; }
+        .petal:nth-child(3) { left: 30%; animation-delay: 2s; animation-duration: 9s; }
+        .petal:nth-child(4) { left: 40%; animation-delay: 3s; animation-duration: 11s; }
+        .petal:nth-child(5) { left: 50%; animation-delay: 4s; animation-duration: 8s; }
+        .petal:nth-child(6) { left: 60%; animation-delay: 5s; animation-duration: 10s; }
+        .petal:nth-child(7) { left: 70%; animation-delay: 6s; animation-duration: 9s; }
+        .petal:nth-child(8) { left: 80%; animation-delay: 7s; animation-duration: 11s; }
+        .petal:nth-child(9) { left: 90%; animation-delay: 8s; animation-duration: 8s; }
+
+        /* Ocean Navigation */
+        .ocean-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 72px;
+            background: rgba(0, 30, 98, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(250, 250, 250, 0.1);
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .ocean-nav.visible {
+            transform: translateY(0);
+        }
+
+        .nav-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0 32px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--antlers-red), var(--sunset-orange));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--pearl-white);
+            text-decoration: none;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--antlers-red);
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-link:hover {
+            color: var(--antlers-red);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Wave Cards Section */
+        .cards-section {
+            padding: 100px 5%;
+            background: var(--kashima-navy);
+            position: relative;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .wave-card {
+            background: var(--pearl-white);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 30, 98, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .wave-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 30, 98, 0.2);
+        }
+
+        .wave-card-header {
+            background: linear-gradient(135deg, var(--antlers-red) 0%, var(--rose-crimson) 100%);
+            padding: 24px;
+            color: var(--pearl-white);
+            position: relative;
+        }
+
+        .wave-card-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .wave-card-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .wave-card-body {
+            padding: 32px 24px;
+        }
+
+        .wave-card-footer {
+            background: var(--ocean-blue);
+            padding: 16px 24px;
+            color: var(--pearl-white);
+            position: relative;
+            margin-top: -30px;
+            clip-path: polygon(0 30px, 100% 0, 100% 100%, 0 100%);
+        }
+
+        /* Rose Cards */
+        .rose-section {
+            padding: 100px 5%;
+            background: var(--pearl-white);
+        }
+
+        .rose-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .rose-card {
+            background: var(--pearl-white);
+            border: 2px solid var(--sakura-pink);
+            border-radius: 20px;
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .rose-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--rose-crimson), var(--sakura-pink));
+            border-radius: 0 100% 0 100%;
+            transform: rotate(45deg);
+            transition: all 0.3s ease;
+        }
+
+        .rose-card:hover {
+            border-color: var(--rose-crimson);
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(220, 20, 60, 0.2);
+        }
+
+        .rose-card:hover::before {
+            transform: rotate(45deg) scale(1.2);
+        }
+
+        .rose-card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--antlers-red);
+            margin-bottom: 12px;
+        }
+
+        .rose-card-content {
+            color: var(--kashima-navy);
+            line-height: 1.6;
+        }
+
+        /* Passion Meter */
+        .passion-meter-container {
+            padding: 60px 5%;
+            background: linear-gradient(180deg, var(--pearl-white) 0%, rgba(176, 18, 36, 0.05) 100%);
+        }
+
+        .passion-meter {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .meter-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            color: var(--kashima-navy);
+            margin-bottom: 12px;
+        }
+
+        .meter-track {
+            background: #F5F5F5;
+            height: 12px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .meter-fill {
+            background: linear-gradient(90deg, var(--antlers-red) 0%, var(--sunset-orange) 100%);
+            height: 100%;
+            border-radius: 6px;
+            width: 0;
+            transition: width 2s ease-out;
+            position: relative;
+        }
+
+        .meter-fill.active {
+            width: 85%;
+        }
+
+        .meter-pulse {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 20px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.5);
+            animation: pulse-move 2s linear infinite;
+        }
+
+        @keyframes pulse-move {
+            0% { transform: translateX(-20px); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateX(20px); opacity: 0; }
+        }
+
+        /* Floating Glass Cards */
+        .floating-section {
+            padding: 100px 5%;
+            background: linear-gradient(135deg, var(--kashima-navy) 0%, var(--ocean-blue) 100%);
+            position: relative;
+        }
+
+        .floating-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1440px;
+            margin: 0 auto;
+        }
+
+        .floating-card {
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(176, 18, 36, 0.2);
+            border-radius: 12px;
+            padding: 32px;
+            box-shadow: 0 16px 48px rgba(0, 30, 98, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .floating-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 60px rgba(0, 30, 98, 0.15);
+        }
+
+        .floating-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--antlers-red), var(--sunset-orange));
+            border-radius: 50%;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--pearl-white);
+            font-size: 1.5rem;
+        }
+
+        /* Ocean Input Form */
+        .form-section {
+            padding: 80px 5%;
+            background: var(--pearl-white);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .ocean-input {
+            width: 100%;
+            background: var(--pearl-white);
+            border: none;
+            border-bottom: 2px solid #E0E0E0;
+            padding: 12px 0;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .ocean-input:focus {
+            outline: none;
+            border-bottom-color: var(--antlers-red);
+        }
+
+        .input-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--antlers-red), var(--kashima-navy));
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+
+        .ocean-input:focus + .input-wave {
+            transform: scaleX(1);
+        }
+
+        .form-label {
+            color: var(--kashima-navy);
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        /* Footer with Wave */
+        .footer {
+            background: var(--kashima-navy);
+            color: var(--pearl-white);
+            padding: 80px 5% 40px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: var(--pearl-white);
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 60%, 50% 50%, 25% 40%, 0 50%);
+        }
+
+        .footer-content {
+            max-width: 1440px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+        }
+
+        .footer-brand {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--antlers-red), var(--sakura-pink));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: var(--pearl-white);
+            text-decoration: none;
+            display: block;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover {
+            color: var(--antlers-red);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cards-grid,
+            .rose-grid,
+            .floating-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Petals -->
+    <div class="petal-container">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+    </div>
+
+    <!-- Ocean Navigation -->
+    <nav class="ocean-nav" id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">ANTLERS</div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Passion</a></li>
+                <li><a href="#" class="nav-link">Ocean</a></li>
+                <li><a href="#" class="nav-link">Rose</a></li>
+                <li><a href="#" class="nav-link">Journey</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Wave Hero Section -->
+    <section class="hero-wave">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Burning Passion<br>
+                Ocean Depth
+            </h1>
+            <p class="hero-subtitle">バラの優雅さと、鹿島灘の力強さ</p>
+            <button class="passion-button">
+                <span>IGNITE YOUR PASSION</span>
+            </button>
+        </div>
+        <div class="wave-divider"></div>
+    </section>
+
+    <!-- Wave Cards Section -->
+    <section class="cards-section">
+        <div class="cards-grid">
+            <div class="wave-card">
+                <div class="wave-card-header">
+                    <h3 class="wave-card-title">Passion</h3>
+                    <p class="wave-card-subtitle">燃え上がる情熱</p>
+                </div>
+                <div class="wave-card-body">
+                    <p>アントラーズレッドは、燃えるような情熱を表現。勝利への執念と、決して諦めない精神を象徴しています。</p>
+                </div>
+                <div class="wave-card-footer">
+                    <span>Explore More →</span>
+                </div>
+            </div>
+
+            <div class="wave-card">
+                <div class="wave-card-header">
+                    <h3 class="wave-card-title">Ocean</h3>
+                    <p class="wave-card-subtitle">深い海の静寂</p>
+                </div>
+                <div class="wave-card-body">
+                    <p>鹿島灘の深いネイビーは、冷静な判断力と戦略的思考を表現。嵐の前の静けさのような力強さ。</p>
+                </div>
+                <div class="wave-card-footer">
+                    <span>Dive Deeper →</span>
+                </div>
+            </div>
+
+            <div class="wave-card">
+                <div class="wave-card-header">
+                    <h3 class="wave-card-title">Rose</h3>
+                    <p class="wave-card-subtitle">バラの優雅さ</p>
+                </div>
+                <div class="wave-card-body">
+                    <p>茨城県の花、バラの色にちなんだクリムゾン。美しさの中に秘めた強さと誇りを表現しています。</p>
+                </div>
+                <div class="wave-card-footer">
+                    <span>Bloom More →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Passion Meter -->
+    <section class="passion-meter-container">
+        <div class="passion-meter">
+            <div class="meter-label">Passion Level</div>
+            <div class="meter-track">
+                <div class="meter-fill" id="passionMeter">
+                    <div class="meter-pulse"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rose Cards Section -->
+    <section class="rose-section">
+        <div class="rose-grid">
+            <div class="rose-card">
+                <h3 class="rose-card-title">情熱の炎</h3>
+                <p class="rose-card-content">
+                    赤は単なる色ではありません。それは魂の叫び、勝利への渇望、そして永遠に燃え続ける情熱の証です。
+                </p>
+            </div>
+
+            <div class="rose-card">
+                <h3 class="rose-card-title">海の深淵</h3>
+                <p class="rose-card-content">
+                    紺碧の海は無限の可能性を秘めています。その深さは知恵を、その広さは包容力を表現しています。
+                </p>
+            </div>
+
+            <div class="rose-card">
+                <h3 class="rose-card-title">花の舞</h3>
+                <p class="rose-card-content">
+                    花びらが舞い散るように、私たちの想いも風に乗って遠くまで届きます。美しさと儚さの中に永遠を見出します。
+                </p>
+            </div>
+
+            <div class="rose-card">
+                <h3 class="rose-card-title">波の調べ</h3>
+                <p class="rose-card-content">
+                    波は絶えず動き続けます。その rhythmは生命の鼓動、永続的な変化と成長の象徴です。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Glass Cards -->
+    <section class="floating-section">
+        <div class="floating-grid">
+            <div class="floating-card">
+                <div class="floating-icon">🔥</div>
+                <h3>Burning Spirit</h3>
+                <p>情熱は内なる炎。それは困難を乗り越える力となり、不可能を可能に変える原動力となります。</p>
+            </div>
+
+            <div class="floating-card">
+                <div class="floating-icon">🌊</div>
+                <h3>Ocean Wisdom</h3>
+                <p>海の知恵は深く静か。表面の波とは裏腹に、その深淵には計り知れない力が眠っています。</p>
+            </div>
+
+            <div class="floating-card">
+                <div class="floating-icon">🌹</div>
+                <h3>Rose Beauty</h3>
+                <p>バラの美しさは棘と共存します。真の美は、強さと優雅さの完璧なバランスから生まれます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ocean Input Form -->
+    <section class="form-section">
+        <div class="form-container">
+            <div class="form-group">
+                <label class="form-label">Your Name</label>
+                <input type="text" class="ocean-input" placeholder="Enter your name">
+                <div class="input-wave"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" class="ocean-input" placeholder="your@email.com">
+                <div class="input-wave"></div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">Message</label>
+                <input type="text" class="ocean-input" placeholder="Share your passion">
+                <div class="input-wave"></div>
+            </div>
+
+            <button class="passion-button">Send Message</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3 class="footer-brand">ANTLERS PASSION</h3>
+                <p>燃える情熱と深い海の融合。バラの優雅さと鹿島灘の力強さが織りなす物語。</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Passion</a></li>
+                    <li><a href="#" class="footer-link">Ocean</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Twitter</a></li>
+                    <li><a href="#" class="footer-link">Instagram</a></li>
+                    <li><a href="#" class="footer-link">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Show navbar on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+
+        // Animate passion meter on scroll
+        const passionMeter = document.getElementById('passionMeter');
+        const meterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    passionMeter.classList.add('active');
+                }
+            });
+        });
+        meterObserver.observe(passionMeter);
+
+        // Ripple effect on buttons
+        const buttons = document.querySelectorAll('.passion-button');
+        buttons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                const ripple = document.createElement('span');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.classList.add('ripple');
+                
+                this.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+{
+  "name": "Antlers Passion",
+  "version": "1.0.0",
+  "description": "燃える情熱のアントラーズレッドと鹿島灘の深いネイビー",
+  
+  "colors": {
+    "primary": {
+      "antlersRed": "#B01224",
+      "kashimaNavy": "#001E62",
+      "roseCrimson": "#DC143C",
+      "oceanBlue": "#003087"
+    },
+    
+    "secondary": {
+      "sunsetOrange": "#FF4500",
+      "pearlWhite": "#FAFAFA",
+      "steelGray": "#71797E",
+      "sakuraPink": "#FFB7C5",
+      "waveTeal": "#008B8B",
+      "coralRed": "#FF6B6B",
+      "midnightBlue": "#191970"
+    },
+    
+    "gradients": {
+      "passionFlame": "linear-gradient(135deg, #B01224 0%, #FF4500 100%)",
+      "oceanDepth": "linear-gradient(180deg, #001E62 0%, #003087 100%)",
+      "sunsetWave": "linear-gradient(90deg, #B01224 0%, #FF4500 50%, #001E62 100%)",
+      "roseBloom": "radial-gradient(circle, #DC143C 0%, #FFB7C5 100%)",
+      "waveMotion": "linear-gradient(45deg, #001E62 25%, #003087 50%, #001E62 75%)"
+    },
+    
+    "opacity": {
+      "red90": "rgba(176, 18, 36, 0.9)",
+      "red75": "rgba(176, 18, 36, 0.75)",
+      "red50": "rgba(176, 18, 36, 0.5)",
+      "red25": "rgba(176, 18, 36, 0.25)",
+      "navy90": "rgba(0, 30, 98, 0.9)",
+      "navy75": "rgba(0, 30, 98, 0.75)",
+      "navy50": "rgba(0, 30, 98, 0.5)",
+      "navy25": "rgba(0, 30, 98, 0.25)"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "display": "'Oswald', 'Bebas Neue', sans-serif",
+      "body": "'Noto Sans JP', 'Roboto', 'Inter', sans-serif",
+      "accent": "'Playfair Display', 'Crimson Text', serif",
+      "number": "'Barlow Condensed', 'Teko', sans-serif",
+      "script": "'Dancing Script', 'Pacifico', cursive",
+      "mono": "'Roboto Mono', 'Courier New', monospace"
+    },
+    
+    "sizes": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "30px",
+      "4xl": "36px",
+      "5xl": "48px",
+      "6xl": "60px",
+      "7xl": "72px",
+      "8xl": "96px",
+      "9xl": "128px"
+    },
+    
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    },
+    
+    "lineHeights": {
+      "tight": 1.1,
+      "snug": 1.25,
+      "normal": 1.5,
+      "relaxed": 1.75,
+      "loose": 2
+    },
+    
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  
+  "layout": {
+    "container": {
+      "maxWidth": "1440px",
+      "padding": {
+        "mobile": "16px",
+        "tablet": "24px",
+        "desktop": "32px"
+      }
+    },
+    
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "margin": "24px"
+    },
+    
+    "wave": {
+      "amplitude": "30px",
+      "frequency": "200px",
+      "speed": "3s"
+    },
+    
+    "spacing": {
+      "0": "0",
+      "1": "4px",
+      "2": "8px",
+      "3": "12px",
+      "4": "16px",
+      "5": "20px",
+      "6": "24px",
+      "8": "32px",
+      "10": "40px",
+      "12": "48px",
+      "16": "64px",
+      "20": "80px",
+      "24": "96px",
+      "32": "128px"
+    },
+    
+    "breakpoints": {
+      "xs": "320px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px"
+    }
+  },
+  
+  "components": {
+    "button": {
+      "passion": {
+        "background": "#B01224",
+        "color": "#FAFAFA",
+        "hoverGradient": "linear-gradient(135deg, #B01224 0%, #FF4500 100%)",
+        "padding": "14px 36px",
+        "borderRadius": "50px",
+        "fontWeight": 700,
+        "textTransform": "uppercase",
+        "transition": "all 0.3s ease",
+        "boxShadow": "0 4px 16px rgba(176, 18, 36, 0.3)"
+      },
+      "ocean": {
+        "background": "#001E62",
+        "color": "#FAFAFA",
+        "hoverBackground": "#003087",
+        "padding": "14px 36px",
+        "borderRadius": "8px",
+        "border": "2px solid #001E62",
+        "transition": "all 0.3s ease"
+      },
+      "wave": {
+        "background": "transparent",
+        "border": "2px solid #B01224",
+        "color": "#B01224",
+        "hoverBackground": "#B01224",
+        "hoverColor": "#FAFAFA",
+        "padding": "12px 32px",
+        "borderRadius": "50px",
+        "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+      }
+    },
+    
+    "card": {
+      "wave": {
+        "background": "#FAFAFA",
+        "headerGradient": "linear-gradient(135deg, #B01224 0%, #DC143C 100%)",
+        "footerBackground": "#001E62",
+        "borderRadius": "16px",
+        "overflow": "hidden",
+        "boxShadow": "0 8px 32px rgba(0, 30, 98, 0.15)",
+        "hoverTransform": "translateY(-8px)",
+        "transition": "all 0.3s ease"
+      },
+      "rose": {
+        "background": "#FAFAFA",
+        "border": "2px solid #FFB7C5",
+        "borderRadius": "20px",
+        "padding": "24px",
+        "accentColor": "#B01224",
+        "hoverBorder": "#DC143C",
+        "transition": "all 0.3s ease"
+      },
+      "floating": {
+        "background": "rgba(250, 250, 250, 0.95)",
+        "backdropFilter": "blur(10px)",
+        "border": "1px solid rgba(176, 18, 36, 0.2)",
+        "borderRadius": "12px",
+        "padding": "32px",
+        "boxShadow": "0 16px 48px rgba(0, 30, 98, 0.1)"
+      }
+    },
+    
+    "navigation": {
+      "header": {
+        "background": "rgba(0, 30, 98, 0.95)",
+        "backdropFilter": "blur(10px)",
+        "color": "#FAFAFA",
+        "height": "72px",
+        "borderBottom": "1px solid rgba(250, 250, 250, 0.1)",
+        "sticky": true,
+        "zIndex": 1000
+      },
+      "link": {
+        "color": "#FAFAFA",
+        "hoverColor": "#B01224",
+        "activeUnderline": "3px solid #B01224",
+        "fontWeight": 500,
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em",
+        "transition": "color 0.3s ease"
+      },
+      "mobileMenu": {
+        "background": "#001E62",
+        "overlay": "rgba(0, 30, 98, 0.98)",
+        "color": "#FAFAFA",
+        "accentColor": "#B01224"
+      }
+    },
+    
+    "badge": {
+      "rose": {
+        "background": "linear-gradient(135deg, #DC143C 0%, #FFB7C5 100%)",
+        "color": "#FAFAFA",
+        "padding": "6px 12px",
+        "borderRadius": "20px 5px 20px 5px",
+        "fontSize": "12px",
+        "fontWeight": 700,
+        "textTransform": "uppercase"
+      },
+      "ocean": {
+        "background": "#003087",
+        "color": "#FAFAFA",
+        "padding": "6px 12px",
+        "borderRadius": "4px",
+        "fontSize": "12px",
+        "fontWeight": 600
+      },
+      "pulse": {
+        "background": "#B01224",
+        "color": "#FAFAFA",
+        "padding": "8px 16px",
+        "borderRadius": "50px",
+        "animation": "passion-pulse 2s infinite"
+      }
+    },
+    
+    "form": {
+      "input": {
+        "background": "#FAFAFA",
+        "border": "2px solid #E0E0E0",
+        "padding": "12px 16px",
+        "borderRadius": "8px",
+        "focusBorder": "#B01224",
+        "errorBorder": "#FF4500",
+        "fontSize": "16px",
+        "transition": "border-color 0.3s ease"
+      },
+      "label": {
+        "color": "#001E62",
+        "fontWeight": 600,
+        "marginBottom": "8px",
+        "fontSize": "14px",
+        "textTransform": "uppercase",
+        "letterSpacing": "0.05em"
+      },
+      "checkbox": {
+        "size": "20px",
+        "border": "2px solid #001E62",
+        "checkedBackground": "#B01224",
+        "checkedBorder": "#B01224",
+        "borderRadius": "4px"
+      }
+    },
+    
+    "divider": {
+      "wave": {
+        "height": "100px",
+        "color": "#B01224",
+        "background": "#001E62",
+        "amplitude": "30px"
+      },
+      "gradient": {
+        "height": "2px",
+        "background": "linear-gradient(90deg, transparent, #B01224, transparent)"
+      },
+      "rose": {
+        "height": "1px",
+        "background": "#FFB7C5",
+        "margin": "32px 0"
+      }
+    }
+  },
+  
+  "effects": {
+    "shadows": {
+      "soft": "0 4px 16px rgba(0, 30, 98, 0.1)",
+      "medium": "0 8px 32px rgba(0, 30, 98, 0.15)",
+      "strong": "0 16px 48px rgba(0, 30, 98, 0.2)",
+      "glowRed": "0 0 20px rgba(176, 18, 36, 0.4)",
+      "glowNavy": "0 0 20px rgba(0, 30, 98, 0.4)",
+      "inner": "inset 0 2px 4px rgba(0, 30, 98, 0.1)"
+    },
+    
+    "borders": {
+      "thin": "1px solid",
+      "medium": "2px solid",
+      "thick": "3px solid",
+      "wave": "2px wavy"
+    },
+    
+    "radius": {
+      "none": "0",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "16px",
+      "xl": "24px",
+      "2xl": "32px",
+      "full": "9999px",
+      "petal": "20px 5px 20px 5px"
+    },
+    
+    "transitions": {
+      "fast": "all 0.2s ease",
+      "normal": "all 0.3s ease",
+      "slow": "all 0.5s ease",
+      "wave": "all 1s cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    }
+  },
+  
+  "animations": {
+    "wave": {
+      "keyframes": "0% { transform: translateX(0) translateY(0); } 50% { transform: translateX(-25px) translateY(-5px); } 100% { transform: translateX(0) translateY(0); }",
+      "duration": "3s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    },
+    "passionPulse": {
+      "keyframes": "0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.05); opacity: 0.9; }",
+      "duration": "2s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    },
+    "petalFall": {
+      "keyframes": "0% { transform: translateY(0) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }",
+      "duration": "10s",
+      "timing": "linear"
+    },
+    "ripple": {
+      "keyframes": "0% { transform: scale(0); opacity: 1; } 100% { transform: scale(4); opacity: 0; }",
+      "duration": "0.6s",
+      "timing": "ease-out"
+    },
+    "slideWave": {
+      "keyframes": "from { transform: translateX(-100%) skewX(-10deg); } to { transform: translateX(0) skewX(0deg); }",
+      "duration": "0.5s",
+      "timing": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+  
+  "patterns": {
+    "wavePattern": {
+      "svg": "M0,50 Q25,30 50,50 T100,50",
+      "stroke": "#B01224",
+      "fill": "none",
+      "strokeWidth": "2px"
+    },
+    "rosePattern": {
+      "type": "radial",
+      "colors": ["#DC143C", "#FFB7C5", "transparent"],
+      "size": "100px",
+      "spacing": "150px"
+    },
+    "oceanPattern": {
+      "type": "linear",
+      "angle": "180deg",
+      "colors": ["#001E62", "#003087", "#001E62"],
+      "size": "200px"
+    },
+    "noiseTexture": {
+      "opacity": 0.03,
+      "blendMode": "multiply"
+    }
+  },
+  
+  "responsive": {
+    "mobile": {
+      "waveAmplitude": "15px",
+      "fontScale": 0.9,
+      "spacingScale": 0.8,
+      "simplifiedGradients": true,
+      "reducedAnimations": true
+    },
+    "tablet": {
+      "waveAmplitude": "20px",
+      "fontScale": 0.95,
+      "spacingScale": 0.9,
+      "gradientQuality": "medium"
+    },
+    "desktop": {
+      "waveAmplitude": "30px",
+      "fontScale": 1,
+      "spacingScale": 1,
+      "gradientQuality": "high",
+      "fullAnimations": true
+    }
+  },
+  
+  "accessibility": {
+    "contrast": {
+      "redOnWhite": 7.5,
+      "navyOnWhite": 15,
+      "whiteOnRed": 7.5,
+      "whiteOnNavy": 15
+    },
+    "focus": {
+      "outline": "3px solid #FF4500",
+      "outlineOffset": "2px"
+    },
+    "reducedMotion": {
+      "transitions": "all 0.01ms",
+      "animations": "none"
+    }
+  }
+}

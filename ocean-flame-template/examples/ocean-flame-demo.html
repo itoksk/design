@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ocean Flame - Where Waves Meet Passion</title>
+    <title>Ocean Flame - Depth Ignition</title>
     <style>
         * {
             margin: 0;
@@ -29,557 +29,680 @@
             overflow-x: hidden;
         }
 
-        /* Ocean Wave Hero */
-        .ocean-hero {
-            position: relative;
-            height: 100vh;
-            background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-navy) 50%, var(--ocean-blue) 100%);
-            overflow: hidden;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-title {
-            font-family: 'Saira Condensed', sans-serif;
-            font-size: clamp(3rem, 10vw, 7rem);
-            background: linear-gradient(135deg, var(--ocean-blue), var(--antlers-red));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-align: center;
-            margin-bottom: 2rem;
-            filter: drop-shadow(0 0 30px rgba(176, 18, 36, 0.3));
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--seafoam);
-            opacity: 0.9;
-            animation: flameFlicker 2s ease-in-out infinite;
-        }
-
-        @keyframes flameFlicker {
-            0%, 100% { transform: scaleY(1); opacity: 0.9; }
-            25% { transform: scaleY(1.05); opacity: 1; }
-            75% { transform: scaleY(0.95); opacity: 0.8; }
-        }
-
-        /* Animated Wave Layers */
-        .wave-container {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 300px;
-            pointer-events: none;
-        }
-
-        .wave {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 200%;
-            height: 100%;
-        }
-
-        .wave1 {
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z' fill='%23004080' opacity='0.6'/%3E%3C/svg%3E") repeat-x;
-            animation: waveMotion 7s linear infinite;
-        }
-
-        .wave2 {
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,60 Q300,30 600,60 T1200,60 L1200,100 L0,100 Z' fill='%23003366' opacity='0.7'/%3E%3C/svg%3E") repeat-x;
-            animation: waveMotion 5s linear infinite reverse;
-        }
-
-        .wave3 {
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,70 Q300,40 600,70 T1200,70 L1200,100 L0,100 Z' fill='%23001833' opacity='0.8'/%3E%3C/svg%3E") repeat-x;
-            animation: waveMotion 3s linear infinite;
-        }
-
-        @keyframes waveMotion {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Floating Bubbles */
-        .bubbles {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        /* Submarine Periscope Navigation */
+        .periscope-nav {
+            position: fixed;
             top: 0;
             left: 0;
-            pointer-events: none;
-        }
-
-        .bubble {
-            position: absolute;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
-            border-radius: 50%;
-            opacity: 0.4;
-            animation: bubbleRise 15s infinite;
-        }
-
-        @keyframes bubbleRise {
-            0% {
-                transform: translateY(100vh) translateX(0) scale(0);
-                opacity: 0;
-            }
-            10% {
-                transform: translateY(90vh) translateX(10px) scale(1);
-                opacity: 0.4;
-            }
-            50% {
-                transform: translateY(50vh) translateX(-10px) scale(1.2);
-                opacity: 0.3;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(10px) scale(0.5);
-                opacity: 0;
-            }
-        }
-
-        /* Whirlpool Navigation */
-        .whirlpool-nav {
-            position: fixed;
-            top: 50%;
-            right: 50px;
-            transform: translateY(-50%);
+            width: 100%;
+            height: 80px;
+            background: var(--midnight);
             z-index: 1000;
-            width: 60px;
-            height: 60px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
         }
 
-        .nav-center {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            background: var(--antlers-red);
+        .periscope-viewer {
+            width: 120px;
+            height: 120px;
+            background: var(--deep-navy);
             border-radius: 50%;
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
-            animation: pulse 2s ease-in-out infinite;
-            box-shadow: 0 0 30px rgba(176, 18, 36, 0.5);
+            border: 8px solid var(--antlers-red);
+            box-shadow: 
+                inset 0 0 30px rgba(0, 51, 102, 0.5),
+                0 0 40px rgba(176, 18, 36, 0.3);
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-
-        .nav-items {
+        .periscope-cross {
             position: absolute;
             width: 100%;
             height: 100%;
-            transform: scale(0) rotate(-180deg);
-            transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
 
-        .whirlpool-nav:hover .nav-items {
-            transform: scale(1) rotate(0);
-        }
-
-        .nav-item {
+        .cross-line {
             position: absolute;
-            width: 40px;
-            height: 40px;
-            background: var(--deep-navy);
-            border-radius: 50%;
+            background: var(--coral);
+            opacity: 0.5;
+        }
+
+        .cross-line.horizontal {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .cross-line.vertical {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .periscope-brand {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-left: 40px;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--ocean-blue);
+            text-shadow: 2px 2px 0 var(--antlers-red);
+        }
+
+        .depth-menu {
+            margin-left: auto;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 10px;
+        }
+
+        .depth-link {
+            position: relative;
+            padding: 10px 20px;
             color: var(--seafoam);
-            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        .nav-item:hover {
-            background: var(--ocean-blue);
-            transform: scale(1.2);
+        .depth-link::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--ocean-blue), var(--antlers-red));
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
         }
 
-        .nav-item:nth-child(1) { transform: rotate(0deg) translateX(100px) rotate(0deg); }
-        .nav-item:nth-child(2) { transform: rotate(60deg) translateX(100px) rotate(-60deg); }
-        .nav-item:nth-child(3) { transform: rotate(120deg) translateX(100px) rotate(-120deg); }
-        .nav-item:nth-child(4) { transform: rotate(180deg) translateX(100px) rotate(-180deg); }
-        .nav-item:nth-child(5) { transform: rotate(240deg) translateX(100px) rotate(-240deg); }
-        .nav-item:nth-child(6) { transform: rotate(300deg) translateX(100px) rotate(-300deg); }
+        .depth-link:hover::before {
+            transform: translateX(0);
+        }
 
-        /* Tidal Grid Section */
-        .tidal-section {
-            padding: 100px 5%;
-            background: linear-gradient(180deg, var(--ocean-blue), var(--deep-navy));
+        .depth-link:hover {
+            color: var(--coral);
+        }
+
+        /* Pressure Chamber Hero */
+        .pressure-chamber {
+            height: 100vh;
             position: relative;
-        }
-
-        .tidal-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            perspective: 1000px;
-        }
-
-        .floating-card {
-            background: rgba(232, 244, 248, 0.05);
-            backdrop-filter: blur(10px);
-            border: 2px solid transparent;
-            background-image: linear-gradient(rgba(232, 244, 248, 0.05), rgba(232, 244, 248, 0.05)),
-                              linear-gradient(135deg, var(--deep-navy), var(--antlers-red));
-            background-origin: border-box;
-            background-clip: padding-box, border-box;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-            padding: 40px;
-            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(circle at center, var(--ocean-blue) 0%, var(--midnight) 70%);
             overflow: hidden;
-            transition: all 0.4s ease;
         }
 
-        .floating-card:nth-child(odd) {
-            animation: tidalDrift 8s ease-in-out infinite;
-        }
-
-        .floating-card:nth-child(even) {
-            animation: tidalDrift 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes tidalDrift {
-            0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
-            25% { transform: translateX(10px) translateY(-5px) rotate(1deg); }
-            75% { transform: translateX(-10px) translateY(5px) rotate(-1deg); }
-        }
-
-        .floating-card:hover {
-            transform: translateY(-10px) scale(1.05);
-            border-radius: 20% 80% 80% 20% / 20% 20% 80% 80%;
-        }
-
-        .card-number {
-            font-family: 'Oswald', sans-serif;
-            font-size: 4rem;
-            color: var(--antlers-red);
-            opacity: 0.3;
+        /* Depth Gauge Animation */
+        .depth-gauges {
             position: absolute;
-            top: 10px;
-            right: 20px;
-            text-shadow: 0 0 20px rgba(176, 18, 36, 0.5);
-        }
-
-        .card-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--seafoam);
-        }
-
-        .card-text {
-            color: rgba(232, 244, 248, 0.8);
-            line-height: 1.6;
-        }
-
-        /* Ripple Effect on Click */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.3);
-            transform: scale(0);
-            animation: rippleExpand 1s ease-out;
+            width: 100%;
+            height: 100%;
             pointer-events: none;
         }
 
-        @keyframes rippleExpand {
-            to {
-                transform: scale(4);
-                opacity: 0;
+        .gauge-ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid var(--ocean-blue);
+            opacity: 0.2;
+            animation: depthPulse 4s ease-in-out infinite;
+        }
+
+        .gauge-ring:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .gauge-ring:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: 15%;
+            animation-delay: 1s;
+            border-color: var(--antlers-red);
+        }
+
+        .gauge-ring:nth-child(3) {
+            width: 250px;
+            height: 250px;
+            bottom: 10%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        @keyframes depthPulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.2;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.4;
             }
         }
 
-        /* Coral Footer */
-        .coral-footer {
+        .chamber-content {
+            text-align: center;
+            z-index: 10;
+            position: relative;
+        }
+
+        .chamber-title {
+            font-size: clamp(4rem, 12vw, 10rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 0.8;
+            letter-spacing: -0.05em;
+        }
+
+        .title-depth {
+            display: block;
+            color: var(--deep-navy);
+            -webkit-text-stroke: 3px var(--ocean-blue);
+            text-shadow: 
+                0 10px 20px rgba(0, 51, 102, 0.5),
+                0 20px 40px rgba(0, 51, 102, 0.3);
+        }
+
+        .title-ignite {
+            display: block;
+            color: var(--antlers-red);
+            margin-top: -20px;
+            transform: scaleX(1.1);
+            text-shadow: 
+                0 0 40px rgba(176, 18, 36, 0.8),
+                0 0 80px rgba(227, 30, 60, 0.4);
+        }
+
+        /* Submarine Grid Layout */
+        .submarine-grid {
+            padding: 150px 5%;
+            background: linear-gradient(180deg, var(--midnight) 0%, var(--deep-navy) 50%, var(--midnight) 100%);
+            position: relative;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: repeat(3, 200px);
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .submarine-cell {
             background: var(--midnight);
-            padding: 80px 5% 40px;
+            border: 3px solid var(--ocean-blue);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+        }
+
+        /* Unique cell layouts */
+        .submarine-cell:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+            background: linear-gradient(135deg, var(--deep-navy), var(--midnight));
+            border-color: var(--antlers-red);
+        }
+
+        .submarine-cell:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .submarine-cell:nth-child(3) {
+            grid-column: span 3;
+            grid-row: span 1;
+            background: linear-gradient(90deg, var(--midnight), var(--ocean-blue), var(--midnight));
+        }
+
+        .submarine-cell:nth-child(4) {
+            grid-column: span 1;
+            grid-row: span 2;
+            border-radius: 100px 0 0 100px;
+        }
+
+        .submarine-cell:nth-child(5) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .submarine-cell:nth-child(6) {
+            grid-column: span 2;
+            grid-row: span 1;
+            border-left: 20px solid var(--antlers-red);
+        }
+
+        .submarine-cell:nth-child(7) {
+            grid-column: span 1;
+            grid-row: span 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--antlers-red), var(--midnight));
+        }
+
+        .submarine-cell::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, var(--coral), transparent);
+            opacity: 0.3;
+            transition: left 0.6s ease;
+        }
+
+        .submarine-cell:hover::before {
+            left: 100%;
+        }
+
+        .submarine-cell:hover {
+            transform: scale(1.05);
+            border-color: var(--coral);
+            box-shadow: 
+                0 0 30px rgba(255, 107, 107, 0.4),
+                inset 0 0 20px rgba(176, 18, 36, 0.2);
+            z-index: 10;
+        }
+
+        .cell-depth {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 0.8rem;
+            color: var(--ocean-blue);
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+
+        .cell-content {
+            text-align: center;
+            z-index: 1;
+        }
+
+        .cell-title {
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--coral);
+            margin-bottom: 10px;
+        }
+
+        /* Thermal Vent Section */
+        .thermal-vents {
+            padding: 100px 0;
+            background: var(--midnight);
             position: relative;
             overflow: hidden;
         }
 
-        .coral-footer::before {
+        .vent-container {
+            position: relative;
+            height: 600px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .thermal-vent {
+            position: absolute;
+            width: 60px;
+            background: linear-gradient(180deg, transparent, var(--antlers-red), var(--rose-red));
+            animation: ventBubble 8s ease-in-out infinite;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .thermal-vent:nth-child(1) {
+            left: 10%;
+            height: 400px;
+            bottom: 0;
+            animation-delay: 0s;
+        }
+
+        .thermal-vent:nth-child(2) {
+            left: 30%;
+            height: 500px;
+            bottom: 0;
+            animation-delay: 2s;
+            width: 80px;
+        }
+
+        .thermal-vent:nth-child(3) {
+            left: 50%;
+            height: 350px;
+            bottom: 0;
+            animation-delay: 4s;
+            width: 40px;
+        }
+
+        .thermal-vent:nth-child(4) {
+            left: 70%;
+            height: 450px;
+            bottom: 0;
+            animation-delay: 1s;
+        }
+
+        .thermal-vent:nth-child(5) {
+            left: 85%;
+            height: 380px;
+            bottom: 0;
+            animation-delay: 3s;
+            width: 70px;
+        }
+
+        @keyframes ventBubble {
+            0%, 100% {
+                transform: scaleY(1) translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                transform: scaleY(1.2) translateY(-50px);
+                opacity: 1;
+            }
+        }
+
+        .vent-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: var(--seafoam);
+            text-align: center;
+            z-index: 10;
+            text-shadow: 
+                0 0 40px rgba(232, 244, 248, 0.5),
+                0 0 80px rgba(176, 18, 36, 0.3);
+        }
+
+        /* Abyssal Footer */
+        .abyssal-footer {
+            background: linear-gradient(180deg, var(--midnight), var(--deep-navy));
+            padding: 100px 5% 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .abyssal-footer::before {
             content: '';
             position: absolute;
-            top: -50px;
+            top: 0;
             left: 0;
             width: 100%;
-            height: 100px;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 100'%3E%3Cpath d='M0,50 Q200,10 400,50 T800,50 Q1000,80 1200,50 L1200,100 L0,100 Z' fill='%23001833'/%3E%3C/svg%3E");
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--antlers-red) 0,
+                var(--antlers-red) 20px,
+                transparent 20px,
+                transparent 40px,
+                var(--ocean-blue) 40px,
+                var(--ocean-blue) 60px,
+                transparent 60px,
+                transparent 80px
+            );
         }
 
-        .coral-branches {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+        .footer-depths {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
             gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
-        .coral-branch {
-            flex: 1;
-            min-width: 200px;
-            animation: sway 6s ease-in-out infinite;
-            transform-origin: bottom center;
+        .depth-zone {
+            padding: 30px;
+            background: rgba(0, 51, 102, 0.1);
+            border-left: 4px solid var(--antlers-red);
+            transition: all 0.3s ease;
         }
 
-        @keyframes sway {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(2deg); }
-            75% { transform: rotate(-2deg); }
+        .depth-zone:hover {
+            background: rgba(176, 18, 36, 0.1);
+            border-left-color: var(--coral);
+            transform: translateX(10px);
         }
 
-        .coral-branch h3 {
+        .zone-title {
+            font-size: 1.5rem;
+            font-weight: 900;
             color: var(--coral);
             margin-bottom: 20px;
-            font-size: 1.5rem;
-            text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .coral-links {
+        .zone-links {
             list-style: none;
         }
 
-        .coral-link {
+        .zone-link {
             color: var(--seafoam);
             text-decoration: none;
             display: block;
             padding: 8px 0;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .coral-link::before {
-            content: '🔥';
-            position: absolute;
-            left: -20px;
-            opacity: 0;
+            font-weight: 600;
+            text-transform: uppercase;
             transition: all 0.3s ease;
         }
 
-        .coral-link:hover {
+        .zone-link:hover {
             color: var(--coral);
-            padding-left: 25px;
-        }
-
-        .coral-link:hover::before {
-            opacity: 1;
-            left: 0;
-        }
-
-        /* Flame Embers Particles */
-        .embers {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .ember {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--coral);
-            border-radius: 50%;
-            box-shadow: 0 0 6px var(--coral);
-            animation: emberFloat 10s infinite;
-        }
-
-        @keyframes emberFloat {
-            0% {
-                transform: translateY(100vh) translateX(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-10vh) translateX(100px);
-                opacity: 0;
-            }
+            padding-left: 10px;
         }
 
         /* Mobile Responsive */
         @media (max-width: 768px) {
-            .whirlpool-nav {
-                right: 20px;
-            }
-            
-            .nav-item:nth-child(n) {
-                transform: rotate(calc(var(--i) * 60deg)) translateX(60px) rotate(calc(var(--i) * -60deg));
+            .depth-menu {
+                display: none;
             }
 
-            .tidal-grid {
+            .grid-container {
                 grid-template-columns: 1fr;
+                grid-template-rows: auto;
             }
 
-            .coral-branches {
-                flex-direction: column;
+            .submarine-cell {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+                border-radius: 0 !important;
+                min-height: 200px;
+            }
+
+            .footer-depths {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Floating Embers -->
-    <div class="embers"></div>
-
-    <!-- Ocean Wave Hero -->
-    <section class="ocean-hero">
-        <div class="hero-content">
-            <h1 class="hero-title">OCEAN MEETS<br>FLAME</h1>
-            <p class="hero-subtitle">Where Deep Waters Burn with Passion</p>
+    <!-- Submarine Periscope Navigation -->
+    <nav class="periscope-nav">
+        <div class="periscope-viewer">
+            <div class="periscope-cross">
+                <div class="cross-line horizontal"></div>
+                <div class="cross-line vertical"></div>
+            </div>
         </div>
-        
-        <!-- Animated Waves -->
-        <div class="wave-container">
-            <div class="wave wave1"></div>
-            <div class="wave wave2"></div>
-            <div class="wave wave3"></div>
-        </div>
-        
-        <!-- Rising Bubbles -->
-        <div class="bubbles"></div>
-    </section>
-
-    <!-- Whirlpool Navigation -->
-    <nav class="whirlpool-nav">
-        <div class="nav-center">☰</div>
-        <div class="nav-items">
-            <div class="nav-item" style="--i: 0">1</div>
-            <div class="nav-item" style="--i: 1">2</div>
-            <div class="nav-item" style="--i: 2">3</div>
-            <div class="nav-item" style="--i: 3">4</div>
-            <div class="nav-item" style="--i: 4">5</div>
-            <div class="nav-item" style="--i: 5">6</div>
+        <div class="periscope-brand">OCEAN|FLAME</div>
+        <div class="depth-menu">
+            <a href="#" class="depth-link">SURFACE</a>
+            <a href="#" class="depth-link">TWILIGHT</a>
+            <a href="#" class="depth-link">MIDNIGHT</a>
+            <a href="#" class="depth-link">ABYSS</a>
+            <a href="#" class="depth-link">TRENCH</a>
         </div>
     </nav>
 
-    <!-- Tidal Grid Section -->
-    <section class="tidal-section">
-        <div class="tidal-grid">
-            <div class="floating-card">
-                <span class="card-number">01</span>
-                <h3 class="card-title">DEEP CURRENT</h3>
-                <p class="card-text">Powerful undercurrents shape the ocean floor, carving paths through darkness.</p>
+    <!-- Pressure Chamber Hero -->
+    <section class="pressure-chamber">
+        <div class="depth-gauges">
+            <div class="gauge-ring"></div>
+            <div class="gauge-ring"></div>
+            <div class="gauge-ring"></div>
+        </div>
+        <div class="chamber-content">
+            <h1 class="chamber-title">
+                <span class="title-depth">DEPTH</span>
+                <span class="title-ignite">IGNITION</span>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Submarine Grid Layout -->
+    <section class="submarine-grid">
+        <div class="grid-container">
+            <div class="submarine-cell">
+                <span class="cell-depth">-200M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">PRESSURE CORE</h3>
+                    <p>Maximum compression creates diamond strength</p>
+                </div>
             </div>
-            <div class="floating-card">
-                <span class="card-number">02</span>
-                <h3 class="card-title">ROSE FLAME</h3>
-                <p class="card-text">Burning passion rises from the depths, illuminating the waters above.</p>
+            <div class="submarine-cell">
+                <span class="cell-depth">-500M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">THERMAL</h3>
+                </div>
             </div>
-            <div class="floating-card">
-                <span class="card-number">03</span>
-                <h3 class="card-title">TIDAL FORCE</h3>
-                <p class="card-text">Eternal push and pull, the dance between moon and sea.</p>
+            <div class="submarine-cell">
+                <span class="cell-depth">-1000M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">VOLCANIC TRENCH</h3>
+                </div>
             </div>
-            <div class="floating-card">
-                <span class="card-number">04</span>
-                <h3 class="card-title">CORAL FIRE</h3>
-                <p class="card-text">Living flames beneath the waves, colonies of vibrant life.</p>
+            <div class="submarine-cell">
+                <span class="cell-depth">-1500M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">DEPTH</h3>
+                </div>
             </div>
-            <div class="floating-card">
-                <span class="card-number">05</span>
-                <h3 class="card-title">STORM SURGE</h3>
-                <p class="card-text">When passion meets the tempest, waves reach for the sky.</p>
+            <div class="submarine-cell">
+                <span class="cell-depth">-2000M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">MAGMA CHAMBER</h3>
+                </div>
             </div>
-            <div class="floating-card">
-                <span class="card-number">06</span>
-                <h3 class="card-title">MIDNIGHT DEPTH</h3>
-                <p class="card-text">In the abyss, pressure creates diamonds and dreams alike.</p>
+            <div class="submarine-cell">
+                <span class="cell-depth">-3000M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">ROSE BLOOM</h3>
+                </div>
+            </div>
+            <div class="submarine-cell">
+                <span class="cell-depth">-5000M</span>
+                <div class="cell-content">
+                    <h3 class="cell-title">CORE</h3>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Coral Footer -->
-    <footer class="coral-footer">
-        <div class="coral-branches">
-            <div class="coral-branch">
-                <h3>Deep Waters</h3>
-                <ul class="coral-links">
-                    <li><a href="#" class="coral-link">Ocean Currents</a></li>
-                    <li><a href="#" class="coral-link">Tidal Charts</a></li>
-                    <li><a href="#" class="coral-link">Deep Diving</a></li>
+    <!-- Thermal Vent Section -->
+    <section class="thermal-vents">
+        <div class="vent-container">
+            <div class="thermal-vent"></div>
+            <div class="thermal-vent"></div>
+            <div class="thermal-vent"></div>
+            <div class="thermal-vent"></div>
+            <div class="thermal-vent"></div>
+            <div class="vent-text">ERUPTION ZONE</div>
+        </div>
+    </section>
+
+    <!-- Abyssal Footer -->
+    <footer class="abyssal-footer">
+        <div class="footer-depths">
+            <div class="depth-zone">
+                <h3 class="zone-title">SURFACE</h3>
+                <ul class="zone-links">
+                    <li><a href="#" class="zone-link">WAVES</a></li>
+                    <li><a href="#" class="zone-link">CURRENT</a></li>
+                    <li><a href="#" class="zone-link">TIDE</a></li>
                 </ul>
             </div>
-            <div class="coral-branch">
-                <h3>Burning Passion</h3>
-                <ul class="coral-links">
-                    <li><a href="#" class="coral-link">Rose Garden</a></li>
-                    <li><a href="#" class="coral-link">Flame Dance</a></li>
-                    <li><a href="#" class="coral-link">Heart Fire</a></li>
+            <div class="depth-zone">
+                <h3 class="zone-title">TWILIGHT</h3>
+                <ul class="zone-links">
+                    <li><a href="#" class="zone-link">PRESSURE</a></li>
+                    <li><a href="#" class="zone-link">DARKNESS</a></li>
+                    <li><a href="#" class="zone-link">COLD</a></li>
                 </ul>
             </div>
-            <div class="coral-branch">
-                <h3>Where They Meet</h3>
-                <ul class="coral-links">
-                    <li><a href="#" class="coral-link">Steam Rising</a></li>
-                    <li><a href="#" class="coral-link">Coral Reef</a></li>
-                    <li><a href="#" class="coral-link">Sunset Shore</a></li>
+            <div class="depth-zone">
+                <h3 class="zone-title">MIDNIGHT</h3>
+                <ul class="zone-links">
+                    <li><a href="#" class="zone-link">VOID</a></li>
+                    <li><a href="#" class="zone-link">SILENCE</a></li>
+                    <li><a href="#" class="zone-link">DEPTH</a></li>
+                </ul>
+            </div>
+            <div class="depth-zone">
+                <h3 class="zone-title">ABYSS</h3>
+                <ul class="zone-links">
+                    <li><a href="#" class="zone-link">HEAT</a></li>
+                    <li><a href="#" class="zone-link">MAGMA</a></li>
+                    <li><a href="#" class="zone-link">CORE</a></li>
                 </ul>
             </div>
         </div>
     </footer>
 
     <script>
-        // Create bubbles
-        const bubblesContainer = document.querySelector('.bubbles');
-        for (let i = 0; i < 15; i++) {
-            const bubble = document.createElement('div');
-            bubble.className = 'bubble';
-            bubble.style.width = Math.random() * 8 + 4 + 'px';
-            bubble.style.height = bubble.style.width;
-            bubble.style.left = Math.random() * 100 + '%';
-            bubble.style.animationDelay = Math.random() * 15 + 's';
-            bubble.style.animationDuration = Math.random() * 10 + 10 + 's';
-            bubblesContainer.appendChild(bubble);
-        }
-
-        // Create embers
-        const embersContainer = document.querySelector('.embers');
-        for (let i = 0; i < 10; i++) {
-            const ember = document.createElement('div');
-            ember.className = 'ember';
-            ember.style.left = Math.random() * 100 + '%';
-            ember.style.animationDelay = Math.random() * 10 + 's';
-            ember.style.animationDuration = Math.random() * 5 + 10 + 's';
-            embersContainer.appendChild(ember);
-        }
-
-        // Ripple effect on click
-        document.addEventListener('click', (e) => {
-            const ripple = document.createElement('div');
-            ripple.className = 'ripple';
-            ripple.style.left = e.clientX + 'px';
-            ripple.style.top = e.clientY + 'px';
-            ripple.style.width = '20px';
-            ripple.style.height = '20px';
-            ripple.style.marginLeft = '-10px';
-            ripple.style.marginTop = '-10px';
-            document.body.appendChild(ripple);
-            setTimeout(() => ripple.remove(), 1000);
+        // Depth gauge rotation
+        const gauges = document.querySelectorAll('.gauge-ring');
+        
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            
+            gauges.forEach((gauge, index) => {
+                const speed = 0.1 + (index * 0.05);
+                gauge.style.transform = `rotate(${scrolled * speed}deg) scale(${1 + Math.sin(scrolled * 0.001) * 0.1})`;
+            });
         });
+
+        // Submarine cell depth effect
+        const cells = document.querySelectorAll('.submarine-cell');
+        
+        cells.forEach((cell, index) => {
+            cell.addEventListener('mouseenter', () => {
+                cell.style.background = `radial-gradient(circle at center, rgba(176, 18, 36, 0.2), transparent)`;
+            });
+            
+            cell.addEventListener('mouseleave', () => {
+                cell.style.background = '';
+            });
+        });
+
+        // Periscope rotation
+        const periscope = document.querySelector('.periscope-viewer');
+        let rotation = 0;
+        
+        setInterval(() => {
+            rotation += 0.5;
+            periscope.style.transform = `rotate(${rotation}deg)`;
+        }, 50);
     </script>
 </body>
 </html>

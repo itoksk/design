@@ -1,85 +1,82 @@
 {
   "name": "Ocean Flame Components",
   "version": "1.0.0",
-  "description": "Fluid ocean waves meeting passionate flames component library",
+  "description": "Submarine depth exploration meets volcanic eruption component library",
   "components": {
     "hero": {
-      "ocean_hero": {
-        "name": "Ocean Wave Hero",
+      "pressure_chamber": {
+        "name": "Pressure Chamber Hero",
         "props": {
-          "waveCount": 3,
-          "waveColors": ["#003366", "#004080", "#001833"],
-          "waveSpeed": ["3s", "5s", "7s"],
-          "bubbleCount": 15,
-          "gradientEnd": "#B01224"
+          "background": "radial-gradient(circle, #004080, #001833)",
+          "depthGauges": 3,
+          "gaugeAnimation": "depthPulse 4s",
+          "titleStroke": "3px #004080"
         },
         "structure": {
-          "container": "100vh height, relative position",
-          "waves": "absolute bottom, SVG paths",
-          "bubbles": "absolute positioned, random distribution",
-          "content": "z-index elevated, floating animation"
+          "container": "100vh height, centered flex",
+          "gauges": "absolute rings, pulsing animation",
+          "content": "z-index elevated, massive typography"
         }
       },
-      "flame_accent_hero": {
-        "name": "Hero with Flame Accents",
+      "depth_ignition": {
+        "name": "Depth Ignition Title",
         "props": {
-          "flameColor": "#E31E3C",
-          "flickerSpeed": "0.5s",
-          "glowRadius": "20px"
+          "topText": "DEPTH",
+          "bottomText": "IGNITION",
+          "strokeWidth": "3px",
+          "glowIntensity": "40px"
         }
       }
     },
     "navigation": {
-      "whirlpool_nav": {
-        "name": "Whirlpool Circular Navigation",
+      "periscope_nav": {
+        "name": "Submarine Periscope Navigation",
         "props": {
-          "radius": "250px",
-          "itemCount": 6,
-          "spiralDuration": "0.6s",
-          "centerPulse": true
+          "viewerSize": "120px",
+          "borderWidth": "8px",
+          "borderColor": "#B01224",
+          "crosshairColor": "#FF6B6B",
+          "rotation": "continuous"
         },
-        "animations": {
-          "closed": "scale(0) rotate(-180deg)",
-          "open": "scale(1) rotate(0deg)",
-          "pulse": "1.5s heartbeat infinite"
+        "structure": {
+          "viewer": "circular with crosshairs",
+          "brand": "2rem bold uppercase",
+          "menu": "depth-based links"
         }
       },
-      "tidal_nav": {
-        "name": "Tidal Flow Navigation",
+      "depth_menu": {
+        "name": "Depth Level Navigation",
         "props": {
-          "background": "rgba(0, 51, 102, 0.95)",
-          "backdropFilter": "blur(10px)",
-          "waveHeight": "4px",
-          "flowDirection": "horizontal"
+          "levels": ["SURFACE", "TWILIGHT", "MIDNIGHT", "ABYSS", "TRENCH"],
+          "underlineGradient": "linear-gradient(90deg, #004080, #B01224)",
+          "hoverColor": "#FF6B6B"
         }
       }
     },
     "sections": {
-      "wave_section": {
-        "name": "Wave Divider Section",
+      "submarine_grid": {
+        "name": "Submarine Grid Layout",
         "props": {
-          "topWave": true,
-          "bottomWave": true,
-          "waveHeight": "100px",
-          "layerCount": 3,
-          "animation": "continuous"
+          "gridColumns": 6,
+          "gridRows": 3,
+          "cellHeight": "200px",
+          "gap": "20px",
+          "depthIndicators": true
         },
-        "svg": {
-          "viewBox": "0 0 1200 100",
-          "preserveAspectRatio": "none",
-          "paths": [
-            "M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z",
-            "M0,60 Q300,30 600,60 T1200,60 L1200,100 L0,100 Z",
-            "M0,70 Q300,40 600,70 T1200,70 L1200,100 L0,100 Z"
-          ]
+        "cellVariants": {
+          "large": "span 2 cols, span 2 rows",
+          "wide": "span 3 cols",
+          "round": "border-radius 50%",
+          "curved": "border-radius 100px 0 0 100px"
         }
       },
-      "coral_section": {
-        "name": "Coral Reef Layout",
+      "thermal_vents": {
+        "name": "Thermal Vent Section",
         "props": {
-          "branchPattern": "organic",
-          "growthAnimation": true,
-          "swayEffect": true
+          "ventCount": 5,
+          "heightRange": "350px-500px",
+          "animation": "ventBubble 8s",
+          "gradient": "linear-gradient(180deg, transparent, #B01224, #E31E3C)"
         }
       }
     },

@@ -1,16 +1,16 @@
 # Royal Fortress Design Template
 
 ## 概要
-深遠なるブルーとブラックの堅固な基盤に、栄光のゴールドと純白のアクセントが輝く。揺るぎない強さと王者の品格を表現する、威厳あるデザインテンプレート。
+ブルーとブラックを基軸とした堅固な基盤に、ゴールドとホワイトのアクセントが輝く。情熱と熱狂を象徴する「青い炎」の要素を持つ、威厳あるデザインテンプレート。
 
 ## デザイン哲学
 
 ### コアコンセプト
-- **Unbreakable Foundation**: 揺るぎない基盤
-- **Royal Authority**: 王者の威厳と権威
-- **Golden Excellence**: 黄金の卓越性
-- **Fortress Strength**: 要塞のような堅固さ
-- **Noble Heritage**: 高貴なる伝統
+- **Blue Flame Foundation**: 青い炎の情熱的基盤
+- **Dual Power**: ブルーとブラックの二重の力
+- **Golden Glory**: ゴールドの栄光アクセント
+- **Pure Excellence**: 純白の卓越性
+- **Passionate Fortress**: 情熱的な要塞
 
 ### 視覚的特徴
 1. **重厚な構造**: ブロック状の堅固なレイアウト

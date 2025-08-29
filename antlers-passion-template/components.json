@@ -1,0 +1,538 @@
+{
+  "name": "Antlers Passion Components",
+  "version": "1.0.0",
+  "description": "情熱と海のコンポーネントライブラリ",
+  
+  "components": {
+    "layout": {
+      "wave-split": {
+        "description": "波形分割レイアウト",
+        "props": {
+          "topColor": "#B01224",
+          "bottomColor": "#001E62",
+          "waveHeight": "100px",
+          "amplitude": "30px"
+        },
+        "styles": {
+          "position": "relative",
+          "width": "100%",
+          "height": "100vh",
+          "overflow": "hidden"
+        },
+        "wavePath": "M0,50 Q25,30 50,50 T100,50",
+        "animation": "wave 3s ease-in-out infinite"
+      },
+      
+      "gradient-flow": {
+        "description": "グラデーションフローレイアウト",
+        "props": {
+          "startColor": "#B01224",
+          "midColor": "#FF4500",
+          "endColor": "#001E62",
+          "angle": "135deg",
+          "animated": true
+        },
+        "styles": {
+          "background": "linear-gradient(var(--angle), var(--startColor) 0%, var(--midColor) 50%, var(--endColor) 100%)",
+          "backgroundSize": "200% 200%",
+          "animation": "gradient-shift 5s ease infinite"
+        }
+      },
+      
+      "rose-petal-container": {
+        "description": "花びらコンテナ",
+        "props": {
+          "petalCount": 5,
+          "baseColor": "#FFB7C5",
+          "accentColor": "#DC143C"
+        },
+        "styles": {
+          "position": "relative",
+          "borderRadius": "20px 5px 20px 5px",
+          "overflow": "hidden",
+          "background": "var(--baseColor)"
+        },
+        "petals": {
+          "position": "absolute",
+          "width": "50px",
+          "height": "50px",
+          "background": "radial-gradient(circle, var(--accentColor), transparent)",
+          "borderRadius": "0 100% 0 100%",
+          "animation": "petal-float 10s linear infinite"
+        }
+      }
+    },
+    
+    "typography": {
+      "passion-heading": {
+        "description": "情熱的な見出し",
+        "props": {
+          "size": ["4xl", "5xl", "6xl", "7xl"],
+          "gradient": true,
+          "weight": [700, 800, 900]
+        },
+        "styles": {
+          "fontFamily": "'Oswald', 'Bebas Neue', sans-serif",
+          "fontSize": "var(--size)",
+          "fontWeight": "var(--weight)",
+          "background": "linear-gradient(135deg, #B01224, #FF4500)",
+          "backgroundClip": "text",
+          "WebkitBackgroundClip": "text",
+          "color": "transparent",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.02em"
+        }
+      },
+      
+      "ocean-text": {
+        "description": "海のテキスト",
+        "props": {
+          "depth": ["shallow", "medium", "deep"],
+          "wave": true
+        },
+        "styles": {
+          "fontFamily": "'Noto Sans JP', 'Roboto', sans-serif",
+          "color": "var(--depth-color)",
+          "textShadow": "0 2px 4px rgba(0, 30, 98, 0.3)",
+          "animation": "text-wave 2s ease-in-out infinite"
+        },
+        "depthColors": {
+          "shallow": "#003087",
+          "medium": "#001E62",
+          "deep": "#000D33"
+        }
+      },
+      
+      "rose-accent": {
+        "description": "バラのアクセントテキスト",
+        "props": {
+          "style": ["italic", "script"],
+          "size": ["base", "lg", "xl"]
+        },
+        "styles": {
+          "fontFamily": "'Playfair Display', 'Dancing Script', serif",
+          "fontSize": "var(--size)",
+          "color": "#DC143C",
+          "fontStyle": "italic",
+          "letterSpacing": "0.05em"
+        }
+      }
+    },
+    
+    "buttons": {
+      "passion-cta": {
+        "description": "情熱CTAボタン",
+        "props": {
+          "size": ["sm", "md", "lg"],
+          "ripple": true,
+          "glow": true
+        },
+        "styles": {
+          "background": "#B01224",
+          "color": "#FAFAFA",
+          "padding": "14px 36px",
+          "borderRadius": "50px",
+          "fontWeight": 700,
+          "textTransform": "uppercase",
+          "position": "relative",
+          "overflow": "hidden",
+          "transition": "all 0.3s ease",
+          "boxShadow": "0 4px 16px rgba(176, 18, 36, 0.3)"
+        },
+        "hover": {
+          "background": "linear-gradient(135deg, #B01224 0%, #FF4500 100%)",
+          "transform": "translateY(-2px)",
+          "boxShadow": "0 6px 20px rgba(176, 18, 36, 0.4)"
+        },
+        "ripple": {
+          "background": "rgba(255, 255, 255, 0.5)",
+          "animation": "ripple 0.6s ease-out"
+        }
+      },
+      
+      "wave-button": {
+        "description": "波形ボタン",
+        "props": {
+          "variant": ["outline", "filled"],
+          "waveColor": "#001E62"
+        },
+        "styles": {
+          "background": "transparent",
+          "border": "2px solid #B01224",
+          "color": "#B01224",
+          "padding": "12px 32px",
+          "borderRadius": "50px",
+          "position": "relative",
+          "overflow": "hidden",
+          "transition": "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        },
+        "wave": {
+          "position": "absolute",
+          "top": "50%",
+          "left": "-100%",
+          "width": "100%",
+          "height": "100%",
+          "background": "#B01224",
+          "transform": "skewX(-10deg)",
+          "transition": "left 0.5s cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      }
+    },
+    
+    "cards": {
+      "wave-card": {
+        "description": "波形カード",
+        "props": {
+          "headerGradient": true,
+          "footerWave": true,
+          "hoverable": true
+        },
+        "styles": {
+          "background": "#FAFAFA",
+          "borderRadius": "16px",
+          "overflow": "hidden",
+          "boxShadow": "0 8px 32px rgba(0, 30, 98, 0.15)",
+          "transition": "all 0.3s ease"
+        },
+        "header": {
+          "background": "linear-gradient(135deg, #B01224 0%, #DC143C 100%)",
+          "padding": "24px",
+          "color": "#FAFAFA",
+          "position": "relative"
+        },
+        "footer": {
+          "background": "#001E62",
+          "padding": "16px 24px",
+          "color": "#FAFAFA",
+          "position": "relative",
+          "marginTop": "-30px",
+          "clipPath": "polygon(0 30px, 100% 0, 100% 100%, 0 100%)"
+        },
+        "hover": {
+          "transform": "translateY(-8px)",
+          "boxShadow": "0 12px 40px rgba(0, 30, 98, 0.2)"
+        }
+      },
+      
+      "rose-card": {
+        "description": "バラカード",
+        "props": {
+          "petalBorder": true,
+          "bloomOnHover": true
+        },
+        "styles": {
+          "background": "#FAFAFA",
+          "border": "2px solid #FFB7C5",
+          "borderRadius": "20px",
+          "padding": "24px",
+          "position": "relative",
+          "transition": "all 0.3s ease"
+        },
+        "petal": {
+          "position": "absolute",
+          "top": "-10px",
+          "right": "-10px",
+          "width": "40px",
+          "height": "40px",
+          "background": "linear-gradient(135deg, #DC143C, #FFB7C5)",
+          "borderRadius": "0 100% 0 100%",
+          "transform": "rotate(45deg)"
+        },
+        "hover": {
+          "borderColor": "#DC143C",
+          "transform": "scale(1.02)",
+          "boxShadow": "0 0 20px rgba(220, 20, 60, 0.2)"
+        }
+      },
+      
+      "floating-card": {
+        "description": "フローティングカード",
+        "props": {
+          "blur": true,
+          "parallax": true
+        },
+        "styles": {
+          "background": "rgba(250, 250, 250, 0.95)",
+          "backdropFilter": "blur(10px)",
+          "border": "1px solid rgba(176, 18, 36, 0.2)",
+          "borderRadius": "12px",
+          "padding": "32px",
+          "boxShadow": "0 16px 48px rgba(0, 30, 98, 0.1)",
+          "transition": "all 0.3s ease"
+        }
+      }
+    },
+    
+    "navigation": {
+      "ocean-nav": {
+        "description": "海洋ナビゲーション",
+        "props": {
+          "sticky": true,
+          "transparent": true,
+          "waveUnderline": true
+        },
+        "styles": {
+          "background": "rgba(0, 30, 98, 0.95)",
+          "backdropFilter": "blur(10px)",
+          "height": "72px",
+          "position": "sticky",
+          "top": 0,
+          "zIndex": 1000,
+          "borderBottom": "1px solid rgba(250, 250, 250, 0.1)",
+          "transition": "all 0.3s ease"
+        },
+        "scrolled": {
+          "background": "rgba(0, 30, 98, 1)",
+          "boxShadow": "0 2px 10px rgba(0, 30, 98, 0.2)"
+        }
+      },
+      
+      "nav-link": {
+        "description": "ナビゲーションリンク",
+        "props": {
+          "variant": ["default", "wave", "pulse"]
+        },
+        "styles": {
+          "color": "#FAFAFA",
+          "fontWeight": 500,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em",
+          "position": "relative",
+          "transition": "color 0.3s ease"
+        },
+        "hover": {
+          "color": "#B01224"
+        },
+        "active": {
+          "borderBottom": "3px solid #B01224"
+        },
+        "waveUnderline": {
+          "content": "''",
+          "position": "absolute",
+          "bottom": "-3px",
+          "left": 0,
+          "width": "100%",
+          "height": "3px",
+          "background": "#B01224",
+          "transform": "scaleX(0)",
+          "transformOrigin": "left",
+          "transition": "transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+        }
+      }
+    },
+    
+    "display": {
+      "passion-meter": {
+        "description": "情熱メーター",
+        "props": {
+          "value": "number",
+          "max": 100,
+          "animated": true,
+          "gradient": true
+        },
+        "styles": {
+          "background": "#F5F5F5",
+          "height": "12px",
+          "borderRadius": "6px",
+          "position": "relative",
+          "overflow": "hidden"
+        },
+        "fill": {
+          "background": "linear-gradient(90deg, #B01224 0%, #FF4500 100%)",
+          "height": "100%",
+          "borderRadius": "6px",
+          "transition": "width 1s ease-out",
+          "position": "relative"
+        },
+        "pulse": {
+          "position": "absolute",
+          "top": 0,
+          "right": 0,
+          "width": "20px",
+          "height": "100%",
+          "background": "rgba(255, 255, 255, 0.5)",
+          "animation": "pulse-move 2s linear infinite"
+        }
+      },
+      
+      "wave-counter": {
+        "description": "波カウンター",
+        "props": {
+          "value": "number",
+          "waveSpeed": "3s",
+          "color": "#001E62"
+        },
+        "styles": {
+          "fontFamily": "'Barlow Condensed', 'Teko', sans-serif",
+          "fontSize": "72px",
+          "fontWeight": 700,
+          "color": "var(--color)",
+          "position": "relative",
+          "display": "inline-block"
+        },
+        "wave": {
+          "position": "absolute",
+          "bottom": 0,
+          "left": 0,
+          "width": "100%",
+          "height": "5px",
+          "background": "#B01224",
+          "animation": "wave-move var(--waveSpeed) ease-in-out infinite"
+        }
+      }
+    },
+    
+    "forms": {
+      "ocean-input": {
+        "description": "海洋入力フィールド",
+        "props": {
+          "type": ["text", "email", "password"],
+          "waveBottom": true
+        },
+        "styles": {
+          "background": "#FAFAFA",
+          "border": "none",
+          "borderBottom": "2px solid #E0E0E0",
+          "padding": "12px 0",
+          "fontSize": "16px",
+          "transition": "border-color 0.3s ease",
+          "width": "100%"
+        },
+        "focus": {
+          "borderBottomColor": "#B01224",
+          "outline": "none"
+        },
+        "wave": {
+          "position": "absolute",
+          "bottom": 0,
+          "left": 0,
+          "width": "100%",
+          "height": "2px",
+          "background": "linear-gradient(90deg, #B01224, #001E62)",
+          "transform": "scaleX(0)",
+          "transformOrigin": "center",
+          "transition": "transform 0.3s ease"
+        }
+      },
+      
+      "rose-checkbox": {
+        "description": "バラチェックボックス",
+        "props": {
+          "size": ["sm", "md", "lg"],
+          "petalCheck": true
+        },
+        "styles": {
+          "width": "20px",
+          "height": "20px",
+          "border": "2px solid #001E62",
+          "borderRadius": "4px",
+          "background": "#FAFAFA",
+          "position": "relative",
+          "cursor": "pointer",
+          "transition": "all 0.3s ease"
+        },
+        "checked": {
+          "background": "#B01224",
+          "borderColor": "#B01224"
+        },
+        "checkmark": {
+          "position": "absolute",
+          "top": "50%",
+          "left": "50%",
+          "transform": "translate(-50%, -50%) scale(0)",
+          "width": "12px",
+          "height": "12px",
+          "background": "radial-gradient(circle, #FFB7C5, #DC143C)",
+          "borderRadius": "0 100% 0 100%",
+          "transition": "transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+        }
+      }
+    },
+    
+    "patterns": {
+      "wave-divider": {
+        "description": "波形ディバイダー",
+        "props": {
+          "height": "100px",
+          "topColor": "#B01224",
+          "bottomColor": "#001E62",
+          "animated": true
+        },
+        "styles": {
+          "position": "relative",
+          "width": "100%",
+          "height": "var(--height)",
+          "overflow": "hidden"
+        },
+        "svg": {
+          "position": "absolute",
+          "bottom": 0,
+          "width": "100%",
+          "height": "100%"
+        },
+        "path": "M0,50 Q25,30 50,50 T100,50",
+        "animation": "wave-move 3s linear infinite"
+      },
+      
+      "petal-scatter": {
+        "description": "花びら散布",
+        "props": {
+          "count": 10,
+          "colors": ["#DC143C", "#FFB7C5", "#FF6B6B"],
+          "fallSpeed": "10s"
+        },
+        "styles": {
+          "position": "fixed",
+          "top": 0,
+          "left": 0,
+          "width": "100%",
+          "height": "100%",
+          "pointerEvents": "none",
+          "overflow": "hidden",
+          "zIndex": 1
+        },
+        "petal": {
+          "position": "absolute",
+          "width": "20px",
+          "height": "20px",
+          "background": "radial-gradient(circle, var(--color), transparent)",
+          "borderRadius": "0 100% 0 100%",
+          "animation": "petal-fall var(--fallSpeed) linear infinite"
+        }
+      },
+      
+      "ocean-ripple": {
+        "description": "海洋リップル",
+        "props": {
+          "color": "#003087",
+          "size": "200px",
+          "duration": "2s"
+        },
+        "styles": {
+          "position": "absolute",
+          "width": "var(--size)",
+          "height": "var(--size)",
+          "borderRadius": "50%",
+          "border": "2px solid var(--color)",
+          "animation": "ripple-expand var(--duration) ease-out"
+        }
+      }
+    }
+  },
+  
+  "utilities": {
+    "text-shadow": {
+      "ocean": "0 2px 4px rgba(0, 30, 98, 0.3)",
+      "passion": "0 2px 4px rgba(176, 18, 36, 0.3)",
+      "glow-red": "0 0 10px rgba(176, 18, 36, 0.5)",
+      "glow-navy": "0 0 10px rgba(0, 30, 98, 0.5)"
+    },
+    "box-shadow": {
+      "soft": "0 4px 16px rgba(0, 30, 98, 0.1)",
+      "medium": "0 8px 32px rgba(0, 30, 98, 0.15)",
+      "strong": "0 16px 48px rgba(0, 30, 98, 0.2)",
+      "glow-red": "0 0 20px rgba(176, 18, 36, 0.4)",
+      "glow-navy": "0 0 20px rgba(0, 30, 98, 0.4)"
+    }
+  }
+}

@@ -1,54 +1,48 @@
 {
   "name": "Royal Fortress Components",
   "version": "1.0.0",
-  "description": "Castle fortress and royal nobility component library",
+  "description": "Blue flame fortress with dual core power component library",
   "components": {
     "hero": {
-      "throne_room": {
-        "name": "Throne Room Hero",
+      "flame_core_hero": {
+        "name": "Blue Flame Core Hero",
         "props": {
           "background": "#0D0D0D",
-          "goldRays": true,
-          "rayCount": 12,
-          "centerGlow": "#FFD700",
-          "stoneTexture": true
+          "flameShards": 20,
+          "shardAnimation": "shardPulse 3s",
+          "titleStroke": "2px #FFD700",
+          "blueVariations": ["#4A90E2", "#0066FF", "#001E4D"]
         },
         "structure": {
-          "container": "100vh height, radial gradient",
-          "throne": "centered focal point",
-          "rays": "absolute positioned, rotating slowly",
-          "title": "gold foil effect, carved appearance"
+          "container": "100vh height, centered flex",
+          "flameGeometry": "20x10 grid of triangular shards",
+          "content": "z-index elevated, skewed typography",
+          "powerIndicator": "polygon clip-path badge"
         }
       },
-      "castle_banner": {
-        "name": "Castle Banner Hero",
+      "dual_core_title": {
+        "name": "Dual Core Title Display",
         "props": {
-          "bannerColors": ["#003DA5", "#FFD700"],
-          "flagAnimation": true,
-          "crestPosition": "center",
-          "torches": 2
+          "line1": "BLUE FLAME",
+          "line2": "BLACK FORTRESS",
+          "skewAngle": "3deg",
+          "shadowLayers": 2
         }
       }
     },
     "navigation": {
-      "fortress_header": {
-        "name": "Battlement Navigation",
+      "rampart_header": {
+        "name": "Fortress Rampart Navigation",
         "props": {
           "background": "#0D0D0D",
-          "borderBottom": "8px solid #FFD700",
-          "battlementHeight": "20px",
-          "towerCount": 2
+          "borderBottom": "4px solid #FFD700",
+          "zigzagBottom": true,
+          "linkClipPath": "polygon(15% 0, 100% 0, 85% 100%, 0 100%)"
         },
-        "battlements": {
-          "pattern": "repeating-linear-gradient(90deg, #0D0D0D 0, #0D0D0D 20px, transparent 20px, transparent 40px)",
-          "height": "20px",
-          "position": "top"
-        },
-        "towers": {
-          "width": "60px",
-          "height": "80px",
-          "shape": "polygon(0 20%, 30% 0, 70% 0, 100% 20%, 100% 100%, 0 100%)",
-          "flag": true
+        "structure": {
+          "brand": "skewX(-10deg) with gold shadow",
+          "links": "overlapping parallelograms",
+          "hoverEffect": "gold slide-in background"
         }
       },
       "tower_sidebar": {
@@ -311,13 +305,14 @@
     "luxury": "1920px"
   },
   "colors": {
-    "royal_blue": "#003DA5",
-    "fortress_black": "#0D0D0D",
-    "champion_gold": "#FFD700",
-    "pure_white": "#FFFFFF",
-    "midnight_blue": "#001E4D",
+    "base_blue": "#003DA5",
+    "base_black": "#0D0D0D",
+    "accent_gold": "#FFD700",
+    "accent_white": "#FFFFFF",
+    "blue_flame_light": "#4A90E2",
+    "blue_flame_hot": "#0066FF",
+    "blue_flame_core": "#001E4D",
     "steel_gray": "#434B56",
-    "platinum": "#E5E4E2",
-    "bronze": "#CD7F32"
+    "platinum": "#E5E4E2"
   }
 }
