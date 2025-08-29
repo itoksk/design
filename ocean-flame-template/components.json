@@ -1,0 +1,275 @@
+{
+  "name": "Ocean Flame Components",
+  "version": "1.0.0",
+  "description": "Fluid ocean waves meeting passionate flames component library",
+  "components": {
+    "hero": {
+      "ocean_hero": {
+        "name": "Ocean Wave Hero",
+        "props": {
+          "waveCount": 3,
+          "waveColors": ["#003366", "#004080", "#001833"],
+          "waveSpeed": ["3s", "5s", "7s"],
+          "bubbleCount": 15,
+          "gradientEnd": "#B01224"
+        },
+        "structure": {
+          "container": "100vh height, relative position",
+          "waves": "absolute bottom, SVG paths",
+          "bubbles": "absolute positioned, random distribution",
+          "content": "z-index elevated, floating animation"
+        }
+      },
+      "flame_accent_hero": {
+        "name": "Hero with Flame Accents",
+        "props": {
+          "flameColor": "#E31E3C",
+          "flickerSpeed": "0.5s",
+          "glowRadius": "20px"
+        }
+      }
+    },
+    "navigation": {
+      "whirlpool_nav": {
+        "name": "Whirlpool Circular Navigation",
+        "props": {
+          "radius": "250px",
+          "itemCount": 6,
+          "spiralDuration": "0.6s",
+          "centerPulse": true
+        },
+        "animations": {
+          "closed": "scale(0) rotate(-180deg)",
+          "open": "scale(1) rotate(0deg)",
+          "pulse": "1.5s heartbeat infinite"
+        }
+      },
+      "tidal_nav": {
+        "name": "Tidal Flow Navigation",
+        "props": {
+          "background": "rgba(0, 51, 102, 0.95)",
+          "backdropFilter": "blur(10px)",
+          "waveHeight": "4px",
+          "flowDirection": "horizontal"
+        }
+      }
+    },
+    "sections": {
+      "wave_section": {
+        "name": "Wave Divider Section",
+        "props": {
+          "topWave": true,
+          "bottomWave": true,
+          "waveHeight": "100px",
+          "layerCount": 3,
+          "animation": "continuous"
+        },
+        "svg": {
+          "viewBox": "0 0 1200 100",
+          "preserveAspectRatio": "none",
+          "paths": [
+            "M0,50 Q300,20 600,50 T1200,50 L1200,100 L0,100 Z",
+            "M0,60 Q300,30 600,60 T1200,60 L1200,100 L0,100 Z",
+            "M0,70 Q300,40 600,70 T1200,70 L1200,100 L0,100 Z"
+          ]
+        }
+      },
+      "coral_section": {
+        "name": "Coral Reef Layout",
+        "props": {
+          "branchPattern": "organic",
+          "growthAnimation": true,
+          "swayEffect": true
+        }
+      }
+    },
+    "cards": {
+      "floating_card": {
+        "name": "Depth Floating Card",
+        "props": {
+          "floatAmplitude": "10px",
+          "floatDuration": "6s",
+          "depthBlur": "0-2px",
+          "rotation": "-2deg to 2deg"
+        },
+        "effects": {
+          "hover": "ripple from cursor",
+          "shadow": "0 8px 32px rgba(0, 51, 102, 0.2)",
+          "border": "2px solid transparent",
+          "borderGradient": "linear-gradient(135deg, #003366, #B01224)"
+        }
+      },
+      "tide_card": {
+        "name": "Tidal Movement Card",
+        "props": {
+          "driftRange": "20px",
+          "driftSpeed": "8s",
+          "expandOnHover": true
+        }
+      }
+    },
+    "particles": {
+      "bubbles": {
+        "name": "Rising Bubbles",
+        "props": {
+          "sizeRange": "4px-12px",
+          "speedRange": "10s-20s",
+          "opacity": "0.3-0.7",
+          "blur": "0-1px",
+          "count": 20
+        },
+        "animation": {
+          "rise": "translateY(100vh) to translateY(-10vh)",
+          "wobble": "translateX(-10px) to translateX(10px)",
+          "scale": "scale(0) to scale(1) to scale(0.5)"
+        }
+      },
+      "embers": {
+        "name": "Flame Embers",
+        "props": {
+          "color": "#FF6B6B",
+          "glow": "0 0 4px #FF6B6B",
+          "sizeRange": "2px-6px",
+          "chaos": true
+        }
+      }
+    },
+    "effects": {
+      "ripple": {
+        "name": "Water Ripple Effect",
+        "props": {
+          "ringCount": 3,
+          "duration": "1s",
+          "maxScale": 4,
+          "color": "rgba(255, 255, 255, 0.3)"
+        }
+      },
+      "caustics": {
+        "name": "Water Caustic Light",
+        "props": {
+          "pattern": "webgl-noise",
+          "speed": "slow",
+          "opacity": 0.1,
+          "blendMode": "overlay"
+        }
+      },
+      "flame_flicker": {
+        "name": "Flame Flicker",
+        "props": {
+          "minScale": 0.95,
+          "maxScale": 1.1,
+          "speed": "0.5s",
+          "randomOffset": true
+        }
+      }
+    },
+    "typography": {
+      "ocean_heading": {
+        "name": "Fluid Ocean Heading",
+        "props": {
+          "fontFamily": "Saira Condensed",
+          "fontSize": "clamp(3rem, 10vw, 7rem)",
+          "background": "linear-gradient(180deg, #004080, #001833)",
+          "webkitBackgroundClip": "text",
+          "animation": "wave distortion"
+        }
+      },
+      "flame_accent": {
+        "name": "Burning Text",
+        "props": {
+          "color": "#B01224",
+          "textShadow": "0 0 10px rgba(176, 18, 36, 0.5)",
+          "animation": "flicker"
+        }
+      }
+    },
+    "layouts": {
+      "tidal_grid": {
+        "name": "Tidal Depth Grid",
+        "props": {
+          "columns": "repeat(auto-fit, minmax(300px, 1fr))",
+          "gap": "30px",
+          "stagger": true,
+          "depthLayers": 5
+        }
+      },
+      "whirlpool_layout": {
+        "name": "Spiral Whirlpool Layout",
+        "props": {
+          "centerPoint": "50% 50%",
+          "spiralTightness": 1.5,
+          "itemSpacing": "60deg"
+        }
+      },
+      "coral_branches": {
+        "name": "Branching Coral Structure",
+        "props": {
+          "branches": 5,
+          "angleVariation": "15deg",
+          "organic": true
+        }
+      }
+    },
+    "animations": {
+      "wave_morph": {
+        "name": "Wave Path Morphing",
+        "props": {
+          "duration": "4s",
+          "easing": "ease-in-out",
+          "infinite": true
+        }
+      },
+      "tidal_drift": {
+        "name": "Tidal Horizontal Drift",
+        "props": {
+          "distance": "30px",
+          "duration": "8s",
+          "direction": "alternating"
+        }
+      },
+      "depth_parallax": {
+        "name": "Ocean Depth Parallax",
+        "props": {
+          "layers": 5,
+          "speedMultiplier": 0.5,
+          "blurIncrease": "0.5px"
+        }
+      }
+    },
+    "utilities": {
+      "wave_shapes": {
+        "gentle": "M0,50 Q50,30 100,50 T200,50",
+        "strong": "M0,60 Q50,20 100,60 T200,60",
+        "tsunami": "M0,80 Q50,10 100,80 T200,80"
+      },
+      "organic_borders": {
+        "bubble": "50% 50% 50% 50% / 60% 60% 40% 40%",
+        "wave": "50% 20% / 50% 20%",
+        "coral": "30% 70% 70% 30% / 30% 30% 70% 70%"
+      },
+      "gradients": {
+        "oceanToFlame": "linear-gradient(135deg, #003366 0%, #004080 35%, #B01224 80%, #E31E3C 100%)",
+        "deepSea": "linear-gradient(180deg, #004080 0%, #003366 50%, #001833 100%)",
+        "burningRose": "linear-gradient(45deg, #B01224 0%, #E31E3C 50%, #FF6B6B 100%)"
+      }
+    }
+  },
+  "breakpoints": {
+    "xs": "320px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1536px"
+  },
+  "colors": {
+    "antlers_red": "#B01224",
+    "deep_navy": "#003366",
+    "rose_red": "#E31E3C",
+    "ocean_blue": "#004080",
+    "midnight": "#001833",
+    "coral": "#FF6B6B",
+    "seafoam": "#E8F4F8",
+    "storm_gray": "#4A5568"
+  }
+}

@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stadium Classic - Victory Through Unity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --pure-white: #FFFFFF;
+            --stadium-black: #0A0A0A;
+            --crimson-red: #DC143C;
+            --charcoal: #2C2C2C;
+            --silver: #C0C0C0;
+            --light-gray: #F5F5F5;
+        }
+
+        body {
+            font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+            background: var(--pure-white);
+            color: var(--stadium-black);
+            overflow-x: hidden;
+        }
+
+        /* Diagonal Hero Section */
+        .hero-diagonal {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .diagonal-split {
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: linear-gradient(135deg, var(--pure-white) 49%, var(--stadium-black) 51%);
+            transform: rotate(-15deg);
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .hero-title {
+            font-family: 'Bebas Neue', 'Oswald', sans-serif;
+            font-size: clamp(4rem, 12vw, 9rem);
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .title-white {
+            color: var(--pure-white);
+            text-shadow: 2px 2px 4px rgba(10, 10, 10, 0.3);
+            mix-blend-mode: difference;
+        }
+
+        .title-accent {
+            color: var(--crimson-red);
+            display: block;
+            font-size: 0.4em;
+            letter-spacing: 0.3em;
+            margin-top: 0.5rem;
+        }
+
+        /* Score Counter Animation */
+        .score-counter {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 20;
+            background: var(--stadium-black);
+            padding: 20px 30px;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+
+        .score-display {
+            font-family: 'Teko', 'Barlow Condensed', sans-serif;
+            font-size: 3rem;
+            color: var(--crimson-red);
+            font-weight: 700;
+            tabular-nums: true;
+        }
+
+        .score-label {
+            color: var(--pure-white);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* Asymmetric Grid Section */
+        .power-grid {
+            padding: 100px 5%;
+            background: var(--light-gray);
+            position: relative;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2px;
+            background: var(--stadium-black);
+            transform: skewY(-2deg);
+        }
+
+        .grid-item {
+            background: var(--pure-white);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.2s ease-out;
+        }
+
+        .grid-item:nth-child(1) {
+            grid-row: span 2;
+        }
+
+        .grid-item:nth-child(4) {
+            grid-column: span 2;
+        }
+
+        .grid-item:hover {
+            background: var(--crimson-red);
+            color: var(--pure-white);
+            transform: scale(1.02);
+            z-index: 10;
+        }
+
+        .grid-number {
+            font-family: 'Teko', sans-serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1;
+            color: var(--crimson-red);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            opacity: 0.3;
+        }
+
+        .grid-item:hover .grid-number {
+            color: var(--pure-white);
+            opacity: 0.2;
+        }
+
+        /* Dynamic Navigation Bar */
+        .nav-dynamic {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--pure-white);
+            border-bottom: 2px solid var(--stadium-black);
+            transform: translateY(-100%);
+            transition: transform 0.3s ease-out;
+        }
+
+        .nav-dynamic.visible {
+            transform: translateY(0);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .nav-logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: var(--stadium-black);
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s ease-out;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--crimson-red);
+            transition: width 0.2s ease-out;
+        }
+
+        .nav-link:hover {
+            color: var(--crimson-red);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Team Cards with Angle Cut */
+        .team-section {
+            padding: 100px 5%;
+            background: var(--stadium-black);
+        }
+
+        .team-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--pure-white);
+            position: relative;
+            padding: 40px 30px;
+            transition: all 0.2s ease-out;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .player-number {
+            font-family: 'Teko', sans-serif;
+            font-size: 8rem;
+            font-weight: 900;
+            color: var(--stadium-black);
+            line-height: 1;
+            margin-bottom: -20px;
+            transition: color 0.2s ease-out;
+        }
+
+        .team-card:hover .player-number {
+            color: var(--crimson-red);
+        }
+
+        .player-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 10px;
+        }
+
+        .player-position {
+            color: var(--silver);
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* CTA Section with Stripes */
+        .cta-section {
+            position: relative;
+            padding: 150px 5%;
+            overflow: hidden;
+            background: var(--pure-white);
+        }
+
+        .stripe-bg {
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 50px,
+                var(--light-gray) 50px,
+                var(--light-gray) 100px
+            );
+            opacity: 0.5;
+            animation: stripeMove 20s linear infinite;
+        }
+
+        @keyframes stripeMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100px); }
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--crimson-red);
+            color: var(--pure-white);
+            padding: 20px 60px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease-out;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--stadium-black);
+            transition: left 0.3s ease-out;
+        }
+
+        .cta-button:hover::before {
+            left: 0;
+        }
+
+        .cta-button span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        /* Footer with Diagonal */
+        .footer {
+            position: relative;
+            background: var(--stadium-black);
+            color: var(--pure-white);
+            padding: 80px 5% 40px;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(135deg, transparent 49%, var(--stadium-black) 51%);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-accent {
+            color: var(--crimson-red);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-link {
+            color: var(--silver);
+            text-decoration: none;
+            display: block;
+            padding: 5px 0;
+            transition: color 0.2s ease-out;
+        }
+
+        .footer-link:hover {
+            color: var(--crimson-red);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+                transform: none;
+            }
+
+            .team-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Navigation -->
+    <nav class="nav-dynamic" id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">STADIUM</div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Team</a></li>
+                <li><a href="#" class="nav-link">Matches</a></li>
+                <li><a href="#" class="nav-link">Victory</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Diagonal Hero Section -->
+    <section class="hero-diagonal">
+        <div class="diagonal-split"></div>
+        <div class="hero-content">
+            <h1 class="hero-title title-white">
+                FAIR PLAY<br>
+                FULL POWER
+                <span class="title-accent pulse">PURE PASSION</span>
+            </h1>
+        </div>
+        <div class="score-counter">
+            <div class="score-label">Victory Count</div>
+            <div class="score-display" data-target="142">000</div>
+        </div>
+    </section>
+
+    <!-- Asymmetric Power Grid -->
+    <section class="power-grid">
+        <div class="grid-container">
+            <div class="grid-item">
+                <span class="grid-number">01</span>
+                <h3>STRENGTH</h3>
+                <p>Unbreakable foundation built on years of dedication and training.</p>
+            </div>
+            <div class="grid-item">
+                <span class="grid-number">02</span>
+                <h3>HONOR</h3>
+                <p>Fair play above all.</p>
+            </div>
+            <div class="grid-item">
+                <span class="grid-number">03</span>
+                <h3>UNITY</h3>
+                <p>Together we stand.</p>
+            </div>
+            <div class="grid-item">
+                <span class="grid-number">04</span>
+                <h3>VICTORY</h3>
+                <p>Excellence through passion and determination.</p>
+            </div>
+            <div class="grid-item">
+                <span class="grid-number">05</span>
+                <h3>LEGACY</h3>
+                <p>Building tomorrow.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Cards Section -->
+    <section class="team-section">
+        <div class="team-cards">
+            <div class="team-card">
+                <div class="player-number">10</div>
+                <div class="player-name">Captain</div>
+                <div class="player-position">Forward</div>
+            </div>
+            <div class="team-card">
+                <div class="player-number">07</div>
+                <div class="player-name">Striker</div>
+                <div class="player-position">Wing</div>
+            </div>
+            <div class="team-card">
+                <div class="player-number">04</div>
+                <div class="player-name">Guardian</div>
+                <div class="player-position">Defense</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section with Moving Stripes -->
+    <section class="cta-section">
+        <div class="stripe-bg"></div>
+        <div class="cta-content">
+            <h2 class="cta-title">Join the Victory</h2>
+            <a href="#" class="cta-button">
+                <span>ENTER THE STADIUM</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div>
+                <h3 class="footer-brand">STADIUM <span class="footer-accent">CLASSIC</span></h3>
+                <p>Where champions are forged through fair play and determination.</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">About</a></li>
+                    <li><a href="#" class="footer-link">Team</a></li>
+                    <li><a href="#" class="footer-link">Schedule</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Connect</h4>
+                <ul class="footer-links">
+                    <li><a href="#" class="footer-link">Twitter</a></li>
+                    <li><a href="#" class="footer-link">Instagram</a></li>
+                    <li><a href="#" class="footer-link">YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Score Counter Animation
+        const counter = document.querySelector('.score-display');
+        const target = parseInt(counter.dataset.target);
+        let current = 0;
+        const increment = target / 100;
+        
+        const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+                counter.textContent = Math.floor(current).toString().padStart(3, '0');
+                requestAnimationFrame(updateCounter);
+            } else {
+                counter.textContent = target.toString().padStart(3, '0');
+            }
+        };
+        
+        // Start counter when visible
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCounter();
+                observer.disconnect();
+            }
+        });
+        observer.observe(counter);
+
+        // Show navbar on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('visible');
+            } else {
+                navbar.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>

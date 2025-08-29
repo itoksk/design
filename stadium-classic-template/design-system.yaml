@@ -1,0 +1,418 @@
+# Stadium Classic Design System
+# フェアプレーと勝利のデザインシステム
+
+metadata:
+  name: "Stadium Classic System"
+  version: "1.0.0"
+  description: "白・黒・クリムゾンレッドによる力強いデザインシステム"
+  author: "Victory Design Team"
+  created: "2024"
+  philosophy: "Fair Play, Full Power, Pure Passion"
+
+# カラーシステム
+colors:
+  # プライマリカラー
+  primary:
+    pure_white: "#FFFFFF"
+    stadium_black: "#0A0A0A"
+    crimson_red: "#DC143C"
+    
+  # セカンダリカラー
+  secondary:
+    charcoal: "#2C2C2C"
+    silver: "#C0C0C0"
+    light_gray: "#F5F5F5"
+    blood_orange: "#CC1100"
+    off_white: "#FAFAFA"
+    
+  # グレースケール
+  grayscale:
+    gray_100: "#FAFAFA"
+    gray_200: "#F5F5F5"
+    gray_300: "#E0E0E0"
+    gray_400: "#C0C0C0"
+    gray_500: "#808080"
+    gray_600: "#606060"
+    gray_700: "#404040"
+    gray_800: "#2C2C2C"
+    gray_900: "#1A1A1A"
+    gray_1000: "#0A0A0A"
+    
+  # 機能色
+  functional:
+    success: "#28A745"
+    warning: "#DC143C"
+    error: "#CC1100"
+    info: "#2C2C2C"
+    
+  # 透明度
+  opacity:
+    black_90: "rgba(10, 10, 10, 0.9)"
+    black_75: "rgba(10, 10, 10, 0.75)"
+    black_50: "rgba(10, 10, 10, 0.5)"
+    black_25: "rgba(10, 10, 10, 0.25)"
+    white_90: "rgba(255, 255, 255, 0.9)"
+    white_75: "rgba(255, 255, 255, 0.75)"
+    white_50: "rgba(255, 255, 255, 0.5)"
+    white_25: "rgba(255, 255, 255, 0.25)"
+    red_50: "rgba(220, 20, 60, 0.5)"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー
+  families:
+    display:
+      primary: "'Bebas Neue', sans-serif"
+      secondary: "'Oswald', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    body:
+      primary: "'Roboto', sans-serif"
+      secondary: "'Inter', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    number:
+      primary: "'Teko', sans-serif"
+      secondary: "'Barlow Condensed', sans-serif"
+      tabular: "'Roboto Mono', monospace"
+    accent:
+      primary: "'Montserrat', sans-serif"
+      secondary: "'Raleway', sans-serif"
+      
+  # サイズスケール
+  sizes:
+    xs: "12px"
+    sm: "14px"
+    base: "16px"
+    lg: "18px"
+    xl: "20px"
+    "2xl": "24px"
+    "3xl": "30px"
+    "4xl": "36px"
+    "5xl": "48px"
+    "6xl": "60px"
+    "7xl": "72px"
+    "8xl": "96px"
+    "9xl": "128px"
+    
+  # 文字の太さ
+  weights:
+    thin: 100
+    light: 300
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extrabold: 800
+    black: 900
+    
+  # 行間
+  line_heights:
+    tight: 1.1
+    snug: 1.2
+    normal: 1.5
+    relaxed: 1.75
+    loose: 2
+    
+  # 文字間隔
+  letter_spacing:
+    tighter: "-0.05em"
+    tight: "-0.025em"
+    normal: "0"
+    wide: "0.025em"
+    wider: "0.05em"
+    widest: "0.1em"
+
+# レイアウト
+layout:
+  # グリッドシステム
+  grid:
+    columns: 12
+    gutter: "24px"
+    margin: "24px"
+    max_width: "1440px"
+    
+  # スペーシング
+  spacing:
+    "0": "0"
+    "1": "4px"
+    "2": "8px"
+    "3": "12px"
+    "4": "16px"
+    "5": "20px"
+    "6": "24px"
+    "8": "32px"
+    "10": "40px"
+    "12": "48px"
+    "16": "64px"
+    "20": "80px"
+    "24": "96px"
+    "32": "128px"
+    
+  # ブレークポイント
+  breakpoints:
+    xs: "320px"
+    sm: "640px"
+    md: "768px"
+    lg: "1024px"
+    xl: "1280px"
+    "2xl": "1440px"
+    
+  # コンテナ
+  container:
+    padding:
+      mobile: "16px"
+      tablet: "24px"
+      desktop: "32px"
+    max_widths:
+      sm: "640px"
+      md: "768px"
+      lg: "1024px"
+      xl: "1280px"
+      "2xl": "1440px"
+
+# コンポーネント
+components:
+  # ボタン
+  buttons:
+    primary:
+      background: "#DC143C"
+      color: "#FFFFFF"
+      border: "none"
+      hover_background: "#CC1100"
+      padding: "12px 32px"
+      font_weight: 700
+      text_transform: "uppercase"
+      
+    secondary:
+      background: "#FFFFFF"
+      color: "#0A0A0A"
+      border: "2px solid #0A0A0A"
+      hover_background: "#0A0A0A"
+      hover_color: "#FFFFFF"
+      padding: "12px 32px"
+      
+    ghost:
+      background: "transparent"
+      color: "#0A0A0A"
+      border: "2px solid #0A0A0A"
+      hover_background: "#0A0A0A"
+      hover_color: "#FFFFFF"
+      
+  # カード
+  cards:
+    default:
+      background: "#FFFFFF"
+      border: "2px solid #0A0A0A"
+      padding: "24px"
+      hover_transform: "translateY(-4px)"
+      hover_shadow: "0 8px 24px rgba(10, 10, 10, 0.15)"
+      
+    inverted:
+      background: "#0A0A0A"
+      color: "#FFFFFF"
+      border: "none"
+      padding: "24px"
+      
+    accent:
+      background: "#FFFFFF"
+      border: "3px solid #DC143C"
+      padding: "24px"
+      
+  # ナビゲーション
+  navigation:
+    header:
+      background: "#FFFFFF"
+      border_bottom: "2px solid #0A0A0A"
+      height: "80px"
+      sticky: true
+      
+    mobile_menu:
+      background: "#0A0A0A"
+      color: "#FFFFFF"
+      overlay: "rgba(10, 10, 10, 0.95)"
+      
+    links:
+      color: "#0A0A0A"
+      hover_color: "#DC143C"
+      active_border: "3px solid #DC143C"
+      
+  # フォーム
+  forms:
+    input:
+      background: "#FFFFFF"
+      border: "2px solid #0A0A0A"
+      padding: "12px 16px"
+      focus_border: "#DC143C"
+      error_border: "#CC1100"
+      
+    label:
+      color: "#0A0A0A"
+      font_weight: 600
+      margin_bottom: "8px"
+      
+    checkbox:
+      size: "24px"
+      border: "2px solid #0A0A0A"
+      checked_background: "#DC143C"
+      
+  # スコアボード
+  scoreboard:
+    background: "#0A0A0A"
+    text_color: "#FFFFFF"
+    score_font_size: "72px"
+    score_font_weight: 900
+    divider: "3px solid #DC143C"
+    padding: "32px"
+
+# エフェクト
+effects:
+  # シャドウ
+  shadows:
+    sm: "0 2px 4px rgba(10, 10, 10, 0.1)"
+    md: "0 4px 8px rgba(10, 10, 10, 0.15)"
+    lg: "0 8px 16px rgba(10, 10, 10, 0.2)"
+    xl: "0 16px 32px rgba(10, 10, 10, 0.25)"
+    inner: "inset 0 2px 4px rgba(10, 10, 10, 0.1)"
+    
+  # ボーダー
+  borders:
+    thin: "1px solid"
+    medium: "2px solid"
+    thick: "3px solid"
+    extra_thick: "5px solid"
+    
+  # 角丸
+  radius:
+    none: "0"
+    sm: "2px"
+    md: "4px"
+    lg: "8px"
+    xl: "16px"
+    full: "9999px"
+    
+  # トランジション
+  transitions:
+    fast: "all 0.15s ease-out"
+    normal: "all 0.2s ease-out"
+    slow: "all 0.3s ease-out"
+    
+  # アニメーション
+  animations:
+    pulse:
+      keyframes: "0%, 100% { opacity: 1; } 50% { opacity: 0.5; }"
+      duration: "2s"
+      timing: "ease-in-out"
+      iteration: "infinite"
+      
+    slide_in:
+      keyframes: "from { transform: translateX(-100%); } to { transform: translateX(0); }"
+      duration: "0.3s"
+      timing: "ease-out"
+      
+    scale_up:
+      keyframes: "from { transform: scale(0.95); } to { transform: scale(1); }"
+      duration: "0.2s"
+      timing: "ease-out"
+
+# パターン
+patterns:
+  # ストライプ
+  stripes:
+    diagonal:
+      angle: "45deg"
+      colors: ["#0A0A0A", "#FFFFFF"]
+      width: "10px"
+      
+    horizontal:
+      angle: "0deg"
+      colors: ["#DC143C", "#FFFFFF"]
+      width: "20px"
+      
+  # グリッド
+  grid_pattern:
+    color: "#E0E0E0"
+    size: "20px"
+    thickness: "1px"
+    
+  # ノイズ
+  noise:
+    opacity: 0.02
+    blend_mode: "multiply"
+
+# 特殊要素
+special:
+  # 対角線分割
+  diagonal_split:
+    angle: "45deg"
+    transition_width: "100px"
+    colors: ["#FFFFFF", "#0A0A0A"]
+    
+  # スコア表示
+  score_display:
+    font_size: "96px"
+    font_weight: 900
+    font_family: "'Teko', sans-serif"
+    color: "#DC143C"
+    
+  # バッジ
+  badges:
+    new:
+      background: "#DC143C"
+      color: "#FFFFFF"
+      padding: "4px 8px"
+      font_size: "12px"
+      font_weight: 700
+      
+    live:
+      background: "#CC1100"
+      color: "#FFFFFF"
+      animation: "pulse"
+      
+  # プログレスバー
+  progress:
+    background: "#E0E0E0"
+    fill: "#DC143C"
+    height: "8px"
+    animated: true
+
+# レスポンシブ設定
+responsive:
+  # モバイル
+  mobile:
+    font_scale: 0.9
+    spacing_scale: 0.8
+    simplified_layout: true
+    
+  # タブレット
+  tablet:
+    font_scale: 0.95
+    spacing_scale: 0.9
+    two_column_layout: true
+    
+  # デスクトップ
+  desktop:
+    font_scale: 1
+    spacing_scale: 1
+    full_layout: true
+
+# アクセシビリティ
+accessibility:
+  # コントラスト
+  contrast:
+    minimum: 7  # WCAG AAA
+    text_on_white: "#0A0A0A"
+    text_on_black: "#FFFFFF"
+    text_on_red: "#FFFFFF"
+    
+  # フォーカス
+  focus:
+    outline: "3px solid #DC143C"
+    outline_offset: "2px"
+    
+  # アニメーション
+  reduced_motion:
+    transitions: "none"
+    animations: "none"
+    
+  # スクリーンリーダー
+  screen_reader:
+    visually_hidden: "position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;"

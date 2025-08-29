@@ -1,0 +1,460 @@
+{
+  "name": "Stadium Classic Components",
+  "version": "1.0.0",
+  "description": "フェアプレーと勝利のコンポーネントライブラリ",
+  
+  "components": {
+    "layout": {
+      "diagonal-split": {
+        "description": "対角線分割レイアウト",
+        "props": {
+          "angle": "45deg",
+          "colorLeft": "#FFFFFF",
+          "colorRight": "#0A0A0A",
+          "breakpoint": "768px"
+        },
+        "styles": {
+          "background": "linear-gradient(45deg, var(--colorLeft) 50%, var(--colorRight) 50%)",
+          "minHeight": "100vh",
+          "position": "relative"
+        }
+      },
+      
+      "stadium-container": {
+        "description": "スタジアムコンテナ",
+        "props": {
+          "maxWidth": "1440px",
+          "padding": ["16px", "24px", "32px"]
+        },
+        "styles": {
+          "width": "100%",
+          "maxWidth": "var(--maxWidth)",
+          "margin": "0 auto",
+          "padding": "0 var(--padding)"
+        }
+      },
+      
+      "power-grid": {
+        "description": "パワーグリッドシステム",
+        "props": {
+          "columns": 12,
+          "gap": "24px"
+        },
+        "styles": {
+          "display": "grid",
+          "gridTemplateColumns": "repeat(var(--columns), 1fr)",
+          "gap": "var(--gap)"
+        }
+      }
+    },
+    
+    "typography": {
+      "display-heading": {
+        "description": "ディスプレイ見出し",
+        "props": {
+          "size": ["6xl", "7xl", "8xl", "9xl"],
+          "weight": [700, 800, 900],
+          "color": ["#0A0A0A", "#FFFFFF", "#DC143C"]
+        },
+        "styles": {
+          "fontFamily": "'Bebas Neue', 'Oswald', sans-serif",
+          "fontSize": "var(--size)",
+          "fontWeight": "var(--weight)",
+          "textTransform": "uppercase",
+          "letterSpacing": "0.02em",
+          "lineHeight": 1.1
+        }
+      },
+      
+      "score-number": {
+        "description": "スコア数字",
+        "props": {
+          "size": ["72px", "96px", "128px"],
+          "color": "#DC143C"
+        },
+        "styles": {
+          "fontFamily": "'Teko', 'Barlow Condensed', sans-serif",
+          "fontSize": "var(--size)",
+          "fontWeight": 900,
+          "color": "var(--color)",
+          "tabularNums": true
+        }
+      },
+      
+      "bold-label": {
+        "description": "ボールドラベル",
+        "props": {
+          "size": ["sm", "base", "lg"],
+          "uppercase": true
+        },
+        "styles": {
+          "fontFamily": "'Montserrat', sans-serif",
+          "fontWeight": 700,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.1em"
+        }
+      }
+    },
+    
+    "buttons": {
+      "crimson-cta": {
+        "description": "クリムゾンCTAボタン",
+        "props": {
+          "size": ["sm", "md", "lg"],
+          "fullWidth": false
+        },
+        "styles": {
+          "background": "#DC143C",
+          "color": "#FFFFFF",
+          "padding": "12px 32px",
+          "border": "none",
+          "fontWeight": 700,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em",
+          "transition": "all 0.2s ease-out",
+          "cursor": "pointer"
+        },
+        "hover": {
+          "background": "#CC1100",
+          "transform": "translateY(-2px)",
+          "boxShadow": "0 4px 12px rgba(220, 20, 60, 0.3)"
+        }
+      },
+      
+      "monochrome-button": {
+        "description": "モノクロームボタン",
+        "props": {
+          "variant": ["white", "black"],
+          "bordered": true
+        },
+        "styles": {
+          "background": "var(--bg)",
+          "color": "var(--color)",
+          "border": "2px solid var(--border)",
+          "padding": "12px 32px",
+          "fontWeight": 600,
+          "transition": "all 0.2s ease-out"
+        },
+        "hover": {
+          "background": "var(--hoverBg)",
+          "color": "var(--hoverColor)"
+        }
+      },
+      
+      "ghost-button": {
+        "description": "ゴーストボタン",
+        "props": {
+          "color": ["black", "white", "red"]
+        },
+        "styles": {
+          "background": "transparent",
+          "border": "2px solid currentColor",
+          "color": "var(--color)",
+          "padding": "10px 28px",
+          "transition": "all 0.2s ease-out"
+        }
+      }
+    },
+    
+    "cards": {
+      "team-card": {
+        "description": "チームカード",
+        "props": {
+          "bordered": true,
+          "hoverable": true
+        },
+        "styles": {
+          "background": "#FFFFFF",
+          "border": "2px solid #0A0A0A",
+          "padding": "24px",
+          "position": "relative",
+          "transition": "all 0.2s ease-out"
+        },
+        "hover": {
+          "transform": "translateY(-4px)",
+          "boxShadow": "0 8px 24px rgba(10, 10, 10, 0.15)",
+          "borderColor": "#DC143C"
+        }
+      },
+      
+      "stat-card": {
+        "description": "統計カード",
+        "props": {
+          "inverted": false,
+          "accent": false
+        },
+        "styles": {
+          "background": "var(--bg)",
+          "color": "var(--color)",
+          "padding": "32px",
+          "textAlign": "center",
+          "border": "var(--border)"
+        },
+        "number": {
+          "fontSize": "72px",
+          "fontWeight": 900,
+          "color": "#DC143C"
+        }
+      },
+      
+      "news-card": {
+        "description": "ニュースカード",
+        "props": {
+          "orientation": ["vertical", "horizontal"]
+        },
+        "styles": {
+          "background": "#FFFFFF",
+          "border": "1px solid #E0E0E0",
+          "overflow": "hidden",
+          "transition": "all 0.2s ease-out"
+        },
+        "category": {
+          "background": "#DC143C",
+          "color": "#FFFFFF",
+          "padding": "4px 12px",
+          "fontSize": "12px",
+          "fontWeight": 700,
+          "textTransform": "uppercase"
+        }
+      }
+    },
+    
+    "navigation": {
+      "header-nav": {
+        "description": "ヘッダーナビゲーション",
+        "props": {
+          "sticky": true,
+          "transparent": false
+        },
+        "styles": {
+          "background": "#FFFFFF",
+          "borderBottom": "2px solid #0A0A0A",
+          "height": "80px",
+          "position": "sticky",
+          "top": 0,
+          "zIndex": 1000,
+          "transition": "all 0.3s ease-out"
+        },
+        "scrolled": {
+          "background": "#0A0A0A",
+          "color": "#FFFFFF",
+          "boxShadow": "0 2px 8px rgba(0, 0, 0, 0.1)"
+        }
+      },
+      
+      "nav-link": {
+        "description": "ナビゲーションリンク",
+        "props": {
+          "active": false
+        },
+        "styles": {
+          "color": "#0A0A0A",
+          "fontWeight": 600,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.05em",
+          "position": "relative",
+          "transition": "color 0.2s ease-out"
+        },
+        "hover": {
+          "color": "#DC143C"
+        },
+        "active": {
+          "borderBottom": "3px solid #DC143C"
+        }
+      },
+      
+      "mobile-menu": {
+        "description": "モバイルメニュー",
+        "props": {
+          "position": ["left", "right"],
+          "fullscreen": true
+        },
+        "styles": {
+          "position": "fixed",
+          "top": 0,
+          "bottom": 0,
+          "width": "100%",
+          "background": "#0A0A0A",
+          "color": "#FFFFFF",
+          "zIndex": 9999,
+          "transform": "translateX(100%)",
+          "transition": "transform 0.3s ease-out"
+        }
+      }
+    },
+    
+    "display": {
+      "scoreboard": {
+        "description": "スコアボード",
+        "props": {
+          "size": ["sm", "md", "lg"],
+          "live": false
+        },
+        "styles": {
+          "background": "#0A0A0A",
+          "color": "#FFFFFF",
+          "padding": "32px",
+          "textAlign": "center",
+          "position": "relative"
+        },
+        "score": {
+          "fontSize": "96px",
+          "fontWeight": 900,
+          "color": "#DC143C",
+          "fontFamily": "'Teko', sans-serif"
+        },
+        "divider": {
+          "width": "3px",
+          "height": "60px",
+          "background": "#DC143C",
+          "margin": "0 24px"
+        }
+      },
+      
+      "stat-counter": {
+        "description": "統計カウンター",
+        "props": {
+          "value": "number",
+          "suffix": "string",
+          "animated": true
+        },
+        "styles": {
+          "fontSize": "72px",
+          "fontWeight": 900,
+          "color": "#0A0A0A",
+          "fontFamily": "'Teko', sans-serif"
+        },
+        "animation": {
+          "duration": "2s",
+          "easing": "ease-out",
+          "triggerOnScroll": true
+        }
+      },
+      
+      "progress-bar": {
+        "description": "プログレスバー",
+        "props": {
+          "value": "number",
+          "max": 100,
+          "showLabel": true
+        },
+        "styles": {
+          "background": "#E0E0E0",
+          "height": "8px",
+          "position": "relative",
+          "overflow": "hidden"
+        },
+        "fill": {
+          "background": "#DC143C",
+          "height": "100%",
+          "transition": "width 1s ease-out"
+        }
+      }
+    },
+    
+    "forms": {
+      "stadium-input": {
+        "description": "スタジアム入力フィールド",
+        "props": {
+          "type": ["text", "email", "number"],
+          "error": false
+        },
+        "styles": {
+          "background": "#FFFFFF",
+          "border": "2px solid #0A0A0A",
+          "padding": "12px 16px",
+          "fontSize": "16px",
+          "transition": "border-color 0.2s ease-out",
+          "width": "100%"
+        },
+        "focus": {
+          "borderColor": "#DC143C",
+          "outline": "none"
+        },
+        "error": {
+          "borderColor": "#CC1100"
+        }
+      },
+      
+      "power-checkbox": {
+        "description": "パワーチェックボックス",
+        "props": {
+          "size": ["sm", "md", "lg"]
+        },
+        "styles": {
+          "width": "24px",
+          "height": "24px",
+          "border": "2px solid #0A0A0A",
+          "background": "#FFFFFF",
+          "position": "relative",
+          "cursor": "pointer"
+        },
+        "checked": {
+          "background": "#DC143C",
+          "borderColor": "#DC143C"
+        }
+      },
+      
+      "select-field": {
+        "description": "セレクトフィールド",
+        "props": {
+          "fullWidth": true
+        },
+        "styles": {
+          "background": "#FFFFFF",
+          "border": "2px solid #0A0A0A",
+          "padding": "12px 16px",
+          "appearance": "none",
+          "backgroundImage": "url('data:image/svg+xml...')",
+          "backgroundPosition": "right 12px center",
+          "backgroundRepeat": "no-repeat"
+        }
+      }
+    },
+    
+    "patterns": {
+      "diagonal-stripes": {
+        "description": "対角線ストライプ",
+        "props": {
+          "colors": ["#0A0A0A", "#FFFFFF"],
+          "width": "10px",
+          "angle": "45deg"
+        },
+        "styles": {
+          "background": "repeating-linear-gradient(var(--angle), var(--color1), var(--color1) var(--width), var(--color2) var(--width), var(--color2) calc(var(--width) * 2))"
+        }
+      },
+      
+      "noise-texture": {
+        "description": "ノイズテクスチャ",
+        "props": {
+          "opacity": 0.02
+        },
+        "styles": {
+          "position": "absolute",
+          "top": 0,
+          "left": 0,
+          "width": "100%",
+          "height": "100%",
+          "opacity": "var(--opacity)",
+          "pointerEvents": "none",
+          "background": "url('noise.png')"
+        }
+      }
+    }
+  },
+  
+  "utilities": {
+    "text-shadow": {
+      "sharp": "2px 2px 0 #0A0A0A",
+      "soft": "0 2px 4px rgba(10, 10, 10, 0.2)",
+      "crimson-glow": "0 0 20px rgba(220, 20, 60, 0.5)"
+    },
+    "box-shadow": {
+      "sm": "0 2px 4px rgba(10, 10, 10, 0.1)",
+      "md": "0 4px 8px rgba(10, 10, 10, 0.15)",
+      "lg": "0 8px 16px rgba(10, 10, 10, 0.2)",
+      "xl": "0 16px 32px rgba(10, 10, 10, 0.25)"
+    }
+  }
+}

@@ -1,0 +1,275 @@
+{
+  "name": "Ocean Flame Theme",
+  "version": "1.0.0",
+  "description": "Where deep ocean meets burning passion",
+  "colors": {
+    "primary": {
+      "antlersRed": "#B01224",
+      "deepNavy": "#003366"
+    },
+    "secondary": {
+      "roseRed": "#E31E3C",
+      "oceanBlue": "#004080",
+      "midnight": "#001833",
+      "coral": "#FF6B6B",
+      "seafoam": "#E8F4F8",
+      "stormGray": "#4A5568"
+    },
+    "gradients": {
+      "oceanToFlame": "linear-gradient(135deg, #003366 0%, #004080 35%, #B01224 80%, #E31E3C 100%)",
+      "deepSea": "linear-gradient(180deg, #004080 0%, #003366 50%, #001833 100%)",
+      "burningRose": "linear-gradient(45deg, #B01224 0%, #E31E3C 50%, #FF6B6B 100%)",
+      "tidalWave": "linear-gradient(90deg, #001833 0%, #003366 25%, #004080 50%, #003366 75%, #001833 100%)",
+      "sunsetOcean": "linear-gradient(180deg, #E31E3C 0%, #B01224 30%, #003366 70%, #001833 100%)"
+    },
+    "opacity": {
+      "navy90": "rgba(0, 51, 102, 0.9)",
+      "navy75": "rgba(0, 51, 102, 0.75)",
+      "navy50": "rgba(0, 51, 102, 0.5)",
+      "navy25": "rgba(0, 51, 102, 0.25)",
+      "navy10": "rgba(0, 51, 102, 0.1)",
+      "red90": "rgba(176, 18, 36, 0.9)",
+      "red75": "rgba(176, 18, 36, 0.75)",
+      "red50": "rgba(176, 18, 36, 0.5)",
+      "red25": "rgba(176, 18, 36, 0.25)",
+      "red10": "rgba(176, 18, 36, 0.1)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "'Saira Condensed', 'Barlow', sans-serif",
+      "body": "'Source Sans Pro', 'Inter', sans-serif",
+      "accent": "'Merriweather', 'Playfair Display', serif",
+      "number": "'Oswald', 'Bebas Neue', sans-serif",
+      "japanese": "'Noto Sans JP', sans-serif"
+    },
+    "sizes": {
+      "xs": "0.75rem",
+      "sm": "0.875rem",
+      "base": "1rem",
+      "lg": "1.125rem",
+      "xl": "1.25rem",
+      "2xl": "1.5rem",
+      "3xl": "1.875rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "3.75rem",
+      "7xl": "4.5rem",
+      "8xl": "6rem"
+    },
+    "weights": {
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800
+    },
+    "lineHeights": {
+      "tight": 1.2,
+      "snug": 1.4,
+      "normal": 1.6,
+      "relaxed": 1.8,
+      "loose": 2.0
+    },
+    "letterSpacing": {
+      "tight": "-0.02em",
+      "normal": "0",
+      "wide": "0.02em",
+      "wider": "0.04em",
+      "widest": "0.08em"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.25rem",
+    "2": "0.5rem",
+    "3": "0.75rem",
+    "4": "1rem",
+    "5": "1.25rem",
+    "6": "1.5rem",
+    "8": "2rem",
+    "10": "2.5rem",
+    "12": "3rem",
+    "16": "4rem",
+    "20": "5rem",
+    "24": "6rem"
+  },
+  "layout": {
+    "container": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1536px"
+    },
+    "waveGrid": {
+      "amplitude": "50px",
+      "frequency": "200px",
+      "columns": 12,
+      "fluid": true
+    },
+    "depthLayers": {
+      "surface": 100,
+      "shallow": 200,
+      "middle": 300,
+      "deep": 400,
+      "abyss": 500
+    }
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "0.25rem",
+      "md": "0.5rem",
+      "lg": "0.75rem",
+      "xl": "1rem",
+      "2xl": "1.5rem",
+      "full": "9999px",
+      "wave": "50% 20% 50% 20%",
+      "organic": "30% 70% 70% 30% / 30% 30% 70% 70%"
+    },
+    "width": {
+      "thin": "1px",
+      "medium": "2px",
+      "thick": "3px"
+    }
+  },
+  "shadows": {
+    "sm": "0 2px 4px rgba(0, 51, 102, 0.1)",
+    "md": "0 4px 8px rgba(0, 51, 102, 0.15)",
+    "lg": "0 8px 16px rgba(0, 51, 102, 0.2)",
+    "xl": "0 16px 32px rgba(0, 51, 102, 0.25)",
+    "glowRed": "0 0 20px rgba(176, 18, 36, 0.5)",
+    "glowBlue": "0 0 20px rgba(0, 51, 102, 0.5)",
+    "inner": "inset 0 2px 4px rgba(0, 51, 102, 0.2)"
+  },
+  "animations": {
+    "durations": {
+      "instant": "0ms",
+      "fast": "200ms",
+      "normal": "300ms",
+      "slow": "500ms",
+      "wave": "3000ms",
+      "tide": "6000ms",
+      "drift": "8000ms"
+    },
+    "easings": {
+      "linear": "linear",
+      "in": "ease-in",
+      "out": "ease-out",
+      "inOut": "ease-in-out",
+      "wave": "cubic-bezier(0.4, 0, 0.2, 1)",
+      "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)"
+    },
+    "keyframes": {
+      "waveMotion": {
+        "0%": "transform: translateX(0)",
+        "100%": "transform: translateX(-100%)"
+      },
+      "bubbleRise": {
+        "0%": "transform: translateY(100vh) scale(0)",
+        "10%": "transform: translateY(90vh) scale(1)",
+        "100%": "transform: translateY(-10vh) scale(0.5)"
+      },
+      "flameFlicker": {
+        "0%, 100%": "transform: scaleY(1)",
+        "50%": "transform: scaleY(1.2)"
+      },
+      "float": {
+        "0%, 100%": "transform: translateY(0)",
+        "50%": "transform: translateY(-20px)"
+      },
+      "ripple": {
+        "from": "opacity: 1; transform: scale(0)",
+        "to": "opacity: 0; transform: scale(4)"
+      },
+      "glow": {
+        "0%, 100%": "opacity: 0.5",
+        "50%": "opacity: 1"
+      }
+    }
+  },
+  "effects": {
+    "waves": {
+      "gentle": {
+        "amplitude": "20px",
+        "frequency": "100px",
+        "speed": "10s"
+      },
+      "strong": {
+        "amplitude": "50px",
+        "frequency": "200px",
+        "speed": "5s"
+      },
+      "tsunami": {
+        "amplitude": "100px",
+        "frequency": "300px",
+        "speed": "3s"
+      }
+    },
+    "filters": {
+      "blurSm": "blur(4px)",
+      "blurMd": "blur(8px)",
+      "blurLg": "blur(16px)",
+      "brightness": "brightness(1.1)",
+      "contrast": "contrast(1.2)",
+      "saturate": "saturate(1.5)"
+    },
+    "blendModes": {
+      "multiply": "multiply",
+      "screen": "screen",
+      "overlay": "overlay",
+      "difference": "difference"
+    }
+  },
+  "particles": {
+    "bubbles": {
+      "sizes": ["4px", "6px", "8px", "10px", "12px"],
+      "speeds": ["10s", "12s", "15s", "18s", "20s"],
+      "colors": ["rgba(255, 255, 255, 0.3)", "rgba(232, 244, 248, 0.4)"]
+    },
+    "embers": {
+      "sizes": ["2px", "3px", "4px", "5px", "6px"],
+      "speeds": ["5s", "7s", "10s", "12s", "15s"],
+      "colors": ["#FF6B6B", "#E31E3C", "#FFD700"]
+    }
+  },
+  "breakpoints": {
+    "xs": {
+      "min": "320px",
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "767px"
+    },
+    "md": {
+      "min": "768px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px",
+      "max": "1279px"
+    },
+    "xl": {
+      "min": "1280px",
+      "max": "1535px"
+    },
+    "2xl": {
+      "min": "1536px"
+    }
+  },
+  "zIndex": {
+    "abyss": -2,
+    "deep": -1,
+    "base": 0,
+    "shallow": 10,
+    "surface": 50,
+    "floating": 100,
+    "navigation": 200,
+    "overlay": 300,
+    "modal": 400,
+    "tooltip": 500
+  }
+}

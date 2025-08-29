@@ -1,0 +1,323 @@
+{
+  "name": "Royal Fortress Components",
+  "version": "1.0.0",
+  "description": "Castle fortress and royal nobility component library",
+  "components": {
+    "hero": {
+      "throne_room": {
+        "name": "Throne Room Hero",
+        "props": {
+          "background": "#0D0D0D",
+          "goldRays": true,
+          "rayCount": 12,
+          "centerGlow": "#FFD700",
+          "stoneTexture": true
+        },
+        "structure": {
+          "container": "100vh height, radial gradient",
+          "throne": "centered focal point",
+          "rays": "absolute positioned, rotating slowly",
+          "title": "gold foil effect, carved appearance"
+        }
+      },
+      "castle_banner": {
+        "name": "Castle Banner Hero",
+        "props": {
+          "bannerColors": ["#003DA5", "#FFD700"],
+          "flagAnimation": true,
+          "crestPosition": "center",
+          "torches": 2
+        }
+      }
+    },
+    "navigation": {
+      "fortress_header": {
+        "name": "Battlement Navigation",
+        "props": {
+          "background": "#0D0D0D",
+          "borderBottom": "8px solid #FFD700",
+          "battlementHeight": "20px",
+          "towerCount": 2
+        },
+        "battlements": {
+          "pattern": "repeating-linear-gradient(90deg, #0D0D0D 0, #0D0D0D 20px, transparent 20px, transparent 40px)",
+          "height": "20px",
+          "position": "top"
+        },
+        "towers": {
+          "width": "60px",
+          "height": "80px",
+          "shape": "polygon(0 20%, 30% 0, 70% 0, 100% 20%, 100% 100%, 0 100%)",
+          "flag": true
+        }
+      },
+      "tower_sidebar": {
+        "name": "Castle Tower Navigation",
+        "props": {
+          "position": "fixed left",
+          "width": "80px",
+          "background": "#0D0D0D",
+          "goldAccent": "#FFD700",
+          "windowShape": "arched"
+        },
+        "structure": {
+          "top": "circular with flag",
+          "body": "vertical windows",
+          "base": "wider foundation"
+        }
+      }
+    },
+    "cards": {
+      "shield_card": {
+        "name": "Heraldic Shield Card",
+        "props": {
+          "clipPath": "polygon(50% 0, 100% 0, 100% 70%, 50% 100%, 0 70%, 0 0)",
+          "background": "#FFFFFF",
+          "border": "3px solid #FFD700",
+          "pattern": "diagonal stripes"
+        },
+        "hover": {
+          "transform": "rotate(5deg) scale(1.05)",
+          "boxShadow": "0 15px 40px rgba(255, 215, 0, 0.3)",
+          "borderWidth": "5px"
+        }
+      },
+      "fortress_card": {
+        "name": "Fortress Wall Card",
+        "props": {
+          "background": "#0D0D0D",
+          "borderTop": "10px solid #0D0D0D",
+          "battlementTop": true,
+          "padding": "40px",
+          "stoneEffect": true
+        },
+        "effects": {
+          "bevel": "inset 0 2px 4px rgba(0,0,0,0.5)",
+          "texture": "noise overlay",
+          "goldTrim": "border gradient"
+        }
+      },
+      "royal_card": {
+        "name": "Royal Chamber Card",
+        "props": {
+          "background": "#003DA5",
+          "goldBorder": "4px solid #FFD700",
+          "cornerDecoration": "fleur-de-lis",
+          "shadow": "0 10px 30px rgba(0, 61, 165, 0.3)"
+        }
+      }
+    },
+    "sections": {
+      "castle_wall": {
+        "name": "Castle Wall Section",
+        "props": {
+          "height": "auto",
+          "borderWidth": "8px",
+          "battlementTop": true,
+          "battlementBottom": false,
+          "towers": "corners"
+        },
+        "structure": {
+          "wall": "thick border with shadow",
+          "battlements": "crenellated pattern",
+          "mortar": "gap between stones"
+        }
+      },
+      "throne_section": {
+        "name": "Throne Room Section",
+        "props": {
+          "background": "radial-gradient(#FFD700, #0D0D0D)",
+          "columns": 2,
+          "centerThrone": true,
+          "carpetPattern": "royal red"
+        }
+      },
+      "moat_divider": {
+        "name": "Moat Divider",
+        "props": {
+          "height": "40px",
+          "background": "linear-gradient(180deg, #003DA5, #001E4D)",
+          "rippleEffect": true,
+          "bridgeOption": true
+        }
+      }
+    },
+    "buttons": {
+      "royal_primary": {
+        "name": "Royal Gold Button",
+        "props": {
+          "background": "linear-gradient(135deg, #FFD700, #FFED4E, #FFD700)",
+          "color": "#0D0D0D",
+          "border": "2px solid #B8860B",
+          "padding": "16px 40px",
+          "fontWeight": 700,
+          "textTransform": "uppercase",
+          "letterSpacing": "0.08em",
+          "shimmer": true
+        },
+        "hover": {
+          "boxShadow": "0 6px 20px rgba(255, 215, 0, 0.5)",
+          "transform": "translateY(-2px)"
+        }
+      },
+      "drawbridge_cta": {
+        "name": "Drawbridge CTA",
+        "props": {
+          "background": "#0D0D0D",
+          "chains": true,
+          "transformOrigin": "bottom",
+          "initialRotate": "rotateX(-20deg)"
+        },
+        "hover": {
+          "transform": "rotateX(0)",
+          "chainAnimation": "swing"
+        }
+      },
+      "fortress_button": {
+        "name": "Fortress Button",
+        "props": {
+          "background": "#0D0D0D",
+          "color": "#FFD700",
+          "border": "3px solid #FFD700",
+          "clipPath": "polygon(10% 0, 90% 0, 100% 50%, 90% 100%, 10% 100%, 0 50%)"
+        }
+      }
+    },
+    "decorations": {
+      "gold_shimmer": {
+        "name": "Gold Shimmer Effect",
+        "props": {
+          "gradient": "linear-gradient(90deg, transparent, #FFED4E, transparent)",
+          "size": "200%",
+          "animation": "shimmer 3s infinite"
+        }
+      },
+      "banner_flag": {
+        "name": "Waving Banner",
+        "props": {
+          "colors": ["#003DA5", "#FFD700"],
+          "shape": "polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%)",
+          "waveAnimation": true
+        }
+      },
+      "torch": {
+        "name": "Castle Torch",
+        "props": {
+          "flameColor": "#FF6B00",
+          "glowRadius": "30px",
+          "flickerSpeed": "0.5s",
+          "holder": "#434B56"
+        }
+      },
+      "crown_badge": {
+        "name": "Royal Crown Badge",
+        "props": {
+          "size": "40px",
+          "color": "#FFD700",
+          "jewels": ["#DC143C", "#003DA5", "#50C878"]
+        }
+      }
+    },
+    "patterns": {
+      "heraldic": {
+        "diagonal_stripes": "repeating-linear-gradient(45deg, #003DA5, #003DA5 10px, #FFD700 10px, #FFD700 20px)",
+        "checkered": "repeating-conic-gradient(#0D0D0D 0 90deg, #FFD700 0 180deg)",
+        "quatrefoil": "radial-gradient(circle, #FFD700 30%, transparent 30%)",
+        "fleur_de_lis": "custom SVG pattern"
+      },
+      "stone": {
+        "rough": "noise + gradient overlay",
+        "brick": "repeating-linear-gradient with offset",
+        "mortar": "grid gaps with shadow"
+      }
+    },
+    "layouts": {
+      "castle_layout": {
+        "name": "Fortress Layout",
+        "props": {
+          "columns": "1fr 3fr 1fr",
+          "towerSides": true,
+          "centralKeep": true,
+          "wallThickness": "8px"
+        }
+      },
+      "hexagonal_grid": {
+        "name": "Shield Hexagon Grid",
+        "props": {
+          "itemWidth": "200px",
+          "gap": "4px",
+          "offset": true,
+          "borderColor": "#FFD700"
+        }
+      },
+      "throne_layout": {
+        "name": "Throne Room Layout",
+        "props": {
+          "centerPiece": "60%",
+          "sides": "20% each",
+          "hierarchical": true
+        }
+      }
+    },
+    "animations": {
+      "gold_shimmer": {
+        "name": "Gold Shimmer Animation",
+        "keyframes": {
+          "from": "background-position: -200% center",
+          "to": "background-position: 200% center"
+        },
+        "duration": "3s",
+        "timing": "linear",
+        "iteration": "infinite"
+      },
+      "banner_wave": {
+        "name": "Banner Wave",
+        "keyframes": {
+          "0%, 100%": "transform: rotate(-2deg)",
+          "50%": "transform: rotate(2deg)"
+        },
+        "duration": "4s",
+        "timing": "ease-in-out",
+        "iteration": "infinite"
+      },
+      "drawbridge_lower": {
+        "name": "Drawbridge Animation",
+        "keyframes": {
+          "from": "transform: rotateX(-90deg)",
+          "to": "transform: rotateX(0)"
+        },
+        "duration": "0.8s",
+        "timing": "ease-out"
+      },
+      "torch_flicker": {
+        "name": "Torch Flame",
+        "keyframes": {
+          "0%, 100%": "opacity: 1; transform: scaleY(1)",
+          "50%": "opacity: 0.8; transform: scaleY(1.1)"
+        },
+        "duration": "0.5s",
+        "timing": "ease-in-out",
+        "iteration": "infinite"
+      }
+    }
+  },
+  "breakpoints": {
+    "xs": "320px",
+    "sm": "640px",
+    "md": "768px",
+    "lg": "1024px",
+    "xl": "1280px",
+    "2xl": "1440px",
+    "luxury": "1920px"
+  },
+  "colors": {
+    "royal_blue": "#003DA5",
+    "fortress_black": "#0D0D0D",
+    "champion_gold": "#FFD700",
+    "pure_white": "#FFFFFF",
+    "midnight_blue": "#001E4D",
+    "steel_gray": "#434B56",
+    "platinum": "#E5E4E2",
+    "bronze": "#CD7F32"
+  }
+}

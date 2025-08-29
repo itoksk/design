@@ -1,0 +1,470 @@
+# Ocean Flame Design System
+# 鹿島灘とバラの情熱のデザインシステム
+
+metadata:
+  name: "Ocean Flame System"
+  version: "1.0.0"
+  description: "深海のネイビーと燃える情熱のレッドの融合"
+  author: "Coastal Fire Team"
+  created: "2024"
+  philosophy: "Where Ocean Meets Flame"
+
+# カラーシステム
+colors:
+  # プライマリカラー
+  primary:
+    antlers_red: "#B01224"     # メインレッド（バラ・情熱）
+    deep_navy: "#003366"        # メインネイビー（鹿島灘）
+    
+  # セカンダリカラー
+  secondary:
+    rose_red: "#E31E3C"         # 明るい情熱
+    ocean_blue: "#004080"       # 海の表層
+    midnight: "#001833"         # 深夜の海
+    coral: "#FF6B6B"           # 珊瑚色アクセント
+    seafoam: "#E8F4F8"         # 波しぶき
+    storm_gray: "#4A5568"      # 嵐の空
+    
+  # グラデーション
+  gradients:
+    ocean_to_flame: "linear-gradient(135deg, #003366 0%, #004080 35%, #B01224 80%, #E31E3C 100%)"
+    deep_sea: "linear-gradient(180deg, #004080 0%, #003366 50%, #001833 100%)"
+    burning_rose: "linear-gradient(45deg, #B01224 0%, #E31E3C 50%, #FF6B6B 100%)"
+    tidal_wave: "linear-gradient(90deg, #001833 0%, #003366 25%, #004080 50%, #003366 75%, #001833 100%)"
+    sunset_ocean: "linear-gradient(180deg, #E31E3C 0%, #B01224 30%, #003366 70%, #001833 100%)"
+    
+  # 透明度バリエーション
+  opacity:
+    navy_90: "rgba(0, 51, 102, 0.9)"
+    navy_75: "rgba(0, 51, 102, 0.75)"
+    navy_50: "rgba(0, 51, 102, 0.5)"
+    navy_25: "rgba(0, 51, 102, 0.25)"
+    navy_10: "rgba(0, 51, 102, 0.1)"
+    red_90: "rgba(176, 18, 36, 0.9)"
+    red_75: "rgba(176, 18, 36, 0.75)"
+    red_50: "rgba(176, 18, 36, 0.5)"
+    red_25: "rgba(176, 18, 36, 0.25)"
+    red_10: "rgba(176, 18, 36, 0.1)"
+    
+  # 機能色
+  functional:
+    success: "#10B981"
+    warning: "#F59E0B"
+    error: "#EF4444"
+    info: "#3B82F6"
+
+# タイポグラフィ
+typography:
+  # フォントファミリー
+  families:
+    display:
+      primary: "'Saira Condensed', sans-serif"
+      secondary: "'Barlow', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    body:
+      primary: "'Source Sans Pro', sans-serif"
+      secondary: "'Inter', sans-serif"
+      japanese: "'Noto Sans JP', sans-serif"
+    accent:
+      primary: "'Merriweather', serif"
+      secondary: "'Playfair Display', serif"
+      japanese: "'Noto Serif JP', serif"
+    number:
+      primary: "'Oswald', sans-serif"
+      secondary: "'Bebas Neue', sans-serif"
+      tabular: "'Roboto Mono', monospace"
+      
+  # サイズスケール
+  sizes:
+    xs: "12px"
+    sm: "14px"
+    base: "16px"
+    lg: "18px"
+    xl: "20px"
+    "2xl": "24px"
+    "3xl": "30px"
+    "4xl": "36px"
+    "5xl": "48px"
+    "6xl": "60px"
+    "7xl": "72px"
+    "8xl": "96px"
+    
+  # 文字の太さ
+  weights:
+    light: 300
+    regular: 400
+    medium: 500
+    semibold: 600
+    bold: 700
+    extrabold: 800
+    
+  # 行間
+  line_heights:
+    tight: 1.2
+    snug: 1.4
+    normal: 1.6
+    relaxed: 1.8
+    loose: 2.0
+    
+  # 文字間隔
+  letter_spacing:
+    tight: "-0.02em"
+    normal: "0"
+    wide: "0.02em"
+    wider: "0.04em"
+    widest: "0.08em"
+
+# レイアウト
+layout:
+  # 波形グリッド
+  wave_grid:
+    amplitude: "50px"
+    frequency: "200px"
+    columns: 12
+    fluid: true
+    
+  # 深度レイヤー
+  depth_layers:
+    surface: 100
+    shallow: 200
+    middle: 300
+    deep: 400
+    abyss: 500
+    
+  # スペーシング
+  spacing:
+    "0": "0"
+    "1": "4px"
+    "2": "8px"
+    "3": "12px"
+    "4": "16px"
+    "5": "20px"
+    "6": "24px"
+    "8": "32px"
+    "10": "40px"
+    "12": "48px"
+    "16": "64px"
+    "20": "80px"
+    "24": "96px"
+    
+  # コンテナ
+  container:
+    max_widths:
+      sm: "640px"
+      md: "768px"
+      lg: "1024px"
+      xl: "1280px"
+      "2xl": "1536px"
+    padding:
+      mobile: "16px"
+      tablet: "24px"
+      desktop: "32px"
+      
+  # ブレークポイント
+  breakpoints:
+    xs: "320px"
+    sm: "640px"
+    md: "768px"
+    lg: "1024px"
+    xl: "1280px"
+    "2xl": "1536px"
+
+# コンポーネント
+components:
+  # ボタン
+  buttons:
+    flame:
+      background: "#B01224"
+      color: "#FFFFFF"
+      hover_background: "#E31E3C"
+      hover_glow: "0 0 20px rgba(176, 18, 36, 0.5)"
+      padding: "14px 32px"
+      border_radius: "8px"
+      font_weight: 600
+      transition: "all 0.3s ease"
+      
+    ocean:
+      background: "#003366"
+      color: "#FFFFFF"
+      hover_background: "#004080"
+      hover_shadow: "0 4px 12px rgba(0, 51, 102, 0.3)"
+      padding: "14px 32px"
+      border_radius: "8px"
+      
+    gradient:
+      background: "linear-gradient(135deg, #003366, #B01224)"
+      color: "#FFFFFF"
+      hover_transform: "scale(1.05)"
+      padding: "14px 32px"
+      
+  # カード
+  cards:
+    tide:
+      background: "#FFFFFF"
+      border: "2px solid #003366"
+      border_radius: "12px"
+      padding: "24px"
+      hover_border: "#B01224"
+      hover_shadow: "0 8px 24px rgba(0, 51, 102, 0.15)"
+      
+    deep:
+      background: "#003366"
+      color: "#FFFFFF"
+      border_radius: "12px"
+      padding: "24px"
+      overlay: "linear-gradient(180deg, transparent, rgba(0, 24, 51, 0.5))"
+      
+    flame_accent:
+      background: "#FFFFFF"
+      border_top: "4px solid #B01224"
+      border_radius: "8px"
+      padding: "24px"
+      
+  # ナビゲーション
+  navigation:
+    header:
+      background: "#003366"
+      backdrop_filter: "blur(10px)"
+      border_bottom: "1px solid rgba(255, 255, 255, 0.1)"
+      height: "72px"
+      
+    links:
+      color: "#FFFFFF"
+      hover_color: "#FF6B6B"
+      active_border: "2px solid #B01224"
+      transition: "all 0.2s ease"
+      
+    mobile_menu:
+      background: "linear-gradient(180deg, #003366, #001833)"
+      color: "#FFFFFF"
+      
+  # フォーム
+  forms:
+    input:
+      background: "#FFFFFF"
+      border: "2px solid #003366"
+      focus_border: "#B01224"
+      border_radius: "8px"
+      padding: "12px 16px"
+      transition: "border-color 0.2s ease"
+      
+    select:
+      background: "#FFFFFF"
+      border: "2px solid #003366"
+      arrow_color: "#B01224"
+      
+    checkbox:
+      border: "2px solid #003366"
+      checked_background: "#B01224"
+      checked_icon: "#FFFFFF"
+
+# エフェクト
+effects:
+  # 波形
+  waves:
+    gentle:
+      amplitude: "20px"
+      frequency: "100px"
+      speed: "10s"
+      
+    strong:
+      amplitude: "50px"
+      frequency: "200px"
+      speed: "5s"
+      
+    tsunami:
+      amplitude: "100px"
+      frequency: "300px"
+      speed: "3s"
+      
+  # シャドウ
+  shadows:
+    sm: "0 2px 4px rgba(0, 51, 102, 0.1)"
+    md: "0 4px 8px rgba(0, 51, 102, 0.15)"
+    lg: "0 8px 16px rgba(0, 51, 102, 0.2)"
+    xl: "0 16px 32px rgba(0, 51, 102, 0.25)"
+    glow_red: "0 0 20px rgba(176, 18, 36, 0.5)"
+    glow_blue: "0 0 20px rgba(0, 51, 102, 0.5)"
+    
+  # ボーダー
+  borders:
+    thin: "1px solid"
+    medium: "2px solid"
+    thick: "3px solid"
+    gradient: "2px solid transparent"
+    gradient_bg: "linear-gradient(#fff, #fff), linear-gradient(135deg, #003366, #B01224)"
+    
+  # 角丸
+  radius:
+    none: "0"
+    sm: "4px"
+    md: "8px"
+    lg: "12px"
+    xl: "16px"
+    "2xl": "24px"
+    full: "9999px"
+    wave: "50% 20% 50% 20%"
+    
+  # フィルター
+  filters:
+    blur_sm: "blur(4px)"
+    blur_md: "blur(8px)"
+    blur_lg: "blur(16px)"
+    brightness: "brightness(1.1)"
+    contrast: "contrast(1.2)"
+    saturate: "saturate(1.5)"
+
+# アニメーション
+animations:
+  # 波動
+  wave:
+    keyframes: "from { transform: translateX(0); } to { transform: translateX(-100%); }"
+    duration: "20s"
+    timing: "linear"
+    iteration: "infinite"
+    
+  # 炎
+  flame:
+    keyframes: "0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.2); }"
+    duration: "2s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  # 浮遊
+  float:
+    keyframes: "0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); }"
+    duration: "6s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+    
+  # 波紋
+  ripple:
+    keyframes: "from { opacity: 1; transform: scale(0); } to { opacity: 0; transform: scale(4); }"
+    duration: "1s"
+    timing: "ease-out"
+    
+  # グロー
+  glow:
+    keyframes: "0%, 100% { opacity: 0.5; } 50% { opacity: 1; }"
+    duration: "2s"
+    timing: "ease-in-out"
+    iteration: "infinite"
+
+# パターン
+patterns:
+  # 波パターン
+  wave_pattern:
+    svg: "M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z"
+    fill: "#003366"
+    height: "100px"
+    
+  # グラデーションメッシュ
+  gradient_mesh:
+    points: 5
+    colors: ["#003366", "#004080", "#B01224", "#E31E3C"]
+    blend_mode: "multiply"
+    
+  # ノイズテクスチャ
+  noise:
+    opacity: 0.03
+    blend_mode: "overlay"
+    size: "200px"
+    
+  # 水面反射
+  reflection:
+    opacity: 0.3
+    blur: "2px"
+    transform: "scaleY(-1)"
+
+# 特殊要素
+special:
+  # パーティクル
+  particles:
+    bubbles:
+      size: "4px to 12px"
+      color: "rgba(255, 255, 255, 0.3)"
+      speed: "10s to 20s"
+      direction: "bottom to top"
+      
+    embers:
+      size: "2px to 6px"
+      color: "#FF6B6B"
+      glow: true
+      speed: "5s to 15s"
+      direction: "chaotic"
+      
+  # オーバーレイ
+  overlays:
+    water:
+      background: "rgba(0, 51, 102, 0.1)"
+      backdrop_filter: "blur(2px)"
+      
+    fire:
+      background: "rgba(176, 18, 36, 0.1)"
+      mix_blend_mode: "multiply"
+      
+    fog:
+      background: "linear-gradient(180deg, transparent, rgba(232, 244, 248, 0.5))"
+      
+  # バッジ
+  badges:
+    hot:
+      background: "#B01224"
+      color: "#FFFFFF"
+      padding: "4px 12px"
+      border_radius: "16px"
+      font_size: "12px"
+      font_weight: 700
+      
+    new:
+      background: "#003366"
+      color: "#FFFFFF"
+      animation: "glow"
+
+# レスポンシブ設定
+responsive:
+  # モバイル
+  mobile:
+    simplify_gradients: true
+    reduce_particles: true
+    static_waves: true
+    font_scale: 0.9
+    
+  # タブレット
+  tablet:
+    moderate_effects: true
+    font_scale: 0.95
+    two_column_max: true
+    
+  # デスクトップ
+  desktop:
+    full_effects: true
+    font_scale: 1
+    multi_column: true
+
+# アクセシビリティ
+accessibility:
+  # コントラスト
+  contrast:
+    navy_white: 12.63  # AAA
+    red_white: 7.1     # AA
+    navy_seafoam: 11.5 # AAA
+    
+  # フォーカス
+  focus:
+    outline: "2px solid #FF6B6B"
+    outline_offset: "2px"
+    background: "rgba(255, 107, 107, 0.1)"
+    
+  # モーション
+  reduced_motion:
+    waves: "static"
+    particles: "hidden"
+    transitions: "instant"
+    
+  # カラーモード
+  high_contrast:
+    primary: "#000066"
+    secondary: "#CC0000"
+    background: "#FFFFFF"
+    text: "#000000"

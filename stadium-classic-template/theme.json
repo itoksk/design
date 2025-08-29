@@ -1,0 +1,337 @@
+{
+  "name": "Stadium Classic",
+  "version": "1.0.0",
+  "description": "フェアプレーと勝利のテーマ",
+  
+  "colors": {
+    "primary": {
+      "white": "#FFFFFF",
+      "black": "#0A0A0A",
+      "crimson": "#DC143C"
+    },
+    
+    "secondary": {
+      "charcoal": "#2C2C2C",
+      "silver": "#C0C0C0",
+      "lightGray": "#F5F5F5",
+      "bloodOrange": "#CC1100",
+      "offWhite": "#FAFAFA"
+    },
+    
+    "grayscale": {
+      "50": "#FAFAFA",
+      "100": "#F5F5F5",
+      "200": "#E0E0E0",
+      "300": "#C0C0C0",
+      "400": "#808080",
+      "500": "#606060",
+      "600": "#404040",
+      "700": "#2C2C2C",
+      "800": "#1A1A1A",
+      "900": "#0A0A0A"
+    },
+    
+    "functional": {
+      "success": "#28A745",
+      "warning": "#DC143C",
+      "error": "#CC1100",
+      "info": "#2C2C2C"
+    },
+    
+    "opacity": {
+      "black90": "rgba(10, 10, 10, 0.9)",
+      "black75": "rgba(10, 10, 10, 0.75)",
+      "black50": "rgba(10, 10, 10, 0.5)",
+      "black25": "rgba(10, 10, 10, 0.25)",
+      "black10": "rgba(10, 10, 10, 0.1)",
+      "white90": "rgba(255, 255, 255, 0.9)",
+      "white75": "rgba(255, 255, 255, 0.75)",
+      "white50": "rgba(255, 255, 255, 0.5)",
+      "white25": "rgba(255, 255, 255, 0.25)",
+      "white10": "rgba(255, 255, 255, 0.1)",
+      "crimson50": "rgba(220, 20, 60, 0.5)",
+      "crimson25": "rgba(220, 20, 60, 0.25)"
+    }
+  },
+  
+  "typography": {
+    "fonts": {
+      "display": "'Bebas Neue', 'Oswald', sans-serif",
+      "body": "'Roboto', 'Inter', 'Noto Sans JP', sans-serif",
+      "number": "'Teko', 'Barlow Condensed', sans-serif",
+      "accent": "'Montserrat', 'Raleway', sans-serif",
+      "mono": "'Roboto Mono', 'Courier New', monospace"
+    },
+    
+    "sizes": {
+      "xs": "12px",
+      "sm": "14px",
+      "base": "16px",
+      "lg": "18px",
+      "xl": "20px",
+      "2xl": "24px",
+      "3xl": "30px",
+      "4xl": "36px",
+      "5xl": "48px",
+      "6xl": "60px",
+      "7xl": "72px",
+      "8xl": "96px",
+      "9xl": "128px"
+    },
+    
+    "weights": {
+      "thin": 100,
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    },
+    
+    "lineHeights": {
+      "tight": 1.1,
+      "snug": 1.2,
+      "normal": 1.5,
+      "relaxed": 1.75,
+      "loose": 2
+    },
+    
+    "letterSpacing": {
+      "tighter": "-0.05em",
+      "tight": "-0.025em",
+      "normal": "0",
+      "wide": "0.025em",
+      "wider": "0.05em",
+      "widest": "0.1em"
+    }
+  },
+  
+  "spacing": {
+    "0": "0",
+    "1": "4px",
+    "2": "8px",
+    "3": "12px",
+    "4": "16px",
+    "5": "20px",
+    "6": "24px",
+    "8": "32px",
+    "10": "40px",
+    "12": "48px",
+    "16": "64px",
+    "20": "80px",
+    "24": "96px",
+    "32": "128px",
+    "40": "160px",
+    "48": "192px",
+    "56": "224px",
+    "64": "256px"
+  },
+  
+  "layout": {
+    "container": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px"
+    },
+    
+    "breakpoints": {
+      "xs": "320px",
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px"
+    },
+    
+    "grid": {
+      "columns": 12,
+      "gutter": "24px",
+      "margin": "24px"
+    }
+  },
+  
+  "borders": {
+    "width": {
+      "thin": "1px",
+      "medium": "2px",
+      "thick": "3px",
+      "extraThick": "5px"
+    },
+    
+    "radius": {
+      "none": "0",
+      "sm": "2px",
+      "md": "4px",
+      "lg": "8px",
+      "xl": "16px",
+      "2xl": "24px",
+      "full": "9999px"
+    },
+    
+    "styles": {
+      "solid": "solid",
+      "dashed": "dashed",
+      "dotted": "dotted"
+    }
+  },
+  
+  "shadows": {
+    "sm": "0 2px 4px rgba(10, 10, 10, 0.1)",
+    "md": "0 4px 8px rgba(10, 10, 10, 0.15)",
+    "lg": "0 8px 16px rgba(10, 10, 10, 0.2)",
+    "xl": "0 16px 32px rgba(10, 10, 10, 0.25)",
+    "2xl": "0 24px 48px rgba(10, 10, 10, 0.3)",
+    "inner": "inset 0 2px 4px rgba(10, 10, 10, 0.1)",
+    "crimson": "0 8px 24px rgba(220, 20, 60, 0.3)",
+    "none": "none"
+  },
+  
+  "transitions": {
+    "durations": {
+      "fast": "150ms",
+      "normal": "200ms",
+      "slow": "300ms",
+      "slower": "500ms"
+    },
+    
+    "easings": {
+      "linear": "linear",
+      "easeIn": "ease-in",
+      "easeOut": "ease-out",
+      "easeInOut": "ease-in-out",
+      "sharp": "cubic-bezier(0.4, 0, 0.6, 1)"
+    },
+    
+    "properties": {
+      "all": "all",
+      "colors": "background-color, border-color, color, fill, stroke",
+      "opacity": "opacity",
+      "shadow": "box-shadow",
+      "transform": "transform"
+    }
+  },
+  
+  "animations": {
+    "pulse": {
+      "keyframes": {
+        "0%, 100%": { "opacity": 1 },
+        "50%": { "opacity": 0.5 }
+      },
+      "duration": "2s",
+      "timing": "ease-in-out",
+      "iteration": "infinite"
+    },
+    
+    "slideIn": {
+      "keyframes": {
+        "from": { "transform": "translateX(-100%)" },
+        "to": { "transform": "translateX(0)" }
+      },
+      "duration": "0.3s",
+      "timing": "ease-out"
+    },
+    
+    "scaleUp": {
+      "keyframes": {
+        "from": { "transform": "scale(0.95)" },
+        "to": { "transform": "scale(1)" }
+      },
+      "duration": "0.2s",
+      "timing": "ease-out"
+    },
+    
+    "countUp": {
+      "duration": "2s",
+      "timing": "ease-out",
+      "triggerOnScroll": true
+    },
+    
+    "diagonalReveal": {
+      "keyframes": {
+        "from": { "clipPath": "polygon(0 0, 0 0, 0 100%, 0 100%)" },
+        "to": { "clipPath": "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }
+      },
+      "duration": "0.6s",
+      "timing": "ease-out"
+    }
+  },
+  
+  "patterns": {
+    "diagonalStripes": {
+      "angle": "45deg",
+      "colors": ["#0A0A0A", "#FFFFFF"],
+      "width": "10px"
+    },
+    
+    "horizontalStripes": {
+      "angle": "0deg",
+      "colors": ["#DC143C", "#FFFFFF"],
+      "width": "20px"
+    },
+    
+    "grid": {
+      "color": "#E0E0E0",
+      "size": "20px",
+      "thickness": "1px"
+    },
+    
+    "noise": {
+      "opacity": 0.02,
+      "blendMode": "multiply"
+    }
+  },
+  
+  "components": {
+    "button": {
+      "primary": {
+        "bg": "#DC143C",
+        "color": "#FFFFFF",
+        "hoverBg": "#CC1100",
+        "padding": "12px 32px",
+        "fontWeight": 700
+      },
+      "secondary": {
+        "bg": "#FFFFFF",
+        "color": "#0A0A0A",
+        "border": "2px solid #0A0A0A",
+        "hoverBg": "#0A0A0A",
+        "hoverColor": "#FFFFFF"
+      },
+      "ghost": {
+        "bg": "transparent",
+        "color": "#0A0A0A",
+        "border": "2px solid currentColor"
+      }
+    },
+    
+    "card": {
+      "bg": "#FFFFFF",
+      "border": "2px solid #0A0A0A",
+      "padding": "24px",
+      "hoverShadow": "0 8px 24px rgba(10, 10, 10, 0.15)"
+    },
+    
+    "input": {
+      "bg": "#FFFFFF",
+      "border": "2px solid #0A0A0A",
+      "padding": "12px 16px",
+      "focusBorder": "#DC143C",
+      "errorBorder": "#CC1100"
+    }
+  },
+  
+  "z-index": {
+    "dropdown": 100,
+    "sticky": 200,
+    "fixed": 300,
+    "modalBackdrop": 400,
+    "modal": 500,
+    "popover": 600,
+    "tooltip": 700,
+    "notification": 800
+  }
+}

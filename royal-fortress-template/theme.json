@@ -1,0 +1,342 @@
+{
+  "name": "Royal Fortress Theme",
+  "version": "1.0.0",
+  "description": "Majestic fortress and royal nobility theme configuration",
+  "colors": {
+    "primary": {
+      "royalBlue": "#003DA5",
+      "fortressBlack": "#0D0D0D",
+      "championGold": "#FFD700",
+      "pureWhite": "#FFFFFF"
+    },
+    "secondary": {
+      "midnightBlue": "#001E4D",
+      "steelGray": "#434B56",
+      "platinum": "#E5E4E2",
+      "bronze": "#CD7F32",
+      "navyShadow": "#00163A",
+      "silver": "#C0C0C0"
+    },
+    "gradients": {
+      "goldShine": "linear-gradient(135deg, #FFD700 0%, #FFF8DC 50%, #FFD700 100%)",
+      "royalDepth": "linear-gradient(180deg, #003DA5 0%, #001E4D 100%)",
+      "fortressWall": "linear-gradient(90deg, #0D0D0D 0%, #434B56 50%, #0D0D0D 100%)",
+      "platinumGlow": "linear-gradient(45deg, #E5E4E2 0%, #FFFFFF 50%, #E5E4E2 100%)",
+      "victory": "linear-gradient(135deg, #FFD700 0%, #003DA5 50%, #0D0D0D 100%)"
+    },
+    "metallic": {
+      "gold": {
+        "base": "#FFD700",
+        "highlight": "#FFED4E",
+        "shadow": "#B8860B",
+        "shimmer": "linear-gradient(45deg, #B8860B 0%, #FFD700 40%, #FFED4E 50%, #FFD700 60%, #B8860B 100%)"
+      },
+      "silver": {
+        "base": "#C0C0C0",
+        "highlight": "#E8E8E8",
+        "shadow": "#808080"
+      },
+      "bronze": {
+        "base": "#CD7F32",
+        "highlight": "#DA9C4A",
+        "shadow": "#8B4513"
+      }
+    },
+    "opacity": {
+      "blue90": "rgba(0, 61, 165, 0.9)",
+      "blue75": "rgba(0, 61, 165, 0.75)",
+      "blue50": "rgba(0, 61, 165, 0.5)",
+      "blue25": "rgba(0, 61, 165, 0.25)",
+      "black90": "rgba(13, 13, 13, 0.9)",
+      "black75": "rgba(13, 13, 13, 0.75)",
+      "black50": "rgba(13, 13, 13, 0.5)",
+      "black25": "rgba(13, 13, 13, 0.25)",
+      "gold50": "rgba(255, 215, 0, 0.5)",
+      "gold25": "rgba(255, 215, 0, 0.25)"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "display": "'Cinzel', 'Didot', Georgia, serif",
+      "body": "'Montserrat', 'Gotham', 'Helvetica Neue', sans-serif",
+      "accent": "'Bodoni Moda', 'Playfair Display', serif",
+      "number": "'Bebas Neue', 'Anton', sans-serif",
+      "tabular": "'Roboto Mono', monospace"
+    },
+    "sizes": {
+      "xs": "0.625rem",
+      "sm": "0.75rem",
+      "base": "0.875rem",
+      "lg": "1rem",
+      "xl": "1.125rem",
+      "2xl": "1.375rem",
+      "3xl": "1.75rem",
+      "4xl": "2.25rem",
+      "5xl": "3rem",
+      "6xl": "4rem",
+      "7xl": "5rem",
+      "8xl": "6rem"
+    },
+    "weights": {
+      "thin": 100,
+      "light": 300,
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    },
+    "lineHeights": {
+      "tight": 1.1,
+      "snug": 1.3,
+      "normal": 1.5,
+      "relaxed": 1.7,
+      "loose": 2.0
+    },
+    "letterSpacing": {
+      "tighter": "-0.03em",
+      "tight": "-0.01em",
+      "normal": "0",
+      "wide": "0.02em",
+      "wider": "0.04em",
+      "widest": "0.08em",
+      "luxury": "0.15em"
+    }
+  },
+  "spacing": {
+    "0": "0",
+    "1": "0.375rem",
+    "2": "0.75rem",
+    "3": "1.125rem",
+    "4": "1.5rem",
+    "5": "1.875rem",
+    "6": "2.25rem",
+    "8": "3rem",
+    "10": "3.75rem",
+    "12": "4.5rem",
+    "16": "6rem",
+    "20": "7.5rem"
+  },
+  "layout": {
+    "container": {
+      "sm": "640px",
+      "md": "768px",
+      "lg": "1024px",
+      "xl": "1280px",
+      "2xl": "1440px",
+      "luxury": "1920px"
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": "30px",
+      "margin": "30px",
+      "maxWidth": "1440px"
+    },
+    "goldenRatio": {
+      "ratio": 1.618,
+      "primary": "61.8%",
+      "secondary": "38.2%"
+    },
+    "fortress": {
+      "wallThickness": "8px",
+      "towerWidth": "80px",
+      "battlementHeight": "20px",
+      "moatGap": "40px"
+    }
+  },
+  "borders": {
+    "radius": {
+      "none": "0",
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px",
+      "xl": "16px",
+      "2xl": "24px"
+    },
+    "width": {
+      "thin": "1px",
+      "medium": "2px",
+      "thick": "3px",
+      "luxury": "4px",
+      "fortress": "8px"
+    },
+    "style": {
+      "solid": "solid",
+      "double": "double",
+      "ridge": "ridge",
+      "inset": "inset",
+      "outset": "outset"
+    }
+  },
+  "shadows": {
+    "sm": "0 2px 4px rgba(13, 13, 13, 0.1)",
+    "md": "0 4px 8px rgba(13, 13, 13, 0.15)",
+    "lg": "0 8px 16px rgba(13, 13, 13, 0.2)",
+    "xl": "0 12px 24px rgba(13, 13, 13, 0.25)",
+    "2xl": "0 20px 40px rgba(13, 13, 13, 0.3)",
+    "goldGlow": "0 0 20px rgba(255, 215, 0, 0.4)",
+    "inner": "inset 0 2px 4px rgba(13, 13, 13, 0.2)",
+    "bevel": "inset 0 2px 4px rgba(0,0,0,0.5), inset 0 -2px 4px rgba(255,255,255,0.2)"
+  },
+  "animations": {
+    "durations": {
+      "instant": "0ms",
+      "fast": "200ms",
+      "normal": "400ms",
+      "slow": "600ms",
+      "slower": "800ms",
+      "slowest": "1000ms",
+      "shimmer": "3000ms",
+      "wave": "4000ms"
+    },
+    "easings": {
+      "linear": "linear",
+      "in": "ease-in",
+      "out": "ease-out",
+      "inOut": "ease-in-out",
+      "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+      "royal": "cubic-bezier(0.4, 0, 0.2, 1)"
+    },
+    "keyframes": {
+      "goldShimmer": {
+        "from": "background-position: -200% center",
+        "to": "background-position: 200% center"
+      },
+      "pulseGold": {
+        "0%, 100%": "box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4)",
+        "50%": "box-shadow: 0 0 20px 10px rgba(255, 215, 0, 0)"
+      },
+      "fadeIn": {
+        "from": "opacity: 0; transform: translateY(20px)",
+        "to": "opacity: 1; transform: translateY(0)"
+      },
+      "slideIn": {
+        "from": "transform: translateX(-100%)",
+        "to": "transform: translateX(0)"
+      },
+      "bannerWave": {
+        "0%, 100%": "transform: rotate(-2deg)",
+        "50%": "transform: rotate(2deg)"
+      },
+      "drawbridgeLower": {
+        "from": "transform: rotateX(-90deg)",
+        "to": "transform: rotateX(0)"
+      }
+    }
+  },
+  "patterns": {
+    "heraldic": {
+      "stripes": "repeating-linear-gradient(45deg, #003DA5, #003DA5 10px, #FFD700 10px, #FFD700 20px)",
+      "checkered": "repeating-conic-gradient(#0D0D0D 0 90deg, #FFD700 0 180deg)",
+      "quatrefoil": "radial-gradient(circle, #FFD700 30%, transparent 30%)"
+    },
+    "stone": {
+      "texture": "url('data:image/svg+xml;base64,...')",
+      "opacity": 0.1,
+      "blendMode": "multiply"
+    },
+    "battlements": {
+      "pattern": "repeating-linear-gradient(90deg, #0D0D0D 0, #0D0D0D 20px, transparent 20px, transparent 40px)",
+      "height": "20px"
+    }
+  },
+  "effects": {
+    "clipPaths": {
+      "shield": "polygon(50% 0, 100% 0, 100% 70%, 50% 100%, 0 70%, 0 0)",
+      "hexagon": "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+      "tower": "polygon(20% 0, 80% 0, 100% 20%, 100% 100%, 0 100%, 0 20%)",
+      "banner": "polygon(0 0, 100% 0, 85% 50%, 100% 100%, 0 100%)"
+    },
+    "filters": {
+      "goldGlow": "drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))",
+      "stoneTexture": "contrast(1.1) brightness(0.95)",
+      "metallic": "contrast(1.2) brightness(1.1)"
+    },
+    "transforms": {
+      "hoverLift": "translateY(-4px)",
+      "press": "translateY(2px)",
+      "scaleSubtle": "scale(1.02)",
+      "scaleNormal": "scale(1.05)",
+      "rotateSubtle": "rotate(1deg)"
+    }
+  },
+  "special": {
+    "crest": {
+      "size": "60px",
+      "color": "#FFD700",
+      "border": "2px solid #FFD700",
+      "background": "#003DA5"
+    },
+    "dividers": {
+      "goldLine": {
+        "height": "2px",
+        "background": "linear-gradient(90deg, transparent, #FFD700, transparent)",
+        "margin": "40px 0"
+      },
+      "doubleLine": {
+        "borderTop": "1px solid #003DA5",
+        "borderBottom": "1px solid #003DA5",
+        "height": "5px"
+      }
+    },
+    "ranks": {
+      "gold": {
+        "icon": "★",
+        "color": "#FFD700",
+        "size": "24px"
+      },
+      "silver": {
+        "icon": "★",
+        "color": "#C0C0C0",
+        "size": "20px"
+      },
+      "bronze": {
+        "icon": "★",
+        "color": "#CD7F32",
+        "size": "18px"
+      }
+    }
+  },
+  "breakpoints": {
+    "xs": {
+      "min": "320px",
+      "max": "639px"
+    },
+    "sm": {
+      "min": "640px",
+      "max": "767px"
+    },
+    "md": {
+      "min": "768px",
+      "max": "1023px"
+    },
+    "lg": {
+      "min": "1024px",
+      "max": "1279px"
+    },
+    "xl": {
+      "min": "1280px",
+      "max": "1439px"
+    },
+    "2xl": {
+      "min": "1440px",
+      "max": "1919px"
+    },
+    "luxury": {
+      "min": "1920px"
+    }
+  },
+  "zIndex": {
+    "behind": -1,
+    "base": 0,
+    "elevated": 10,
+    "tower": 50,
+    "battlement": 100,
+    "flag": 150,
+    "dropdown": 200,
+    "overlay": 300,
+    "modal": 400,
+    "tooltip": 500
+  }
+}

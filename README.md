@@ -76,6 +76,27 @@
 - 📊 テーブルレイアウトとフレームセット
 - 🔷 原色使いとTimes New Roman
 
+### 11. [Stadium Classic Template](./stadium-classic-template/)
+**フェアプレーと勝利のデザイン**
+- ⚪ フェアプレーの白、力強さの黒
+- 🔴 歓喜と情熱のクリムゾンレッド
+- ⚡ 対角線構成とダイナミックな動き
+- 🏆 スポーツチーム・アスレチックブランド向け
+
+### 12. [Ocean Flame Template](./ocean-flame-template/)
+**鹿島灘とバラの情熱デザイン**
+- 🌊 深海のネイビーブルー（鹿島灘）
+- 🔥 燃える情熱のアントラーズレッド
+- 🌹 茨城県花バラをイメージ
+- 🌀 波形グラデーションと流動的な表現
+
+### 13. [Royal Fortress Template](./royal-fortress-template/)
+**王者の要塞デザイン**
+- 👑 ロイヤルブルーとフォートレスブラック
+- ✨ チャンピオンゴールドの輝き
+- 🏰 重厚で威厳ある構造
+- 💎 プレミアムブランド・高級サービス向け
+
 ## 🚀 クイックスタート
 
 ### 基本的な使用方法
@@ -110,6 +131,12 @@ cd broken-grid-template/
 cd retro-blog-template/
 # または
 cd 90s-web-template/
+# または
+cd stadium-classic-template/
+# または
+cd ocean-flame-template/
+# または
+cd royal-fortress-template/
 
 # 詳細を確認
 cat README.md
